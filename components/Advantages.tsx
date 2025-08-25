@@ -3,8 +3,13 @@
 import { useTranslations } from 'next-intl';
 import { motion } from 'framer-motion';
 import Link from 'next/link';
-import { 
-  Check 
+import {
+  Settings,
+  Wifi,
+  Shield,
+  Zap,
+  CreditCard,
+  Headphones
 } from 'lucide-react';
 
 interface AdvantagesProps {
@@ -16,42 +21,42 @@ export function Advantages({ locale }: AdvantagesProps) {
 
   const advantages = [
     {
-      icon: Check,
+      icon: Settings,
       title: t('advantages.premium.title'),
       description: t('advantages.premium.desc'),
       color: 'text-white',
       bgColor: 'bg-green-500',
     },
     {
-      icon: Check,
+      icon: Wifi,
       title: t('advantages.iot.title'),
       description: t('advantages.iot.desc'),
       color: 'text-white',
       bgColor: 'bg-green-500',
     },
     {
-      icon: Check,
+      icon: Shield,
       title: t('advantages.clean.title'),
       description: t('advantages.clean.desc'),
       color: 'text-white',
       bgColor: 'bg-green-500',
     },
-    {
-      icon: Check,
+    { 
+      icon: Zap,
       title: t('advantages.fast.title'),
       description: t('advantages.fast.desc'),
       color: 'text-white',
       bgColor: 'bg-green-500',
     },
     {
-      icon: Check,
+      icon: CreditCard,
       title: t('advantages.payment.title'),
       description: t('advantages.payment.desc'),
       color: 'text-white',
       bgColor: 'bg-green-500',
     },
     {
-      icon: Check,
+      icon: Headphones,
       title: t('advantages.support.title'),
       description: t('advantages.support.desc'),
       color: 'text-white',
