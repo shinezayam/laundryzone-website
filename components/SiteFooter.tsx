@@ -119,7 +119,7 @@ export function SiteFooter({ locale }: SiteFooterProps) {
         <div className="border-t border-neutral-800 mt-12 pt-8">
           <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
             <p className="text-neutral-400 text-sm">
-              {t('footer.copyright')} Designed by{' '}
+              {t('footer.copyright')} {t('footer.designed_by')}{' '}
               <a
                 href="https://portfolio-sage-xi-54.vercel.app/"
                 target="_blank"
