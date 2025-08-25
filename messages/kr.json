@@ -1,0 +1,562 @@
+{
+  "nav": {
+    "home": "홈",
+    "about": "회사 소개",
+    "pricing": "가격",
+    "franchise": "가맹점",
+    "contact": "문의하기"
+  },
+  "hero": {
+    "headline": "셀프 세탁소",
+    "sub": "LG/삼성 상업용 기계, 빠른 사이클, 현금 없는 결제.",
+    "cta": {
+      "pricing": "가격 보기",
+      "branches": "지점 보기"
+    },
+    "experience": "LaundryZone 경험",
+    "watch_video": "비디오 보기",
+    "open_24_7": "08:00 - 00:00 영업",
+    "lg_samsung": "LG/삼성"
+  },
+  "stats": {
+    "24_7": "08:00 - 00:00 운영",
+    "cashless": "현금 없는 결제",
+    "wifi": "무료 Wi-Fi",
+    "detergent": "세제 포함"
+  },
+  "advantages": {
+    "title": "우리를 선택하는 이유",
+    "subtitle": "최첨단 기술과 프리미엄 서비스로 세탁의 미래를 경험하세요",
+    "premium": {
+      "title": "프리미엄 장비",
+      "desc": "LG/삼성 상업용 기계"
+    },
+    "iot": {
+      "title": "IoT 모니터링",
+      "desc": "실시간 기계 상태 모니터링"
+    },
+    "clean": {
+      "title": "깨끗하고 안전",
+      "desc": "매일 청소 및 유지보수"
+    },
+    "fast": {
+      "title": "빠르고 효율적",
+      "desc": "30-40분 세탁, 20-30분 건조"
+    },
+    "payment": {
+      "title": "쉬운 결제",
+      "desc": "카드, QR 코드, 현금 결제"
+    },
+    "support": {
+      "title": "08:00 - 00:00 지원",
+      "desc": "언제든지 도움 받기 가능"
+    },
+    "cta": {
+      "title": "차이점을 경험할 준비가 되셨나요?",
+      "subtitle": "우리 지점 중 하나를 방문하여 LaundryZone이 현대적인 세탁 요구에 가장 적합한 선택인 이유를 확인하세요.",
+      "find_branch": "가장 가까운 지점 찾기",
+      "view_pricing": "가격 보기"
+    }
+  },
+  "pricing": {
+    "title": "가격",
+    "subtitle": "합리적인 가격, 프리미엄 품질",
+    "washers": "세탁기",
+    "dryers": "건조기",
+    "extras": "추가 서비스",
+    "see_full": "전체 가격 보기",
+    "how_it_works": "이용 방법",
+    "steps": {
+      "load": "옷 넣기",
+      "pay": "결제하기",
+      "wash": "세탁",
+      "dry": "건조"
+    },
+    "machines": {
+      "washer_20kg": "중간 크기 세탁에 적합",
+      "dryer_25kg": "빠르고 효율적인 건조",
+      "shoe_washer": "신발 전용 세척",
+      "washer_20kg_name": "세탁기 20kg",
+      "dryer_25kg_name": "건조기 25kg",
+      "shoe_washer_name": "신발 세탁기",
+      "washer_20kg_cold": "세탁기 20kg (냉수)",
+      "washer_20kg_hot": "세탁기 20kg (온수)",
+      "washer_20kg_deep": "세탁기 20kg (깊은 세정)",
+      "washer_30kg_cold": "세탁기 30kg (냉수)",
+      "washer_30kg_hot": "세탁기 30kg (온수)",
+      "washer_30kg_deep": "세탁기 30kg (깊은 세정)",
+      "dryer_25kg_20min": "건조기 25kg (20분)",
+      "dryer_25kg_30min": "건조기 25kg (30분)",
+      "shoe_dryer": "신발 건조기",
+      "detergent": "세제",
+      "sterilization": "살균"
+    },
+    "units": {
+      "cycle": "₮/사이클",
+      "minutes": "₮/20분",
+      "piece": "₮/개"
+    },
+    "descriptions": {
+      "washer_20kg_cold": "대용량, 에너지 절약",
+      "washer_20kg_hot": "대용량, 위생적 세탁",
+      "washer_20kg_deep": "대용량, 강한 얼룩",
+      "washer_30kg_cold": "초대용량, 에너지 절약",
+      "washer_30kg_hot": "초대용량, 위생적 세탁",
+      "washer_30kg_deep": "초대용량, 강한 얼룩",
+      "dryer_25kg_20min": "소량용 빠른 건조",
+      "dryer_25kg_30min": "중간 크기용 연장 건조",
+      "shoe_washer": "신발 세탁 전용 기계",
+      "shoe_dryer": "신발 건조 전용 기계",
+      "detergent": "프리미엄 세탁 세제",
+      "sterilization": "전문 살균 서비스"
+    },
+    "help_description": "저희 직원은 세탁 요구사항에 맞는 올바른 기계를 선택하는 데 항상 도움을 드립니다. 개인 맞춤 지원을 위해 저희 지점 중 하나를 방문하세요."
+  },
+  "faq": {
+    "title": "자주 묻는 질문",
+    "subtitle": "질문에 대한 답변",
+    "still_have_questions": "더 궁금한 점이 있으신가요?",
+    "contact_description": "저희 팀이 항상 도움을 드릴 준비가 되어 있습니다. 도움이 필요하시면 연락해 주세요."
+  },
+  "guidelines": {
+    "title": "고객 이용 안내",
+    "subtitle": "LaundryZone 서비스 이용 시 따라야 할 중요한 안내사항",
+    "guideline_count": "안내사항",
+    "search_placeholder": "안내사항 검색...",
+    "clear_filter": "필터 지우기",
+    "expand": "더 보기",
+    "collapse": "접기",
+    "show_all": "모두 보기",
+    "show_less": "덜 보기",
+    "thank_you": {
+      "title": "감사합니다",
+      "content": "LaundryZone 서비스를 이용해 주셔서 감사합니다. 위의 안내사항을 따라 주시면 편안하고 안전한 서비스를 받으실 수 있습니다."
+    },
+    "items": {
+      "washing_instructions": {
+        "title": "세탁 지침에 따른 세탁",
+        "content": "세탁할 물품의 공장 라벨과 세탁 지침에 따라 세탁기와 건조기를 사용하여 얻은 결과에 대해 고객이 책임을 진다는 점을 참고하시기 바랍니다."
+      },
+      "color_separation": {
+        "title": "흰색과 유색 의류 분리",
+        "content": "흰색과 유색 의류는 반드시 색상별로 분리하여 세탁해야 합니다. 이렇게 하면 세탁물이 색을 잃거나 변색되는 것을 방지할 수 있습니다!"
+      },
+      "check_pockets": {
+        "title": "주머니 속 물건 확인",
+        "content": "세탁 전 주머니 속 모든 물건을 하나씩 확인하세요 (휴지, 이쑤시개, 마스크, 열쇠, 핀, 사탕 등). 고객의 부주의로 인한 손상이나 부상이 발생할 경우 고객이 책임을 진다는 점을 참고하시기 바랍니다."
+      },
+      "stretchy_items": {
+        "title": "신축성 있는 의류",
+        "content": "신축성 있는 직물, 니트, 실크, 폴리 소재의 의류는 지침에 따라 세탁하세요"
+      },
+      "supervision": {
+        "title": "세탁 중 감독",
+        "content": "다른 고객에게 지연을 야기하고 물건을 잃을 위험이 있으므로 세탁기와 건조기를 사용하는 동안 오랫동안 자리를 비우지 마세요."
+      },
+      "no_pets": {
+        "title": "반려동물 금지",
+        "content": "질식과 호흡 곤란이 위험하므로 세탁기와 건조기 안에 반려동물을 넣거나 들어가는 것을 엄격히 금지합니다."
+      },
+      "capacity_limit": {
+        "title": "기계 용량 초과 금지",
+        "content": "세탁기와 건조기의 용량을 초과하면 세탁물이 색을 잃거나 불완전하게 세탁될 수 있으며, 장비가 손상될 위험이 있으므로 정해진 용량에 따라 사용하는 것을 권장합니다."
+      },
+      "household_only": {
+        "title": "가정용으로만 사용",
+        "content": "저희 모든 기계는 가정용 세탁에만 사용하도록 설계되었으며, 다른 목적으로 사용하는 것을 엄격히 금지합니다. /포함: 신발, 카펫, 자동차 커버, 기름진 기술용품 등/"
+      },
+      "closing_time": {
+        "title": "마감 2시간 전에 방문",
+        "content": "세탁은 1-2시간이 소요되므로 저녁 마감 2시간 전에 방문하세요."
+      },
+      "gentle_use": {
+        "title": "기계를 부드럽게 사용",
+        "content": "모든 기계의 문을 부드럽게 닫고 손잡이를 강하게 당기지 마세요."
+      },
+      "follow_staff": {
+        "title": "직원 조언 따르기",
+        "content": "저희 직원이 카드와 기계 사용법에 대한 지침과 조언을 드릴 것입니다. 저희 직원은 고객의 물건을 세탁하고 건조하는 책임을 지지 않으며, 고객께서 저희 직원의 지침에 따라 기계를 직접 조작하여 \"셀프 서비스\"를 이용하시게 됩니다."
+      },
+      "customer_responsibility": {
+        "title": "고객 책임",
+        "content": "저희 직원의 조언을 따르지 않아 발생하는 \"결과\"에 대해 고객이 전적으로 책임을 집니다."
+      },
+      "color_restoration": {
+        "title": "색상 복원 불가능",
+        "content": "색이 변했거나 오랫동안 사용된 의류의 색상은 복원하지 않으며, 오염만 세탁합니다."
+      },
+      "stain_removal": {
+        "title": "얼룩 제거 지침",
+        "content": "세탁물의 얼룩과 깊은 오염에는 반드시 전용 얼룩 제거제와 깊은 세정 세제를 사용하여 세탁하는 것을 권장합니다."
+      },
+      "staff_respect": {
+        "title": "직원 존중",
+        "content": "저희 서비스 직원을 존중하며, 먼저 온 고객 앞에서 줄을 서지 말고, 언어로 모욕하지 말며, 신체적으로 접촉하지 말고, 무례하지 않게 예의 바르게 서비스를 이용해 주세요."
+      }
+    }
+  },
+  "branches": {
+    "title": "우리 지점",
+    "subtitle": "울란바토르 전역 08:00 - 00:00 서비스",
+    "hours": "영업시간",
+    "services": "서비스",
+    "phone": "전화",
+    "directions": "길찾기",
+    "service_types": {
+      "self_service": "셀프 서비스",
+      "wash_dry": "세탁 & 건조",
+      "wifi": "Wi-Fi",
+      "detergent": "세제"
+    },
+    "map_title": "인터랙티브 지도",
+    "map_subtitle": "울란바토르 전역의 모든 지점 보기",
+    "services_available": "이용 가능한 서비스",
+    "phone_support": "전화 지원",
+    "find_nearest": "가장 가까운 지점 찾기",
+    "cta_description": "모든 지점이 최신 LG/삼성 장비를 갖추고 08:00 - 00:00 서비스를 제공합니다.",
+    "search_placeholder": "지점 검색...",
+    "filter_district": "구역",
+    "filter_hours": "영업시간",
+    "filter_services": "서비스",
+    "all_districts": "모든 구역",
+    "all_hours": "모든 시간",
+    "clear_filters": "필터 지우기",
+    "results_count": "{count}개 지점 발견 ({total}개 전체)",
+    "nearby_branches": "주변 지점",
+    "no_results": "결과를 찾을 수 없습니다",
+    "get_directions": "길찾기",
+    "filters": "필터",
+    "filters_active": "활성",
+    "map_unavailable": "지도 사용 불가",
+    "map_fallback_text": "Google 지도를 직접 열려면 클릭하세요",
+    "open_google_maps": "Google 지도 열기",
+    "loading_map": "지도 로딩 중...",
+    "view_on_map": "지도에서 보기"
+  },
+  "contact": {
+    "title": "연락처",
+    "subtitle": "우리와 연락하세요",
+    "get_in_touch": "연락하기",
+    "get_in_touch_desc": "서비스에 대한 질문이나 도움이 필요하신가요? 08:00 - 00:00 도움을 드립니다. 아래 채널을 통해 연락해 주세요.",
+    "form": {
+      "name": "이름",
+      "phone": "전화",
+      "email": "이메일",
+      "message": "메시지",
+      "send": "보내기",
+      "name_placeholder": "이름을 입력하세요",
+      "email_placeholder": "이메일을 입력하세요",
+      "phone_placeholder": "전화번호를 입력하세요",
+      "message_placeholder": "문의사항을 알려주세요...",
+      "sending": "전송 중...",
+      "success_message": "감사합니다! 메시지가 성공적으로 전송되었습니다.",
+      "error_message": "죄송합니다. 메시지 전송 중 오류가 발생했습니다. 다시 시도해 주세요.",
+      "privacy_notice": "이 양식을 제출함으로써 개인정보 보호정책에 동의하고 문의사항에 대해 연락받는 것에 동의합니다.",
+      "validation": {
+        "name_min": "이름은 최소 2자 이상이어야 합니다",
+        "email_invalid": "유효한 이메일 주소를 입력하세요",
+        "phone_min": "유효한 전화번호를 입력하세요",
+        "message_min": "메시지는 최소 10자 이상이어야 합니다"
+      }
+    },
+    "info": {
+      "phone": "전화",
+      "email": "이메일",
+      "address": "주소",
+      "hours": "영업시간"
+    }
+  },
+  "franchise": {
+    "title": "가맹점 되기",
+    "subtitle": "성공적인 비즈니스 시작",
+    "benefits": {
+      "training": "완전한 교육",
+      "support": "마케팅 지원",
+      "equipment": "장비",
+      "branding": "브랜딩",
+      "training_desc": "당신과 직원들을 위한 완전한 교육 프로그램",
+      "support_desc": "지속적인 마케팅 및 운영 지원",
+      "equipment_desc": "프리미엄 LG/삼성 장비 접근",
+      "branding_desc": "확립된 브랜드 인지도 및 마케팅 자료"
+    },
+    "form": {
+      "name": "이름",
+      "phone": "전화",
+      "email": "이메일",
+      "city": "도시",
+      "budget": "예산",
+      "message": "메시지",
+      "submit": "제출"
+    },
+    "why_title": "왜 LaundryZone 가맹점인가요?",
+    "download_title": "가맹점 정보 다운로드",
+    "download_description": "가맹점 프로그램, 요구사항, 투자 세부사항에 대한 자세한 정보를 받으세요.",
+    "download_brochure": "브로셔 다운로드",
+    "message_placeholder": "가맹점에 대한 관심사에 대해 알려주세요...",
+    "success_message": "감사합니다! 곧 가맹점 정보로 연락드리겠습니다.",
+    "error_message": "죄송합니다. 오류가 발생했습니다. 다시 시도해 주세요.",
+    "validation": {
+      "name_min": "이름은 최소 2자 이상이어야 합니다",
+      "email_invalid": "유효한 이메일 주소를 입력하세요",
+      "phone_min": "유효한 전화번호를 입력하세요",
+      "city_min": "도시를 입력하세요",
+      "budget_required": "예산 범위를 선택하세요",
+      "message_min": "메시지는 최소 10자 이상이어야 합니다"
+    },
+    "budget_ranges": {
+      "under_50m": "50백만 ₮ 미만",
+      "50m_100m": "50백만 - 100백만 ₮",
+      "100m_200m": "100백만 - 200백만 ₮",
+      "200m_500m": "200백만 - 500백만 ₮",
+      "over_500m": "500백만 ₮ 이상"
+    }
+  },
+  "footer": {
+    "copyright": "© 2025 LaundryZone Mongolia. 모든 권리 보유.",
+    "designed_by": "디자이너",
+    "links": {
+      "privacy": "개인정보 보호정책",
+      "terms": "서비스 약관",
+      "franchise": "프랜차이즈"
+    }
+  },
+  "common": {
+    "learn_more": "더 알아보기",
+    "get_started": "시작하기",
+    "view_all": "모두 보기",
+    "loading": "로딩 중...",
+    "error": "오류가 발생했습니다",
+    "success": "성공",
+    "language": "언어",
+    "get_in_touch": "연락하기",
+    "follow_us": "팔로우하기",
+    "send_message": "메시지 보내기",
+    "franchise_inquiry": "가맹점 문의",
+    "select_budget": "예산 범위 선택",
+    "enter_name": "이름을 입력하세요",
+    "enter_email": "이메일을 입력하세요",
+    "enter_phone": "전화번호를 입력하세요",
+    "enter_city": "도시를 입력하세요",
+    "premium_quality": "프리미엄 품질",
+    "fast_service": "빠른 서비스",
+    "available_24_7": "08:00 - 00:00 이용 가능",
+    "quick_links": "빠른 링크",
+    "services": "서비스",
+    "self_service_washing": "셀프 서비스 세탁",
+    "commercial_dryers": "상업용 건조기",
+    "shoe_washing": "신발 세탁",
+    "detergent_included": "세제 포함",
+    "free_wifi": "무료 Wi-Fi",
+    "cashless_payment": "현금 없는 결제",
+    "need_help": "선택에 도움이 필요하신가요?",
+    "sending": "보내는 중...",
+    "get_started": "시작할 준비가 되셨나요?"
+  },
+  "banner": {
+    "title": "우리의 서비스",
+    "subtitle": "편안한 환경에서 제공하는 고품질 세탁 서비스",
+    "premium": "프리미엄",
+    "featured": "특별",
+    "main": {
+      "title": "프리미엄 세탁 서비스",
+      "description": "LG/삼성 장비, 빠른 사이클, 깨끗한 환경"
+    },
+    "secondary": {
+      "title": "왜 LaundryZone인가?",
+      "description": "몽골 최고의 셀프 세탁소"
+    },
+    "features": {
+      "hygiene": "깨끗하고 위생적",
+      "hours": "08:00 - 00:00 영업",
+      "quality": "고품질"
+    },
+    "fast": "빠른",
+    "cta": "더 알아보기"
+  },
+  "about": {
+    "title": "회사 소개",
+    "subtitle": "몽골 최고의 셀프 세탁소",
+    "story": {
+      "title": "우리의 이야기",
+      "content": "LaundryZone은 2020년에 설립되었으며 몽골 최대의 셀프 세탁소입니다. LG/삼성 장비를 사용하여 고품질 서비스를 제공합니다."
+    },
+    "company": {
+      "name": "LaundryZone Mongolia",
+      "since": "2020년부터"
+    },
+    "partners": {
+      "title": "장비 파트너",
+      "subtitle": "세계 최고 제조업체와 협력하여 최고의 세탁 경험을 제공합니다",
+      "lg": {
+        "name": "LG 상업용",
+        "desc": "고성능 및 에너지 효율성을 위한 상업용 세탁기 및 건조기"
+      },
+      "samsung": {
+        "name": "Samsung 상업용",
+        "desc": "스마트 기술, 우수한 세정 성능 및 혁신적인 기능을 갖춘 고급 상업용 세탁 장비"
+      }
+    },
+    "achievements": {
+      "locations": {
+        "title": "위치",
+        "desc": "울란바토르 전역"
+      },
+      "operation": {
+        "title": "운영",
+        "desc": "항상 이용 가능"
+      },
+      "satisfaction": {
+        "title": "만족도",
+        "desc": "고객 중심"
+      }
+    },
+    "timeline": {
+      "title": "우리의 성장 이야기",
+      "subtitle": "우리는 \"셀프 서비스 세탁소 - LAUNDRYZONE\"을 통해 모든 사람에게 빠르고 저렴한 세탁 및 청소 서비스를 제공하기 위해 노력하고 있습니다.",
+      "branch_1": "둔징가라브 지점",
+      "branch_1_desc": "17, 20, 30kg 세탁기, 11kg 및 25kg 건조기, 6쌍의 신발 세탁기 및 건조기 총 12대의 기계로 첫 번째 지점이 개점되었습니다.",
+      "branch_2": "3, 4구역",
+      "branch_2_desc": "3, 4구역에 지점들이 개점되었습니다.",
+      "branch_3": "야르마그 - 푸드시티",
+      "branch_3_desc": "야르마그 - 푸드시티에 지점이 개점되었습니다.",
+      "branch_4": "마샬 타워",
+      "branch_4_desc": "마샬 타워에 지점이 개점되었습니다.",
+      "branch_5": "산사르 - 이마트",
+      "branch_5_desc": "산사르 - 이마트에 지점이 개점되었습니다.",
+      "branch_6": "바르스 지점",
+      "branch_6_desc": "바르스 지점이 개점되었습니다.",
+      "branch_7": "1구역, 하르호린",
+      "branch_7_desc": "1구역, 하르호린에 지점이 개점되었습니다.",
+      "branch_8": "산사르 - 바얀주르크",
+      "branch_8_desc": "산사르 - 바얀주르크에 지점이 개점되었습니다.",
+      "branch_9": "옴노고비 주",
+      "branch_9_desc": "옴노고비 주에 지점이 개점되었습니다.",
+      "branch_10": "날라이크 시",
+      "branch_10_desc": "날라이크 시에 지점이 개점되었습니다.",
+      "branch_11": "19구역",
+      "branch_11_desc": "19구역에 지점이 개점되었습니다.",
+      "branch_12": "차이스 - DHIS",
+      "branch_12_desc": "차이스 - DHIS에 지점이 개점되었습니다.",
+      "branch_13": "라샨트 - 32구역",
+      "branch_13_desc": "라샨트 - 32구역에 지점이 개점되었습니다.",
+      "branch_14": "소돈 구역",
+      "branch_14_desc": "소돈 구역에 지점이 개점되었습니다."
+    },
+    "stats": {
+      "title": "우리의 숫자",
+      "subtitle": "숫자로 보는 LaundryZone의 성공",
+      "washing_machines": "세탁기",
+      "dryers": "건조기",
+      "shoe_machines": "신발 세탁기 & 건조기",
+      "total_users": "총 사용자"
+    },
+    "about_section": {
+      "title": "회사 소개",
+      "description": "Laundryzone Mongolia는 국제 표준에 따라 현대적인 자동 세탁, 건조 및 케어 서비스를 사용자에게 제공한다는 목표로 설립되었습니다. 우리는 울란바토르 시민들의 삶을 더 쉽고 편안하게 만들기 위해 노력하고 있습니다.",
+      "vision": {
+        "title": "우리의 비전",
+        "content": "몽골에서 세탁 및 건조의 새로운 문화를 전파하여 모든 사용자가 시간을 절약하고 깨끗하고 편안한 라이프스타일을 받아들이도록 돕습니다."
+      },
+      "mission": {
+        "title": "우리의 사명",
+        "content": [
+          "빠르고 신속하며 고품질의 서비스 제공",
+          "현대적인 자동 장비로 고객의 시간 절약",
+          "청결 및 위생의 국제 표준 구현"
+        ]
+      },
+      "advantages": {
+        "title": "우리의 장점",
+        "items": [
+          {
+            "title": "고용량 세탁기 및 건조기"
+          },
+          {
+            "title": "셀프 서비스 자동 시스템",
+            "description": "사용자가 자신의 일정에 맞춰 사용할 수 있음"
+          },
+          {
+            "title": "깨끗하고 편안한 환경",
+            "description": "고객 편의를 보장하도록 구성됨"
+          },
+          {
+            "title": "합리적인 가격",
+            "description": "모든 사람에게 합리적인 가격으로 서비스를 제공하는 정책"
+          }
+        ]
+      },
+      "final_statement": "Laundryzone은 한국 Laundryzone 프랜차이즈의 최고의 경험과 기술을 몽골 소비자를 위해 현지화하여 효율적이고 신뢰할 수 있는 서비스를 지속적으로 제공하고 있습니다."
+    },
+    "guidelines": {
+      "title": "고객 주의사항",
+      "subtitle": "LaundryZone 서비스 이용 시 준수해야 할 중요한 가이드라인",
+      "important": "중요",
+      "read_more": "더 보기",
+      "show_less": "접기",
+      "washing_instructions": {
+        "title": "세탁 지침 준수",
+        "content": "제품의 제조업체 라벨과 세탁 지침에 따라 세탁기와 건조기를 사용할 때 얻는 결과에 대해 고객이 책임을 지는 것에 유의하시기 바랍니다."
+      },
+      "color_separation": {
+        "title": "흰색과 유색 의류 분리",
+        "content": "흰색과 유색 의류는 반드시 색상별로 분리하여 세탁해야 합니다. 이렇게 하면 색상 이염과 세탁물 손상을 방지할 수 있습니다!"
+      },
+      "check_pockets": {
+        "title": "주머니 속 물건 확인",
+        "content": "세탁 전 주머니 속 모든 물건을 확인하세요 (티슈, 이쑤시개, 마스크, 열쇠, 핀, 사탕 등). 고객의 부주의로 인한 손상이나 분실에 대해 고객이 책임을 지는 것에 유의하시기 바랍니다."
+      },
+      "delicate_fabrics": {
+        "title": "섬세한 직물 주의",
+        "content": "신축성 있는 직물, 니트, 실크, 폴리 소재로 만든 제품은 지침에 따라 세탁하세요."
+      },
+      "supervision": {
+        "title": "세탁 중 감독",
+        "content": "세탁기와 건조기를 오랫동안 방치하는 것은 다른 고객에게 불편을 주고 물건을 잃을 위험이 있으므로 위험합니다."
+      },
+      "no_pets": {
+        "title": "반려동물 금지",
+        "content": "세탁기와 건조기 안에 반려동물을 넣거나 들어가게 하는 것은 위험하고 질식할 수 있으므로 엄격히 금지됩니다."
+      },
+      "capacity_limit": {
+        "title": "기계 용량 초과 금지",
+        "content": "세탁기와 건조기의 용량을 초과하면 세탁물의 색상 손실, 불완전한 세탁, 장비 손상의 위험이 있으므로 지정된 용량에 따라 사용하는 것을 권장합니다."
+      },
+      "household_only": {
+        "title": "가정용으로만 사용",
+        "content": "모든 기계는 가정용 세탁 전용으로 설계되었으며, 다른 목적으로 사용하는 것은 엄격히 금지됩니다. (신발, 카펫, 자동차 커버, 기술용 품목 등 포함)"
+      },
+      "closing_time": {
+        "title": "마감 2시간 전 도착",
+        "content": "세탁은 1-2시간이 소요되므로 마감 시간 2시간 전에 도착하시기 바랍니다."
+      },
+      "gentle_handling": {
+        "title": "기계를 부드럽게 다루기",
+        "content": "모든 기계 문을 부드럽게 닫고 핸들을 강제로 당기지 마세요."
+      },
+      "staff_assistance": {
+        "title": "직원 지시 따르기",
+        "content": "직원이 카드와 기계 사용에 대한 안내를 제공합니다. 직원이 세탁물을 세탁하거나 건조하지 않으며, 고객이 직원의 지시에 따라 기계를 직접 조작합니다 - \"셀프 서비스\"."
+      },
+      "responsibility": {
+        "title": "고객 책임",
+        "content": "직원의 조언을 따르지 않아 발생하는 모든 \"결과\"에 대해 고객이 전적으로 책임을 집니다."
+      },
+      "color_restoration": {
+        "title": "색상 복원 불가",
+        "content": "바랜 색상이나 오래 사용된 제품의 색상은 복원하지 않으며, 오염만 세탁합니다."
+      },
+      "stain_removal": {
+        "title": "얼룩 제거 가이드라인",
+        "content": "세탁물의 얼룩과 깊은 오염에는 전용 얼룩 제거제와 깊은 세정 세제를 사용하는 것을 권장합니다."
+      },
+      "respect": {
+        "title": "직원 존중",
+        "content": "서비스 직원을 존중하고, 먼저 온 고객 앞에 새치기하지 말고, 언어 폭력을 하지 말며, 신체적 접촉을 하지 말고, 무례한 행동으로 타인의 권리를 침해하지 마세요."
+      },
+      "thank_you": {
+        "title": "감사합니다",
+        "content": "LaundryZone 서비스를 이용해 주셔서 감사합니다. 위의 가이드라인을 따르면 편안하고 안전한 서비스를 받을 수 있습니다."
+      }
+    }
+  }
+}

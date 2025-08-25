@@ -1,0 +1,158 @@
+[
+  {
+    "id": "weight-calculation",
+    "q": {
+      "mn": "Угаах хувцасны жинг хэрхэн тооцох вэ?",
+      "en": "How to calculate the weight of clothes to wash?",
+      "kr": "세탁할 옷의 무게는 어떻게 계산하나요?"
+    },
+    "a": {
+      "mn": "Угаалгын машины хүчин чадлыг нойтон жингээр тооцдог. Гэхдээ нойтон жинг тодорхойлоход төвөгтэй байдаг тул, машин бүрт хэр их хэмжээний хувцас хийхэд тохиромжтойг хаалганы гадна талд цагаан зураасаар тэмдэглэж өгсөн байдаг.\n\nУгаалгын машины ажиллах зарчим нь хоосон зай үлдэж, дээрээс доош унах горимоор бохирдлыг арилгадаг тул тал зай хоосон байх шаардлагатай.",
+      "en": "When determining the washing machine capacity, it is calculated based on the weight when wet. However, since it is difficult to determine the wet weight, how much clothes should be loaded is marked with a \"White\" line on the outside of the washing machine door.\n\nThe basic principle of the washing machine operation is to remove dirt by rotating in empty space and falling from top to bottom, so there should be empty space.",
+      "kr": "세탁기 용량을 결정할 때는 젖었을 때의 무게로 계산합니다. 하지만 젖은 무게를 결정하기 어렵기 때문에, 얼마나 많은 옷을 넣어야 하는지는 세탁기 문 바깥쪽에 \"흰색\" 선으로 표시되어 있습니다.\n\n세탁기 작동의 기본 원리는 빈 공간에서 회전하여 위에서 아래로 떨어지는 방식으로 때를 제거하는 것이므로 빈 공간이 있어야 합니다."
+    }
+  },
+  {
+    "id": "own-detergent",
+    "q": {
+      "mn": "Угаалгын нунтагаа өөрсдөө авч очих уу?",
+      "en": "Should I bring my own detergent?",
+      "kr": "세제를 직접 가져가야 하나요?"
+    },
+    "a": {
+      "mn": "Хэрэглэж сурсан, үнэрт нь дассан өөрсдийн угаалгын нунтагаа авчирч хэрэглэхийг зөвлөж байна. Манай салбар дээр гүн цэвэрлэгээтэй, автомат машины зориулалтын угаалгын нунтагыг жижиг савлан борлуулж байна.\n\nМөн угаах зүйлс нь гүн бохирдолтой, толботой бол:\n• Толбо арилгагч\n• Өнгө сэргээгч\n• Бусад нэмэлт цэвэрлэгээний бодисуудыг хэрэглэхийг зөвлөж байна.\n\nГүн толбо нь зөвхөн тусгай цэвэрлэгээний бодисоор л арилгах боломжтой.",
+      "en": "We recommend bringing your own laundry detergent that you are used to using and have become accustomed to its smell. At our branch, we sell deep-cleaning, fully automatic machine-specific laundry detergent in small packages.\n\nAlso, if the items to be washed are deeply dirty and have various stains, we recommend using additional cleaning agents such as:\n• Stain removers\n• Color restorers\n• Other cleaning agents\n\nDeep stains can only be removed with specialized cleaning agents.",
+      "kr": "사용에 익숙하고 냄새에 익숙한 자신만의 세제를 가져와서 사용하는 것을 권장합니다. 저희 지점에서는 깊은 세정, 완전 자동 기계 전용 세제를 소포장으로 판매하고 있습니다.\n\n또한 세탁할 물건이 깊이 더럽고 다양한 얼룩이 있다면:\n• 얼룩 제거제\n• 색상 복원제\n• 기타 세정제를 사용하는 것을 권장합니다.\n\n깊은 얼룩은 전문 세정제로만 제거할 수 있습니다."
+    }
+  },
+  {
+    "id": "color-separation",
+    "q": {
+      "mn": "Хувцасаа өнгөөр ялгаж угаах уу?",
+      "en": "Do you separate clothes by color when washing?",
+      "kr": "옷을 색상별로 구분해서 세탁하나요?"
+    },
+    "a": {
+      "mn": "Тийм, хувцсаа өнгөөр нь ялгаж угаана. Ингэж ялгаж угааснаар хувцас болон бусад зүйлсийн өнгөө алдаж гундахаас сэргийлэх боломжтой.\n\nМанай 17кг бага оврын угаалгын машин нь нэг удаад:\n• 1 хөнжил эсвэл\n• Зуны хувцас 30 ширхэг угаах хүчин чадалтай тул, аль болох хүчин чадалд нь тохирсон хэмжээний хувцас угаалгыг гэртээ бэлдэж ирээд угаахыг зөвлөж байна.",
+      "en": "Yes, of course we separate clothes by color when washing. By separating and washing this way, we can prevent clothes and other items from losing their color and fading.\n\nOur 17kg small washing machine has the capacity to wash at once:\n• 1 blanket or\n• 30 pieces of summer clothes\n\nSo we recommend preparing laundry that matches the capacity as much as possible at home and coming to wash.",
+      "kr": "네, 물론 세탁할 때 옷을 색상별로 구분합니다. 이렇게 구분해서 세탁함으로써 옷과 기타 물건들이 색을 잃고 바래지는 것을 방지할 수 있습니다.\n\n저희 17kg 소형 세탁기는 한 번에:\n• 담요 1개 또는\n• 여름옷 30벌을 세탁할 수 있는 용량을 가지고 있으므로, 가능한 한 용량에 맞는 세탁물을 집에서 준비해서 와서 세탁하는 것을 권장합니다."
+    }
+  },
+  {
+    "id": "car-covers",
+    "q": {
+      "mn": "Авто машины хучлага угаах уу?",
+      "en": "Do you wash car seat covers?",
+      "kr": "자동차 시트 커버를 세탁하나요?"
+    },
+    "a": {
+      "mn": "Манай угаалгын газар нь зөвхөн ахуйн угаалга хийдэг. Машины хучлага нь нарийн тоос, тосны толбо их байдаг учраас манай угаалгын газар угаах боломжгүй юм.",
+      "en": "Our laundry only does household laundry. Car seat covers have a lot of fine dust and oil stains, so our laundry cannot wash them.",
+      "kr": "저희 세탁소는 가정용 세탁만 합니다. 자동차 시트 커버는 미세한 먼지와 기름 얼룩이 많기 때문에 저희 세탁소에서는 세탁할 수 없습니다."
+    }
+  },
+  {
+    "id": "machine-capacity",
+    "q": {
+      "mn": "Угаалгын машинууд 17кг, 20кг, 25кг, 30кг гээд ялгаатай байна. Би хуурай хувцасны жингээр бодоод угаалга хийж болох уу?",
+      "en": "Washing machines are different: 17kg, 20kg, 25kg, 30kg. Can I calculate based on dry clothes weight?",
+      "kr": "세탁기는 17kg, 20kg, 25kg, 30kg으로 다릅니다. 마른 옷 무게로 계산해서 세탁할 수 있나요?"
+    },
+    "a": {
+      "mn": "Угаалгын машины хүчин чадлыг нойтон жингээр тодорхойлдог. Угаах хөнжил, хувцасны нойтон жинг тухай бүрд нь тодорхойлоход төвөгтэй байдгийг урьдчилан тооцоолж, LaundryZone угаалгын машинууд нь угаах хувцасны дээд хязгаарыг заасан цагаан зураасан тэмдэглээ хийсэн байдаг.\n\nЗаасан тэмдэглэгээ хүртэл угаах хувцасаа хийж ашиглахыг зөвлөж байна.",
+      "en": "When determining the capacity of washing machines, it is determined by the weight when wet. Since it is difficult to determine the wet weight of each blanket and clothing in advance, \"Laundryzone\" washing machines have additional white line markings indicating the upper limit of clothes to be washed.\n\nWe recommend loading clothes to be washed up to the specified marking.",
+      "kr": "세탁기 용량을 결정할 때는 젖었을 때의 무게로 결정합니다. 각 담요와 의류의 젖은 무게를 미리 결정하기 어렵기 때문에 \"LaundryZone\" 세탁기는 세탁할 옷의 상한선을 나타내는 흰색 선 표시를 추가로 해두었으므로, 지정된 표시까지 세탁할 옷을 넣어서 사용하는 것을 권장합니다."
+    }
+  },
+  {
+    "id": "separate-machines",
+    "q": {
+      "mn": "Угаалга, хатаалганы машинууд тусдаа байдаг уу?",
+      "en": "Are washing and drying machines separate?",
+      "kr": "세탁기와 건조기는 분리되어 있나요?"
+    },
+    "a": {
+      "mn": "Тийм, угаалга, хатаалганы машинууд тусдаа байдаг:\n\n• Угаалгын машинууд нь зөвхөн угаалга хийдэг\n• Хатаагч машинууд нь зөвхөн хатаалт хийдэг\n\nЭнэ нь илүү сайн чанарын үйлчилгээ үзүүлэх боломжийг олгодог.",
+      "en": "Yes, washing and drying machines are separate:\n\n• Washing machines only wash\n• Dryer machines only dry\n\nThis allows us to provide better quality service.",
+      "kr": "네, 세탁기와 건조기는 분리되어 있습니다:\n\n• 세탁기는 세탁만 합니다\n• 건조기는 건조만 합니다\n\n이를 통해 더 나은 품질의 서비스를 제공할 수 있습니다."
+    }
+  },
+  {
+    "id": "membership-card",
+    "q": {
+      "mn": "Гишүүнчилэлийн карт авах давуу тал нь юу вэ?",
+      "en": "What are the advantages of getting a membership card?",
+      "kr": "멤버십 카드를 받는 장점은 무엇인가요?"
+    },
+    "a": {
+      "mn": "Гишүүнчилэлийн карт эзэмшсэнээр цэнэглэсэн үнийн дүнгээс хамаарч урамшууллын оноо авах бөгөөд энэ нь картанд мөнгөн дүнгээр хуримтлал болж ордог.\n\nУрамшууллын хэмжээ:\n• Шинэ карт 5,000₮ худалдаж авбал - 5,000₮\n• 40,000-59,000₮ цэнэглэвэл - 3,000₮\n• 60,000-99,000₮ цэнэглэвэл - 5,000₮\n• 100,000-199,000₮ цэнэглэвэл - 10,000₮\n• 200,000₮-аас дээш цэнэглэвэл - 15,000₮",
+      "en": "By having a membership card, you receive reward points depending on the amount charged, which accumulates as money on the card.\n\nReward amounts:\n• Buy a new card for 5,000₮ - get 5,000₮\n• Charge 40,000-59,000₮ - get 3,000₮\n• Charge 60,000-99,000₮ - get 5,000₮\n• Charge 100,000-199,000₮ - get 10,000₮\n• Charge 200,000₮ or more - get 15,000₮",
+      "kr": "멤버십 카드를 소지하면 충전 금액에 따라 리워드 포인트를 받게 되며, 이는 카드에 금액으로 적립됩니다.\n\n리워드 금액:\n• 새 카드를 5,000₮에 구매하면 - 5,000₮\n• 40,000-59,000₮ 충전하면 - 3,000₮\n• 60,000-99,000₮ 충전하면 - 5,000₮\n• 100,000-199,000₮ 충전하면 - 10,000₮\n• 200,000₮ 이상 충전하면 - 15,000₮"
+    }
+  },
+  {
+    "id": "dryer-benefits",
+    "q": {
+      "mn": "Хатаах машины давуу тал",
+      "en": "Advantages of the dryer machine",
+      "kr": "건조기의 장점"
+    },
+    "a": {
+      "mn": "Хатаах машин нь 60 градус хүртэл халж \"Хуурай халуун\" ариутгалын горимоор ажилладаг. Энэ нь угааж буй зүйлд шигдэж наалдсан:\n\n• Гэрийн тоосны хачиг\n• Хөгц мөөгөнцөр\n• Нян бактерийг устгахаас гадна\n• Хүний биеийн үхэжсэн арьс нарийн тоосонцруудыг сорж авдаг\n\nИнгэснээр арьс харшлын болон амьсгалын замын олон өвчнүүдээс сэргийлэх боломжийг олгодог.\n\nТиймээс хөхүүл ханиалга, багтраа, тоос тоосонцрын харшил, арьсны загатнаа өвчнөөр шаналж буй эмзэг мэдрэмтгий бүх насны хүмүүс хатаагч машиныг тогтмол хэрэглэхийг зөвлөж байна.",
+      "en": "The dryer heats up to 60 degrees and operates in \"Dry Hot\" sterilization mode. This removes from washed items:\n\n• House dust mites\n• Mold\n• Bacteria\n• Dead skin cells from the human body\n\nThis helps prevent many skin allergies and respiratory diseases.\n\nTherefore, we recommend that all ages of sensitive people suffering from asthma, cough, dust allergies, and skin eczema use the dryer regularly.",
+      "kr": "건조기는 60도까지 가열되어 \"건조 열\" 살균 모드로 작동합니다. 이는 세탁된 물건에서 제거합니다:\n\n• 집 먼지 진드기\n• 곰팡이\n• 박테리아\n• 인체의 죽은 피부 세포\n\n이는 많은 피부 알레르기와 호흡기 질환을 예방하는 데 도움이 됩니다.\n\n따라서 천식, 기침, 먼지 알레르기, 피부 습진으로 고통받는 모든 연령의 민감한 사람들이 건조기를 정기적으로 사용하는 것을 권장합니다."
+    }
+  },
+  {
+    "id": "shoe-washing",
+    "q": {
+      "mn": "Пүүзний угаах хатаах машины онцлог, давуу тал",
+      "en": "Features and advantages of shoe washing and drying machines",
+      "kr": "신발 세탁 건조기의 특징과 장점"
+    },
+    "a": {
+      "mn": "Пүүз угаах машин:\n• Тачирхан үстэй сойтгон дотортой\n• Гүн бохирдлыг сайн арилгадаг\n\nХатаах машин:\n• Хэт ягаан туяагаар хөлний мөөгөнцөр, үнэр, нян бактерийг устгадаг\n• Богино хугацаанд хатаадгаараа давуу талтай",
+      "en": "Shoe washing machine:\n• Has a rough bristle brush inside\n• Removes deep dirt well\n\nDrying machine:\n• Removes foot fungus, odor, and bacteria with ultraviolet rays\n• Has the advantage of drying in a short time",
+      "kr": "신발 세탁기:\n• 내부에 거친 브러시가 있습니다\n• 깊은 때를 잘 제거합니다\n\n건조기:\n• 자외선으로 발 곰팡이, 냄새, 박테리아를 제거합니다\n• 짧은 시간에 건조하는 장점이 있습니다"
+    }
+  },
+  {
+    "id": "self-service",
+    "q": {
+      "mn": "Бид угаах зүйлсээ авч очоод танай машиныг ашиглаж өөрөө хувцсаа угаана гэсэн үг үү?",
+      "en": "Does it mean we bring our laundry and use your machines to wash our clothes ourselves?",
+      "kr": "세탁물을 가져와서 당신들의 기계를 사용해서 직접 옷을 세탁한다는 뜻인가요?"
+    },
+    "a": {
+      "mn": "Тийм, LaundryZone сүлжээ нь Монгол улсдаа анх удаа \"Өөртөө үйлчлэх угаалгын газрын үйлчилгээ\"-г нэвтрүүлэн ажиллаж байна.\n\nМанай зөвлөх ажилтан танд:\n• Гишүүнчилэлийн карт болон машинуудыг хэрхэн ашиглах заавар\n• Зөвлөгөөг өгөх бөгөөд\n\nЭнэхүү зөвлөгөөний дагуу та \"ӨӨРТӨӨ ҮЙЛЧИЛНЭ\" гэдгийг анхаарна уу.",
+      "en": "Yes, the LaundryZone network is the first to introduce \"Self-service laundry service\" in Mongolia.\n\nOur consultant will give you:\n• Instructions on how to use membership cards and machines\n• Advice\n\nPlease note that according to this advice, YOU \"SERVICE YOURSELF\".",
+      "kr": "네, LaundryZone 네트워크는 몽골에서 처음으로 \"셀프 서비스 세탁소 서비스\"를 도입했습니다.\n\n저희 상담원이 드릴 것입니다:\n• 멤버십 카드와 기계 사용법에 대한 지시\n• 조언\n\n이 조언에 따라 \"직접 서비스\"한다는 점을 참고하시기 바랍니다."
+    }
+  },
+  {
+    "id": "chemical-cleaning",
+    "q": {
+      "mn": "Хими цэвэрлэгээ байгаа юу?",
+      "en": "Is there chemical cleaning?",
+      "kr": "화학 세정이 있나요?"
+    },
+    "a": {
+      "mn": "Манай угаалгын газар нь химийн орцтой угаалга цэвэрлэгээ хийхгүй, зөвхөн \"УСАН УГААЛГА\" хийдэг.",
+      "en": "Our laundry does not do chemical cleaning, only \"WATER WASHING\".",
+      "kr": "저희 세탁소는 화학 세정을 하지 않고 \"물 세탁\"만 합니다."
+    }
+  },
+  {
+    "id": "weight-vs-piece",
+    "q": {
+      "mn": "Угаалгаа жингээр нь эсвэл ширхгээр угаана гэсэн үг үү?",
+      "en": "Does it mean laundry is washed by weight or by piece?",
+      "kr": "세탁을 무게별로 또는 개수별로 한다는 뜻인가요?"
+    },
+    "a": {
+      "mn": "Үгүй, ашиглах гэж буй машины том жижигээс хамаарч үйлчилгээний үнэ тооцогддог.\n\nИймд манай бүх машинуудын хүчин чадалтай танилцаж түүнд дүйцэхүйц угаалга бэлдэж ирээд өөрсдийн мөнгөө хэмнэхийг зөвлөж байна.\n\nЖишээ нь: 30кг машинд 1 удаад:\n• 5-7 куртка, эсвэл\n• 3-4 хөнжил, эсвэл\n• 50-60 ширхэг зуны хувцас угаах боломжтой.",
+      "en": "No, the service price is calculated depending on the size of the machine you are going to use.\n\nTherefore, we recommend getting acquainted with the capacity of all our machines and preparing laundry that matches it to save your money.\n\nFor example: 30kg machine can wash at once:\n• 5-7 jackets, or\n• 3-4 blankets, or\n• 50-60 pieces of summer clothes.",
+      "kr": "아니요, 사용하려는 기계의 크기에 따라 서비스 가격이 계산됩니다.\n\n따라서 저희 모든 기계의 용량을 알아보고 그에 맞는 세탁물을 준비해서 돈을 절약하는 것을 권장합니다.\n\n예: 30kg 기계는 한 번에:\n• 5-7개의 재킷, 또는\n• 3-4개의 담요, 또는\n• 50-60벌의 여름옷을 세탁할 수 있습니다."
+    }
+  }
+]

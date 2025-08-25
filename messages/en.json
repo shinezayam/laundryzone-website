@@ -1,0 +1,562 @@
+{
+  "nav": {
+    "home": "Home",
+    "about": "About Us",
+    "pricing": "Pricing",
+    "franchise": "Franchise",
+    "contact": "Contact"
+  },
+  "hero": {
+    "headline": "Self-Service Laundry",
+    "sub": "LG/Samsung commercial machines, fast cycles, and cashless payment.",
+    "cta": {
+      "pricing": "View Pricing",
+      "branches": "Our Branches"
+    },
+    "experience": "LaundryZone Experience",
+    "watch_video": "Watch our video",
+    "open_24_7": "08:00 - 00:00 Open",
+    "lg_samsung": "LG/Samsung"
+  },
+  "stats": {
+    "24_7": "08:00 - 00:00 Operation",
+    "cashless": "Cashless Payment",
+    "wifi": "Free Wi-Fi",
+    "detergent": "Detergent Included"
+  },
+  "advantages": {
+    "title": "Why Choose Us",
+    "subtitle": "Experience the future of laundry with our cutting-edge technology and premium service",
+    "premium": {
+      "title": "Premium Equipment",
+      "desc": "LG/Samsung commercial machines"
+    },
+    "iot": {
+      "title": "IoT Monitoring",
+      "desc": "Real-time machine status monitoring"
+    },
+    "clean": {
+      "title": "Clean & Safe",
+      "desc": "Daily cleaning and maintenance"
+    },
+    "fast": {
+      "title": "Fast & Efficient",
+      "desc": "30-40 min wash, 20-30 min dry"
+    },
+    "payment": {
+      "title": "Easy Payment",
+      "desc": "Card, QR code, cash payment"
+    },
+    "support": {
+      "title": "24/7 Support",
+      "desc": "Help available anytime"
+    },
+    "cta": {
+      "title": "Ready to experience the difference?",
+      "subtitle": "Visit any of our locations and see why LaundryZone is the preferred choice for modern laundry needs.",
+      "find_branch": "Find Nearest Branch",
+      "view_pricing": "View Pricing"
+    }
+  },
+  "pricing": {
+    "title": "Pricing",
+    "subtitle": "Affordable prices, premium quality",
+    "washers": "Washing Machines",
+    "dryers": "Dryers",
+    "extras": "Additional Services",
+    "see_full": "View Full Pricing",
+    "how_it_works": "How It Works",
+    "steps": {
+      "load": "Load Clothes",
+      "pay": "Make Payment",
+      "wash": "Wash",
+      "dry": "Dry"
+    },
+    "machines": {
+      "washer_20kg": "Perfect for medium loads",
+      "dryer_25kg": "Fast and efficient drying",
+      "shoe_washer": "Specialized shoe cleaning",
+      "washer_20kg_name": "Washer 20kg",
+      "dryer_25kg_name": "Dryer 25kg",
+      "shoe_washer_name": "Shoe Washer",
+      "washer_20kg_cold": "Washer 20kg (Cold Water)",
+      "washer_20kg_hot": "Washer 20kg (Hot Water)",
+      "washer_20kg_deep": "Washer 20kg (Deep Clean)",
+      "washer_30kg_cold": "Washer 30kg (Cold Water)",
+      "washer_30kg_hot": "Washer 30kg (Hot Water)",
+      "washer_30kg_deep": "Washer 30kg (Deep Clean)",
+      "dryer_25kg_20min": "Dryer 25kg (20 min)",
+      "dryer_25kg_30min": "Dryer 25kg (30 min)",
+      "shoe_dryer": "Shoe Dryer",
+      "detergent": "Detergent",
+      "sterilization": "Sterilization"
+    },
+    "units": {
+      "cycle": "₮/cycle",
+      "minutes": "₮/20min",
+      "piece": "₮/piece"
+    },
+    "descriptions": {
+      "washer_20kg_cold": "Large load, energy saving",
+      "washer_20kg_hot": "Large load, hygienic wash",
+      "washer_20kg_deep": "Large load, tough stains",
+      "washer_30kg_cold": "Extra large load, energy saving",
+      "washer_30kg_hot": "Extra large load, hygienic wash",
+      "washer_30kg_deep": "Extra large load, tough stains",
+      "dryer_25kg_20min": "Quick dry for small loads",
+      "dryer_25kg_30min": "Extended dry for medium loads",
+      "shoe_washer": "Special machine for washing shoes",
+      "shoe_dryer": "Special machine for drying shoes",
+      "detergent": "Premium laundry detergent",
+      "sterilization": "Professional sterilization service"
+    },
+    "help_description": "Our staff is always available to help you choose the right machine for your laundry needs. Visit any of our locations for personalized assistance."
+  },
+  "faq": {
+    "title": "Frequently Asked Questions",
+    "subtitle": "Answers to your questions",
+    "still_have_questions": "Still have questions?",
+    "contact_description": "Our team is always ready to help you. Contact us if you need assistance."
+  },
+  "guidelines": {
+    "title": "Customer Guidelines",
+    "subtitle": "Important guidelines to follow when using LaundryZone services",
+    "guideline_count": "guidelines",
+    "search_placeholder": "Search guidelines...",
+    "clear_filter": "Clear filter",
+    "expand": "Read more",
+    "collapse": "Collapse",
+    "show_all": "Show all",
+    "show_less": "Show less",
+    "thank_you": {
+      "title": "Thank you",
+      "content": "Thank you for using LaundryZone services. Following the above guidelines will ensure comfortable and safe service."
+    },
+    "items": {
+      "washing_instructions": {
+        "title": "Washing according to instructions",
+        "content": "Please note that customers are responsible for the results obtained from using washing machines and dryers according to the factory label and washing instructions on the items to be washed."
+      },
+      "color_separation": {
+        "title": "Separate white and colored items",
+        "content": "White and colored items must be separated by color when washing. This prevents the laundry from losing or deteriorating in color!"
+      },
+      "check_pockets": {
+        "title": "Check items in pockets",
+        "content": "Check all items in pockets one by one before washing (tissues, toothpicks, masks, keys, pins, candy, etc.). Please note that customers will be responsible for any damage or injury caused by customer negligence."
+      },
+      "stretchy_items": {
+        "title": "Stretchy items",
+        "content": "Wash stretchable fabrics, knits, silk, and poly materials according to instructions"
+      },
+      "supervision": {
+        "title": "Supervision during washing",
+        "content": "It is risky to cause delays for other customers and lose items, so do not leave for a long time while using washing and dryer machines."
+      },
+      "no_pets": {
+        "title": "No pets allowed",
+        "content": "It is dangerous to suffocate and choke, so it is strictly forbidden to put pets in washing machines and dryer machines or enter them."
+      },
+      "capacity_limit": {
+        "title": "Do not exceed machine capacity",
+        "content": "If you exceed the capacity of washing and drying machines, your laundry may lose color and be incompletely washed, and equipment may be damaged, so we recommend using according to the established capacity."
+      },
+      "household_only": {
+        "title": "For household use only",
+        "content": "All our machines are designed only for household washing, and it is strictly forbidden to use them for other purposes. /including: Shoes, carpets, car covers, oily technical items, etc./"
+      },
+      "closing_time": {
+        "title": "Come 2 hours before closing",
+        "content": "Washing takes 1-2 hours, so come 2 hours before closing in the evening."
+      },
+      "gentle_use": {
+        "title": "Use machines gently",
+        "content": "Close all machine doors gently and do not pull handles forcefully."
+      },
+      "follow_staff": {
+        "title": "Follow staff advice",
+        "content": "Our staff will give you instructions and advice on how to use cards and machines. Our staff will not be responsible for washing and drying your items, and you will operate your machines yourself according to our staff's instructions \"SELF-SERVICE\"."
+      },
+      "customer_responsibility": {
+        "title": "Customer responsibility",
+        "content": "Customers are fully responsible for the \"RESULTS\" caused by not following our staff's advice."
+      },
+      "color_restoration": {
+        "title": "Color restoration not possible",
+        "content": "We do not restore colors of items that have changed color or been used for a long time, we only wash dirt."
+      },
+      "stain_removal": {
+        "title": "Stain removal instructions",
+        "content": "We recommend using special stain removers and deep-cleaning laundry detergents for stains and deep dirt on laundry."
+      },
+      "staff_respect": {
+        "title": "Respect for staff",
+        "content": "Please treat our service staff with respect, do not cut in line in front of customers who came before you, do not verbally abuse, do not physically touch others, and serve politely without being rude."
+      }
+    }
+  },
+  "branches": {
+    "title": "Our Branches",
+    "subtitle": "08:00 - 00:00 service across Ulaanbaatar",
+    "hours": "Hours",
+    "services": "Services",
+    "phone": "Phone",
+    "directions": "Directions",
+    "service_types": {
+      "self_service": "Self-service",
+      "wash_dry": "Wash & Dry",
+      "wifi": "Wi-Fi",
+      "detergent": "Detergent"
+    },
+    "map_title": "Interactive Map",
+    "map_subtitle": "View all our locations across Ulaanbaatar",
+    "services_available": "Services Available",
+    "phone_support": "Phone Support",
+    "find_nearest": "Find Your Nearest Branch",
+    "cta_description": "All our locations are equipped with the latest LG/Samsung equipment and offer 08:00 - 00:00 service.",
+    "search_placeholder": "Search branches...",
+    "filter_district": "District",
+    "filter_hours": "Hours",
+    "filter_services": "Services",
+    "all_districts": "All Districts",
+    "all_hours": "All Hours",
+    "clear_filters": "Clear Filters",
+    "results_count": "{count} branches found ({total} total)",
+    "nearby_branches": "Nearby Branches",
+    "no_results": "No results found",
+    "get_directions": "Get Directions",
+    "filters": "Filters",
+    "filters_active": "Active",
+    "map_unavailable": "Map Unavailable",
+    "map_fallback_text": "Click to open Google Maps directly",
+    "open_google_maps": "Open Google Maps",
+    "loading_map": "Loading map...",
+    "view_on_map": "View on Map"
+  },
+  "contact": {
+    "title": "Contact Us",
+    "subtitle": "Get in touch with us",
+    "get_in_touch": "Get in Touch",
+    "get_in_touch_desc": "Have questions about our services or need assistance? We're here to help 24/7. Reach out to us through any of the channels below.",
+    "form": {
+      "name": "Name",
+      "phone": "Phone",
+      "email": "Email",
+      "message": "Message",
+      "send": "Send",
+      "name_placeholder": "Enter your name",
+      "email_placeholder": "Enter your email",
+      "phone_placeholder": "Enter your phone number",
+      "message_placeholder": "Tell us about your inquiry...",
+      "sending": "Sending...",
+      "success_message": "Thank you! Your message has been sent successfully.",
+      "error_message": "Sorry, there was an error sending your message. Please try again.",
+      "privacy_notice": "By submitting this form, you agree to our privacy policy and consent to being contacted regarding your inquiry.",
+      "validation": {
+        "name_min": "Name must be at least 2 characters",
+        "email_invalid": "Please enter a valid email address",
+        "phone_min": "Please enter a valid phone number",
+        "message_min": "Message must be at least 10 characters"
+      }
+    },
+    "info": {
+      "phone": "Phone",
+      "email": "Email",
+      "address": "Address",
+      "hours": "Hours"
+    }
+  },
+  "franchise": {
+    "title": "Become a Franchise",
+    "subtitle": "Start a successful business",
+    "benefits": {
+      "training": "Complete Training",
+      "support": "Marketing Support",
+      "equipment": "Equipment",
+      "branding": "Branding",
+      "training_desc": "Complete training program for you and your staff",
+      "support_desc": "Ongoing marketing and operational support",
+      "equipment_desc": "Access to premium LG/Samsung equipment",
+      "branding_desc": "Established brand recognition and marketing materials"
+    },
+    "form": {
+      "name": "Name",
+      "phone": "Phone",
+      "email": "Email",
+      "city": "City",
+      "budget": "Budget",
+      "message": "Message",
+      "submit": "Submit"
+    },
+    "why_title": "Why Franchise with LaundryZone?",
+    "download_title": "Download Franchise Information",
+    "download_description": "Get detailed information about our franchise program, requirements, and investment details.",
+    "download_brochure": "Download Brochure",
+    "message_placeholder": "Tell us about your interest in franchising...",
+    "success_message": "Thank you! We'll contact you soon with franchise information.",
+    "error_message": "Sorry, there was an error. Please try again.",
+    "validation": {
+      "name_min": "Name must be at least 2 characters",
+      "email_invalid": "Please enter a valid email address",
+      "phone_min": "Please enter a valid phone number",
+      "city_min": "Please enter your city",
+      "budget_required": "Please select your budget range",
+      "message_min": "Message must be at least 10 characters"
+    },
+    "budget_ranges": {
+      "under_50m": "Under 50M ₮",
+      "50m_100m": "50M - 100M ₮",
+      "100m_200m": "100M - 200M ₮",
+      "200m_500m": "200M - 500M ₮",
+      "over_500m": "Over 500M ₮"
+    }
+  },
+  "footer": {
+    "copyright": "© 2025 LaundryZone Mongolia. All rights reserved.",
+    "designed_by": "Designed by",
+    "links": {
+      "privacy": "Privacy Policy",
+      "terms": "Terms of Service",
+      "franchise": "Franchise"
+    }
+  },
+  "common": {
+    "learn_more": "Learn More",
+    "get_started": "Get Started",
+    "view_all": "View All",
+    "loading": "Loading...",
+    "error": "Error occurred",
+    "success": "Success",
+    "language": "Language",
+    "get_in_touch": "Get in Touch",
+    "follow_us": "Follow Us",
+    "send_message": "Send us a Message",
+    "franchise_inquiry": "Franchise Inquiry",
+    "select_budget": "Select budget range",
+    "enter_name": "Enter your name",
+    "enter_email": "Enter your email",
+    "enter_phone": "Enter your phone number",
+    "enter_city": "Enter your city",
+    "premium_quality": "Premium quality",
+    "fast_service": "Fast service",
+    "available_24_7": "08:00 - 00:00 available",
+    "quick_links": "Quick Links",
+    "services": "Services",
+    "self_service_washing": "Self-service washing",
+    "commercial_dryers": "Commercial dryers",
+    "shoe_washing": "Shoe washing",
+    "detergent_included": "Detergent included",
+    "free_wifi": "Free Wi-Fi",
+    "cashless_payment": "Cashless payment",
+    "need_help": "Need Help Choosing?",
+    "sending": "Sending...",
+    "get_started": "Ready to Get Started?"
+  },
+  "banner": {
+    "title": "Our Services",
+    "subtitle": "High-quality laundry service in a comfortable environment",
+    "premium": "Premium",
+    "featured": "Featured",
+    "main": {
+      "title": "Premium Laundry Service",
+      "description": "LG/Samsung equipment, fast cycles, clean environment"
+    },
+    "secondary": {
+      "title": "Why LaundryZone?",
+      "description": "Mongolia's best self-service laundromat"
+    },
+    "features": {
+      "hygiene": "Clean & Hygienic",
+      "hours": "08:00 - 00:00 Open",
+      "quality": "High Quality"
+    },
+    "fast": "Fast",
+    "cta": "Learn More"
+  },
+  "about": {
+    "title": "About Us",
+    "subtitle": "Mongolia's First Self-Service Laundry",
+    "story": {
+      "title": "Our Story",
+      "content": "LaundryZone was established in 2020 and is Mongolia's first self-service laundry. We provide high-quality service using LG/Samsung equipment."
+    },
+    "company": {
+      "name": "LaundryZone Mongolia",
+      "since": "Since 2020"
+    },
+    "partners": {
+      "title": "Our Equipment Partners",
+      "subtitle": "We partner with world-leading manufacturers to provide the best laundry experience",
+      "lg": {
+        "name": "LG Commercial",
+        "desc": "Premium commercial washing machines and dryers designed for high-performance and energy efficiency in commercial environments."
+      },
+      "samsung": {
+        "name": "Samsung Commercial",
+        "desc": "Advanced commercial laundry equipment featuring smart technology, superior cleaning performance, and innovative features."
+      }
+    },
+    "achievements": {
+      "locations": {
+        "title": "Locations",
+        "desc": "Across Ulaanbaatar"
+      },
+      "operation": {
+        "title": "Operation",
+        "desc": "Always Available"
+      },
+      "satisfaction": {
+        "title": "Satisfaction",
+        "desc": "Customer Focused"
+      }
+    },
+    "timeline": {
+      "title": "Our Growth Story",
+      "subtitle": "We are working to provide fast, low-cost washing and cleaning services to everyone through \"SELF-SERVICE LAUNDRY - LAUNDRYZONE\".",
+      "branch_1": "Dunjingarav Branch",
+      "branch_1_desc": "First branch opened with 17, 20, 30kg washers, 11kg and 25kg dryers, 6 pairs of shoe washers and dryers - total of 12 machines.",
+      "branch_2": "3rd & 4th Districts",
+      "branch_2_desc": "Branches opened in 3rd and 4th districts.",
+      "branch_3": "Yarmag - Food City",
+      "branch_3_desc": "Branch opened at Yarmag - Food City.",
+      "branch_4": "Marshall Tower",
+      "branch_4_desc": "Branch opened at Marshall Tower.",
+      "branch_5": "Sansar - Emart",
+      "branch_5_desc": "Branch opened at Sansar - Emart.",
+      "branch_6": "Bars Branch",
+      "branch_6_desc": "Bars branch opened.",
+      "branch_7": "1st District, Kharkhorin",
+      "branch_7_desc": "Branch opened in 1st District, Kharkhorin.",
+      "branch_8": "Sansar - Bayanzurkh",
+      "branch_8_desc": "Branch opened at Sansar - Bayanzurkh.",
+      "branch_9": "Omnogovi Province",
+      "branch_9_desc": "Branch opened in Omnogovi Province.",
+      "branch_10": "Nalaikh City",
+      "branch_10_desc": "Branch opened in Nalaikh City.",
+      "branch_11": "19th District",
+      "branch_11_desc": "Branch opened in 19th District.",
+      "branch_12": "Tsais - DHIS",
+      "branch_12_desc": "Branch opened at Tsais - DHIS.",
+      "branch_13": "Rashaant - 32nd District",
+      "branch_13_desc": "Branch opened at Rashaant - 32nd District.",
+      "branch_14": "Sodon District",
+      "branch_14_desc": "Branch opened in Sodon District."
+    },
+    "stats": {
+      "title": "Our statistics",
+      "subtitle": "See LaundryZone's success in numbers",
+      "washing_machines": "Washing Machines",
+      "dryers": "Dryer Machines",
+      "shoe_machines": "Shoe Washers & Dryers",
+      "total_users": "Total Users"
+    },
+    "about_section": {
+      "title": "About Us",
+      "description": "Laundryzone Mongolia was established with the goal of providing modern automatic washing, drying, and care services to users in accordance with international standards. We are working to make the lives of Ulaanbaatar citizens easier and more comfortable.",
+      "vision": {
+        "title": "Our Vision",
+        "content": "To spread a new culture of washing and drying in Mongolia, helping every user save time and embrace a clean, comfortable lifestyle."
+      },
+      "mission": {
+        "title": "Our Mission",
+        "content": [
+          "To offer fast, prompt, and high-quality service",
+          "To save customers' time with modern automatic equipment",
+          "To implement international standards of cleanliness and hygiene"
+        ]
+      },
+      "advantages": {
+        "title": "Our Advantages",
+        "items": [
+          {
+            "title": "High-capacity washers and dryers"
+          },
+          {
+            "title": "Self-service automatic system",
+            "description": "users can use it according to their schedule"
+          },
+          {
+            "title": "Clean, comfortable environment",
+            "description": "organized to ensure customer comfort"
+          },
+          {
+            "title": "Affordable price",
+            "description": "policy to provide service at an affordable price for everyone"
+          }
+        ]
+      },
+      "final_statement": "Laundryzone is consistently delivering efficient and reliable services by localizing the best practices and technology of the Korean Laundryzone franchise for Mongolian consumers."
+    },
+    "guidelines": {
+      "title": "Customer Attention",
+      "subtitle": "Important guidelines to follow when using LaundryZone services",
+      "important": "Important",
+      "read_more": "Read More",
+      "show_less": "Show Less",
+      "washing_instructions": {
+        "title": "Follow Washing Instructions",
+        "content": "Please note that customers are responsible for the results obtained when using washing machines and dryers according to the manufacturer's labels and washing instructions on the items."
+      },
+      "color_separation": {
+        "title": "Separate White and Colored Items",
+        "content": "White and colored items must be separated by color when washing. This helps prevent color bleeding and damage to your laundry!"
+      },
+      "check_pockets": {
+        "title": "Check Items in Pockets",
+        "content": "Check all items in pockets before washing (tissues, toothpicks, masks, keys, pins, candy, etc.). Please note that customers will be held responsible for any damage or loss due to customer negligence."
+      },
+      "delicate_fabrics": {
+        "title": "Handle Delicate Fabrics Carefully",
+        "content": "Wash items made of stretchable fabrics, knits, silk, and poly materials according to instructions."
+      },
+      "supervision": {
+        "title": "Supervise During Washing",
+        "content": "It is risky to leave washing and dryer machines unattended for long periods as it may cause inconvenience to other customers and risk losing your items."
+      },
+      "no_pets": {
+        "title": "No Pets Allowed",
+        "content": "It is strictly forbidden to put pets inside washing machines and dryers as it is dangerous and can cause suffocation."
+      },
+      "capacity_limit": {
+        "title": "Do Not Exceed Machine Capacity",
+        "content": "We recommend using machines according to their specified capacity as exceeding the capacity of washing and drying machines may cause color loss, incomplete washing, and risk damaging the equipment."
+      },
+      "household_only": {
+        "title": "Household Use Only",
+        "content": "All our machines are designed for household laundry only, and using them for other purposes is strictly prohibited. (Including: shoes, carpets, car covers, technical items, etc.)"
+      },
+      "closing_time": {
+        "title": "Arrive 2 Hours Before Closing",
+        "content": "Laundry takes 1-2 hours, so please arrive 2 hours before closing time."
+      },
+      "gentle_handling": {
+        "title": "Handle Machines Gently",
+        "content": "Close all machine doors gently and do not force handles."
+      },
+      "staff_assistance": {
+        "title": "Follow Staff Instructions",
+        "content": "Our staff will provide guidance on using cards and machines. Our staff will not wash or dry your items, and you will operate the machines yourself according to staff instructions - \"SELF-SERVICE\"."
+      },
+      "responsibility": {
+        "title": "Customer Responsibility",
+        "content": "Customers are fully responsible for any \"RESULTS\" arising from not following our staff's advice."
+      },
+      "color_restoration": {
+        "title": "Color Restoration Not Possible",
+        "content": "We do not restore colors of faded or long-used items, we only wash dirt."
+      },
+      "stain_removal": {
+        "title": "Stain Removal Guidelines",
+        "content": "We recommend using specialized stain removers and deep-cleaning detergents for stains and deep dirt on laundry."
+      },
+      "respect": {
+        "title": "Respect Staff",
+        "content": "Please treat our service staff with respect, do not cut in line ahead of customers who arrived earlier, do not verbally abuse, do not physically touch, and do not violate others' rights with rude behavior."
+      },
+      "thank_you": {
+        "title": "Thank You",
+        "content": "Thank you for using LaundryZone services. Following the above guidelines will ensure comfortable and safe service."
+      }
+    }
+  }
+}

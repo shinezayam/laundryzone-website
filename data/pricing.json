@@ -1,0 +1,74 @@
+{
+  "washers": [
+    {
+      "name": "Washer 8kg",
+      "price": 6000,
+      "unit": "₮/мөчлөг",
+      "description": "Small load washing machine"
+    },
+    {
+      "name": "Washer 10kg",
+      "price": 7000,
+      "unit": "₮/мөчлөг",
+      "description": "Medium load washing machine"
+    },
+    {
+      "name": "Washer 15kg",
+      "price": 9000,
+      "unit": "₮/мөчлөг",
+      "description": "Large load washing machine"
+    },
+    {
+      "name": "Washer 20kg",
+      "price": 12000,
+      "unit": "₮/мөчлөг",
+      "description": "Extra large load washing machine"
+    }
+  ],
+  "dryers": [
+    {
+      "name": "Dryer 10kg",
+      "price": 500,
+      "unit": "₮/10min",
+      "description": "Small dryer"
+    },
+    {
+      "name": "Dryer 14kg",
+      "price": 600,
+      "unit": "₮/10min",
+      "description": "Medium dryer"
+    },
+    {
+      "name": "Dryer 18kg",
+      "price": 700,
+      "unit": "₮/10min",
+      "description": "Large dryer"
+    }
+  ],
+  "extras": [
+    {
+      "name": "Shoe washer",
+      "price": 5000,
+      "unit": "₮/мөчлөг",
+      "description": "Specialized shoe cleaning machine"
+    },
+    {
+      "name": "Detergent",
+      "price": 1000,
+      "unit": "₮/ширхэг",
+      "description": "Premium laundry detergent"
+    },
+    {
+      "name": "Fabric softener",
+      "price": 500,
+      "unit": "₮/ширхэг",
+      "description": "Fabric softener for fresh clothes"
+    },
+    {
+      "name": "Stain remover",
+      "price": 800,
+      "unit": "₮/ширхэг",
+      "description": "Professional stain removal treatment"
+    }
+  ]
+}

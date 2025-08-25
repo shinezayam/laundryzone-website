@@ -1,0 +1,68 @@
+[
+  {
+    "id": "mnd-apart",
+    "name": "Moscow Apart District",
+    "address": "Moscow Apart District, Ulaanbaatar",
+    "lat": 47.9149,
+    "lng": 106.9155,
+    "hours": "24/7",
+    "phone": "+976-11-123-4567",
+    "services": ["Self-service", "Wash & Dry", "Wi-Fi"],
+    "images": ["/images/branches/mnd-1.jpg"]
+  },
+  {
+    "id": "sukhbaatar",
+    "name": "Sukhbaatar Square",
+    "address": "Sukhbaatar Square, Ulaanbaatar",
+    "lat": 47.9184,
+    "lng": 106.9177,
+    "hours": "24/7",
+    "phone": "+976-11-123-4568",
+    "services": ["Self-service", "Wash & Dry", "Wi-Fi", "Detergent"],
+    "images": ["/images/branches/sukhbaatar-1.jpg"]
+  },
+  {
+    "id": "bayangol",
+    "name": "Bayangol District",
+    "address": "Bayangol District, Ulaanbaatar",
+    "lat": 47.9200,
+    "lng": 106.9200,
+    "hours": "24/7",
+    "phone": "+976-11-123-4569",
+    "services": ["Self-service", "Wash & Dry", "Wi-Fi"],
+    "images": ["/images/branches/bayangol-1.jpg"]
+  },
+  {
+    "id": "khan-uul",
+    "name": "Khan-Uul District",
+    "address": "Khan-Uul District, Ulaanbaatar",
+    "lat": 47.9250,
+    "lng": 106.9250,
+    "hours": "24/7",
+    "phone": "+976-11-123-4570",
+    "services": ["Self-service", "Wash & Dry", "Wi-Fi", "Detergent"],
+    "images": ["/images/branches/khan-uul-1.jpg"]
+  },
+  {
+    "id": "songinokhairkhan",
+    "name": "Songinokhairkhan District",
+    "address": "Songinokhairkhan District, Ulaanbaatar",
+    "lat": 47.9300,
+    "lng": 106.9300,
+    "hours": "24/7",
+    "phone": "+976-11-123-4571",
+    "services": ["Self-service", "Wash & Dry", "Wi-Fi"],
+    "images": ["/images/branches/songinokhairkhan-1.jpg"]
+  },
+  {
+    "id": "chingeltei",
+    "name": "Chingeltei District",
+    "address": "Chingeltei District, Ulaanbaatar",
+    "lat": 47.9350,
+    "lng": 106.9350,
+    "hours": "24/7",
+    "phone": "+976-11-123-4572",
+    "services": ["Self-service", "Wash & Dry", "Wi-Fi", "Detergent"],
+    "images": ["/images/branches/chingeltei-1.jpg"]
+  }
+]
