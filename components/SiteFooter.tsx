@@ -118,17 +118,17 @@ export function SiteFooter({ locale }: SiteFooterProps) {
         {/* Bottom Bar */}
         <div className="border-t border-neutral-800 mt-12 pt-8">
           <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
-            <p className="text-neutral-400 text-sm">
-              {t('footer.copyright')} {t('footer.designed_by')}{' '}
-              <a
-                href="https://portfolio-sage-xi-54.vercel.app/"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-accent-400 hover:text-accent-300 transition-colors font-medium"
-              >
-                Shinezaya Myagmar
-              </a>
-            </p>
+                         <p className="text-neutral-400 text-sm">
+               © 2025 LaundryZone Mongolia. All rights reserved. Designed by{' '}
+               <a
+                 href="https://portfolio-sage-xi-54.vercel.app/"
+                 target="_blank"
+                 rel="noopener noreferrer"
+                 className="text-accent-400 hover:text-accent-300 transition-colors font-medium"
+               >
+                 Shinezaya Myagmar
+               </a>
+             </p>
             <div className="flex space-x-6">
               <Link
                 href={`/${locale}/privacy`}
