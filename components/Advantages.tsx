@@ -45,7 +45,7 @@ export function Advantages({ locale }: AdvantagesProps) {
       icon: Zap,
       title: t('advantages.fast.title'),
       description: t('advantages.fast.desc'),
-      color: 'text-blue-600',
+      color: 'text-yellow-600',
       bgColor: 'bg-yellow-100',
     },
     {
