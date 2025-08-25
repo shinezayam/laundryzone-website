@@ -239,7 +239,7 @@ export default function AboutPage({ params: { locale } }: AboutPageProps) {
               <div className="grid md:grid-cols-2 gap-6">
                 {t.raw('about.about_section.advantages.items').map((item: any, index: number) => (
                   <div key={index} className="flex items-start">
-                    <div className="w-8 h-8 bg-green-500 rounded-full flex items-center justify-center mr-3 mt-1">
+                    <div className="w-8 h-8 bg-green-500 rounded-full flex items-center justify-center mr-3 mt-1" style={{ aspectRatio: '1/1', minWidth: '32px', minHeight: '32px' }}>
                       <svg className="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                       </svg>
