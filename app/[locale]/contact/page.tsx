@@ -1,6 +1,7 @@
 import { getTranslations } from 'next-intl/server';
 import { PageHeader } from '@/components/PageHeader';
 import { ContactForm } from '@/components/ContactForm';
+import { Phone, Mail, MapPin, Clock, MessageCircle } from 'lucide-react';
 
 interface ContactPageProps {
   params: { locale: string };
@@ -34,27 +35,27 @@ export default async function ContactPage({ params: { locale } }: ContactPagePro
               <div className="space-y-6">
                 <div className="flex items-center space-x-4 p-4 bg-gradient-to-br from-neutral-50 to-neutral-100 rounded-xl">
                   <div className="w-12 h-12 bg-accent-100 rounded-lg flex items-center justify-center">
-                    <span className="text-accent-500 font-bold">📞</span>
+                    <Phone size={24} className="text-accent-500" />
                   </div>
                   <div>
                     <h3 className="font-semibold text-neutral-900">{t('contact.info.phone')}</h3>
-                    <p className="text-neutral-600">+976-7272-2121                    </p>
+                    <p className="text-neutral-600">+976-7272-2121</p>
                   </div>
                 </div>
 
                 <div className="flex items-center space-x-4 p-4 bg-gradient-to-br from-neutral-50 to-neutral-100 rounded-xl">
                   <div className="w-12 h-12 bg-accent-100 rounded-lg flex items-center justify-center">
-                    <span className="text-accent-500 font-bold">✉️</span>
+                    <Mail size={24} className="text-accent-500" />
                   </div>
                   <div>
                     <h3 className="font-semibold text-neutral-900">{t('contact.info.email')}</h3>
-                    <p className="text-neutral-600">laundryzone.mongolia@gmail.com                    </p>
+                    <p className="text-neutral-600">laundryzone.mongolia@gmail.com</p>
                   </div>
                 </div>
 
                 <div className="flex items-center space-x-4 p-4 bg-gradient-to-br from-neutral-50 to-neutral-100 rounded-xl">
                   <div className="w-12 h-12 bg-accent-100 rounded-lg flex items-center justify-center">
-                    <span className="text-accent-500 font-bold">📍</span>
+                    <MapPin size={24} className="text-accent-500" />
                   </div>
                   <div>
                     <h3 className="font-semibold text-neutral-900">{t('contact.info.address')}</h3>
@@ -64,7 +65,7 @@ export default async function ContactPage({ params: { locale } }: ContactPagePro
 
                 <div className="flex items-center space-x-4 p-4 bg-gradient-to-br from-neutral-50 to-neutral-100 rounded-xl">
                   <div className="w-12 h-12 bg-accent-100 rounded-lg flex items-center justify-center">
-                    <span className="text-accent-500 font-bold">🕒</span>
+                    <Clock size={24} className="text-accent-500" />
                   </div>
                   <div>
                     <h3 className="font-semibold text-neutral-900">{t('contact.info.hours')}</h3>
@@ -77,8 +78,8 @@ export default async function ContactPage({ params: { locale } }: ContactPagePro
             {/* Contact Form */}
             <div className="card">
               <div className="flex items-center space-x-3 mb-6">
-                                  <div className="p-2 bg-gradient-to-br from-accent-500 to-accent-600 rounded-lg">
-                  <span className="text-white font-bold">💬</span>
+                <div className="p-2 bg-gradient-to-br from-accent-500 to-accent-600 rounded-lg">
+                  <MessageCircle size={20} className="text-white" />
                 </div>
                 <h3 className="text-xl font-semibold">{t('common.send_message')}</h3>
               </div>
