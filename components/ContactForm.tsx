@@ -7,6 +7,7 @@ import { zodResolver } from '@hookform/resolvers/zod';
 import { z } from 'zod';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Send, CheckCircle, AlertCircle } from 'lucide-react';
+import { createContactEmail, sendEmailViaMailto, EMAIL_CONFIG } from '@/lib/email';
 
 interface ContactFormProps {
   locale: string;
@@ -40,11 +41,14 @@ export function ContactForm({ locale }: ContactFormProps) {
     setSubmitStatus('idle');
 
     try {
-      // Simulate API call
-      await new Promise(resolve => setTimeout(resolve, 2000));
+      // Create email content using the email template
+      const { subject, body } = createContactEmail(data);
       
-      // Here you would typically send the data to your backend
-      console.log('Form data:', data);
+      // Send email via mailto link
+      sendEmailViaMailto(EMAIL_CONFIG.TO, subject, body);
+      
+      // Simulate processing time
+      await new Promise(resolve => setTimeout(resolve, 1000));
       
       setSubmitStatus('success');
       reset();

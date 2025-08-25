@@ -7,6 +7,7 @@ import { zodResolver } from '@hookform/resolvers/zod';
 import { z } from 'zod';
 import { motion } from 'framer-motion';
 import { Send, CheckCircle, AlertCircle, Download, Users, Settings, Award, Headphones } from 'lucide-react';
+import { createFranchiseEmail, sendEmailViaMailto, EMAIL_CONFIG } from '@/lib/email';
 
 interface FranchiseFormProps {
   locale: string;
@@ -81,11 +82,14 @@ export function FranchiseForm({ locale }: FranchiseFormProps) {
     setSubmitStatus('idle');
 
     try {
-      // Simulate API call
-      await new Promise(resolve => setTimeout(resolve, 2000));
+      // Create email content using the email template
+      const { subject, body } = createFranchiseEmail(data);
       
-      // Here you would typically send the data to your backend
-      console.log('Franchise form data:', data);
+      // Send email via mailto link
+      sendEmailViaMailto(EMAIL_CONFIG.TO, subject, body);
+      
+      // Simulate processing time
+      await new Promise(resolve => setTimeout(resolve, 1000));
       
       setSubmitStatus('success');
       reset();
