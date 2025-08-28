@@ -1,8 +1,12 @@
-import type { Metadata } from 'next';
+import type { Metadata, Viewport } from 'next';
 import { Inter } from 'next/font/google';
 import './globals.css';
 
 const inter = Inter({ subsets: ['latin'] });
+
+export const viewport: Viewport = {
+  themeColor: '#f97316',
+};
 
 export const metadata: Metadata = {
   title: 'LaundryZone Mongolia - Self-Service Laundry',
@@ -35,7 +39,6 @@ export const metadata: Metadata = {
     shortcut: '/images/favicon.png',
   },
   manifest: '/site.webmanifest',
-  themeColor: '#f97316',
   appleWebApp: {
     capable: true,
     statusBarStyle: 'default',

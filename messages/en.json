@@ -2,6 +2,7 @@
   "nav": {
     "home": "Home",
     "about": "About Us",
+    "equipment": "Equipment",
     "pricing": "Pricing",
     "franchise": "Franchise",
     "contact": "Contact"
@@ -351,6 +352,227 @@
     "need_help": "Need Help Choosing?",
     "sending": "Sending...",
     "get_started": "Ready to Get Started?"
+  },
+  "equipment": {
+    "title": "Equipment",
+    "subtitle": "Discover our premium LG and Samsung commercial washing machines and dryers",
+    "categories": {
+      "washers": "Washing Machines",
+      "washers_desc": "High-quality commercial washing machines",
+      "dryers": "Dryers",
+      "dryers_desc": "Fast, efficient drying machines"
+    },
+    "types": {
+      "washer": "Washer",
+      "dryer": "Dryer"
+    },
+    "specs": {
+      "capacity": "Capacity",
+      "cycles": "Wash Cycles",
+      "features": "Key Features",
+      "dimensions": "Dimensions"
+    },
+    "hover_details": "Hover for detailed specifications",
+    "stats": {
+      "machines": {
+        "count": "40+ Machines",
+        "description": "Wide variety to choose from"
+      },
+      "temperature": {
+        "range": "20°C - 95°C",
+        "description": "Wide temperature range"
+      },
+      "capacity": {
+        "max": "Up to 18kg",
+        "description": "Large load capacity"
+      },
+      "efficiency": {
+        "rating": "A+++ Rating",
+        "description": "Energy efficient operation"
+      }
+    }
+  },
+  "services": {
+    "title": "Equipment",
+    "subtitle": "State-of-the-art commercial laundry equipment for professional results",
+    "washing": {
+      "title": "Washing Machines",
+      "description": "LG/Samsung commercial washing machines with advanced cleaning technology",
+      "features": {
+        "capacity": "20kg and 30kg capacity options",
+        "temperature": "Cold, hot, and deep clean cycles",
+        "cycles": "Multiple specialized wash programs",
+        "eco": "Energy-efficient operation"
+      }
+    },
+    "drying": {
+      "title": "Dryers",
+      "description": "High-speed commercial dryers with moisture sensors and temperature control",
+      "features": {
+        "speed": "20-30 minute drying cycles",
+        "temperature": "Adjustable temperature settings",
+        "sensor": "Moisture sensor technology",
+        "energy": "Energy-saving operation"
+      }
+    },
+    "shoe_washing": {
+      "title": "Shoe Washing Machines",
+      "description": "Specialized equipment designed specifically for footwear cleaning",
+      "features": {
+        "specialized": "Dedicated shoe washing machines",
+        "gentle": "Gentle cleaning process",
+        "drying": "Specialized shoe dryers",
+        "all_types": "All shoe types welcome"
+      }
+    },
+    "sterilization": {
+      "title": "Sterilization Equipment",
+      "description": "Professional sterilization machines for complete hygiene treatment",
+      "features": {
+        "hygiene": "Complete hygiene treatment",
+        "allergen": "Allergen removal",
+        "bacteria": "Bacteria elimination",
+        "safe": "Safe for all fabrics"
+      }
+    },
+    "machines": {
+      "lw_45n": "LG Washing Machine LW-45N",
+      "lw_70n": "LG Washing Machine LW-70N",
+      "sck060": "Samsung Washing Machine SCK060",
+      "sck080": "Samsung Washing Machine SCK080",
+      "sck100": "Samsung Washing Machine SCK100",
+      "lr_18_tp2": "LG Dryer LR-18 TP2",
+      "lr_25_tp2": "LG Dryer LR-25 TP2"
+    },
+    "highlights": {
+      "title": "Why Choose Our Equipment",
+      "subtitle": "Experience the difference with our premium laundry equipment",
+      "fast": {
+        "title": "Fast Operation",
+        "description": "Quick 30-40 minute wash cycles and 20-30 minute drying"
+      },
+      "clean": {
+        "title": "Clean & Safe",
+        "description": "Daily cleaning and maintenance for hygienic environment"
+      },
+      "efficient": {
+        "title": "Energy Efficient",
+        "description": "Modern equipment designed for optimal performance and savings"
+      },
+      "care": {
+        "title": "Gentle Care",
+        "description": "Professional care for all types of fabrics and materials"
+      }
+    },
+    "cta": {
+      "title": "Ready to Experience Premium Laundry Equipment?",
+      "description": "Visit any of our locations and discover why LaundryZone is the preferred choice for modern laundry needs",
+      "view_pricing": "View Pricing",
+      "find_branch": "Find Nearest Branch"
+    }
+  },
+  "service_details": {
+    "title": "Equipment Details",
+    "subtitle": "Learn more about our commercial laundry equipment and their specifications",
+    "features_title": "Key Features",
+    "benefits_title": "Benefits",
+    "stats": {
+      "quality": "Premium Quality"
+    },
+    "washing": {
+      "title": "Commercial Washing Machines",
+      "subtitle": "Advanced cleaning with commercial-grade equipment",
+      "description": "Our washing machines are state-of-the-art LG/Samsung commercial units designed for optimal cleaning performance. With multiple capacity options and specialized cycles, we ensure your clothes receive the best care possible.",
+      "features": {
+        "capacity_20kg": "20kg capacity for medium loads",
+        "capacity_30kg": "30kg capacity for large loads",
+        "temperature_control": "Precise temperature control",
+        "specialized_cycles": "Multiple specialized wash programs",
+        "eco_friendly": "Energy-efficient operation",
+        "iot_monitoring": "Real-time machine monitoring"
+      },
+      "benefits": {
+        "deep_cleaning": "Deep cleaning for tough stains",
+        "fabric_care": "Gentle fabric care and protection",
+        "time_saving": "Quick 30-40 minute cycles",
+        "cost_effective": "Cost-effective laundry solution"
+      },
+      "stats": {
+        "time": "30-40 min"
+      }
+    },
+    "drying": {
+      "title": "Commercial Dryers",
+      "subtitle": "Fast and efficient drying with smart technology",
+      "description": "Our dryers feature advanced moisture sensors and temperature control to ensure your clothes are dried perfectly without damage. The smart technology automatically adjusts settings for optimal results.",
+      "features": {
+        "moisture_sensor": "Advanced moisture sensor technology",
+        "temperature_control": "Adjustable temperature settings",
+        "fast_cycles": "20-30 minute drying cycles",
+        "energy_efficient": "Energy-saving operation",
+        "fabric_protection": "Fabric protection technology",
+        "auto_stop": "Automatic stop when dry"
+      },
+      "benefits": {
+        "quick_drying": "Quick and efficient drying",
+        "fabric_safety": "Safe for all fabric types",
+        "energy_saving": "Energy-efficient operation",
+        "convenient": "Convenient and hassle-free"
+      },
+      "stats": {
+        "time": "20-30 min"
+      }
+    },
+    "shoe_washing": {
+      "title": "Shoe Washing Equipment",
+      "subtitle": "Professional care for all types of footwear",
+      "description": "Our specialized shoe washing equipment uses dedicated machines designed specifically for footwear. The gentle cleaning process ensures your shoes are thoroughly cleaned without damage to materials or structure.",
+      "features": {
+        "specialized_machines": "Dedicated shoe washing machines",
+        "gentle_cleaning": "Gentle cleaning process",
+        "dedicated_dryers": "Specialized shoe dryers",
+        "all_materials": "Safe for all shoe materials",
+        "stain_removal": "Effective stain removal",
+        "odor_elimination": "Odor elimination technology"
+      },
+      "benefits": {
+        "professional_cleaning": "Professional cleaning results",
+        "material_safety": "Safe for all materials",
+        "extended_life": "Extends shoe lifespan",
+        "fresh_appearance": "Fresh and clean appearance"
+      },
+      "stats": {
+        "time": "45-60 min"
+      }
+    },
+    "sterilization": {
+      "title": "Sterilization Equipment",
+      "subtitle": "Complete hygiene treatment for health and safety",
+      "description": "Our sterilization equipment eliminates bacteria, allergens, and other harmful microorganisms from your clothes. This medical-grade treatment ensures your family's health and safety with every wash.",
+      "features": {
+        "bacteria_elimination": "Complete bacteria elimination",
+        "allergen_removal": "Allergen removal technology",
+        "hygiene_treatment": "Comprehensive hygiene treatment",
+        "safe_process": "Safe and gentle process",
+        "complete_coverage": "Complete coverage treatment",
+        "medical_grade": "Medical-grade sterilization"
+      },
+      "benefits": {
+        "health_protection": "Protects family health",
+        "allergy_relief": "Relieves allergy symptoms",
+        "hygiene_confidence": "Confidence in cleanliness",
+        "family_safety": "Ensures family safety"
+      },
+      "stats": {
+        "time": "60-90 min"
+      }
+    },
+    "cta": {
+      "title": "Ready to Experience Our Premium Equipment?",
+      "description": "Visit any of our locations and discover the difference that professional laundry equipment makes",
+      "view_pricing": "View Pricing",
+      "find_branch": "Find Nearest Branch"
+    }
   },
   "banner": {
     "title": "Our Services",

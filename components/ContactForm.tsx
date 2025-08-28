@@ -69,7 +69,7 @@ export function ContactForm({ locale }: ContactFormProps) {
     <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">
       {/* Name Field */}
       <div>
-        <label htmlFor="name" className="block text-sm font-medium text-white mb-2">
+        <label htmlFor="name" className="block text-sm font-medium text-gray-900 mb-2">
           {t('contact.form.name')} *
         </label>
         <input
@@ -95,7 +95,7 @@ export function ContactForm({ locale }: ContactFormProps) {
 
       {/* Email Field */}
       <div>
-        <label htmlFor="email" className="block text-sm font-medium text-white mb-2">
+        <label htmlFor="email" className="block text-sm font-medium text-gray-900 mb-2">
           {t('contact.form.email')} *
         </label>
         <input
@@ -121,7 +121,7 @@ export function ContactForm({ locale }: ContactFormProps) {
 
       {/* Phone Field */}
       <div>
-        <label htmlFor="phone" className="block text-sm font-medium text-white mb-2">
+        <label htmlFor="phone" className="block text-sm font-medium text-gray-900 mb-2">
           {t('contact.form.phone')} *
         </label>
         <input
@@ -147,7 +147,7 @@ export function ContactForm({ locale }: ContactFormProps) {
 
       {/* Message Field */}
       <div>
-        <label htmlFor="message" className="block text-sm font-medium text-white mb-2">
+        <label htmlFor="message" className="block text-sm font-medium text-gray-900 mb-2">
           {t('contact.form.message')} *
         </label>
         <textarea

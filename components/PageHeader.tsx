@@ -1,6 +1,7 @@
 'use client';
 
 import { motion } from 'framer-motion';
+import { useTranslations } from 'next-intl';
 
 interface PageHeaderProps {
   title: string;
@@ -9,6 +10,7 @@ interface PageHeaderProps {
 }
 
 export function PageHeader({ title, subtitle, locale }: PageHeaderProps) {
+  const t = useTranslations();
   return (
     <section className="pt-32 pb-16 bg-gradient-to-br from-accent-50 via-white to-accent-50">
       <div className="container-custom">
@@ -19,10 +21,10 @@ export function PageHeader({ title, subtitle, locale }: PageHeaderProps) {
           className="text-center"
         >
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-neutral-900 mb-6">
-            {title}
+            {t(title)}
           </h1>
           <p className="text-xl text-neutral-600 max-w-3xl mx-auto leading-relaxed">
-            {subtitle}
+            {t(subtitle)}
           </p>
         </motion.div>
       </div>

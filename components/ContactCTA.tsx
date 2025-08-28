@@ -152,7 +152,7 @@ export function ContactCTA({ locale }: ContactCTAProps) {
                 <div className="p-2 bg-gradient-to-br from-accent-500 to-accent-600 rounded-lg">
                   <MessageCircle size={20} className="text-white" />
                 </div>
-                <h3 className="text-xl font-semibold">{t('common.send_message')}</h3>
+                <h3 className="text-xl font-semibold" style={{ color: '#000000' }}>{t('common.send_message')}</h3>
               </div>
               
               <ContactForm locale={locale} />

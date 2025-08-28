@@ -61,6 +61,14 @@ export function SiteFooter({ locale }: SiteFooterProps) {
               </li>
               <li>
                 <Link
+                  href={`/${locale}/services`}
+                  className="text-neutral-300 hover:text-white transition-colors text-sm"
+                >
+                  {t('nav.services')}
+                </Link>
+              </li>
+              <li>
+                <Link
                   href={`/${locale}/pricing`}
                   className="text-neutral-300 hover:text-white transition-colors text-sm"
                 >

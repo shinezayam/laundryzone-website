@@ -252,21 +252,19 @@ export function CustomerGuidelines({ locale }: CustomerGuidelinesProps) {
                           {t(guideline.titleKey)}
                         </h3>
                         
-                        <AnimatePresence>
-                          {expandedItems.includes(index) && (
-                            <motion.div
-                              initial={{ opacity: 0, height: 0 }}
-                              animate={{ opacity: 1, height: 'auto' }}
-                              exit={{ opacity: 0, height: 0 }}
-                              transition={{ duration: 0.3 }}
-                              className="overflow-hidden"
-                            >
-                              <p className="text-sm leading-relaxed text-neutral-600 mb-3">
-                                {t(guideline.contentKey)}
-                              </p>
-                            </motion.div>
-                          )}
-                        </AnimatePresence>
+                        {expandedItems.includes(index) && (
+                          <motion.div
+                            initial={{ opacity: 0, height: 0 }}
+                            animate={{ opacity: 1, height: 'auto' }}
+                            exit={{ opacity: 0, height: 0 }}
+                            transition={{ duration: 0.3 }}
+                            className="overflow-hidden"
+                          >
+                            <p className="text-sm leading-relaxed text-neutral-600 mb-3">
+                              {t(guideline.contentKey)}
+                            </p>
+                          </motion.div>
+                        )}
                         
                         <div className="flex items-center justify-between">
                           <span className="text-sm font-medium text-accent-600">

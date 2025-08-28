@@ -30,9 +30,9 @@ export function SiteHeader({ locale }: SiteHeaderProps) {
   const navItems = [
     { href: `/${locale}`, label: t('nav.home') },
     { href: `/${locale}/about`, label: t('nav.about') },
+    { href: `/${locale}/equipment`, label: t('nav.equipment') },
     { href: `/${locale}/pricing`, label: t('nav.pricing') },
     { href: `/${locale}/franchise`, label: t('nav.franchise') },
-    { href: `/${locale}/contact`, label: t('nav.contact') },
   ];
 
   const isActive = (href: string) => {
