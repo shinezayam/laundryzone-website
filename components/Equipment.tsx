@@ -39,7 +39,6 @@ interface EquipmentItem {
 
 export function Equipment() {
   const t = useTranslations('equipment');
-  const [hoveredItem, setHoveredItem] = useState<string | null>(null);
 
   const washers: EquipmentItem[] = [
     {
@@ -339,19 +338,13 @@ export function Equipment() {
   ];
 
   const EquipmentCard = ({ item }: { item: EquipmentItem }) => {
-    const isHovered = hoveredItem === item.id;
-
     return (
       <motion.div
         className="relative"
-        onHoverStart={() => setHoveredItem(item.id)}
-        onHoverEnd={() => setHoveredItem(null)}
-        whileHover={{ y: -8 }}
-        transition={{ duration: 0.3 }}
+        whileHover={{ y: -4 }}
+        transition={{ duration: 0.2 }}
       >
-        <div className={`relative bg-white rounded-2xl border-2 overflow-hidden transition-all duration-300 h-full min-h-[500px] flex flex-col ${
-          isHovered ? 'shadow-2xl border-accent-200' : 'shadow-soft border-neutral-200'
-        }`}>
+        <div className="relative bg-white rounded-2xl border border-neutral-200 overflow-hidden shadow-soft hover:shadow-medium transition-all duration-300 h-full flex flex-col">
           {/* Equipment Image - Square Frame */}
           <div className="relative aspect-square overflow-hidden" style={{ backgroundColor: '#E5E5E5' }}>
             <Image
@@ -361,100 +354,79 @@ export function Equipment() {
               className="object-contain object-center p-4"
               sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
               onError={(e) => {
-                // Fallback to a placeholder or existing image
                 (e.target as HTMLImageElement).src = '/images/laundryzone-hero.jpg';
               }}
             />
             {/* Brand Badge */}
-            <div className={`absolute top-4 right-4 px-3 py-1 rounded-full text-sm font-medium ${
-              item.brand === 'LG' ? 'bg-red-100 text-red-700' : 'bg-blue-100 text-blue-700'
+            <div className={`absolute top-3 right-3 px-2 py-1 rounded-lg text-xs font-semibold ${
+              item.brand === 'LG' ? 'bg-red-500 text-white' : 'bg-blue-500 text-white'
             }`}>
               {item.brand}
             </div>
           </div>
 
-          {/* Basic Info */}
-          <div className="p-6 flex-1 flex flex-col">
-            <div className="flex items-start justify-between mb-4">
-              <div>
-                <h3 className="text-xl font-bold text-neutral-900 mb-1">
+          {/* Card Content */}
+          <div className="p-5 flex-1 flex flex-col">
+            {/* Header */}
+            <div className="flex items-start justify-between mb-3">
+              <div className="flex-1">
+                <h3 className="text-lg font-bold text-neutral-900 mb-1 leading-tight">
                   {item.brand} {item.type === 'washer' ? t('types.washer') : t('types.dryer')}
                 </h3>
-                <p className="text-sm text-neutral-600 font-mono">{item.model}</p>
+                <p className="text-sm text-neutral-500 font-mono">{item.model}</p>
               </div>
-              <div className="text-right">
-                <p className="text-2xl font-bold text-accent-500">{item.specs.capacity}</p>
-                <p className="text-sm text-neutral-600">{t('specs.capacity')}</p>
-              </div>
-            </div>
-
-            <div className="grid grid-cols-2 gap-4 mb-4">
-              <div className="flex items-center space-x-2">
-                <Timer size={16} className="text-neutral-500" />
-                <span className="text-sm text-neutral-700">{item.specs.duration}</span>
-              </div>
-              <div className="flex items-center space-x-2">
-                <Zap size={16} className="text-neutral-500" />
-                <span className="text-sm text-neutral-700">{item.specs.powerRating}</span>
+              <div className="text-right ml-3">
+                <p className="text-xl font-bold text-accent-500">{item.specs.capacity}</p>
+                <p className="text-xs text-neutral-500 uppercase tracking-wide">{t('specs.capacity')}</p>
               </div>
             </div>
 
-            {/* Hover Details */}
-            <motion.div
-              initial={{ opacity: 0, height: 0 }}
-              animate={{ 
-                opacity: isHovered ? 1 : 0, 
-                height: isHovered ? 'auto' : 0 
-              }}
-              transition={{ duration: 0.3 }}
-              className="overflow-hidden"
-            >
-              <div className="border-t border-neutral-200 pt-4 mt-4">
-                {/* Cycles */}
-                <div className="mb-4">
-                  <p className="text-sm font-medium text-neutral-900 mb-2">{t('specs.cycles')}:</p>
-                  <div className="flex flex-wrap gap-1">
-                    {item.specs.cycles.map((cycle, index) => (
-                      <span 
-                        key={index}
-                        className="px-2 py-1 bg-neutral-100 text-neutral-700 text-xs rounded-full"
-                      >
-                        {cycle}
-                      </span>
-                    ))}
-                  </div>
+            {/* Key Specs - Always Visible */}
+            <div className="grid grid-cols-2 gap-3 mb-4">
+              <div className="bg-neutral-50 rounded-lg p-3">
+                <div className="flex items-center mb-1">
+                  <Timer size={14} className="text-neutral-600 mr-2" />
+                  <span className="text-xs text-neutral-600 font-medium uppercase tracking-wide">Duration</span>
                 </div>
-
-                {/* Key Features */}
-                <div className="mb-4">
-                  <p className="text-sm font-medium text-neutral-900 mb-2">{t('specs.features')}:</p>
-                  <div className="space-y-1">
-                    {item.specs.features.map((feature, index) => (
-                      <div key={index} className="flex items-center text-sm text-neutral-700">
-                        <Star size={12} className="text-accent-500 mr-2" />
-                        {feature}
-                      </div>
-                    ))}
-                  </div>
-                </div>
-
-                {/* Dimensions */}
-                <div className="text-xs text-neutral-600">
-                  <span className="font-medium">{t('specs.dimensions')}:</span> {item.specs.dimensions}
-                </div>
+                <p className="text-sm font-semibold text-neutral-900">{item.specs.duration}</p>
               </div>
-            </motion.div>
-
-            {/* Always visible CTA */}
-            <motion.div 
-              className="mt-auto pt-4"
-              animate={{ opacity: isHovered ? 0.7 : 1 }}
-            >
-              <div className="flex items-center justify-between text-sm text-neutral-600">
-                <span>{t('hover_details')}</span>
-                <ChevronRight size={16} className="text-accent-500" />
+              <div className="bg-neutral-50 rounded-lg p-3">
+                <div className="flex items-center mb-1">
+                  <Zap size={14} className="text-neutral-600 mr-2" />
+                  <span className="text-xs text-neutral-600 font-medium uppercase tracking-wide">Power</span>
+                </div>
+                <p className="text-sm font-semibold text-neutral-900">{item.specs.powerRating}</p>
               </div>
-            </motion.div>
+            </div>
+
+            {/* Key Features - Always Visible */}
+            <div className="mb-4">
+              <p className="text-xs text-neutral-600 font-medium uppercase tracking-wide mb-2">Key Features</p>
+              <div className="flex flex-wrap gap-1">
+                {item.specs.features.slice(0, 3).map((feature, index) => (
+                  <span 
+                    key={index}
+                    className="px-2 py-1 bg-accent-50 text-accent-700 text-xs font-medium rounded-md"
+                  >
+                    {feature}
+                  </span>
+                ))}
+              </div>
+            </div>
+
+            {/* Bottom Info */}
+            <div className="mt-auto pt-3 border-t border-neutral-100">
+              <div className="flex items-center justify-between">
+                <div className="flex flex-wrap gap-2 text-xs text-neutral-500">
+                  <span>{item.specs.cycles.length} cycles</span>
+                  <span>•</span>
+                  <span>{item.specs.dimensions}</span>
+                </div>
+                <div className={`w-2 h-2 rounded-full ${
+                  item.type === 'washer' ? 'bg-blue-500' : 'bg-green-500'
+                }`}></div>
+              </div>
+            </div>
           </div>
         </div>
       </motion.div>
