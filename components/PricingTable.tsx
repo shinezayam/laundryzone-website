@@ -130,11 +130,25 @@ export function PricingTable({ locale }: PricingTableProps) {
   return (
     <section className="section-padding bg-gradient-to-br from-white to-neutral-50">
       <div className="container-custom">
+        {/* Featured Image */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+          className="text-center mb-12"
+        >
+          <img 
+            src="/images/123.png" 
+            alt="LaundryZone Services"
+            className="mx-auto rounded-2xl shadow-lg max-w-full h-auto"
+          />
+        </motion.div>
+
         {/* How it works section */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
+          transition={{ duration: 0.8, delay: 0.2 }}
           className="text-center mb-16"
         >
           <h2 className="text-3xl md:text-4xl font-bold text-neutral-900 mb-4">

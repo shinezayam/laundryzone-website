@@ -7,10 +7,11 @@ import { zodResolver } from '@hookform/resolvers/zod';
 import { z } from 'zod';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Send, CheckCircle, AlertCircle } from 'lucide-react';
-import { createContactEmail, sendEmailViaMailto, EMAIL_CONFIG } from '@/lib/email';
+import { createContactEmail, sendEmailViaMailto, sendEmailViaAPI, EMAIL_CONFIG } from '@/lib/email';
 
 interface ContactFormProps {
   locale: string;
+  variant?: 'light' | 'dark';
 }
 
 const contactSchema = z.object({
@@ -22,7 +23,7 @@ const contactSchema = z.object({
 
 type ContactFormData = z.infer<typeof contactSchema>;
 
-export function ContactForm({ locale }: ContactFormProps) {
+export function ContactForm({ locale, variant = 'dark' }: ContactFormProps) {
   const t = useTranslations();
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'error'>('idle');
@@ -41,14 +42,9 @@ export function ContactForm({ locale }: ContactFormProps) {
     setSubmitStatus('idle');
 
     try {
-      // Create email content using the email template
-      const { subject, body } = createContactEmail(data);
-      
-      // Send email via mailto link
-      sendEmailViaMailto(EMAIL_CONFIG.TO, subject, body);
-      
-      // Simulate processing time
-      await new Promise(resolve => setTimeout(resolve, 1000));
+      // Try to send via API endpoint first
+      await sendEmailViaAPI(data);
+      console.log('Email sent successfully via API');
       
       setSubmitStatus('success');
       reset();
@@ -59,7 +55,22 @@ export function ContactForm({ locale }: ContactFormProps) {
       }, 5000);
     } catch (error) {
       console.error('Form submission error:', error);
-      setSubmitStatus('error');
+      
+      // If API fails, try mailto fallback
+      try {
+        console.log('API failed, trying mailto fallback');
+        const { subject, body } = createContactEmail(data);
+        sendEmailViaMailto(EMAIL_CONFIG.TO, subject, body);
+        setSubmitStatus('success');
+        reset();
+        
+        setTimeout(() => {
+          setSubmitStatus('idle');
+        }, 5000);
+      } catch (fallbackError) {
+        console.error('Both API and mailto failed:', fallbackError);
+        setSubmitStatus('error');
+      }
     } finally {
       setIsSubmitting(false);
     }
@@ -69,15 +80,21 @@ export function ContactForm({ locale }: ContactFormProps) {
     <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">
       {/* Name Field */}
       <div>
-        <label htmlFor="name" className="block text-sm font-medium text-gray-900 mb-2">
+        <label htmlFor="name" className={`block text-sm font-medium mb-2 ${
+          variant === 'light' ? 'text-neutral-700' : 'text-white'
+        }`}>
           {t('contact.form.name')} *
         </label>
         <input
           {...register('name')}
           type="text"
           id="name"
-          className={`w-full px-4 py-3 bg-white/10 border rounded-xl text-white placeholder-neutral-400 focus:outline-none focus:ring-2 focus:ring-accent-500 focus:border-transparent transition-all duration-200 ${
-            errors.name ? 'border-red-500' : 'border-neutral-600'
+          className={`w-full px-4 py-3 border rounded-xl focus:outline-none focus:ring-2 focus:ring-accent-500 focus:border-transparent transition-all duration-200 ${
+            variant === 'light' 
+              ? 'bg-white text-neutral-900 placeholder-neutral-500 border-neutral-300' 
+              : 'bg-white/20 text-white placeholder-neutral-200 border-neutral-500'
+          } ${
+            errors.name ? 'border-red-500' : ''
           }`}
           placeholder={t('contact.form.name_placeholder')}
         />
@@ -95,15 +112,21 @@ export function ContactForm({ locale }: ContactFormProps) {
 
       {/* Email Field */}
       <div>
-        <label htmlFor="email" className="block text-sm font-medium text-gray-900 mb-2">
+        <label htmlFor="email" className={`block text-sm font-medium mb-2 ${
+          variant === 'light' ? 'text-neutral-700' : 'text-white'
+        }`}>
           {t('contact.form.email')} *
         </label>
         <input
           {...register('email')}
           type="email"
           id="email"
-          className={`w-full px-4 py-3 bg-white/10 border rounded-xl text-white placeholder-neutral-400 focus:outline-none focus:ring-2 focus:ring-accent-500 focus:border-transparent transition-all duration-200 ${
-            errors.email ? 'border-red-500' : 'border-neutral-600'
+          className={`w-full px-4 py-3 border rounded-xl focus:outline-none focus:ring-2 focus:ring-accent-500 focus:border-transparent transition-all duration-200 ${
+            variant === 'light' 
+              ? 'bg-white text-neutral-900 placeholder-neutral-500 border-neutral-300' 
+              : 'bg-white/20 text-white placeholder-neutral-200 border-neutral-500'
+          } ${
+            errors.email ? 'border-red-500' : ''
           }`}
           placeholder={t('contact.form.email_placeholder')}
         />
@@ -121,15 +144,21 @@ export function ContactForm({ locale }: ContactFormProps) {
 
       {/* Phone Field */}
       <div>
-        <label htmlFor="phone" className="block text-sm font-medium text-gray-900 mb-2">
+        <label htmlFor="phone" className={`block text-sm font-medium mb-2 ${
+          variant === 'light' ? 'text-neutral-700' : 'text-white'
+        }`}>
           {t('contact.form.phone')} *
         </label>
         <input
           {...register('phone')}
           type="tel"
           id="phone"
-          className={`w-full px-4 py-3 bg-white/10 border rounded-xl text-white placeholder-neutral-400 focus:outline-none focus:ring-2 focus:ring-accent-500 focus:border-transparent transition-all duration-200 ${
-            errors.phone ? 'border-red-500' : 'border-neutral-600'
+          className={`w-full px-4 py-3 border rounded-xl focus:outline-none focus:ring-2 focus:ring-accent-500 focus:border-transparent transition-all duration-200 ${
+            variant === 'light' 
+              ? 'bg-white text-neutral-900 placeholder-neutral-500 border-neutral-300' 
+              : 'bg-white/20 text-white placeholder-neutral-200 border-neutral-500'
+          } ${
+            errors.phone ? 'border-red-500' : ''
           }`}
           placeholder={t('contact.form.phone_placeholder')}
         />
@@ -147,15 +176,21 @@ export function ContactForm({ locale }: ContactFormProps) {
 
       {/* Message Field */}
       <div>
-        <label htmlFor="message" className="block text-sm font-medium text-gray-900 mb-2">
+        <label htmlFor="message" className={`block text-sm font-medium mb-2 ${
+          variant === 'light' ? 'text-neutral-700' : 'text-white'
+        }`}>
           {t('contact.form.message')} *
         </label>
         <textarea
           {...register('message')}
           id="message"
           rows={4}
-          className={`w-full px-4 py-3 bg-white/10 border rounded-xl text-white placeholder-neutral-400 focus:outline-none focus:ring-2 focus:ring-accent-500 focus:border-transparent transition-all duration-200 resize-none ${
-            errors.message ? 'border-red-500' : 'border-neutral-600'
+          className={`w-full px-4 py-3 border rounded-xl focus:outline-none focus:ring-2 focus:ring-accent-500 focus:border-transparent transition-all duration-200 resize-none ${
+            variant === 'light' 
+              ? 'bg-white text-neutral-900 placeholder-neutral-500 border-neutral-300' 
+              : 'bg-white/20 text-white placeholder-neutral-200 border-neutral-500'
+          } ${
+            errors.message ? 'border-red-500' : ''
           }`}
           placeholder={t('contact.form.message_placeholder')}
         />

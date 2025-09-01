@@ -32,6 +32,7 @@ export function SiteHeader({ locale }: SiteHeaderProps) {
     { href: `/${locale}/about`, label: t('nav.about') },
     { href: `/${locale}/equipment`, label: t('nav.equipment') },
     { href: `/${locale}/pricing`, label: t('nav.pricing') },
+    { href: `/${locale}/blog`, label: t('nav.blog') },
     { href: `/${locale}/franchise`, label: t('nav.franchise') },
   ];
 

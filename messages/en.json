@@ -4,6 +4,7 @@
     "about": "About Us",
     "equipment": "Equipment",
     "pricing": "Pricing",
+    "blog": "Blog",
     "franchise": "Franchise",
     "contact": "Contact"
   },
@@ -16,11 +17,11 @@
     },
     "experience": "LaundryZone Experience",
     "watch_video": "Watch our video",
-    "open_24_7": "08:00 - 00:00 Open",
+    "open_24_7": "08:00 - 24:00 Open",
     "lg_samsung": "LG/Samsung"
   },
   "stats": {
-    "24_7": "08:00 - 00:00 Operation",
+    "24_7": "08:00 - 24:00 Operation",
     "cashless": "Cashless Payment",
     "wifi": "Free Wi-Fi",
     "detergent": "Detergent Included"
@@ -64,7 +65,7 @@
     "subtitle": "Affordable prices, premium quality",
     "washers": "Washing Machines",
     "dryers": "Dryers",
-    "extras": "Additional Services",
+    "extras": "Additional Equipment",
     "see_full": "View Full Pricing",
     "how_it_works": "How It Works",
     "steps": {
@@ -198,12 +199,12 @@
   },
   "branches": {
     "title": "Our Branches",
-    "subtitle": "08:00 - 00:00 service across Ulaanbaatar",
+    "subtitle": "08:00 - 24:00 service across Ulaanbaatar",
     "hours": "Hours",
-    "services": "Services",
+    "equipment": "Equipment",
     "phone": "Phone",
     "directions": "Directions",
-    "service_types": {
+    "equipment_types": {
       "self_service": "Self-service",
       "wash_dry": "Wash & Dry",
       "wifi": "Wi-Fi",
@@ -211,14 +212,14 @@
     },
     "map_title": "Interactive Map",
     "map_subtitle": "View all our locations across Ulaanbaatar",
-    "services_available": "Services Available",
+    "equipment_available": "Equipment Available",
     "phone_support": "Phone Support",
     "find_nearest": "Find Your Nearest Branch",
-    "cta_description": "All our locations are equipped with the latest LG/Samsung equipment and offer 08:00 - 00:00 service.",
+    "cta_description": "All our locations are equipped with the latest LG/Samsung equipment and offer 08:00 - 24:00 service.",
     "search_placeholder": "Search branches...",
     "filter_district": "District",
     "filter_hours": "Hours",
-    "filter_services": "Services",
+    "filter_equipment": "Equipment",
     "all_districts": "All Districts",
     "all_hours": "All Hours",
     "clear_filters": "Clear Filters",
@@ -232,7 +233,11 @@
     "map_fallback_text": "Click to open Google Maps directly",
     "open_google_maps": "Open Google Maps",
     "loading_map": "Loading map...",
-    "view_on_map": "View on Map"
+    "view_on_map": "View on Map",
+    "visit_facebook": "Visit Facebook",
+    "view_on_maps": "Open in Maps",
+    "visit_facebook_button": "Follow on Facebook",
+    "load_more": "Load More Branches"
   },
   "contact": {
     "title": "Contact Us",
@@ -313,6 +318,7 @@
     }
   },
   "footer": {
+    "company_description": "Self-service laundromats throughout Ulaanbaatar city with LG/Samsung equipment, operating from 08:00 - 24:00, with cashless payment options available.",
     "copyright": "© 2025 LaundryZone Mongolia. All rights reserved.",
     "designed_by": "Designed by",
     "links": {
@@ -340,9 +346,9 @@
     "enter_city": "Enter your city",
     "premium_quality": "Premium quality",
     "fast_service": "Fast service",
-    "available_24_7": "08:00 - 00:00 available",
+    "available_24_7": "08:00 - 24:00 available",
     "quick_links": "Quick Links",
-    "services": "Services",
+    "equipment": "Services",
     "self_service_washing": "Self-service washing",
     "commercial_dryers": "Commercial dryers",
     "shoe_washing": "Shoe washing",
@@ -355,7 +361,7 @@
   },
   "equipment": {
     "title": "Equipment",
-    "subtitle": "Discover our premium LG and Samsung commercial washing machines and dryers",
+    "subtitle": "State-of-the-art commercial laundry equipment for professional results",
     "categories": {
       "washers": "Washing Machines",
       "washers_desc": "High-quality commercial washing machines",
@@ -372,29 +378,24 @@
       "features": "Key Features",
       "dimensions": "Dimensions"
     },
-    "hover_details": "Hover for detailed specifications",
     "stats": {
       "machines": {
-        "count": "40+ Machines",
-        "description": "Wide variety to choose from"
+        "count": "100+ Machines",
+        "description": "Commercial-grade equipment"
       },
       "temperature": {
-        "range": "20°C - 95°C",
-        "description": "Wide temperature range"
+        "range": "20°C - 90°C",
+        "description": "Temperature range available"
       },
       "capacity": {
-        "max": "Up to 18kg",
-        "description": "Large load capacity"
+        "max": "Up to 230kg",
+        "description": "Maximum load capacity"
       },
       "efficiency": {
         "rating": "A+++ Rating",
         "description": "Energy efficient operation"
       }
-    }
-  },
-  "services": {
-    "title": "Equipment",
-    "subtitle": "State-of-the-art commercial laundry equipment for professional results",
+    },
     "washing": {
       "title": "Washing Machines",
       "description": "LG/Samsung commercial washing machines with advanced cleaning technology",
@@ -589,7 +590,7 @@
     },
     "features": {
       "hygiene": "Clean & Hygienic",
-      "hours": "08:00 - 00:00 Open",
+      "hours": "08:00 - 24:00 Open",
       "quality": "High Quality"
     },
     "fast": "Fast",
@@ -778,6 +779,69 @@
       "thank_you": {
         "title": "Thank You",
         "content": "Thank you for using LaundryZone services. Following the above guidelines will ensure comfortable and safe service."
+      }
+    }
+  },
+  "blog": {
+    "title": "Blog",
+    "description": "Latest news, tips, and insights from LaundryZone Mongolia",
+    "featured": "Featured",
+    "recent_posts": "Recent Posts",
+    "posts": "Posts",
+    "read": "read",
+    "read_more": "Read More",
+    "categories": {
+      "all": "All",
+      "hygiene": "Hygiene & Health",
+      "company": "Company News",
+      "tips": "Laundry Tips",
+      "guidelines": "Guidelines",
+      "equipment": "Equipment"
+    },
+    "newsletter": {
+      "title": "Stay Updated",
+      "description": "Get the latest laundry tips, news, and exclusive offers delivered to your inbox",
+      "placeholder": "Enter your email address",
+      "subscribe": "Subscribe"
+    },
+    "back_to_blog": "Back to Blog",
+    "share": "Share",
+    "cta": {
+      "title": "Need Professional Laundry Service?",
+      "description": "Visit any LaundryZone location for professional cleaning with commercial-grade equipment.",
+      "contact": "Contact Us",
+      "more_articles": "More Articles"
+    },
+    "posts": {
+      "dust_mites": {
+        "title": "Household Dust Mites, Bed Bugs and Mold",
+        "excerpt": "Learn about common household allergens and how proper laundry care can help eliminate dust mites, bed bugs, and mold from your home.",
+        "content": "Discover effective ways to combat dust mites, bed bugs, and mold through proper washing and drying techniques. Our professional equipment ensures thorough cleaning at high temperatures to eliminate these common household allergens."
+      },
+      "new_technology": {
+        "title": "New Technology - Positive Approach, Cultured Service",
+        "excerpt": "LaundryZone Mongolia receives recognition for implementing cutting-edge laundry technology and providing exceptional customer service.",
+        "content": "We are proud to announce that LaundryZone has been recognized for our commitment to new technology, positive customer approach, and cultured service. This award reflects our dedication to excellence in the laundry industry."
+      },
+      "bedding_care": {
+        "title": "Regular Bedding Washing - Make It a Habit",
+        "excerpt": "Establish a regular bedding washing routine for better hygiene, health, and sleep quality using LaundryZone's professional equipment.",
+        "content": "Regular bedding washing is crucial for maintaining good hygiene and health. Learn how to establish a proper bedding care routine and why LaundryZone's commercial-grade machines provide the best results for your bedding."
+      },
+      "customer_guidelines": {
+        "title": "Customer Guidelines and Safety",
+        "excerpt": "Important guidelines and safety instructions for using LaundryZone services effectively and safely.",
+        "content": "Please read these important guidelines before using our services. Following these rules ensures a safe and pleasant experience for all customers while maintaining the quality of our equipment and services."
+      },
+      "dryer_benefits": {
+        "title": "Why Choose LaundryZone Dryers?",
+        "excerpt": "Discover the advantages of using LaundryZone's professional dryers for faster, more efficient, and better drying results.",
+        "content": "Learn why LaundryZone's commercial dryers are the best choice for your laundry needs. Our advanced drying technology, 24-hour availability, and professional-grade equipment ensure superior results every time."
+      },
+      "weight_calculation": {
+        "title": "How to Calculate Laundry Weight",
+        "excerpt": "Learn how to properly estimate your laundry weight to choose the right machine capacity and get the best washing results.",
+        "content": "Proper weight calculation is essential for optimal washing results. This guide will help you estimate your laundry weight accurately to select the appropriate machine size and achieve the best cleaning performance."
       }
     }
   }

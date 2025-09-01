@@ -366,36 +366,36 @@ export function Equipment() {
           </div>
 
           {/* Card Content */}
-          <div className="p-5 flex-1 flex flex-col">
+          <div className="p-4 sm:p-5 flex-1 flex flex-col">
             {/* Header */}
-            <div className="flex items-start justify-between mb-3">
+            <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between mb-3 gap-2 sm:gap-0">
               <div className="flex-1">
-                <h3 className="text-lg font-bold text-neutral-900 mb-1 leading-tight">
+                <h3 className="text-base sm:text-lg font-bold text-neutral-900 mb-1 leading-tight">
                   {item.brand} {item.type === 'washer' ? t('types.washer') : t('types.dryer')}
                 </h3>
-                <p className="text-sm text-neutral-500 font-mono">{item.model}</p>
+                <p className="text-xs sm:text-sm text-neutral-500 font-mono">{item.model}</p>
               </div>
-              <div className="text-right ml-3">
-                <p className="text-xl font-bold text-accent-500">{item.specs.capacity}</p>
+              <div className="text-left sm:text-right">
+                <p className="text-lg sm:text-xl font-bold text-accent-500">{item.specs.capacity}</p>
                 <p className="text-xs text-neutral-500 uppercase tracking-wide">{t('specs.capacity')}</p>
               </div>
             </div>
 
             {/* Key Specs - Always Visible */}
-            <div className="grid grid-cols-2 gap-3 mb-4">
-              <div className="bg-neutral-50 rounded-lg p-3">
+            <div className="grid grid-cols-2 gap-2 sm:gap-3 mb-4">
+              <div className="bg-neutral-50 rounded-lg p-2 sm:p-3">
                 <div className="flex items-center mb-1">
-                  <Timer size={14} className="text-neutral-600 mr-2" />
+                  <Timer size={12} className="text-neutral-600 mr-1 sm:mr-2" />
                   <span className="text-xs text-neutral-600 font-medium uppercase tracking-wide">Duration</span>
                 </div>
-                <p className="text-sm font-semibold text-neutral-900">{item.specs.duration}</p>
+                <p className="text-xs sm:text-sm font-semibold text-neutral-900">{item.specs.duration}</p>
               </div>
-              <div className="bg-neutral-50 rounded-lg p-3">
+              <div className="bg-neutral-50 rounded-lg p-2 sm:p-3">
                 <div className="flex items-center mb-1">
-                  <Zap size={14} className="text-neutral-600 mr-2" />
+                  <Zap size={12} className="text-neutral-600 mr-1 sm:mr-2" />
                   <span className="text-xs text-neutral-600 font-medium uppercase tracking-wide">Power</span>
                 </div>
-                <p className="text-sm font-semibold text-neutral-900">{item.specs.powerRating}</p>
+                <p className="text-xs sm:text-sm font-semibold text-neutral-900">{item.specs.powerRating}</p>
               </div>
             </div>
 
@@ -406,7 +406,7 @@ export function Equipment() {
                 {item.specs.features.slice(0, 3).map((feature, index) => (
                   <span 
                     key={index}
-                    className="px-2 py-1 bg-accent-50 text-accent-700 text-xs font-medium rounded-md"
+                    className="px-1.5 sm:px-2 py-0.5 sm:py-1 bg-accent-50 text-accent-700 text-xs font-medium rounded-md"
                   >
                     {feature}
                   </span>
@@ -417,10 +417,10 @@ export function Equipment() {
             {/* Bottom Info */}
             <div className="mt-auto pt-3 border-t border-neutral-100">
               <div className="flex items-center justify-between">
-                <div className="flex flex-wrap gap-2 text-xs text-neutral-500">
+                <div className="flex flex-wrap gap-1 sm:gap-2 text-xs text-neutral-500">
                   <span>{item.specs.cycles.length} cycles</span>
-                  <span>•</span>
-                  <span>{item.specs.dimensions}</span>
+                  <span className="hidden sm:inline">•</span>
+                  <span className="hidden sm:inline">{item.specs.dimensions}</span>
                 </div>
                 <div className={`w-2 h-2 rounded-full ${
                   item.type === 'washer' ? 'bg-blue-500' : 'bg-green-500'
@@ -443,22 +443,17 @@ export function Equipment() {
           transition={{ duration: 0.6 }}
           className="mb-16"
         >
-          <div className="flex items-center mb-8">
-            <div className="flex items-center justify-center w-12 h-12 rounded-xl bg-blue-100 mr-4">
+          <div className="flex flex-col sm:flex-row items-start sm:items-center mb-8">
+            <div className="flex items-center justify-center w-12 h-12 rounded-xl bg-blue-100 mr-4 mb-4 sm:mb-0">
               <Droplets size={24} className="text-blue-600" />
             </div>
             <div>
-              <h2 className="text-3xl font-bold text-neutral-900">{t('categories.washers')}</h2>
-              <p className="text-neutral-600">{t('categories.washers_desc')}</p>
+              <h2 className="text-2xl sm:text-3xl font-bold text-neutral-900">{t('categories.washers')}</h2>
+              <p className="text-neutral-600 text-sm sm:text-base">{t('categories.washers_desc')}</p>
             </div>
           </div>
 
-          <div className="w-full" style={{ 
-            display: 'grid', 
-            gridTemplateColumns: '1fr 1fr 1fr', 
-            gap: '2rem',
-            gridAutoRows: '1fr'
-          }}>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 lg:gap-8">
             {washers.slice(0, 9).map((washer) => (
               <EquipmentCard key={washer.id} item={washer} />
             ))}
@@ -471,22 +466,17 @@ export function Equipment() {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.2 }}
         >
-          <div className="flex items-center mb-8">
-            <div className="flex items-center justify-center w-12 h-12 rounded-xl bg-green-100 mr-4">
+          <div className="flex flex-col sm:flex-row items-start sm:items-center mb-8">
+            <div className="flex items-center justify-center w-12 h-12 rounded-xl bg-green-100 mr-4 mb-4 sm:mb-0">
               <Wind size={24} className="text-green-600" />
             </div>
             <div>
-              <h2 className="text-3xl font-bold text-neutral-900">{t('categories.dryers')}</h2>
-              <p className="text-neutral-600">{t('categories.dryers_desc')}</p>
+              <h2 className="text-2xl sm:text-3xl font-bold text-neutral-900">{t('categories.dryers')}</h2>
+              <p className="text-neutral-600 text-sm sm:text-base">{t('categories.dryers_desc')}</p>
             </div>
           </div>
 
-          <div className="w-full" style={{ 
-            display: 'grid', 
-            gridTemplateColumns: '1fr 1fr 1fr', 
-            gap: '2rem',
-            gridAutoRows: '1fr'
-          }}>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 lg:gap-8">
             {dryers.slice(0, 9).map((dryer) => (
               <EquipmentCard key={dryer.id} item={dryer} />
             ))}
@@ -501,7 +491,7 @@ export function Equipment() {
           className="mt-16"
         >
           <div className="bg-white rounded-2xl p-8 shadow-soft border border-neutral-200">
-            <div className="grid md:grid-cols-4 gap-8">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8">
               <div className="text-center">
                 <div className="inline-flex items-center justify-center w-16 h-16 rounded-xl bg-brand-100 text-brand-600 mb-4">
                   <Settings size={32} />

@@ -19,7 +19,7 @@ export function SiteFooter({ locale }: SiteFooterProps) {
               <span className="text-xl font-bold">LaundryZone</span>
             </div>
             <p className="text-neutral-300 text-sm leading-relaxed">
-              LG/Samsung тоног төхөөрөмжтэй, 08:00 - 00:00 ажилладаг, бэлэн мөнгөгүй төлбөрийн боломжтой өөртөө үйлчлэх угаалгын газар Улаанбаатар хот даяар.
+              {t('footer.company_description')}
             </p>
             <div className="flex space-x-4">
               <a
@@ -61,10 +61,10 @@ export function SiteFooter({ locale }: SiteFooterProps) {
               </li>
               <li>
                 <Link
-                  href={`/${locale}/services`}
+                  href={`/${locale}/equipment`}
                   className="text-neutral-300 hover:text-white transition-colors text-sm"
                 >
-                  {t('nav.services')}
+                  {t('nav.equipment')}
                 </Link>
               </li>
               <li>
@@ -104,14 +104,14 @@ export function SiteFooter({ locale }: SiteFooterProps) {
               </div>
               <div className="flex items-center space-x-3">
                 <Clock size={16} className="text-accent-400" />
-                <span className="text-neutral-300 text-sm">08:00-00:00</span>
+                <span className="text-neutral-300 text-sm">08:00-24:00</span>
               </div>
             </div>
           </div>
 
-          {/* Services */}
-          <div className="space-y-4">
-            <h3 className="text-lg font-semibold">{t('common.services')}</h3>
+                          {/* Equipment */}
+                <div className="space-y-4">
+                  <h3 className="text-lg font-semibold">{t('common.equipment')}</h3>
             <ul className="space-y-2">
               <li className="text-neutral-300 text-sm">{t('common.self_service_washing')}</li>
               <li className="text-neutral-300 text-sm">{t('common.commercial_dryers')}</li>
@@ -127,7 +127,7 @@ export function SiteFooter({ locale }: SiteFooterProps) {
         <div className="border-t border-neutral-800 mt-12 pt-8">
           <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
                          <p className="text-neutral-400 text-sm">
-               © 2025 LaundryZone Mongolia. All rights reserved. Designed by{' '}
+               © 2025 LaundryZone Mongolia. All rights reserved. Designed and Developed by{' '}
                <a
                  href="https://portfolio-sage-xi-54.vercel.app/"
                  target="_blank"

@@ -10,8 +10,8 @@ export const viewport: Viewport = {
 
 export const metadata: Metadata = {
   title: 'LaundryZone Mongolia - Self-Service Laundry',
-  description: 'Premium self-service laundry with LG/Samsung equipment, 08:00 - 00:00 operation, and cashless payment across Ulaanbaatar.',
-  keywords: 'laundry, self-service, Ulaanbaatar, Mongolia, wash, dry, 08:00 - 00:00',
+  description: 'Premium self-service laundry with LG/Samsung equipment, 08:00 - 24:00 operation, and cashless payment across Ulaanbaatar.',
+  keywords: 'laundry, self-service, Ulaanbaatar, Mongolia, wash, dry, 08:00 - 24:00',
   authors: [{ name: 'LaundryZone Mongolia' }],
   creator: 'LaundryZone Mongolia',
   publisher: 'LaundryZone Mongolia',
@@ -46,7 +46,7 @@ export const metadata: Metadata = {
   },
   openGraph: {
     title: 'LaundryZone Mongolia - Self-Service Laundry',
-    description: 'Premium self-service laundry with LG/Samsung equipment, 08:00 - 00:00 operation, and cashless payment across Ulaanbaatar.',
+    description: 'Premium self-service laundry with LG/Samsung equipment, 08:00 - 24:00 operation, and cashless payment across Ulaanbaatar.',
     url: 'https://laundryzone.mn',
     siteName: 'LaundryZone Mongolia',
     images: [
@@ -63,7 +63,7 @@ export const metadata: Metadata = {
   twitter: {
     card: 'summary_large_image',
     title: 'LaundryZone Mongolia - Self-Service Laundry',
-    description: 'Premium self-service laundry with LG/Samsung equipment, 08:00 - 00:00 operation, and cashless payment across Ulaanbaatar.',
+    description: 'Premium self-service laundry with LG/Samsung equipment, 08:00 - 24:00 operation, and cashless payment across Ulaanbaatar.',
     images: ['/images/twitter-image.jpg'],
   },
   robots: {

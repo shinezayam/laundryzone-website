@@ -7,7 +7,7 @@ import { zodResolver } from '@hookform/resolvers/zod';
 import { z } from 'zod';
 import { motion } from 'framer-motion';
 import { Send, CheckCircle, AlertCircle, Download, Users, Settings, Award, Headphones } from 'lucide-react';
-import { createFranchiseEmail, sendEmailViaMailto, EMAIL_CONFIG } from '@/lib/email';
+import { createFranchiseEmail, sendEmailViaMailto, sendFranchiseEmailViaAPI, EMAIL_CONFIG } from '@/lib/email';
 
 interface FranchiseFormProps {
   locale: string;
@@ -82,14 +82,9 @@ export function FranchiseForm({ locale }: FranchiseFormProps) {
     setSubmitStatus('idle');
 
     try {
-      // Create email content using the email template
-      const { subject, body } = createFranchiseEmail(data);
-      
-      // Send email via mailto link
-      sendEmailViaMailto(EMAIL_CONFIG.TO, subject, body);
-      
-      // Simulate processing time
-      await new Promise(resolve => setTimeout(resolve, 1000));
+      // Try to send via API endpoint first
+      await sendFranchiseEmailViaAPI(data);
+      console.log('Franchise email sent successfully via API');
       
       setSubmitStatus('success');
       reset();
@@ -100,7 +95,22 @@ export function FranchiseForm({ locale }: FranchiseFormProps) {
       }, 5000);
     } catch (error) {
       console.error('Form submission error:', error);
-      setSubmitStatus('error');
+      
+      // If API fails, try mailto fallback
+      try {
+        console.log('API failed, trying mailto fallback');
+        const { subject, body } = createFranchiseEmail(data);
+        sendEmailViaMailto(EMAIL_CONFIG.TO, subject, body);
+        setSubmitStatus('success');
+        reset();
+        
+        setTimeout(() => {
+          setSubmitStatus('idle');
+        }, 5000);
+      } catch (fallbackError) {
+        console.error('Both API and mailto failed:', fallbackError);
+        setSubmitStatus('error');
+      }
     } finally {
       setIsSubmitting(false);
     }

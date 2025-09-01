@@ -13,7 +13,7 @@ import {
 } from 'lucide-react';
 
 export function Services() {
-  const t = useTranslations('services');
+  const t = useTranslations('equipment');
 
   const services = [
     {

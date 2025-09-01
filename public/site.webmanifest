@@ -1,7 +1,7 @@
 {
   "name": "LaundryZone Mongolia",
   "short_name": "LaundryZone",
-  "description": "Premium self-service laundry with LG/Samsung equipment, 08:00 - 00:00 operation, and cashless payment across Ulaanbaatar.",
+  "description": "Premium self-service laundry with LG/Samsung equipment, 08:00 - 24:00 operation, and cashless payment across Ulaanbaatar.",
   "start_url": "/",
   "display": "standalone",
   "background_color": "#ffffff",

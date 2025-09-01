@@ -1,5 +1,6 @@
 import { SiteHeader } from '@/components/SiteHeader';
 import { SiteFooter } from '@/components/SiteFooter';
+import { Chatbot } from '@/components/Chatbot';
 import { NextIntlClientProvider } from 'next-intl';
 import { getMessages } from 'next-intl/server';
 import { notFound } from 'next/navigation';
@@ -27,6 +28,7 @@ export default async function LocaleLayout({
           {children}
         </main>
         <SiteFooter locale={locale} />
+        <Chatbot locale={locale} />
       </div>
     </NextIntlClientProvider>
   );

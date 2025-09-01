@@ -59,7 +59,7 @@ export default async function ContactPage({ params: { locale } }: ContactPagePro
                   </div>
                   <div>
                     <h3 className="font-semibold text-neutral-900">{t('contact.info.address')}</h3>
-                    <p className="text-neutral-600">Ulaanbaatar, Mongolia</p>
+                    <p className="text-neutral-600">БЗД 36-р хороо, Санни таун ү/4Б тоот</p>
                   </div>
                 </div>
 
@@ -69,22 +69,22 @@ export default async function ContactPage({ params: { locale } }: ContactPagePro
                   </div>
                   <div>
                     <h3 className="font-semibold text-neutral-900">{t('contact.info.hours')}</h3>
-                    <p className="text-neutral-600">08:00 - 00:00</p>
+                    <p className="text-neutral-600">08:00 - 24:00</p>
                   </div>
                 </div>
               </div>
             </div>
 
             {/* Contact Form */}
-            <div className="card">
+            <div className="bg-white rounded-2xl p-8 shadow-lg border border-neutral-200">
               <div className="flex items-center space-x-3 mb-6">
                 <div className="p-2 bg-gradient-to-br from-accent-500 to-accent-600 rounded-lg">
                   <MessageCircle size={20} className="text-white" />
                 </div>
-                <h3 className="text-xl font-semibold">{t('common.send_message')}</h3>
+                <h3 className="text-xl font-semibold text-neutral-900">{t('common.send_message')}</h3>
               </div>
               
-              <ContactForm locale={locale} />
+              <ContactForm locale={locale} variant="light" />
             </div>
           </div>
         </div>

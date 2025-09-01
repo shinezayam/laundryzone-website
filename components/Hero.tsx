@@ -236,9 +236,9 @@ export function Hero({ locale }: HeroProps) {
                 }}
                 className="absolute top-6 right-6 bg-gradient-to-br from-white/95 to-white/90 backdrop-blur-sm rounded-2xl p-4 shadow-lg border border-white/20"
               >
-                <div className="flex items-center space-x-3">
-                  <div className="w-3 h-3 bg-green-500 rounded-full animate-pulse"></div>
-                  <span className="text-sm font-semibold text-neutral-800">{t('hero.open_24_7')}</span>
+                <div className="flex items-center space-x-2 md:space-x-3">
+                  <div className="w-2 h-2 md:w-3 md:h-3 bg-green-500 rounded-full animate-pulse"></div>
+                  <span className="text-xs md:text-sm font-semibold text-neutral-800">{t('hero.open_24_7')}</span>
                 </div>
               </motion.div>
               
