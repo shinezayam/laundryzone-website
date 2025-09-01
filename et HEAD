@@ -1,5 +1,0 @@
-[33m25b6708[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmain[m[33m, [m[1;31morigin/main[m[33m, [m[1;31morigin/HEAD[m[33m)[m Fix TypeScript error in franchise route as well
-[33m9fa46d6[m Fix TypeScript error in contact route by properly typing error object
-[33ma6e654b[m Enhanced chatbot with prebuilt quick replies, improved formatting, and persistent UI
-[33m4f51bb9[m major fixes and upgrades mail services and more
-[33m8cbbd9b[m Add comprehensive equipment page with professional washing machines and dryers

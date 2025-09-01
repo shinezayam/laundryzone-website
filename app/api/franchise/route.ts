@@ -2,7 +2,8 @@ import { NextRequest, NextResponse } from 'next/server';
 import { Resend } from 'resend';
 import { z } from 'zod';
 
-const resend = new Resend(process.env.RESEND_API_KEY);
+// Initialize Resend only when API key is available
+const resend = process.env.RESEND_API_KEY ? new Resend(process.env.RESEND_API_KEY) : null;
 
 const franchiseSchema = z.object({
   name: z.string().min(2, 'Name must be at least 2 characters'),
@@ -20,7 +21,7 @@ export async function POST(request: NextRequest) {
     const validatedData = franchiseSchema.parse(body);
 
     // Check if Resend API key is configured
-    if (!process.env.RESEND_API_KEY) {
+    if (!process.env.RESEND_API_KEY || !resend) {
       console.error('RESEND_API_KEY is not configured');
       return NextResponse.json(
         { error: 'Email service not configured' },
