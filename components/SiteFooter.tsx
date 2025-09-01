@@ -16,7 +16,11 @@ export function SiteFooter({ locale }: SiteFooterProps) {
           {/* Company Info */}
           <div className="space-y-4">
             <div className="flex items-center space-x-2">
-              <span className="text-xl font-bold">LaundryZone</span>
+              <img 
+                src="/images/logos.png" 
+                alt="LaundryZone" 
+                className="h-8 w-auto"
+              />
             </div>
             <p className="text-neutral-300 text-sm leading-relaxed">
               {t('footer.company_description')}

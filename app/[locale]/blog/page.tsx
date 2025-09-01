@@ -1,6 +1,4 @@
-import { useTranslations } from 'next-intl';
-import { PageHeader } from '@/components/PageHeader';
-import { BlogList } from '@/components/BlogList';
+import { redirect } from 'next/navigation';
 
 interface BlogPageProps {
   params: {
@@ -9,18 +7,8 @@ interface BlogPageProps {
 }
 
 export default function BlogPage({ params }: BlogPageProps) {
-  const t = useTranslations('blog');
-
-  return (
-    <main>
-      <PageHeader
-        title={t('title')}
-        subtitle={t('description')}
-        locale={params.locale}
-      />
-      <BlogList locale={params.locale} />
-    </main>
-  );
+  // Redirect to community announcements section where blog content now lives
+  redirect(`/${params.locale}/community#announcements`);
 }
 
 export async function generateMetadata({ params }: BlogPageProps) {

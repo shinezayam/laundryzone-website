@@ -2,10 +2,35 @@
   "nav": {
     "home": "홈",
     "about": "회사 소개",
-    "equipment": "장비소개",
-    "pricing": "가격",
-    "blog": "블로그",
+    "competitive_advantage": "경쟁 우위",
+    "competitive_advantage_items": {
+      "industry_leader": "업계 선두",
+      "digital_payment": "디지털 결제 시스템",
+      "expert_team": "전문 팀",
+      "international_recognition": "국제적 인정"
+    },
     "franchise": "가맹점",
+    "franchise_items": {
+      "business_start_steps": "비즈니스 시작 단계",
+      "detailed_information": "자세한 정보 받기",
+      "faq": "자주 묻는 질문"
+    },
+    "equipment": "장비소개",
+    "equipment_items": {
+      "washing_machines": "세탁기",
+      "dryer_machines": "건조기",
+      "shoe_washing_machines": "신발 세탁기",
+      "shoe_dryer_machines": "신발 건조기",
+      "other_equipment": "기타"
+    },
+    "pricing": "가격",
+    "community_relations": "커뮤니티 관계",
+    "community_relations_items": {
+      "announcements": "공지사항",
+      "branch_locations": "지점 위치",
+      "pricing_info": "서비스 가격 정보",
+      "press_releases": "보도자료"
+    },
     "contact": "문의하기"
   },
   "hero": {

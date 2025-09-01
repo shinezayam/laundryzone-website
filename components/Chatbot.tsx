@@ -128,27 +128,27 @@ export function Chatbot({ locale }: ChatbotProps) {
 
   const quickReplies = [
     {
-      text: '🕐',
+      text: locale === 'mn' ? 'Цаг' : locale === 'kr' ? '시간' : 'Hours',
       label: locale === 'mn' ? 'Цаг' : locale === 'kr' ? '시간' : 'Hours',
       query: locale === 'mn' ? 'ажиллах цагийн хуваарь' : locale === 'kr' ? '운영시간' : 'operating hours'
     },
     {
-      text: '💰',
+      text: locale === 'mn' ? 'Үнэ' : locale === 'kr' ? '가격' : 'Price',
       label: locale === 'mn' ? 'Үнэ' : locale === 'kr' ? '가격' : 'Price',
       query: locale === 'mn' ? 'үнэ' : locale === 'kr' ? '가격' : 'price'
     },
     {
-      text: '📍',
+      text: locale === 'mn' ? 'Байршил' : locale === 'kr' ? '위치' : 'Location',
       label: locale === 'mn' ? 'Байршил' : locale === 'kr' ? '위치' : 'Location',
       query: locale === 'mn' ? 'хаяг байршил' : locale === 'kr' ? '위치' : 'location'
     },
     {
-      text: '📞',
+      text: locale === 'mn' ? 'Холбоо' : locale === 'kr' ? '연락' : 'Contact',
       label: locale === 'mn' ? 'Холбоо' : locale === 'kr' ? '연락' : 'Contact',
       query: locale === 'mn' ? 'холбоо барих' : locale === 'kr' ? '연락' : 'contact'
     },
     {
-      text: '🏪',
+      text: locale === 'mn' ? 'Эрхлэх' : locale === 'kr' ? '가맹점' : 'Franchise',
       label: locale === 'mn' ? 'Эрхлэх' : locale === 'kr' ? '가맹점' : 'Franchise',
       query: locale === 'mn' ? 'салбар эрхлэх' : locale === 'kr' ? '프랜차이즈' : 'franchise'
     }
@@ -312,13 +312,9 @@ export function Chatbot({ locale }: ChatbotProps) {
                           animate={{ opacity: 1, scale: 1 }}
                           transition={{ delay: index * 0.1 }}
                           onClick={() => handleQuickReply(reply.query, reply.label)}
-                          className="group relative w-12 h-12 bg-gradient-to-br from-orange-100 to-orange-200 hover:from-orange-200 hover:to-orange-300 text-orange-700 border border-orange-200 hover:border-orange-400 rounded-full text-lg font-medium transition-all duration-300 hover:scale-110 hover:shadow-lg flex items-center justify-center"
-                          title={reply.label}
+                          className="bg-gradient-to-br from-orange-100 to-orange-200 hover:from-orange-200 hover:to-orange-300 text-orange-700 border border-orange-200 hover:border-orange-400 rounded-lg px-3 py-2 text-xs font-medium transition-all duration-300 hover:scale-105 hover:shadow-lg active:scale-95"
                         >
                           {reply.text}
-                          <div className="absolute -bottom-6 left-1/2 transform -translate-x-1/2 bg-gray-800 text-white text-xs px-2 py-1 rounded opacity-0 group-hover:opacity-100 transition-opacity duration-200 whitespace-nowrap pointer-events-none">
-                            {reply.label}
-                          </div>
                         </motion.button>
                       ))}
                     </div>

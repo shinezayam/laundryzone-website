@@ -1,23 +1,10 @@
-import { getTranslations } from 'next-intl/server';
-import { PageHeader } from '@/components/PageHeader';
-import { PricingTable } from '@/components/PricingTable';
+import { redirect } from 'next/navigation';
 
 interface PricingPageProps {
   params: { locale: string };
 }
 
-export default async function PricingPage({ params: { locale } }: PricingPageProps) {
-  const t = await getTranslations();
-
-  return (
-    <>
-      <PageHeader 
-        title={t('pricing.title')}
-        subtitle={t('pricing.subtitle')}
-        locale={locale}
-      />
-      
-      <PricingTable locale={locale} />
-    </>
-  );
+export default function PricingPage({ params: { locale } }: PricingPageProps) {
+  // Redirect to community pricing section where pricing content now lives
+  redirect(`/${locale}/community#pricing-info`);
 }

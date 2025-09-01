@@ -2,10 +2,35 @@
   "nav": {
     "home": "Home",
     "about": "About Us",
-    "equipment": "Equipment",
-    "pricing": "Pricing",
-    "blog": "Blog",
+    "competitive_advantage": "Competitive Advantage",
+    "competitive_advantage_items": {
+      "industry_leader": "Industry Leader",
+      "digital_payment": "Digital Payment System",
+      "expert_team": "Expert Team",
+      "international_recognition": "International Recognition"
+    },
     "franchise": "Franchise",
+    "franchise_items": {
+      "business_start_steps": "Business Start Steps",
+      "detailed_information": "Get Detailed Information",
+      "faq": "FAQ"
+    },
+    "equipment": "Equipment",
+    "equipment_items": {
+      "washing_machines": "Washing Machines",
+      "dryer_machines": "Dryer Machines",
+      "shoe_washing_machines": "Shoe Washing Machines",
+      "shoe_dryer_machines": "Shoe Dryer Machines",
+      "other_equipment": "Other Equipment"
+    },
+    "pricing": "Pricing",
+    "community_relations": "Community Relations",
+    "community_relations_items": {
+      "announcements": "Announcements",
+      "branch_locations": "Branch Locations",
+      "pricing_info": "Service Pricing Information",
+      "press_releases": "Press Releases"
+    },
     "contact": "Contact"
   },
   "hero": {
@@ -357,7 +382,7 @@
     "cashless_payment": "Cashless payment",
     "need_help": "Need Help Choosing?",
     "sending": "Sending...",
-    "get_started": "Ready to Get Started?"
+    "ready_to_start": "Ready to Get Started?"
   },
   "equipment": {
     "title": "Equipment",
@@ -787,7 +812,6 @@
     "description": "Latest news, tips, and insights from LaundryZone Mongolia",
     "featured": "Featured",
     "recent_posts": "Recent Posts",
-    "posts": "Posts",
     "read": "read",
     "read_more": "Read More",
     "categories": {

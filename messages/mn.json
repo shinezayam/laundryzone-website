@@ -2,10 +2,35 @@
   "nav": {
     "home": "Нүүр",
     "about": "Бидний тухай",
+    "competitive_advantage": "Өрсөлдөх чадвар",
+    "competitive_advantage_items": {
+      "industry_leader": "Салбартаа анхдагч",
+      "digital_payment": "Төлбөрийн цахим систем",
+      "expert_team": "Мэргэшсэн баг хамт олон",
+      "international_recognition": "Олон улсад танигдсан"
+    },
+    "franchise": "Салбар эрхлэх",
+    "franchise_items": {
+      "business_start_steps": "Бизнес эхлүүлэх үе шат",
+      "detailed_information": "Дэлгэрэнгүй мэдээлэл авах",
+      "faq": "Түгээмэл асуултууд"
+    },
     "equipment": "Тоног төхөөрөмж",
+    "equipment_items": {
+      "washing_machines": "Угаалгын машин",
+      "dryer_machines": "Хатаагч машин",
+      "shoe_washing_machines": "Пүүзний угаалгын машин",
+      "shoe_dryer_machines": "Пүүзний хатаагч машин",
+      "other_equipment": "Бусад"
+    },
     "pricing": "Үнэ",
-    "blog": "Блог",
-    "franchise": "Франчайз",
+    "community_relations": "Хөршийн холбоо",
+    "community_relations_items": {
+      "announcements": "Зар мэдээ",
+      "branch_locations": "Салбаруудын хаяг байршил",
+      "pricing_info": "Үйлчилгээний үнийн мэдээлэл",
+      "press_releases": "Хэвлэлийн мэдээ"
+    },
     "contact": "Холбоо барих"
   },
   "hero": {
@@ -167,7 +192,7 @@
     "get_in_touch": "Холбоо барих",
     "get_in_touch_desc": "Манай үйлчилгээний талаар асуулт эсвэл тусламж хэрэгтэй юу? Бид 24/7 тусламж үзүүлдэг. Доорх сувгуудаар холбогдоно уу.",
     "form": {
-      "name": "Нэр",
+      "name": "Овог Нэр",
       "phone": "Утас",
       "email": "Цахим шуудан",
       "message": "Мессеж",
@@ -175,7 +200,7 @@
       "name_placeholder": "Овог нэрээ оруулна уу",
       "email_placeholder": "Цахим шуудангаа оруулна уу",
       "phone_placeholder": "Утасны дугаараа оруулна уу",
-      "message_placeholder": "Асуултаа: 100 тэмдэгтэд багаан оруулна уу",
+      "message_placeholder": "Асуултаа: 100 тэмдэгтэд багтаан оруулна уу",
       "sending": "Илгээж байна...",
       "success_message": "Баярлалаа! Таны мессеж амжилттай илгээгдлээ.",
       "error_message": "Уучлаарай, алдаа гарлаа. Дахин оролдоно уу.",
@@ -208,7 +233,7 @@
       "branding_desc": "Танигдсан брэнд ба маркетингийн материал"
     },
     "form": {
-      "name": "Нэр",
+      "name": "Овог Нэр",
       "phone": "Утас",
       "email": "Цахим шуудан",
       "city": "Хот",
@@ -611,7 +636,6 @@
     "description": "LaundryZone Mongolia-ын хамгийн сүүлийн үеийн мэдээ, зөвлөгөө, мэдлэг",
     "featured": "Онцлох",
     "recent_posts": "Сүүлийн нийтлэлүүд",
-    "posts": "нийтлэл",
     "read": "уншина",
     "read_more": "Дэлгэрэнгүй",
     "categories": {
