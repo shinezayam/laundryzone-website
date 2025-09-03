@@ -12,6 +12,7 @@
     "franchise": "Franchise",
     "franchise_items": {
       "business_start_steps": "Business Start Steps",
+      "business_start_steps_subtitle": "LaundryZone franchise business startup step-by-step process",
       "detailed_information": "Get Detailed Information",
       "faq": "FAQ"
     },
@@ -23,6 +24,8 @@
       "shoe_dryer_machines": "Shoe Dryer Machines",
       "other_equipment": "Other Equipment"
     },
+    "services": "Services",
+    "community": "Community",
     "pricing": "Pricing",
     "community_relations": "Community Relations",
     "community_relations_items": {
@@ -33,9 +36,112 @@
     },
     "contact": "Contact"
   },
+  "business_steps": {
+    "step_01": {
+      "title": "Business Introduction and Business Start Consultation",
+      "items": [
+        "Visit branches to familiarize with equipment",
+        "Review contract terms and discuss business vision",
+        "Provide preliminary basic knowledge about franchise operation",
+        "Business model description"
+      ],
+      "note": "Based on individual financial status, sales skills, and knowledge level, our central office sales team will provide tailored consultation."
+    },
+    "step_02": {
+      "title": "Location Selection and Franchise Area Analysis",
+      "items": [
+        "Location research",
+        "Customer research, location characteristics, similar and other industry condition analysis",
+        "Profit level prediction analysis",
+        "Business operation permit research"
+      ],
+      "note": "Our experienced team, who successfully introduced Mongolia's first self-service laundry service, will analyze and recommend the most suitable location conditions and high-demand areas based on our knowledge and information database."
+    },
+    "step_03": {
+      "title": "Branch Research",
+      "items": [
+        "Planned branch evaluation",
+        "Equipment and interior decoration price proposals",
+        "Interior decoration design (concept, model) presentation",
+        "Equipment installation final assessment"
+      ],
+      "note": "We will provide detailed equipment evaluation and design proposals for the branch, developing the most optimal self-service laundromat establishment plan."
+    },
+    "step_04": {
+      "title": "Store Rental Contract and Laundry Equipment Purchase Contract",
+      "items": [
+        "Contract document preparation",
+        "Review and verify branch special conditions",
+        "Branch opening work \"team\" meeting (Design / Supervision / Construction / Programming / Marketing)",
+        "Interior decoration design final approval"
+      ],
+      "note": "We will complete perfect construction work with the participation of specialized laundry construction companies. Or you can complete renovation work with your own workforce following guidance from the \"franchise\" central company."
+    },
+    "step_05": {
+      "title": "On-site Construction",
+      "items": [
+        "Equipment supply",
+        "Laundry equipment and dryer installation",
+        "Self-service laundromat various facility installation"
+      ],
+      "note": "We will maintain regular communication with the owner from the first stage of construction work and agree on progress."
+    },
+    "step_06": {
+      "title": "Construction Progress",
+      "items": [
+        "Equipment assembly and installation work",
+        "Interior decoration work",
+        "Regular equipment inspection",
+        "Conduct trial operations"
+      ],
+      "note": "We will ensure conditions to continuously conduct opening preparation work while regularly inspecting equipment during interior work."
+    },
+    "step_07": {
+      "title": "Trial Opening and Official Opening",
+      "items": [
+        "Equipment / System emergency operation training",
+        "Provide on-site basic knowledge training required for branch owners and managers to operate",
+        "Complete system marketing configuration and implementation"
+      ],
+      "note": "Training related to self-service laundromat operations will be conducted and official opening will begin."
+    },
+    "step_08": {
+      "title": "Start Operations",
+      "items": [
+        "Official opening",
+        "Opening ceremony",
+        "Sales management and marketing support",
+        "Regular monitoring and guidance for the first month"
+      ],
+      "note": "We will help ensure smooth operation by maintaining regular communication with franchise owners and reaching agreements."
+    }
+  },
+  "franchise_faq": {
+    "subtitle": "Frequently asked questions and answers about franchising",
+    "items": [
+      {
+        "question": "How much investment is required to start a franchise?",
+        "answer": "Franchise investment depends on location, branch size, and equipment count. Please contact us for detailed information."
+      },
+      {
+        "question": "How long does it take to break even?",
+        "answer": "Generally, it takes 2-3 years to break even, but this depends on location, management, and market conditions."
+      },
+      {
+        "question": "What kind of support do you provide?",
+        "answer": "We provide full support at all stages including location selection, equipment installation, training, marketing, and operations."
+      },
+      {
+        "question": "What is the contract duration?",
+        "answer": "Franchise contracts are generally 5-10 years with renewal options available."
+      }
+    ]
+  },
   "hero": {
     "headline": "Self-Service Laundry",
     "sub": "LG/Samsung commercial machines, fast cycles, and cashless payment.",
+    "subtitle_new": "Wash, Sanitize, and Dry!",
+    "description": "Self-service laundromat with LG/Samsung equipment, operating 08:00 - 24:00, offering cashless payment throughout Ulaanbaatar city.",
     "cta": {
       "pricing": "View Pricing",
       "branches": "Our Branches"
@@ -49,7 +155,7 @@
     "24_7": "08:00 - 24:00 Operation",
     "cashless": "Cashless Payment",
     "wifi": "Free Wi-Fi",
-    "detergent": "Detergent Included"
+    "detergent": "Detergent Available"
   },
   "advantages": {
     "title": "Why Choose Us",
@@ -202,11 +308,11 @@
       },
       "follow_staff": {
         "title": "Follow staff advice",
-        "content": "Our staff will give you instructions and advice on how to use cards and machines. Our staff will not be responsible for washing and drying your items, and you will operate your machines yourself according to our staff's instructions \"SELF-SERVICE\"."
+        "content": "Our staff will give you instructions and advice on how to use cards and machines. Our staff will not be responsible for washing and drying your items, and you will operate your machines yourself according to our staff's instructions SELF-SERVICE."
       },
       "customer_responsibility": {
         "title": "Customer responsibility",
-        "content": "Customers are fully responsible for the \"RESULTS\" caused by not following our staff's advice."
+        "content": "Customers are fully responsible for the RESULTS caused by not following our staff's advice."
       },
       "color_restoration": {
         "title": "Color restoration not possible",
@@ -303,12 +409,12 @@
     "benefits": {
       "training": "Complete Training",
       "support": "Marketing Support",
-      "equipment": "Equipment",
+      "equipment": "World-class Equipment",
       "branding": "Branding",
-      "training_desc": "Complete training program for you and your staff",
-      "support_desc": "Ongoing marketing and operational support",
-      "equipment_desc": "Access to premium LG/Samsung equipment",
-      "branding_desc": "Established brand recognition and marketing materials"
+      "training_desc": "We provide comprehensive training and manuals with essential foundational knowledge needed for you and your staff to operate the business.",
+      "support_desc": "We provide ready-made advertising and marketing materials focused on location promotion and customer attraction.",
+      "equipment_desc": "Equipped with world-renowned Korean brand equipment.",
+      "branding_desc": "Operating a premium brand that has not only over 400 branches in South Korea but has also successfully introduced its services to many countries worldwide will be a guarantee of your reputation."
     },
     "form": {
       "name": "Name",
@@ -335,11 +441,11 @@
       "message_min": "Message must be at least 10 characters"
     },
     "budget_ranges": {
-      "under_50m": "Under 50M ₮",
-      "50m_100m": "50M - 100M ₮",
+      "under_100m": "Under 100M ₮",
       "100m_200m": "100M - 200M ₮",
-      "200m_500m": "200M - 500M ₮",
-      "over_500m": "Over 500M ₮"
+      "200m_300m": "200M - 300M ₮",
+      "300m_400m": "300M - 400M ₮",
+      "over_400m": "Over 400M ₮"
     }
   },
   "footer": {
@@ -377,7 +483,7 @@
     "self_service_washing": "Self-service washing",
     "commercial_dryers": "Commercial dryers",
     "shoe_washing": "Shoe washing",
-    "detergent_included": "Detergent included",
+    "detergent_available": "Detergent available",
     "free_wifi": "Free Wi-Fi",
     "cashless_payment": "Cashless payment",
     "need_help": "Need Help Choosing?",
@@ -459,6 +565,24 @@
         "allergen": "Allergen removal",
         "bacteria": "Bacteria elimination",
         "safe": "Safe for all fabrics"
+      }
+    },
+    "detergent": {
+      "title": "Premium Detergent",
+      "description": "High-quality laundry detergent included with every wash cycle",
+      "features": {
+        "quality": "Premium quality detergent",
+        "included": "Free with every wash",
+        "variety": "Multiple detergent options"
+      }
+    },
+    "convenience": {
+      "title": "Convenience Services",
+      "description": "Additional services to make your laundry experience better",
+      "features": {
+        "wifi": "Free Wi-Fi available",
+        "payment": "Cashless payment options",
+        "hours": "24/7 service availability"
       }
     },
     "machines": {
@@ -660,7 +784,7 @@
     },
     "timeline": {
       "title": "Our Growth Story",
-      "subtitle": "We are working to provide fast, low-cost washing and cleaning services to everyone through \"SELF-SERVICE LAUNDRY - LAUNDRYZONE\".",
+      "subtitle": "We are working to provide fast, low-cost washing and cleaning services to everyone through SELF-SERVICE LAUNDRY - LAUNDRYZONE.",
       "branch_1": "Dunjingarav Branch",
       "branch_1_desc": "First branch opened with 17, 20, 30kg washers, 11kg and 25kg dryers, 6 pairs of shoe washers and dryers - total of 12 machines.",
       "branch_2": "3rd & 4th Districts",
@@ -783,11 +907,11 @@
       },
       "staff_assistance": {
         "title": "Follow Staff Instructions",
-        "content": "Our staff will provide guidance on using cards and machines. Our staff will not wash or dry your items, and you will operate the machines yourself according to staff instructions - \"SELF-SERVICE\"."
+        "content": "Our staff will provide guidance on using cards and machines. Our staff will not wash or dry your items, and you will operate the machines yourself according to staff instructions - SELF-SERVICE."
       },
       "responsibility": {
         "title": "Customer Responsibility",
-        "content": "Customers are fully responsible for any \"RESULTS\" arising from not following our staff's advice."
+        "content": "Customers are fully responsible for any RESULTS arising from not following our staff's advice."
       },
       "color_restoration": {
         "title": "Color Restoration Not Possible",
@@ -866,6 +990,9 @@
         "title": "How to Calculate Laundry Weight",
         "excerpt": "Learn how to properly estimate your laundry weight to choose the right machine capacity and get the best washing results.",
         "content": "Proper weight calculation is essential for optimal washing results. This guide will help you estimate your laundry weight accurately to select the appropriate machine size and achieve the best cleaning performance."
+      },
+      "default": {
+        "content": "This blog post content is not available."
       }
     }
   }

@@ -23,10 +23,10 @@ export function Chatbot({ locale }: ChatbotProps) {
     {
       id: '1',
       text: locale === 'mn' 
-        ? 'Сайн байна уу,\n\nТа "ЛОНДРИЗОН" өөртөө үйлчлэх угаалгын газрын "ДҮНЖИНГАРАВ" салбартай холбогдлоо.\n\n📅 Ажиллах цагийн хуваарь:\n   • Даваа ~ Ням: 08:00-00:00\n   • Сүүлийн үйлчлүүлэгч: 23:00\n\n🎊 Жич:\nЖил бүрийн уламжлалт "ЦАГААН САР"-н баярын өдрийг угтан битүүний өмнөх 7 хоногт 24 цагаар уртасгасан цагаар ажиллана.\n\nТаны нэмэлт асуултанд мэдээллийн ажилтан тун удахгүй хариу өгөх болно.\n\nБаярлалаа! 🙏'
+        ? 'Сайн байна уу,\n\nТа "ЛОНДРИЗОН" өөртөө үйлчлэх угаалгын газартай холбогдлоо.\n\n📅 Ажиллах цагийн хуваарь:\n   • Даваа ~ Ням: 08:00-24:00\n   • Сүүлийн үйлчүүлэгч: 23:00\n\nТаны нэмэлт асуултанд мэдээллийн ажилтан тун удахгүй хариу өгөх болно.\n\nБаярлалаа! 🙏'
         : locale === 'kr'
-        ? '안녕하세요,\n\n"론드리존" 셀프 빨래방 "Dunjingarav" 지점에 연결되었습니다.\n\n📅 운영시간:\n   • 월요일 ~ 일요일: 08:00-00:00\n   • 마지막 고객 접수: 23:00\n\n🎊 참고:\n매년 전통 "설날" 명절을 맞이하여 일주일 전부터 24시간 연장 운영합니다.\n\n추가 질문에 대해 정보 담당자가 곧 답변드릴 것입니다.\n\n감사합니다! 🙏'
-        : 'Hello,\n\nYou have connected to "LAUNDRYZONE" self-service laundromat "Dunjingarav" branch.\n\n📅 Operating Hours:\n   • Monday ~ Sunday: 08:00-00:00\n   • Last customer accepted: 23:00\n\n🎊 Note:\nEvery year for the traditional "Lunar New Year" celebration, we operate 24 hours extended schedule starting one week before.\n\nOur information staff will respond to your additional questions very soon.\n\nThank you! 🙏',
+        ? '안녕하세요,\n\n"론드리존" 셀프 빨래방 "Dunjingarav" 지점에 연결되었습니다.\n\n📅 운영시간:\n   • 월요일 ~ 일요일: 08:00-24:00\n   • 마지막 고객 접수: 23:00\n\n🎊 참고:\n매년 전통 "설날" 명절을 맞이하여 일주일 전부터 24시간 연장 운영합니다.\n\n추가 질문에 대해 정보 담당자가 곧 답변드릴 것입니다.\n\n감사합니다! 🙏'
+        : 'Hello,\n\nYou have connected to "LAUNDRYZONE" self-service laundromat "Dunjingarav" branch.\n\n📅 Operating Hours:\n   • Monday ~ Sunday: 08:00-24:00\n   • Last customer accepted: 23:00\n\n🎊 Note:\nEvery year for the traditional "Lunar New Year" celebration, we operate 24 hours extended schedule starting one week before.\n\nOur information staff will respond to your additional questions very soon.\n\nThank you! 🙏',
       isUser: false,
       timestamp: new Date()
     }
@@ -71,10 +71,10 @@ export function Chatbot({ locale }: ChatbotProps) {
       }, 5000);
       
       return locale === 'mn' 
-        ? 'Laundryzone өөртөө үйлчлэх угаалгын газар\n\n⚠️ Үнийн бодлого:\nМанайх угаах зүйлсийг ширхэгээр үнэлж угаадаггүй бөгөөд угаалгын машины хүчин чадлаар тооцож үнэ тарифаа тогтоосон байдаг.\n\n📦 Жишээ (30кг машин):\n   • 3-4 хөнжил\n   • 40-50 зуны хувцас\n   • 7-9 куртка багтдаг\n\n✅ ЗӨВЛӨМЖ:\n   • Өнгөөр ялгаж угаах\n   • Өнгө алдахаас сэргийлэх\n   • Будаг түгжигч бодис ашиглах\n\nӨнгө өнгийн зүйл хольж угаах тохиолдолд манай дээр зарагдаж буй будаг түгжигч бодисыг ашиглахыг зөвлөж байна.\n\n🔄 5 секундын дараа дэлгэрэнгүй үнийн хуудас руу шилжүүлэх болно...'
+        ? 'Laundryzone өөртөө үйлчлэх угаалгын газар\n\n⚠️ Үнийн бодлого:\nМанайх угаах зүйлсийг ширхэгээр үнэлж угаадаггүй бөгөөд угаалгын машины хүчин чадлаар тооцож үнэ тарифаа тогтоосон байдаг.\n\n📦 Жишээ (30кг машин):\n   • 3-4 хөнжил\n   • 40-50 зуны хувцас\n   • 7-9 куртка багтдаг\n\n✅ ЗӨВЛӨМЖ:\n   • Өнгөөр ялгаж угаах\n   • Өнгө алдахаас сэргийлэх\n   • Будаг түгжигч бодис ашиглах\n\n💡 Нэмэлт мэдээлэл:\nӨнгө өнгийн зүйл хольж угаах тохиолдолд манай дээр зарагдаж буй будаг түгжигч бодисыг ашиглахыг зөвлөж байна.\n\n🔄 5 секундын дараа дэлгэрэнгүй үнийн хуудас руу шилжүүлэх болно...'
         : locale === 'kr'
-        ? 'Laundryzone 셀프 빨래방\n\n⚠️ 요금 정책:\n저희는 빨래를 개별적으로 평가하지 않고 세탁기 용량에 따라 요금을 책정합니다.\n\n📦 예시 (30kg 기계):\n   • 이불 3-4개\n   • 여름옷 40-50벌\n   • 재킷 7-9벌 수용 가능\n\n✅ 조언:\n   • 색깔별로 분류하여 세탁\n   • 색상 손실 방지\n   • 색상 고정제 사용 권장\n\n색상이 섞인 빨래의 경우 매장에서 판매하는 색상 고정제 사용을 권장합니다.\n\n🔄 5초 후 상세 요금 페이지로 이동합니다...'
-        : 'Laundryzone Self-Service Laundromat\n\n⚠️ Pricing Policy:\nWe don\'t price items individually but base our tariffs on washing machine capacity.\n\n📦 Example (30kg machine):\n   • 3-4 blankets\n   • 40-50 summer clothes\n   • 7-9 jackets\n\n✅ TIP:\n   • Sort by color before washing\n   • Prevents color loss\n   • Use color-fixing agents\n\nFor mixed-color items, we recommend using the color-fixing agents sold at our store.\n\n🔄 Redirecting to detailed pricing page in 5 seconds...';
+        ? 'Laundryzone 셀프 빨래방\n\n⚠️ 요금 정책:\n저희는 빨래를 개별적으로 평가하지 않고 세탁기 용량에 따라 요금을 책정합니다.\n\n📦 예시 (30kg 기계):\n   • 이불 3-4개\n   • 여름옷 40-50벌\n   • 재킷 7-9벌 수용 가능\n\n✅ 조언:\n   • 색깔별로 분류하여 세탁\n   • 색상 손실 방지\n   • 색상 고정제 사용 권장\n\n💡 추가 정보:\n색상이 섞인 빨래의 경우 매장에서 판매하는 색상 고정제 사용을 권장합니다.\n\n🔄 5초 후 상세 요금 페이지로 이동합니다...'
+        : 'Laundryzone Self-Service Laundromat\n\n⚠️ Pricing Policy:\nWe don\'t price items individually but base our tariffs on washing machine capacity.\n\n📦 Example (30kg machine):\n   • 3-4 blankets\n   • 40-50 summer clothes\n   • 7-9 jackets\n\n✅ TIP:\n   • Sort by color before washing\n   • Prevents color loss\n   • Use color-fixing agents\n\n💡 Additional Information:\nFor mixed-color items, we recommend using the color-fixing agents sold at our store.\n\n🔄 Redirecting to detailed pricing page in 5 seconds...';
     }
     
     // Franchise - check this BEFORE location to avoid conflict
@@ -85,10 +85,10 @@ export function Chatbot({ locale }: ChatbotProps) {
       }, 10000);
       
       return locale === 'mn'
-        ? 'Laundryzone өөртөө үйлчлэх угаалгын газар\nLaundryzone өөртөө үйлчлэх угаалгын газар\n\nТа Лондризоны салбар эрхлэх бизнесийг сонирхож байвал @laundryzone.mongolia@gmail.com хаяглуу цахим шуудан илгээнэ үү.\n\nЭсвэл ☎️7272-2121, 9192-3113 дугаарт холбогдож дэлгэрэнгүй мэдээлэл аваарай.\n\nБид 21 аймагт үйлчилгээгээ тэлж ойртуулахаар зорин ажиллаж байна. Аймагтаа шинэ бизнес эхлүүлэх хүсэлтэй санхүүгийн бүрэн чадавхтай хувь хүн, албан байгууллагуудыг урьж байна. Нэг аймагт зөвхөн 1-3 зөвшөөрөл олгогдоно. Алдаж болохгүй алтан боломж‼️ Та яараарай~\n\n🔄 10 секундын дараа франчайзын хуудас руу шилжүүлэх болно...'
+        ? 'Laundryzone өөртөө үйлчлэх угаалгын газар\n\n🌟 Франчайз боломж:\nТа Лондризоны салбар эрхлэх бизнесийг сонирхож байвал @laundryzone.mongolia@gmail.com хаяглуу цахим шуудан илгээнэ үү.\n\n📞 Холбогдох:\nЭсвэл ☎️ 7272-2121, 9192-3113 дугаарт холбогдож дэлгэрэнгүй мэдээлэл аваарай.\n\n💼 Бизнес тэлгэлт:\nБид 21 аймагт үйлчилгээгээ тэлж ойртуулахаар зорин ажиллаж байна.\n\n🎯 Зорилго:\nАймагтаа шинэ бизнес эхлүүлэх хүсэлтэй санхүүгийн бүрэн чадавхтай хувь хүн, албан байгууллагуудыг урьж байна.\n\n⚠️ Чухал мэдээлэл:\nНэг аймагт зөвхөн 1-3 зөвшөөрөл олгогдоно.\n\n🥇 Алдаж болохгүй алтан боломж‼️\nТа яараарай~\n\n🔄 10 секундын дараа франчайзын хуудас руу шилжүүлэх болно...'
         : locale === 'kr'
-        ? 'Laundryzone 셀프 빨래방\n\nLaundryzone 프랜차이즈 사업에 관심이 있으시면 laundryzone.mongolia@gmail.com으로 이메일을 보내주세요.\n\n또는 ☎️ 7272-2121, 9192-3113으로 연락하여 자세한 정보를 받으세요.\n\n🌟 저희는 21개 아이막에 서비스를 확장할 예정입니다.\n\n💼 지역에서 새로운 사업을 시작하고자 하는 재정적으로 준비된 개인이나 기관을 모집합니다.\n\n⚠️ 한 아이막당 1-3개의 허가만 발급됩니다.\n\n🥇 놓치면 안 되는 골든 기회‼️\n서두르세요~\n\n🔄 10초 후 프랜차이즈 페이지로 이동합니다...'
-        : 'Laundryzone Self-Service Laundromat\n\nIf you are interested in Laundryzone franchise business, please send an email to laundryzone.mongolia@gmail.com.\n\nOr contact ☎️ 7272-2121, 9192-3113 for detailed information.\n\n🌟 We are working to expand our services to 21 aimags.\n\n💼 We invite financially capable individuals and organizations who want to start a new business in their aimag.\n\n⚠️ Only 1-3 permits will be granted per aimag.\n\n🥇 Don\'t miss this golden opportunity‼️\nHurry up~\n\n🔄 Redirecting to franchise page in 10 seconds...';
+        ? 'Laundryzone 셀프 빨래방\n\n🌟 프랜차이즈 기회:\nLaundryzone 프랜차이즈 사업에 관심이 있으시면 laundryzone.mongolia@gmail.com으로 이메일을 보내주세요.\n\n📞 연락처:\n또는 ☎️ 7272-2121, 9192-3113으로 연락하여 자세한 정보를 받으세요.\n\n💼 서비스 확장:\n저희는 21개 아이막에 서비스를 확장할 예정입니다.\n\n🎯 모집 대상:\n지역에서 새로운 사업을 시작하고자 하는 재정적으로 준비된 개인이나 기관을 모집합니다.\n\n⚠️ 중요 정보:\n한 아이막당 1-3개의 허가만 발급됩니다.\n\n🥇 놓치면 안 되는 골든 기회‼️\n서두르세요~\n\n🔄 10초 후 프랜차이즈 페이지로 이동합니다...'
+        : 'Laundryzone Self-Service Laundromat\n\n🌟 Franchise Opportunity:\nIf you are interested in Laundryzone franchise business, please send an email to laundryzone.mongolia@gmail.com.\n\n📞 Contact:\nOr contact ☎️ 7272-2121, 9192-3113 for detailed information.\n\n💼 Service Expansion:\nWe are working to expand our services to 21 aimags.\n\n🎯 Target Audience:\nWe invite financially capable individuals and organizations who want to start a new business in their aimag.\n\n⚠️ Important Information:\nOnly 1-3 permits will be granted per aimag.\n\n🥇 Don\'t miss this golden opportunity‼️\nHurry up~\n\n🔄 Redirecting to franchise page in 10 seconds...';
     }
 
     if (lowerMessage.includes('location') || lowerMessage.includes('хаяг байршил') || lowerMessage.includes('салбар') || lowerMessage.includes('위치')) {
@@ -98,7 +98,7 @@ export function Chatbot({ locale }: ChatbotProps) {
       }, 5000);
       
       return locale === 'mn'
-        ? 'Бид Улаанбаатар хотод 30 гаруй салбартай. Хамгийн ойрын салбараа олохын тулд манай вэбсайт дээрх салбаруудын жагсаалтыг үзнэ үү.\n\n🔄 5 секундын дараа салбаруудын хуудас руу шилжүүлэх болно...'
+        ? 'Сайн байна уу! Та "ЛОНДРИЗОН" өөртөө үйлчлэх угаалгын газрын "ДҮНЖИНГАРАВ" салбартай холбогдлоо.\n\n📅 Ажиллах цагийн хуваарь:\n• Даваа ~ Ням: 08:00-00:00\n• Сүүлийн үйлчлүүлэгч: 23:00\n\n🎊 Жич: Жил бүрийн уламжлалт "ЦАГААН САР"-н баярын өдрийг угтан битүүний өмнөх 7 хоногийн 24 цагаар уртасгасан цагаар ажиллана.\n\nТаны нэмэлт асуултанд мэдээллийн ажилтан тун удахгүй хариу өгөх болно.\n\nБаярлалаа! 🙏\n\n🔄 5 секундын дараа салбаруудын хуудас руу шилжүүлэх болно...'
         : locale === 'kr'
         ? '울란바토르시에 30개 이상의 지점이 있습니다. 가장 가까운 지점을 찾으려면 웹사이트의 지점 목록을 확인하세요.\n\n🔄 5초 후 지점 페이지로 이동합니다...'
         : 'We have over 30 locations in Ulaanbaatar. Check our website\'s branch list to find the nearest location.\n\n🔄 Redirecting to branches page in 5 seconds...';
@@ -111,10 +111,10 @@ export function Chatbot({ locale }: ChatbotProps) {
       }, 5000);
       
       return locale === 'mn'
-        ? 'Холбоо барих\nБидэнтэй холбогдоно уу\n\nLaundryzone өөртөө үйлчлэх угаалгын газар\n\n☎️ 7272-2121\n   #Баянзүрх дүүргийг сонгоод-(1)\n\n📞 Дүнжингарав салбартай шууд холбогдох:\n   9500-7443\n\n📧 Цахим шуудан:\n   laundryzone.mongolia@gmail.com\n\n🔄 5 секундын дараа холбоо барих хуудас руу шилжүүлэх болно...'
+        ? 'Холбоо барих\nБидэнтэй холбогдоно уу\n\nLaundryzone өөртөө үйлчлэх угаалгын газар\n\n☎️ Үндсэн утас:\n   7272-2121\n   #Баянзүрх дүүргийг сонгоод-(1)\n\n📞 Дүнжингарав салбартай шууд холбогдох:\n   9500-7443\n\n📧 Цахим шуудан:\n   laundryzone.mongolia@gmail.com\n\n🔄 5 секундын дараа холбоо барих хуудас руу шилжүүлэх болно...'
         : locale === 'kr'
-        ? '연락처\n문의해 주세요\n\nLaundryzone 셀프 빨래방\n\n☎️ 7272-2121\n   #바양주르흐 구역 선택 후-(1)\n\n📞 Dunjingarav 지점 직통:\n   9500-7443\n\n📧 이메일:\n   laundryzone.mongolia@gmail.com\n\n🔄 5초 후 연락처 페이지로 이동합니다...'
-        : 'Contact Us\nGet in touch with us\n\nLaundryzone Self-Service Laundromat\n\n☎️ 7272-2121\n   #Select Bayanzurkh district-(1)\n\n📞 Direct line to Dunjingarav branch:\n   9500-7443\n\n📧 Email:\n   laundryzone.mongolia@gmail.com\n\n🔄 Redirecting to contact page in 5 seconds...';
+        ? '연락처\n문의해 주세요\n\nLaundryzone 셀프 빨래방\n\n☎️ 메인 전화:\n   7272-2121\n   #바양주르흐 구역 선택 후-(1)\n\n📞 Dunjingarav 지점 직통:\n   9500-7443\n\n📧 이메일:\n   laundryzone.mongolia@gmail.com\n\n🔄 5초 후 연락처 페이지로 이동합니다...'
+        : 'Contact Us\nGet in touch with us\n\nLaundryzone Self-Service Laundromat\n\n☎️ Main Phone:\n   7272-2121\n   #Select Bayanzurkh district-(1)\n\n📞 Direct line to Dunjingarav branch:\n   9500-7443\n\n📧 Email:\n   laundryzone.mongolia@gmail.com\n\n🔄 Redirecting to contact page in 5 seconds...';
     }
     
 
@@ -128,28 +128,28 @@ export function Chatbot({ locale }: ChatbotProps) {
 
   const quickReplies = [
     {
-      text: locale === 'mn' ? 'Цаг' : locale === 'kr' ? '시간' : 'Hours',
-      label: locale === 'mn' ? 'Цаг' : locale === 'kr' ? '시간' : 'Hours',
+      text: locale === 'mn' ? 'Цагийн хуваарь' : locale === 'kr' ? '시간' : 'Hours',
+      label: locale === 'mn' ? 'Цагийн хуваарь' : locale === 'kr' ? '시간' : 'Hours',
       query: locale === 'mn' ? 'ажиллах цагийн хуваарь' : locale === 'kr' ? '운영시간' : 'operating hours'
     },
     {
-      text: locale === 'mn' ? 'Үнэ' : locale === 'kr' ? '가격' : 'Price',
-      label: locale === 'mn' ? 'Үнэ' : locale === 'kr' ? '가격' : 'Price',
-      query: locale === 'mn' ? 'үнэ' : locale === 'kr' ? '가격' : 'price'
+      text: locale === 'mn' ? 'Үнийн мэдээлэл' : locale === 'kr' ? '가격' : 'Price',
+      label: locale === 'mn' ? 'Үнийн мэдээлэл' : locale === 'kr' ? '가격' : 'Price',
+      query: locale === 'mn' ? 'үнийн мэдээлэл' : locale === 'kr' ? '가격' : 'price'
     },
     {
-      text: locale === 'mn' ? 'Байршил' : locale === 'kr' ? '위치' : 'Location',
-      label: locale === 'mn' ? 'Байршил' : locale === 'kr' ? '위치' : 'Location',
-      query: locale === 'mn' ? 'хаяг байршил' : locale === 'kr' ? '위치' : 'location'
+      text: locale === 'mn' ? 'Хаяг, байршил' : locale === 'kr' ? '위치' : 'Location',
+      label: locale === 'mn' ? 'Хаяг, байршил' : locale === 'kr' ? '위치' : 'Location',
+      query: locale === 'mn' ? 'хаяг, байршил' : locale === 'kr' ? '위치' : 'location'
     },
     {
-      text: locale === 'mn' ? 'Холбоо' : locale === 'kr' ? '연락' : 'Contact',
-      label: locale === 'mn' ? 'Холбоо' : locale === 'kr' ? '연락' : 'Contact',
+      text: locale === 'mn' ? 'Холбоо барих' : locale === 'kr' ? '연락' : 'Contact',
+      label: locale === 'mn' ? 'Холбоо барих' : locale === 'kr' ? '연락' : 'Contact',
       query: locale === 'mn' ? 'холбоо барих' : locale === 'kr' ? '연락' : 'contact'
     },
     {
-      text: locale === 'mn' ? 'Эрхлэх' : locale === 'kr' ? '가맹점' : 'Franchise',
-      label: locale === 'mn' ? 'Эрхлэх' : locale === 'kr' ? '가맹점' : 'Franchise',
+      text: locale === 'mn' ? 'Салбар эрхлэх' : locale === 'kr' ? '가맹점' : 'Franchise',
+      label: locale === 'mn' ? 'Салбар эрхлэх' : locale === 'kr' ? '가맹점' : 'Franchise',
       query: locale === 'mn' ? 'салбар эрхлэх' : locale === 'kr' ? '프랜차이즈' : 'franchise'
     }
   ];
@@ -286,7 +286,7 @@ export function Chatbot({ locale }: ChatbotProps) {
                           : 'bg-gray-100 text-gray-800'
                       }`}
                     >
-                      <p className="text-sm">{message.text}</p>
+                      <p className="text-sm whitespace-pre-line">{message.text}</p>
                       <p className="text-xs opacity-70 mt-1">
                         {message.timestamp.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })}
                       </p>
@@ -312,7 +312,7 @@ export function Chatbot({ locale }: ChatbotProps) {
                           animate={{ opacity: 1, scale: 1 }}
                           transition={{ delay: index * 0.1 }}
                           onClick={() => handleQuickReply(reply.query, reply.label)}
-                          className="bg-gradient-to-br from-orange-100 to-orange-200 hover:from-orange-200 hover:to-orange-300 text-orange-700 border border-orange-200 hover:border-orange-400 rounded-lg px-3 py-2 text-xs font-medium transition-all duration-300 hover:scale-105 hover:shadow-lg active:scale-95"
+                                                     className="bg-gradient-to-br from-orange-100 to-orange-200 hover:from-orange-200 hover:to-orange-300 text-orange-700 border border-orange-200 hover:border-orange-400 rounded-lg px-3 py-2 text-sm font-medium transition-all duration-300 hover:scale-105 hover:shadow-lg active:scale-95"
                         >
                           {reply.text}
                         </motion.button>

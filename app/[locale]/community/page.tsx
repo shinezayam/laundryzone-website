@@ -98,21 +98,6 @@ export default function CommunityPage({ params: { locale } }: CommunityPageProps
 
       {/* Branch Locations Section */}
       <section id="branch-locations" className="section-padding bg-neutral-50 scroll-mt-24">
-        <div className="container-custom">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            className="text-center mb-12"
-          >
-            <h2 className="text-3xl md:text-4xl font-bold text-neutral-900 mb-4">
-              {t('nav.community_relations_items.branch_locations')}
-            </h2>
-            <p className="text-lg text-neutral-600 max-w-2xl mx-auto">
-              Улаанбаатар хот даяарх манай салбаруудын байршил, хаяг, холбогдох мэдээлэл
-            </p>
-          </motion.div>
-        </div>
         <Branches locale={locale} />
       </section>
 
@@ -141,8 +126,8 @@ export default function CommunityPage({ params: { locale } }: CommunityPageProps
               className="bg-white rounded-xl shadow-lg overflow-hidden border border-neutral-200"
             >
               <Image
-                src="/images/123.png"
-                alt="Үйлчилгээний үнийн мэдээлэл 1"
+                src="/images/price_ub.png"
+                alt="Улаанбаатар хотын үнийн мэдээлэл"
                 width={600}
                 height={800}
                 className="w-full h-auto object-contain"
@@ -156,8 +141,8 @@ export default function CommunityPage({ params: { locale } }: CommunityPageProps
               className="bg-white rounded-xl shadow-lg overflow-hidden border border-neutral-200"
             >
               <Image
-                src="/images/1234.png"
-                alt="Үйлчилгээний үнийн мэдээлэл 2"
+                src="/images/price_provinces.png"
+                alt="Аймгийн үнийн мэдээлэл"
                 width={600}
                 height={800}
                 className="w-full h-auto object-contain"

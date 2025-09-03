@@ -159,7 +159,7 @@ export function Hero({ locale }: HeroProps) {
               transition={{ duration: 0.8, delay: 0.4 }}
               className="text-lg md:text-xl text-neutral-600 mb-8 leading-relaxed"
             >
-              {t('hero.sub')}
+              {t('hero.subtitle_new')}
             </motion.p>
 
             {/* Interactive CTA Buttons */}

@@ -59,8 +59,22 @@ export function Services() {
       borderColor: 'border-purple-200'
     },
     {
-      id: 'sterilization',
+      id: 'detergent',
       icon: Sparkles,
+      title: t('detergent.title'),
+      description: t('detergent.description'),
+      features: [
+        t('detergent.features.quality'),
+        t('detergent.features.included'),
+        t('detergent.features.variety')
+      ],
+      color: 'text-pink-600',
+      bgColor: 'bg-pink-50',
+      borderColor: 'border-pink-200'
+    },
+    {
+      id: 'sterilization',
+      icon: Shield,
       title: t('sterilization.title'),
       description: t('sterilization.description'),
       features: [
@@ -71,6 +85,20 @@ export function Services() {
       color: 'text-orange-600',
       bgColor: 'bg-orange-50',
       borderColor: 'border-orange-200'
+    },
+    {
+      id: 'convenience',
+      icon: Clock,
+      title: t('convenience.title'),
+      description: t('convenience.description'),
+      features: [
+        t('convenience.features.wifi'),
+        t('convenience.features.payment'),
+        t('convenience.features.hours')
+      ],
+      color: 'text-indigo-600',
+      bgColor: 'bg-indigo-50',
+      borderColor: 'border-indigo-200'
     }
   ];
 
@@ -91,7 +119,7 @@ export function Services() {
           </p>
         </motion.div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           {services.map((service, index) => (
             <motion.div
               key={service.id}

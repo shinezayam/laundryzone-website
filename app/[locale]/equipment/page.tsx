@@ -35,11 +35,11 @@ export default function EquipmentPage({ params: { locale } }: EquipmentPageProps
               {t('nav.equipment_items.washing_machines')}
             </h2>
             <p className="text-lg text-neutral-600 max-w-2xl mx-auto">
-              LG/Samsung брэндийн коммерцийн угаалгын машинууд дэвшилтэт цэвэрлэгээний технологитой
+            Үйлчилгээний тусгай зориулалтын угаалгын машин, дэвшилтэт цэвэрлэгээний технологитой
             </p>
           </motion.div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-4  gap-8 mb-16">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16 mx-auto ">
             {[
               { name: "LR-18ss TP2", capacity: "18кг", image: "/images/washers/세탁기 LR-18 TP2.png", specs: ["Загвар: LG LR-18 TP2", "Даац: 18кг", "Эрчим хүч: 220V", "Угаах хугацаа: 30-45мин"] },
               { name: "LR-25 TP2", capacity: "25кг", image: "/images/washers/세탁기 LR-25 TP2.png", specs: ["Загвар: LG LR-25 TP2", "Даац: 25кг", "Эрчим хүч: 220V", "Угаах хугацаа: 35-50мин"] },
@@ -51,7 +51,7 @@ export default function EquipmentPage({ params: { locale } }: EquipmentPageProps
                 initial={{ opacity: 0, y: 30 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: index * 0.1 }}
-                className="group relative rounded-xl shadow-lg border border-neutral-200 overflow-hidden cursor-pointer"
+                className={`group relative rounded-xl shadow-lg border border-neutral-200 overflow-hidden cursor-pointer ${index === 3 ? 'lg:col-start-2' : ''}`}
                 style={{ backgroundColor: '#E5E5E5' }}
               >
                 <div className="relative h-64 p-6">

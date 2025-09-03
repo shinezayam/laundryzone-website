@@ -1,6 +1,6 @@
 import { Hero } from '@/components/Hero';
 import { Advantages } from '@/components/Advantages';
-import { PricingTeaser } from '@/components/PricingTeaser';
+import { PricingImages } from '@/components/PricingImages';
 import { FAQ } from '@/components/FAQ';
 import { Branches } from '@/components/Branches';
 import { CustomerGuidelines } from '@/components/CustomerGuidelines';
@@ -15,7 +15,7 @@ export default function HomePage({ params: { locale } }: HomePageProps) {
     <>
       <Hero locale={locale} />
       <Advantages locale={locale} />
-      <PricingTeaser locale={locale} />
+      <PricingImages locale={locale} />
       <FAQ locale={locale} />
       <CustomerGuidelines locale={locale} />
       <Branches locale={locale} />

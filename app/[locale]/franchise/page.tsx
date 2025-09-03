@@ -4,6 +4,7 @@ import { useTranslations } from 'next-intl';
 import { motion } from 'framer-motion';
 import { PageHeader } from '@/components/PageHeader';
 import { FranchiseForm } from '@/components/FranchiseForm';
+import { BusinessStepsPDF } from '@/components/BusinessStepsPDF';
 
 interface FranchisePageProps {
   params: { locale: string };
@@ -15,89 +16,89 @@ export default function FranchisePage({ params: { locale } }: FranchisePageProps
   const businessSteps = [
     {
       number: "01",
-      title: "Бизнесийн танилцуулга ба Бизнес эхлүүлэх зөвлөгөө",
+      title: t('business_steps.step_01.title'),
       items: [
-        "Салбаруудаар зочлож тоног төхөөрөмжтэй танилцах",
-        "Гэрээний нөхцөлүүдтэй танилцах ба бизнесийн алсын харааг ярилцах",
-        "Салбар эрхлэхтэй холбоотой урьдчилсан суурь мэдлэг олгох зөвлөгөө",
-        "Бизнесийн загварын тайлбар"
+        t('business_steps.step_01.items.0'),
+        t('business_steps.step_01.items.1'),
+        t('business_steps.step_01.items.2'),
+        t('business_steps.step_01.items.3')
       ],
-      note: "Хувь хүний хөрөнгийн байдал, худалдааны ур чадвар болон мэдлэгийн түвшнээс хамааран төв оффисын хариуцсан борлуулалтын баг таньд тохируулсан зөвлөгөөг өгнө."
+      note: t('business_steps.step_01.note')
     },
     {
       number: "02",
-      title: "Байршил сонголт ба салбар эрхлэх бүсийн шинжилгээ",
+      title: t('business_steps.step_02.title'),
       items: [
-        "Байршлын судалгаа",
-        "Хэрэглэгчийн судалгаа, байршлын онцлог, ижил төрлийн болон бусад салбарын нөхцөл байдлын судалгаа",
-        "Ашгийн түвшин таамаглах шинжилгээ",
-        "Үйл ажиллагаа эрхлэхтэй холбоотой зөвшөөрлийн судалгаа"
+        t('business_steps.step_02.items.0'),
+        t('business_steps.step_02.items.1'),
+        t('business_steps.step_02.items.2'),
+        t('business_steps.step_02.items.3')
       ],
-      note: "Монгол Улсад хамгийн анхны өөртөө үйлчлэх угаалгын үйлчилгээг амжилттай нэвтрүүлж чадсан арвин туршлагатай баг хамт олон өөрсдийн мэдлэг, мэдээллийн бааздаа тулгуурлан эзэмшигч танд хамгийн тохиромжтой байршлын нөхцөл ба эрэлтэт бүсийг шинжилж санал болгоно."
+      note: t('business_steps.step_02.note')
     },
     {
       number: "03",
-      title: "Салбарын судалгаа",
+      title: t('business_steps.step_03.title'),
       items: [
-        "Төлөвлөсөн салбарын үнэлгээ",
-        "Тоног төхөөрөмж болон дотоод засал чимэглэлийн үнийн санал",
-        "Дотоод засал чимэглэлийн зураг төсөл (санаа, загвар) танилцуулах",
-        "Тоног төхөөрөмж суурилуулалтын эцсийн дүгнэлт гаргах"
+        t('business_steps.step_03.items.0'),
+        t('business_steps.step_03.items.1'),
+        t('business_steps.step_03.items.2'),
+        t('business_steps.step_03.items.3')
       ],
-      note: "Салбарт суурилагдах тоног төхөөрөмжийн нарийвчилсан үнэлгээ болон зураг төслийн саналыг гаргаж, хамгийн оновчтой өөртөө үйлчлэх угаалгын газар байгуулах төлөвлөгөөг боловсруулна."
+      note: t('business_steps.step_03.note')
     },
     {
       number: "04",
-      title: "Дэлгүүр түрээсийн гэрээ ба угаалгын тоног төхөөрөмж худалдан авах гэрээ",
+      title: t('business_steps.step_04.title'),
       items: [
-        "Гэрээ бичиг боловсруулах",
-        "Салбарын онцлог нөхцөлүүдийг зөвшилцөх, шалгах",
-        "Салбар нээх ажлын \"баг\"ийн уулзалт (Дизайн / Хяналт / Барилга угсралт / Програмчлал / Маркетинг)",
-        "Дотоод засал чимэглэлийн зураг төслийн эцсийн баталгаажуулалт"
+        t('business_steps.step_04.items.0'),
+        t('business_steps.step_04.items.1'),
+        t('business_steps.step_04.items.2'),
+        t('business_steps.step_04.items.3')
       ],
-      note: "Угаалгын газрын мэргэшсэн барилга угсралтын компанийн оролцоотойгоор төгс барилгын ажлыг гүйцэтгэж өгнө. Эсвэл \"салбар эрхлэгч\" төв компаниас өгсөн чиглүүлгийн дагуу өөрийн хүн хүчээрээ заслын ажлаа гүйцэтгэж болно."
+      note: t('business_steps.step_04.note')
     },
     {
       number: "05",
-      title: "Талбай дээрх барилга угсралт",
+      title: t('business_steps.step_05.title'),
       items: [
-        "Тоног төхөөрөмжийн нийлүүлэлт",
-        "Угаалгын тоног төхөөрөмж болон хатаах төхөөрөмжийн суурилуулалт",
-        "Өөртөө үйлчлэх угаалгын газрын төрөл бүрийн байгууламжийн угсралт"
+        t('business_steps.step_05.items.0'),
+        t('business_steps.step_05.items.1'),
+        t('business_steps.step_05.items.2')
       ],
-      note: "Барилгын ажлын эхний шатанд эзэмшигчтэй тогтмол харилцаж, гүйцэтгэлийн явцыг зөвшилцөнө."
+      note: t('business_steps.step_05.note')
     },
     {
       number: "06",
-      title: "Барилгын ажлын явц",
+      title: t('business_steps.step_06.title'),
       items: [
-        "Тоног төхөөрөмжийн угсралт, суурилуулалтын ажил",
-        "Дотоод засал чимэглэлийн ажил",
-        "Тоног төхөөрөмжийг тогтмол шалгах",
-        "Туршилтын ажиллагаа явуулах"
+        t('business_steps.step_06.items.0'),
+        t('business_steps.step_06.items.1'),
+        t('business_steps.step_06.items.2'),
+        t('business_steps.step_06.items.3')
       ],
-      note: "Дотор заслыг хийж байх явцад тоног төхөөрөмжийг тогтмол шалгаж, нээлтийн бэлтгэл ажлыг саадгүй үргэлжлүүлэн хийх нөхцөлөөр хангана."
+      note: t('business_steps.step_06.note')
     },
     {
       number: "07",
-      title: "Туршилтын нээлт ба Албан ёсны нээлт",
+      title: t('business_steps.step_07.title'),
       items: [
-        "Тоног төхөөрөмж / Системийн яаралтай ажиллагааны сургалт",
-        "Салбар эзэмшигч, менежерүүдэд үйл ажиллагаа эрхлэхэд шаардагатай суурь мэдлэгийн сургалтыг газар дээр нь олгоно",
-        "Системийн Маркетингийн тохиргоог бүрэн хийж гүйцэтгэнэ"
+        t('business_steps.step_07.items.0'),
+        t('business_steps.step_07.items.1'),
+        t('business_steps.step_07.items.2')
       ],
-      note: "Өөртөө үйлчлэх угаалгын газрын үйл ажиллагаатай холбоотой сургалт явагдаж, албан ёсны нээлт эхэлнэ."
+      note: t('business_steps.step_07.note')
     },
     {
       number: "08",
-      title: "Үйл ажиллагаа эхлүүлэх",
+      title: t('business_steps.step_08.title'),
       items: [
-        "Албан ёсны нээлт",
-        "Нээлтийн арга хэмжээ",
-        "Борлуулалт удирдах ба маркетингийн дэмжлэг",
-        "Эхний нэг сарын хугацаанд тогтмол хяналт тавьж удирдлага чиглүүлэг өгнө"
+        t('business_steps.step_08.items.0'),
+        t('business_steps.step_08.items.1'),
+        t('business_steps.step_08.items.2'),
+        t('business_steps.step_08.items.3')
       ],
-      note: "Салбар эзэмшигчтэй тогтмол харилцаатай байж, зөвшилцлөөр үйл ажиллагааг саадгүй гүйцэтгэхэд тусална."
+      note: t('business_steps.step_08.note')
     }
   ];
 
@@ -119,11 +120,21 @@ export default function FranchisePage({ params: { locale } }: FranchisePageProps
             className="text-center mb-16"
           >
             <h2 className="text-3xl md:text-4xl font-bold text-neutral-900 mb-4">
-              Лондризоны франчайз эрх авах - Бизнес эхлүүлэх үе шат
+              {t('nav.franchise_items.business_start_steps')}
             </h2>
             <p className="text-lg text-neutral-600 max-w-3xl mx-auto">
-              LaundryZone франчайзын бизнес эхлүүлэх алхам алхмын процесс
+              {t('nav.franchise_items.business_start_steps_subtitle')}
             </p>
+            
+            {/* PDF Download Button */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.3 }}
+              className="mt-8"
+            >
+              <BusinessStepsPDF locale={locale} />
+            </motion.div>
           </motion.div>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -252,29 +263,12 @@ export default function FranchisePage({ params: { locale } }: FranchisePageProps
               {t('nav.franchise_items.faq')}
             </h2>
             <p className="text-lg text-neutral-600 max-w-2xl mx-auto">
-              Франчайзтай холбоотой түгээмэл асуултууд болон хариулт
+              {t('franchise_faq.subtitle')}
             </p>
           </motion.div>
 
           <div className="grid md:grid-cols-2 gap-8">
-            {[
-              {
-                question: "Франчайз эхлүүлэхэд хэр их хөрөнгө шаардагдах вэ?",
-                answer: "Франчайзын хөрөнгө оруулалт нь байршил, салбарын хэмжээ болон тоног төхөөрөмжийн тооноос хамаарна. Дэлгэрэнгүй мэдээллийг бидэнтэй холбогдож авна уу."
-              },
-              {
-                question: "Хэр хугацаанд эргэн төлөгдөх вэ?",
-                answer: "Ерөнхийдөө 2-3 жилийн хугацаанд эргэн төлөгддөг боловч энэ нь байршил, удирдлага болон зах зээлийн нөхцөл байдлаас хамаарна."
-              },
-              {
-                question: "Ямар дэмжлэг үзүүлдэг вэ?",
-                answer: "Бид танд байршил сонголт, тоног төхөөрөмж суурилуулалт, сургалт, маркетинг болон үйл ажиллагааны бүхий л шатанд бүрэн дэмжлэг үзүүлнэ."
-              },
-              {
-                question: "Гэрээний хугацаа хэд вэ?",
-                answer: "Франчайзын гэрээ ерөнхийдөө 5-10 жилийн хугацаатай байдаг бөгөөд сунгах боломжтой."
-              }
-            ].map((faq, index) => (
+            {t.raw('franchise_faq.items').map((faq: any, index: number) => (
               <motion.div
                 key={index}
                 initial={{ opacity: 0, y: 30 }}

@@ -32,7 +32,7 @@ export function ContactCTA({ locale }: ContactCTAProps) {
     {
       icon: MapPin,
       title: t('contact.info.address'),
-      value: 'БЗД 36-р хороо, Санни таун ү/4Б тоот',
+      value: 'БЗД, 36-р хороо, Санни таун ү/4Б тоот, Улаанбаатар хот, Монгол улс',
       href: '#',
       color: 'text-purple-600',
       bgColor: 'bg-purple-100',

@@ -70,11 +70,11 @@ export function FranchiseForm({ locale }: FranchiseFormProps) {
   ];
 
   const budgetRanges = [
-    { key: 'under_50m', value: t('franchise.budget_ranges.under_50m') },
-    { key: '50m_100m', value: t('franchise.budget_ranges.50m_100m') },
+    { key: 'under_100m', value: t('franchise.budget_ranges.under_100m') },
     { key: '100m_200m', value: t('franchise.budget_ranges.100m_200m') },
-    { key: '200m_500m', value: t('franchise.budget_ranges.200m_500m') },
-    { key: 'over_500m', value: t('franchise.budget_ranges.over_500m') },
+    { key: '200m_300m', value: t('franchise.budget_ranges.200m_300m') },
+    { key: '300m_400m', value: t('franchise.budget_ranges.300m_400m') },
+    { key: 'over_400m', value: t('franchise.budget_ranges.over_400m') },
   ];
 
   const onSubmit = async (data: FranchiseFormData) => {

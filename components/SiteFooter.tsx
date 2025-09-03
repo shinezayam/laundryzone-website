@@ -23,7 +23,7 @@ export function SiteFooter({ locale }: SiteFooterProps) {
               />
             </div>
             <p className="text-neutral-300 text-sm leading-relaxed">
-              {t('footer.company_description')}
+              {/* {t('footer.company_description')} */}
             </p>
             <div className="flex space-x-4">
               <a
@@ -69,6 +69,22 @@ export function SiteFooter({ locale }: SiteFooterProps) {
                   className="text-neutral-300 hover:text-white transition-colors text-sm"
                 >
                   {t('nav.equipment')}
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href={`/${locale}/services`}
+                  className="text-neutral-300 hover:text-white transition-colors text-sm"
+                >
+                  {t('nav.services')}
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href={`/${locale}/community`}
+                  className="text-neutral-300 hover:text-white transition-colors text-sm"
+                >
+                  {t('nav.community')}
                 </Link>
               </li>
               <li>
@@ -120,7 +136,7 @@ export function SiteFooter({ locale }: SiteFooterProps) {
               <li className="text-neutral-300 text-sm">{t('common.self_service_washing')}</li>
               <li className="text-neutral-300 text-sm">{t('common.commercial_dryers')}</li>
               <li className="text-neutral-300 text-sm">{t('common.shoe_washing')}</li>
-              <li className="text-neutral-300 text-sm">{t('common.detergent_included')}</li>
+              <li className="text-neutral-300 text-sm">{t('common.detergent_available')}</li>
               <li className="text-neutral-300 text-sm">{t('common.free_wifi')}</li>
               <li className="text-neutral-300 text-sm">{t('common.cashless_payment')}</li>
             </ul>

@@ -121,7 +121,7 @@ export function SiteHeader({ locale }: SiteHeaderProps) {
           </Link>
 
           {/* Desktop Navigation */}
-          <nav className="hidden lg:flex items-center space-x-8">
+          <nav className="hidden lg:flex items-center space-x-4">
             {navItems.map((item) => {
               if (item.dropdown) {
                 return (
@@ -140,7 +140,7 @@ export function SiteHeader({ locale }: SiteHeaderProps) {
                     >
                       {item.label}
                       <ChevronDown 
-                        size={16} 
+                        size={18} 
                         className={`ml-1 transition-transform duration-200 ${
                           activeDropdown === item.key ? 'rotate-180' : ''
                         }`}
@@ -168,7 +168,7 @@ export function SiteHeader({ locale }: SiteHeaderProps) {
                             <Link
                               key={dropdownItem.href}
                               href={dropdownItem.href}
-                              className={`block px-4 py-3 text-xs transition-colors duration-200 ${
+                              className={`block px-4 py-3 text-sm transition-colors duration-200 ${
                                 isActive(dropdownItem.href)
                                   ? 'text-accent-500 bg-accent-50'
                                   : 'text-neutral-700 hover:text-accent-500 hover:bg-neutral-50'
@@ -187,7 +187,7 @@ export function SiteHeader({ locale }: SiteHeaderProps) {
                   <Link
                     key={item.href}
                     href={item.href!}
-                    className={`relative px-3 py-2 text-xs font-medium transition-colors duration-200 ${
+                    className={`relative px-3 py-2 text-base font-medium transition-colors duration-200 ${
                       isActive(item.href)
                         ? 'text-accent-500'
                         : 'text-neutral-700 hover:text-accent-500'
@@ -275,7 +275,7 @@ export function SiteHeader({ locale }: SiteHeaderProps) {
                                   key={dropdownItem.href}
                                   href={dropdownItem.href}
                                   onClick={() => setIsMobileMenuOpen(false)}
-                                  className={`block px-4 py-2 text-xs transition-colors duration-200 rounded-lg ${
+                                  className={`block px-4 py-2 text-sm transition-colors duration-200 rounded-lg ${
                                     isActive(dropdownItem.href)
                                       ? 'text-accent-500 bg-accent-50'
                                       : 'text-neutral-600 hover:text-accent-500 hover:bg-neutral-50'
