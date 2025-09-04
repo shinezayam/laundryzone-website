@@ -25,8 +25,8 @@ export function Chatbot({ locale }: ChatbotProps) {
       text: locale === 'mn' 
         ? 'Сайн байна уу,\n\nТа "ЛОНДРИЗОН" өөртөө үйлчлэх угаалгын газартай холбогдлоо.\n\n📅 Ажиллах цагийн хуваарь:\n   • Даваа ~ Ням: 08:00-24:00\n   • Сүүлийн үйлчүүлэгч: 23:00\n\nТаны нэмэлт асуултанд мэдээллийн ажилтан тун удахгүй хариу өгөх болно.\n\nБаярлалаа! 🙏'
         : locale === 'kr'
-        ? '안녕하세요,\n\n"론드리존" 셀프 빨래방 "Dunjingarav" 지점에 연결되었습니다.\n\n📅 운영시간:\n   • 월요일 ~ 일요일: 08:00-24:00\n   • 마지막 고객 접수: 23:00\n\n🎊 참고:\n매년 전통 "설날" 명절을 맞이하여 일주일 전부터 24시간 연장 운영합니다.\n\n추가 질문에 대해 정보 담당자가 곧 답변드릴 것입니다.\n\n감사합니다! 🙏'
-        : 'Hello,\n\nYou have connected to "LAUNDRYZONE" self-service laundromat "Dunjingarav" branch.\n\n📅 Operating Hours:\n   • Monday ~ Sunday: 08:00-24:00\n   • Last customer accepted: 23:00\n\n🎊 Note:\nEvery year for the traditional "Lunar New Year" celebration, we operate 24 hours extended schedule starting one week before.\n\nOur information staff will respond to your additional questions very soon.\n\nThank you! 🙏',
+        ? '안녕하세요,\n\n"론드리존" 셀프 빨래방 "Dunjingarav" 지점에 연결되었습니다.\n\n📅 운영시간:\n   • 월요일 ~ 일요일: 08:00-24:00\n   • 마지막 고객 접수: 23:00\n\n추가 질문에 대해 정보 담당자가 곧 답변드릴 것입니다.\n\n감사합니다! 🙏'
+        : 'Hello,\n\nYou have connected to "LAUNDRYZONE" self-service laundromat "Dunjingarav" branch.\n\n📅 Operating Hours:\n   • Monday ~ Sunday: 08:00-24:00\n   • Last customer accepted: 23:00\n\nOur information staff will respond to your additional questions very soon.\n\nThank you! 🙏',
       isUser: false,
       timestamp: new Date()
     }
@@ -58,10 +58,10 @@ export function Chatbot({ locale }: ChatbotProps) {
     // Working hours / цагийн хуваарь
     if (lowerMessage.includes('ажиллах цагийн хуваарь') || lowerMessage.includes('цагийн хуваарь') || lowerMessage.includes('time') || lowerMessage.includes('цаг') || lowerMessage.includes('운영시간') || lowerMessage.includes('시간')) {
       return locale === 'mn'
-        ? 'Laundryzone өөртөө үйлчлэх угаалгын газар\n\n⏰ Энгийн цагийн хуваарь:\n   • Даваа ~ Ням: 08:00-00:00\n   • Сүүлийн үйлчлүүлэгч: 23:00\n\n🎊 Онцгой цагийн хуваарь:\n   • ЦАГААН САР-н өмнөх 7 хоногт\n   • 24 цагаар тасралтгүй ажиллана\n\nЖил бүрийн уламжлалт "ЦАГААН САР"-н баярын өдрийг угтан битүүний өмнөх 7 хоногт 24 цагаар тасралтгүй сунаж ажиллана.'
+        ? 'Laundryzone өөртөө үйлчлэх угаалгын газар\n\n⏰ Ажиллах цагийн хуваарь:\n   • Даваа ~ Ням: 08:00-00:00\n   • Сүүлийн үйлчлүүлэгч: 23:00'
         : locale === 'kr'
-        ? 'Laundryzone 셀프 빨래방\n\n⏰ 일반 운영시간:\n   • 월요일 ~ 일요일: 08:00-00:00\n   • 마지막 고객 접수: 23:00\n\n🎊 특별 운영시간:\n   • 설날 전 일주일간\n   • 24시간 연장 운영\n\n매년 전통 "설날" 명절을 맞이하여 일주일 전부터 24시간 연장 운영합니다.'
-        : 'Laundryzone Self-Service Laundromat\n\n⏰ Regular Operating Hours:\n   • Monday ~ Sunday: 08:00-00:00\n   • Last customer accepted: 23:00\n\n🎊 Special Operating Hours:\n   • One week before Lunar New Year\n   • 24-hour extended operation\n\nEvery year for traditional "Lunar New Year" celebration, we operate 24 hours extended schedule starting one week before.';
+        ? 'Laundryzone 셀프 빨래방\n\n⏰ 운영시간:\n   • 월요일 ~ 일요일: 08:00-00:00\n   • 마지막 고객 접수: 23:00'
+        : 'Laundryzone Self-Service Laundromat\n\n⏰ Operating Hours:\n   • Monday ~ Sunday: 08:00-00:00\n   • Last customer accepted: 23:00';
     }
     
     if (lowerMessage.includes('price') || lowerMessage.includes('үнэ') || lowerMessage.includes('үнийн мэдээлэл') || lowerMessage.includes('가격')) {
@@ -98,7 +98,7 @@ export function Chatbot({ locale }: ChatbotProps) {
       }, 5000);
       
       return locale === 'mn'
-        ? 'Сайн байна уу! Та "ЛОНДРИЗОН" өөртөө үйлчлэх угаалгын газрын "ДҮНЖИНГАРАВ" салбартай холбогдлоо.\n\n📅 Ажиллах цагийн хуваарь:\n• Даваа ~ Ням: 08:00-00:00\n• Сүүлийн үйлчлүүлэгч: 23:00\n\n🎊 Жич: Жил бүрийн уламжлалт "ЦАГААН САР"-н баярын өдрийг угтан битүүний өмнөх 7 хоногийн 24 цагаар уртасгасан цагаар ажиллана.\n\nТаны нэмэлт асуултанд мэдээллийн ажилтан тун удахгүй хариу өгөх болно.\n\nБаярлалаа! 🙏\n\n🔄 5 секундын дараа салбаруудын хуудас руу шилжүүлэх болно...'
+        ? 'Сайн байна уу! Та "ЛОНДРИЗОН" өөртөө үйлчлэх угаалгын газрын "ДҮНЖИНГАРАВ" салбартай холбогдлоо.\n\n📅 Ажиллах цагийн хуваарь:\n• Даваа ~ Ням: 08:00-00:00\n• Сүүлийн үйлчлүүлэгч: 23:00\n\nТаны нэмэлт асуултанд мэдээллийн ажилтан тун удахгүй хариу өгөх болно.\n\nБаярлалаа! 🙏\n\n🔄 5 секундын дараа салбаруудын хуудас руу шилжүүлэх болно...'
         : locale === 'kr'
         ? '울란바토르시에 30개 이상의 지점이 있습니다. 가장 가까운 지점을 찾으려면 웹사이트의 지점 목록을 확인하세요.\n\n🔄 5초 후 지점 페이지로 이동합니다...'
         : 'We have over 30 locations in Ulaanbaatar. Check our website\'s branch list to find the nearest location.\n\n🔄 Redirecting to branches page in 5 seconds...';

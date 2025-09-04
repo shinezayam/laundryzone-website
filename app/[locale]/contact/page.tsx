@@ -59,7 +59,7 @@ export default async function ContactPage({ params: { locale } }: ContactPagePro
                   </div>
                   <div>
                     <h3 className="font-semibold text-neutral-900">{t('contact.info.address')}</h3>
-                    <p className="text-neutral-600">БЗД 36-р хороо, Санни таун ү/4Б тоот</p>
+                    <p className="text-neutral-600">БЗД, 36-р хороо, Санни таун ү/4Б тоот</p>
                   </div>
                 </div>
 

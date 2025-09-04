@@ -62,98 +62,12 @@ export default function CommunityPage({ params: { locale } }: CommunityPageProps
     <>
       <PageHeader 
         title={t('nav.community_relations')}
-        subtitle="LaundryZone Mongolia хөршүүдтэйгээ харилцах, холбогдох мэдээлэл"
+        subtitle={t('community_relations.subtitle')}
         locale={locale}
       />
 
-      {/* Announcements Section */}
-      <section id="announcements" className="section-padding bg-white scroll-mt-24">
-        <div className="container-custom">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            className="text-center mb-12"
-          >
-            <h2 className="text-3xl md:text-4xl font-bold text-neutral-900 mb-4">
-              {t('nav.community_relations_items.announcements')}
-            </h2>
-            <p className="text-lg text-neutral-600 max-w-2xl mx-auto">
-              LaundryZone Mongolia-ын хамгийн сүүлийн мэдээ, зарууд болон чухал мэдэгдлүүд
-            </p>
-          </motion.div>
-
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {blogPosts.map((post, index) => (
-              <BlogCard
-                key={post.id}
-                post={post}
-                delay={index * 0.1}
-                locale={locale}
-              />
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Branch Locations Section */}
-      <section id="branch-locations" className="section-padding bg-neutral-50 scroll-mt-24">
-        <Branches locale={locale} />
-      </section>
-
-      {/* Pricing Information Section */}
-      <section id="pricing-info" className="section-padding bg-white scroll-mt-24">
-        <div className="container-custom">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            className="text-center mb-12"
-          >
-            <h2 className="text-3xl md:text-4xl font-bold text-neutral-900 mb-4">
-              {t('nav.community_relations_items.pricing_info')}
-            </h2>
-            <p className="text-lg text-neutral-600 max-w-2xl mx-auto">
-              Бүх төрлийн угаалгын үйлчилгээний үнийн мэдээлэл, хөнгөлөлттэй саналууд
-            </p>
-          </motion.div>
-
-          <div className="grid md:grid-cols-2 gap-8 max-w-6xl mx-auto">
-            <motion.div
-              initial={{ opacity: 0, x: -30 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.8 }}
-              className="bg-white rounded-xl shadow-lg overflow-hidden border border-neutral-200"
-            >
-              <Image
-                src="/images/price_ub.png"
-                alt="Улаанбаатар хотын үнийн мэдээлэл"
-                width={600}
-                height={800}
-                className="w-full h-auto object-contain"
-              />
-            </motion.div>
-
-            <motion.div
-              initial={{ opacity: 0, x: 30 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.8, delay: 0.2 }}
-              className="bg-white rounded-xl shadow-lg overflow-hidden border border-neutral-200"
-            >
-              <Image
-                src="/images/price_provinces.png"
-                alt="Аймгийн үнийн мэдээлэл"
-                width={600}
-                height={800}
-                className="w-full h-auto object-contain"
-              />
-            </motion.div>
-          </div>
-        </div>
-      </section>
-
       {/* Press Releases Section */}
-      <section id="press-releases" className="section-padding bg-neutral-50 scroll-mt-24">
+      <section id="press-releases" className="section-padding bg-white scroll-mt-24">
         <div className="container-custom">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -165,7 +79,7 @@ export default function CommunityPage({ params: { locale } }: CommunityPageProps
               {t('nav.community_relations_items.press_releases')}
             </h2>
             <p className="text-lg text-neutral-600 max-w-2xl mx-auto">
-              Хэвлэлийн мэдээ, LaundryZone Mongolia-ын үйл ажиллагаатай холбоотой албан ёсны мэдэгдлүүд
+              {t('community_relations.press_releases.subtitle')}
             </p>
           </motion.div>
 
@@ -185,15 +99,101 @@ export default function CommunityPage({ params: { locale } }: CommunityPageProps
                     </svg>
                   </div>
                   <div className="ml-4">
-                    <h3 className="text-lg font-bold text-neutral-900">Хэвлэлийн мэдээ {index}</h3>
+                    <h3 className="text-lg font-bold text-neutral-900">{t('community_relations.press_releases.items.title')} {index}</h3>
                     <p className="text-sm text-neutral-500">2025.01.{5 + index}</p>
                   </div>
                 </div>
                 <p className="text-neutral-600 leading-relaxed">
-                  LaundryZone Mongolia-ын шинэ технологи, салбар нээлт, түншлэл болон бусад чухал үйл ажиллагаатай холбоотой мэдээ.
+                  {t('community_relations.press_releases.items.description')}
                 </p>
               </motion.div>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Announcements Section */}
+      <section id="announcements" className="section-padding bg-neutral-50 scroll-mt-24">
+        <div className="container-custom">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            className="text-center mb-12"
+          >
+            <h2 className="text-3xl md:text-4xl font-bold text-neutral-900 mb-4">
+              {t('nav.community_relations_items.announcements')}
+            </h2>
+            <p className="text-lg text-neutral-600 max-w-2xl mx-auto">
+              {t('community_relations.announcements.subtitle')}
+            </p>
+          </motion.div>
+
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {blogPosts.map((post, index) => (
+              <BlogCard
+                key={post.id}
+                post={post}
+                delay={index * 0.1}
+                locale={locale}
+              />
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Branch Locations Section */}
+      <section id="branch-locations" className="section-padding bg-white scroll-mt-24">
+        <Branches locale={locale} />
+      </section>
+
+      {/* Pricing Information Section */}
+      <section id="pricing-info" className="section-padding bg-neutral-50 scroll-mt-24">
+        <div className="container-custom">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            className="text-center mb-12"
+          >
+            <h2 className="text-3xl md:text-4xl font-bold text-neutral-900 mb-4">
+              {t('nav.community_relations_items.pricing_info')}
+            </h2>
+            <p className="text-lg text-neutral-600 max-w-2xl mx-auto">
+              {t('community_relations.pricing_info.subtitle')}
+            </p>
+          </motion.div>
+
+          <div className="grid md:grid-cols-2 gap-8 max-w-6xl mx-auto">
+            <motion.div
+              initial={{ opacity: 0, x: -30 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.8 }}
+              className="bg-white rounded-xl shadow-lg overflow-hidden border border-neutral-200"
+            >
+              <Image
+                src="/images/price_ub.png"
+                alt={t('community_relations.images.ub_pricing')}
+                width={600}
+                height={800}
+                className="w-full h-auto object-contain"
+              />
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, x: 30 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.8, delay: 0.2 }}
+              className="bg-white rounded-xl shadow-lg overflow-hidden border border-neutral-200"
+            >
+              <Image
+                src="/images/price_provinces.png"
+                alt={t('community_relations.images.provinces_pricing')}
+                width={600}
+                height={800}
+                className="w-full h-auto object-contain"
+              />
+            </motion.div>
           </div>
         </div>
       </section>

@@ -49,50 +49,18 @@ export function SiteFooter({ locale }: SiteFooterProps) {
             <ul className="space-y-2">
               <li>
                 <Link
-                  href={`/${locale}`}
-                  className="text-neutral-300 hover:text-white transition-colors text-sm"
-                >
-                  {t('nav.home')}
-                </Link>
-              </li>
-              <li>
-                <Link
                   href={`/${locale}/about`}
                   className="text-neutral-300 hover:text-white transition-colors text-sm"
                 >
-                  {t('nav.about')}
+                  {t('common.about_us')}
                 </Link>
               </li>
               <li>
                 <Link
-                  href={`/${locale}/equipment`}
+                  href={`/${locale}/competitive-advantage`}
                   className="text-neutral-300 hover:text-white transition-colors text-sm"
                 >
-                  {t('nav.equipment')}
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href={`/${locale}/services`}
-                  className="text-neutral-300 hover:text-white transition-colors text-sm"
-                >
-                  {t('nav.services')}
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href={`/${locale}/community`}
-                  className="text-neutral-300 hover:text-white transition-colors text-sm"
-                >
-                  {t('nav.community')}
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href={`/${locale}/pricing`}
-                  className="text-neutral-300 hover:text-white transition-colors text-sm"
-                >
-                  {t('nav.pricing')}
+                  {t('common.competitive_advantage')}
                 </Link>
               </li>
               <li>
@@ -100,7 +68,23 @@ export function SiteFooter({ locale }: SiteFooterProps) {
                   href={`/${locale}/franchise`}
                   className="text-neutral-300 hover:text-white transition-colors text-sm"
                 >
-                  {t('nav.franchise')}
+                  {t('common.franchise')}
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href={`/${locale}/equipment`}
+                  className="text-neutral-300 hover:text-white transition-colors text-sm"
+                >
+                  {t('common.equipment')}
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href={`/${locale}/community`}
+                  className="text-neutral-300 hover:text-white transition-colors text-sm"
+                >
+                  {t('common.community_relations')}
                 </Link>
               </li>
             </ul>
@@ -147,7 +131,7 @@ export function SiteFooter({ locale }: SiteFooterProps) {
         <div className="border-t border-neutral-800 mt-12 pt-8">
           <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
                          <p className="text-neutral-400 text-sm">
-               © 2025 LaundryZone Mongolia. All rights reserved. Designed and Developed by{' '}
+               © 2025 LaundryZone Mongolia. All rights reserved. Designed by{' '}
                <a
                  href="https://portfolio-sage-xi-54.vercel.app/"
                  target="_blank"

@@ -55,7 +55,7 @@ export default function CompetitiveAdvantagePage({ params: { locale } }: Competi
     <>
       <PageHeader 
         title={t('nav.competitive_advantage')}
-        subtitle="LaundryZone Mongolia-ын өрсөлдөх давуу талууд"
+        subtitle={t('competitive_advantage_subtitle')}
         locale={locale}
       />
 
@@ -82,10 +82,7 @@ export default function CompetitiveAdvantagePage({ params: { locale } }: Competi
                     </h3>
                   </div>
                   <p className="text-neutral-600 leading-relaxed">
-                    {advantage.key === 'industry_leader' && "LaundryZone нь Монголын угаалгын үйлчилгээний салбарт тэргүүлэгч байр суурь эзэлдэг, инновацийн технологи болон өндөр чанартай үйлчилгээгээрээ алдартай."}
-                    {advantage.key === 'digital_payment' && "Орчин үеийн цахим төлбөрийн систем нь үйлчлүүлэгчдэд хялбар, хурдан, найдвартай төлбөр тооцооны боломжийг олгодог."}
-                    {advantage.key === 'expert_team' && "Туршлагатай, мэргэшсэн ажилтны баг нь өдөр бүр танд хамгийн сайн үйлчилгээ үзүүлэхийн төлөө ажилладаг."}
-                    {advantage.key === 'international_recognition' && "Олон улсын стандартад нийцсэн үйлчилгээ, Солонгосын технологи ашиглан дэлхийн стандартын үйлчилгээг санал болгож байна."}
+                    {t(`competitive_advantage_descriptions.${advantage.key}`)}
                   </p>
                 </div>
               </motion.div>

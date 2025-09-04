@@ -2,7 +2,7 @@
   "nav": {
     "home": "Home",
     "about": "About Us",
-    "competitive_advantage": "Competitive Advantage",
+    "competitive_advantage": "Competitive Advantages",
     "competitive_advantage_items": {
       "industry_leader": "Industry Leader",
       "digital_payment": "Digital Payment System",
@@ -29,10 +29,10 @@
     "pricing": "Pricing",
     "community_relations": "Community Relations",
     "community_relations_items": {
-      "announcements": "Announcements",
-      "branch_locations": "Branch Locations",
-      "pricing_info": "Service Pricing Information",
-      "press_releases": "Press Releases"
+      "press_releases": "Event Overview",
+      "announcements": "News & Announcements",
+      "branch_locations": "Branch Addresses & Locations",
+      "pricing_info": "Service Pricing Information"
     },
     "contact": "Contact"
   },
@@ -140,7 +140,7 @@
   "hero": {
     "headline": "Self-Service Laundry",
     "sub": "LG/Samsung commercial machines, fast cycles, and cashless payment.",
-    "subtitle_new": "Wash, Sanitize, and Dry!",
+          "subtitle_new": "Mongolia's First Self-Service Laundry",
     "description": "Self-service laundromat with LG/Samsung equipment, operating 08:00 - 24:00, offering cashless payment throughout Ulaanbaatar city.",
     "cta": {
       "pricing": "View Pricing",
@@ -263,7 +263,7 @@
     "show_less": "Show less",
     "thank_you": {
       "title": "Thank you",
-      "content": "Thank you for using LaundryZone services. Following the above guidelines will ensure comfortable and safe service."
+      "content": "Thank you for choosing LaundryZone self-service laundromat."
     },
     "items": {
       "washing_instructions": {
@@ -374,7 +374,7 @@
     "title": "Contact Us",
     "subtitle": "Get in touch with us",
     "get_in_touch": "Get in Touch",
-    "get_in_touch_desc": "Have questions about our services or need assistance? We're here to help 24/7. Reach out to us through any of the channels below.",
+    "get_in_touch_desc": "Would you like to get more detailed information about our services? Please contact us through the following channels.",
     "form": {
       "name": "Name",
       "phone": "Phone",
@@ -401,7 +401,8 @@
       "email": "Email",
       "address": "Address",
       "hours": "Hours"
-    }
+    },
+    "email_us": "Send Email"
   },
   "franchise": {
     "title": "Become a Franchise",
@@ -460,7 +461,6 @@
   },
   "common": {
     "learn_more": "Learn More",
-    "get_started": "Get Started",
     "view_all": "View All",
     "loading": "Loading...",
     "error": "Error occurred",
@@ -479,7 +479,11 @@
     "fast_service": "Fast service",
     "available_24_7": "08:00 - 24:00 available",
     "quick_links": "Quick Links",
+    "about_us": "About Us",
+    "competitive_advantage": "Competitive Advantages",
+    "franchise": "Franchise",
     "equipment": "Services",
+    "community_relations": "Community Relations",
     "self_service_washing": "Self-service washing",
     "commercial_dryers": "Commercial dryers",
     "shoe_washing": "Shoe washing",
@@ -488,7 +492,14 @@
     "cashless_payment": "Cashless payment",
     "need_help": "Need Help Choosing?",
     "sending": "Sending...",
-    "ready_to_start": "Ready to Get Started?"
+    "ready_to_start": "Ready to Get Started?",
+    "competitive_advantage_subtitle": "LaundryZone Mongolia's Competitive Advantages",
+    "competitive_advantage_descriptions": {
+      "industry_leader": "LaundryZone holds a leading position in Mongolia's laundry service industry, renowned for innovative technology and high-quality service.",
+      "digital_payment": "Modern digital payment systems provide customers with easy, fast, and reliable payment options.",
+      "expert_team": "Our experienced, specialized staff works daily to provide you with the best service.",
+      "international_recognition": "Service that meets international standards, offering world-class service using Korean technology."
+    }
   },
   "equipment": {
     "title": "Equipment",
@@ -530,6 +541,7 @@
     "washing": {
       "title": "Washing Machines",
       "description": "LG/Samsung commercial washing machines with advanced cleaning technology",
+      "subtitle": "Professional-grade washing machines with advanced cleaning technology for commercial use",
       "features": {
         "capacity": "20kg and 30kg capacity options",
         "temperature": "Cold, hot, and deep clean cycles",
@@ -540,6 +552,7 @@
     "drying": {
       "title": "Dryers",
       "description": "High-speed commercial dryers with moisture sensors and temperature control",
+      "subtitle": "High-speed commercial dryers with moisture sensors and temperature control",
       "features": {
         "speed": "20-30 minute drying cycles",
         "temperature": "Adjustable temperature settings",
@@ -550,11 +563,36 @@
     "shoe_washing": {
       "title": "Shoe Washing Machines",
       "description": "Specialized equipment designed specifically for footwear cleaning",
+      "subtitle": "Specialized equipment designed specifically for footwear cleaning",
       "features": {
         "specialized": "Dedicated shoe washing machines",
         "gentle": "Gentle cleaning process",
         "drying": "Specialized shoe dryers",
         "all_types": "All shoe types welcome"
+      }
+    },
+    "shoe_drying": {
+      "title": "Shoe Dryer Machines",
+      "description": "Specialized dryer machines designed for footwear drying",
+      "subtitle": "Specialized dryer machines designed for footwear drying"
+    },
+    "other_equipment": {
+      "title": "Other Equipment",
+      "description": "Additional equipment and auxiliary tools",
+      "subtitle": "Additional equipment and auxiliary tools",
+      "items": {
+        "sanitization": {
+          "title": "Sanitization Equipment",
+          "description": "Professional sanitization machines for hygiene treatment"
+        },
+        "detergent_dispenser": {
+          "title": "Automatic Detergent Dispenser",
+          "description": "Automatic detergent dispensing machine with multiple detergent options"
+        },
+        "wifi_system": {
+          "title": "Wi-Fi System",
+          "description": "Free Wi-Fi connection and waiting area for customer convenience"
+        }
       }
     },
     "sterilization": {
@@ -592,7 +630,18 @@
       "sck080": "Samsung Washing Machine SCK080",
       "sck100": "Samsung Washing Machine SCK100",
       "lr_18_tp2": "LG Dryer LR-18 TP2",
-      "lr_25_tp2": "LG Dryer LR-25 TP2"
+      "lr_25_tp2": "LG Dryer LR-25 TP2",
+      "specs": {
+        "model": "Model",
+        "capacity": "Capacity",
+        "power": "Power",
+        "wash_time": "Wash Time",
+        "dry_time": "Dry Time",
+        "dimensions": "Dimensions",
+        "weight": "Weight",
+        "heater": "Electric Heater",
+        "fan_speed": "Fan Speed"
+      }
     },
     "highlights": {
       "title": "Why Choose Our Equipment",
@@ -722,6 +771,27 @@
       "description": "Visit any of our locations and discover the difference that professional laundry equipment makes",
       "view_pricing": "View Pricing",
       "find_branch": "Find Nearest Branch"
+    }
+  },
+  "community_relations": {
+    "title": "Community Relations",
+    "subtitle": "Current event overview and news, information",
+          "announcements": {
+        "subtitle": "Latest news and information about LaundryZone"
+      },
+    "pricing_info": {
+      "subtitle": "Pricing information for all types of laundry services and promotional offers"
+    },
+    "press_releases": {
+      "subtitle": "Event overview and official announcements related to LaundryZone Mongolia operations",
+      "items": {
+        "title": "Press Release",
+        "description": "News about LaundryZone Mongolia's new technology, branch openings, partnerships and other important activities."
+      }
+    },
+    "images": {
+      "ub_pricing": "Ulaanbaatar city pricing information",
+      "provinces_pricing": "Province pricing information"
     }
   },
   "banner": {

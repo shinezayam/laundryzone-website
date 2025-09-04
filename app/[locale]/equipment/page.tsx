@@ -35,16 +35,16 @@ export default function EquipmentPage({ params: { locale } }: EquipmentPageProps
               {t('nav.equipment_items.washing_machines')}
             </h2>
             <p className="text-lg text-neutral-600 max-w-2xl mx-auto">
-            Үйлчилгээний тусгай зориулалтын угаалгын машин, дэвшилтэт цэвэрлэгээний технологитой
+              {t('equipment.washing.subtitle')}
             </p>
           </motion.div>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16 mx-auto ">
             {[
-              { name: "LR-18ss TP2", capacity: "18кг", image: "/images/washers/세탁기 LR-18 TP2.png", specs: ["Загвар: LG LR-18 TP2", "Даац: 18кг", "Эрчим хүч: 220V", "Угаах хугацаа: 30-45мин"] },
-              { name: "LR-25 TP2", capacity: "25кг", image: "/images/washers/세탁기 LR-25 TP2.png", specs: ["Загвар: LG LR-25 TP2", "Даац: 25кг", "Эрчим хүч: 220V", "Угаах хугацаа: 35-50мин"] },
-              { name: "LW-45N", capacity: "45кг", image: "/images/washers/세탁기 LW-45N.png", specs: ["Загвар: LG LW-45N", "Даац: 45кг", "Эрчим хүч: 380V", "Угаах хугацаа: 40-60мин"] },
-              { name: "LW-70N", capacity: "70кг", image: "/images/washers/세탁기 LW-70N.png", specs: ["Загвар: LG LW-70N", "Даац: 70кг", "Эрчим хүч: 380V", "Угаах хугацаа: 45-70мин"] }
+              { name: "LR-18ss TP2", capacity: "18кг", image: "/images/washers/세탁기 LR-18 TP2.png", specs: [`${t('equipment.machines.specs.model')}: LG LR-18 TP2`, `${t('equipment.machines.specs.capacity')}: 18кг`, `${t('equipment.machines.specs.power')}: 220V`, `${t('equipment.machines.specs.wash_time')}: 30-45мин`] },
+              { name: "LR-25 TP2", capacity: "25кг", image: "/images/washers/세탁기 LR-25 TP2.png", specs: [`${t('equipment.machines.specs.model')}: LG LR-25 TP2`, `${t('equipment.machines.specs.capacity')}: 25кг`, `${t('equipment.machines.specs.power')}: 220V`, `${t('equipment.machines.specs.wash_time')}: 35-50мин`] },
+              { name: "LW-45N", capacity: "45кг", image: "/images/washers/세탁기 LW-45N.png", specs: [`${t('equipment.machines.specs.model')}: LG LW-45N`, `${t('equipment.machines.specs.capacity')}: 45кг`, `${t('equipment.machines.specs.power')}: 380V`, `${t('equipment.machines.specs.wash_time')}: 40-60мин`] },
+              { name: "LW-70N", capacity: "70кг", image: "/images/washers/세탁기 LW-70N.png", specs: [`${t('equipment.machines.specs.model')}: LG LW-70N`, `${t('equipment.machines.specs.capacity')}: 70кг`, `${t('equipment.machines.specs.power')}: 380V`, `${t('equipment.machines.specs.wash_time')}: 45-70мин`] }
             ].map((machine, index) => (
               <motion.div
                 key={machine.name}
@@ -97,7 +97,7 @@ export default function EquipmentPage({ params: { locale } }: EquipmentPageProps
               {t('nav.equipment_items.dryer_machines')}
             </h2>
             <p className="text-lg text-neutral-600 max-w-2xl mx-auto">
-              Чийгшил мэдрэгч, температур хяналттай өндөр хурдны коммерцийн хатаагч
+              {t('equipment.drying.subtitle')}
             </p>
           </motion.div>
 
@@ -123,11 +123,11 @@ export default function EquipmentPage({ params: { locale } }: EquipmentPageProps
                 <div className="absolute inset-0 bg-black bg-opacity-80 flex flex-col justify-center items-center p-6 opacity-0 group-hover:opacity-100 transition-all duration-300 lg:opacity-0 lg:group-hover:opacity-100">
                   <h3 className="text-xl font-bold text-white mb-4 text-center">CTN-50(전기)<br/><span className="text-lg">CTN-50 (Цахилгаан)</span></h3>
                   <ul className="space-y-2 text-white text-center">
-                    <li className="text-sm">Хатаах даац: 25кг</li>
-                    <li className="text-sm">Хэмжээ: 993×1,200×1,830мм</li>
-                    <li className="text-sm">Эрчим хүч: 15.2kW</li>
-                    <li className="text-sm">Цахилгаан халаагч: 14.4kW</li>
-                    <li className="text-sm">Жин: 370кг</li>
+                    <li className="text-sm">{t('equipment.machines.specs.capacity')}: 25кг</li>
+                    <li className="text-sm">{t('equipment.machines.specs.dimensions')}: 993×1,200×1,830мм</li>
+                    <li className="text-sm">{t('equipment.machines.specs.power')}: 15.2kW</li>
+                    <li className="text-sm">{t('equipment.machines.specs.heater')}: 14.4kW</li>
+                    <li className="text-sm">{t('equipment.machines.specs.weight')}: 370кг</li>
                   </ul>
                 </div>
 
@@ -155,7 +155,7 @@ export default function EquipmentPage({ params: { locale } }: EquipmentPageProps
               {t('nav.equipment_items.shoe_washing_machines')}
             </h2>
             <p className="text-lg text-neutral-600 max-w-2xl mx-auto">
-              Гутал цэвэрлэхэд зориулж тусгайлан зохион бүтээсэн тоног төхөөрөмж
+              {t('equipment.shoe_washing.subtitle')}
             </p>
           </motion.div>
 
@@ -181,9 +181,9 @@ export default function EquipmentPage({ params: { locale } }: EquipmentPageProps
                 <div className="absolute inset-0 bg-black bg-opacity-80 flex flex-col justify-center items-center p-6 opacity-0 group-hover:opacity-100 transition-all duration-300 lg:opacity-0 lg:group-hover:opacity-100">
                   <h3 className="text-xl font-bold text-white mb-4 text-center">운동화 세탁기<br/><span className="text-lg">Гутлын угаалгын машин</span></h3>
                   <ul className="space-y-2 text-white text-center">
-                    <li className="text-sm">Угаах даац: 6 хос гутал</li>
-                    <li className="text-sm">Хэмжээ: 762×826×1083мм</li>
-                    <li className="text-sm">Хүчин чадал: 3HP / 2.2KW</li>
+                    <li className="text-sm">{t('equipment.machines.specs.capacity')}: 6 хос гутал</li>
+                    <li className="text-sm">{t('equipment.machines.specs.dimensions')}: 762×826×1083мм</li>
+                    <li className="text-sm">{t('equipment.machines.specs.power')}: 3HP / 2.2KW</li>
                     <li className="text-sm">Угаах эргэлт: 47rpm</li>
                   </ul>
                 </div>
@@ -212,7 +212,7 @@ export default function EquipmentPage({ params: { locale } }: EquipmentPageProps
               {t('nav.equipment_items.shoe_dryer_machines')}
             </h2>
             <p className="text-lg text-neutral-600 max-w-2xl mx-auto">
-              Гутлын хатаалтад зориулсан тусгай хатаагч машинууд
+              {t('equipment.shoe_drying.subtitle')}
             </p>
           </motion.div>
 
@@ -238,11 +238,11 @@ export default function EquipmentPage({ params: { locale } }: EquipmentPageProps
                 <div className="absolute inset-0 bg-black bg-opacity-80 flex flex-col justify-center items-center p-6 opacity-0 group-hover:opacity-100 transition-all duration-300 lg:opacity-0 lg:group-hover:opacity-100">
                   <h3 className="text-xl font-bold text-white mb-4 text-center">운동화 건조기<br/><span className="text-lg">Гутлын хатаагч машин</span></h3>
                   <ul className="space-y-2 text-white text-center">
-                    <li className="text-sm">Хатаах даац: 6 хос гутал</li>
-                    <li className="text-sm">Хэмжээ: 767×750×900мм</li>
-                    <li className="text-sm">Эрчим хүч: 2.6KW</li>
-                    <li className="text-sm">Жин: 58.5кг</li>
-                    <li className="text-sm">Салхины хурд: 3.6-4.0 м³/мин</li>
+                    <li className="text-sm">{t('equipment.machines.specs.capacity')}: 6 хос гутал</li>
+                    <li className="text-sm">{t('equipment.machines.specs.dimensions')}: 767×750×900мм</li>
+                    <li className="text-sm">{t('equipment.machines.specs.power')}: 2.6KW</li>
+                    <li className="text-sm">{t('equipment.machines.specs.weight')}: 58.5кг</li>
+                    <li className="text-sm">{t('equipment.machines.specs.fan_speed')}: 3.6-4.0 м³/мин</li>
                   </ul>
                 </div>
 
@@ -270,25 +270,25 @@ export default function EquipmentPage({ params: { locale } }: EquipmentPageProps
               {t('nav.equipment_items.other_equipment')}
             </h2>
             <p className="text-lg text-neutral-600 max-w-2xl mx-auto">
-              Бусад нэмэлт тоног төхөөрөмж, туслах багаж хэрэгсэл
+              {t('equipment.other_equipment.subtitle')}
             </p>
           </motion.div>
 
           <div className="grid md:grid-cols-3 gap-8">
             {[
               {
-                title: "Ариутгалын тоног төхөөрөмж",
-                description: "Ариун цэврийн мэргэжлийн ариутгалын машинууд",
+                title: t('equipment.other_equipment.items.sanitization.title'),
+                description: t('equipment.other_equipment.items.sanitization.description'),
                 icon: "🧼"
               },
               {
-                title: "Угаалгын нунтагны автомат машин",
-                description: "Автомат угаалгын нунтаг олгох машин, олон төрлийн угаалгын нунтаг",
+                title: t('equipment.other_equipment.items.detergent_dispenser.title'),
+                description: t('equipment.other_equipment.items.detergent_dispenser.description'),
                 icon: "🥤"
               },
               {
-                title: "Wi-Fi систем",
-                description: "Үнэгүй Wi-Fi холболт болон хүлээлгийн хэсэг, үйлчлүүлэгчдийн тав тухыг хангах үүднээс",
+                title: t('equipment.other_equipment.items.wifi_system.title'),
+                description: t('equipment.other_equipment.items.wifi_system.description'),
                 icon: "📶"
               }
             ].map((item, index) => (

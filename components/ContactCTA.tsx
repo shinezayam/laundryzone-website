@@ -32,7 +32,7 @@ export function ContactCTA({ locale }: ContactCTAProps) {
     {
       icon: MapPin,
       title: t('contact.info.address'),
-      value: 'БЗД, 36-р хороо, Санни таун ү/4Б тоот, Улаанбаатар хот, Монгол улс',
+      value: 'БЗД, 36-р хороо, Санни таун ү/4Б тоот',
       href: '#',
       color: 'text-purple-600',
       bgColor: 'bg-purple-100',
@@ -110,7 +110,7 @@ export function ContactCTA({ locale }: ContactCTAProps) {
               <h4 className="text-lg font-semibold mb-4">{t('common.follow_us')}</h4>
               <div className="flex space-x-4">
                 <a
-                  href="https://facebook.com/laundryzone.mn"
+                  href="https://www.facebook.com/laundryzone.mongolia"
                   className="p-3 bg-blue-600 hover:bg-blue-700 rounded-lg transition-colors duration-200"
                   aria-label="Facebook"
                 >
@@ -119,7 +119,7 @@ export function ContactCTA({ locale }: ContactCTAProps) {
                   </svg>
                 </a>
                 <a
-                  href="https://instagram.com/laundryzone.mn"
+                  href="https://www.instagram.com/laundryzone_mongolia/"
                   className="p-3 bg-gradient-to-r from-purple-500 to-pink-500 hover:from-purple-600 hover:to-pink-600 rounded-lg transition-all duration-200"
                   aria-label="Instagram"
                 >
@@ -161,7 +161,7 @@ export function ContactCTA({ locale }: ContactCTAProps) {
         >
           <div className="bg-gradient-to-br from-accent-500 to-accent-600 rounded-2xl p-8">
                          <h3 className="text-2xl font-bold mb-4">
-               {t('common.get_started')}
+               {t('contact.title')}
              </h3>
              <p className="text-accent-100 mb-6 max-w-2xl mx-auto">
                {t('contact.get_in_touch_desc')}
@@ -169,17 +169,17 @@ export function ContactCTA({ locale }: ContactCTAProps) {
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <a
                 href="tel:+976-11-123-4567"
-                className="bg-gradient-to-br from-white to-neutral-100 text-accent-500 hover:from-neutral-50 hover:to-neutral-200 font-medium py-3 px-6 rounded-2xl transition-all duration-200 inline-flex items-center justify-center"
+                className="bg-gradient-to-br from-white to-neutral-100 text-accent-500 hover:from-neutral-50 hover:to-neutral-200 font-semibold text-base py-3 px-6 rounded-2xl transition-all duration-200 inline-flex items-center justify-center"
               >
                 <Phone size={20} className="mr-2" />
                                  {t('contact.info.phone')}
                </a>
                <a
-                 href="#branches"
-                 className="bg-gradient-to-br from-white/20 to-white/10 text-white hover:from-white/30 hover:to-white/20 border border-white/30 font-medium py-3 px-6 rounded-2xl transition-all duration-200 inline-flex items-center justify-center"
+                 href="mailto:laundryzone.mongolia@gmail.com"
+                 className="bg-gradient-to-br from-white/20 to-white/10 text-white hover:from-white/30 hover:to-white/20 border border-white/30 font-semibold text-base py-3 px-6 rounded-2xl transition-all duration-200 inline-flex items-center justify-center"
                >
-                 <MapPin size={20} className="mr-2" />
-                 {t('branches.find_nearest')}
+                 <Mail size={20} className="mr-2" />
+                 {t('contact.email_us')}
               </a>
             </div>
           </div>
