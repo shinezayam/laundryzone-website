@@ -2,7 +2,7 @@
 
 import { motion } from 'framer-motion';
 import { useTranslations } from 'next-intl';
-import { useState, useRef } from 'react';
+import { useState, useRef, useEffect } from 'react';
 
 interface VideoEmbedProps {
   locale: string;
@@ -11,15 +11,61 @@ interface VideoEmbedProps {
 export function FacebookReelEmbed({ locale }: VideoEmbedProps) {
   const t = useTranslations();
   const [isPlaying, setIsPlaying] = useState(false);
+  const [hasError, setHasError] = useState(false);
   const videoRef = useRef<HTMLVideoElement>(null);
 
-  const handlePlayClick = () => {
+  // Prevent browser extension errors from interfering
+  useEffect(() => {
+    // Override chrome extension message handlers to prevent errors
+    if (typeof window !== 'undefined') {
+      const originalAddEventListener = window.addEventListener;
+      const originalConsoleError = console.error;
+      
+      // Suppress extension-related errors
+      console.error = (...args: any[]) => {
+        const message = args[0]?.toString() || '';
+        if (message.includes('onMessage') || message.includes('sendMessage') || message.includes('chrome-extension://')) {
+          return; // Suppress extension errors
+        }
+        originalConsoleError.apply(console, args);
+      };
+
+      return () => {
+        console.error = originalConsoleError;
+      };
+    }
+  }, []);
+
+  const handlePlayClick = async () => {
+    console.log('Play button clicked');
     if (videoRef.current) {
-      if (videoRef.current.paused) {
-        videoRef.current.play();
-      } else {
-        videoRef.current.pause();
+      console.log('Video element found, current state:', {
+        paused: videoRef.current.paused,
+        readyState: videoRef.current.readyState,
+        networkState: videoRef.current.networkState,
+        currentSrc: videoRef.current.currentSrc
+      });
+      
+      try {
+        if (videoRef.current.paused) {
+          console.log('Attempting to play video...');
+          const playPromise = videoRef.current.play();
+          if (playPromise !== undefined) {
+            await playPromise;
+            console.log('Video play successful');
+            setIsPlaying(true);
+          }
+        } else {
+          console.log('Pausing video...');
+          videoRef.current.pause();
+          setIsPlaying(false);
+        }
+      } catch (error) {
+        console.log('Video play error:', error);
+        setHasError(true);
       }
+    } else {
+      console.log('Video element not found');
     }
   };
 
@@ -54,17 +100,25 @@ export function FacebookReelEmbed({ locale }: VideoEmbedProps) {
               preload="metadata"
               poster="/images/banner.jpg"
               playsInline
+              muted={false}
               onPlay={() => setIsPlaying(true)}
               onPause={() => setIsPlaying(false)}
               onEnded={() => setIsPlaying(false)}
               onLoadedData={() => console.log('Video loaded successfully')}
-              onError={(e) => console.error('Video error:', e)}
+              onError={(e) => {
+                console.log('Video loading error:', e);
+                setHasError(true);
+              }}
+              onCanPlay={() => {
+                console.log('Video can play');
+                setHasError(false);
+              }}
             >
               <source src="/videos/laundryzone-reel.mp4" type="video/mp4" />
-              Your browser does not support the video tag.
+              <p>Your browser does not support the video tag.</p>
             </video>
             
-            {!isPlaying && (
+            {!isPlaying && !hasError && (
               <button 
                 onClick={handlePlayClick}
                 className="absolute inset-0 bg-black bg-opacity-20 flex items-center justify-center transition-opacity duration-300 hover:bg-opacity-30"
@@ -81,6 +135,30 @@ export function FacebookReelEmbed({ locale }: VideoEmbedProps) {
                   </svg>
                 </div>
               </button>
+            )}
+            
+            {hasError && (
+              <div className="absolute inset-0 bg-neutral-100 flex items-center justify-center" style={{ zIndex: 1 }}>
+                <div className="text-center p-4">
+                  <div className="w-12 h-12 bg-gray-300 rounded-full flex items-center justify-center mx-auto mb-2">
+                    <svg className="w-6 h-6 text-gray-600" fill="currentColor" viewBox="0 0 20 20">
+                      <path fillRule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7 4a1 1 0 11-2 0 1 1 0 012 0zm-1-9a1 1 0 00-1 1v4a1 1 0 102 0V6a1 1 0 00-1-1z" clipRule="evenodd" />
+                    </svg>
+                  </div>
+                  <p className="text-sm text-gray-600">Video temporarily unavailable</p>
+                  <button 
+                    onClick={() => {
+                      setHasError(false);
+                      if (videoRef.current) {
+                        videoRef.current.load();
+                      }
+                    }}
+                    className="mt-2 text-xs text-blue-600 hover:underline"
+                  >
+                    Try again
+                  </button>
+                </div>
+              </div>
             )}
           </div>
           
