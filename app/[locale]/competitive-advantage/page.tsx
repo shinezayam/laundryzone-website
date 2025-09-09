@@ -10,7 +10,8 @@ interface CompetitiveAdvantagePageProps {
 }
 
 export default function CompetitiveAdvantagePage({ params: { locale } }: CompetitiveAdvantagePageProps) {
-  const t = useTranslations();
+  const t = useTranslations('common');
+  const tNav = useTranslations('nav');
 
   const advantages = [
     {
@@ -54,7 +55,7 @@ export default function CompetitiveAdvantagePage({ params: { locale } }: Competi
   return (
     <>
       <PageHeader 
-        title={t('nav.competitive_advantage')}
+        title={tNav('competitive_advantage')}
         subtitle={t('competitive_advantage_subtitle')}
         locale={locale}
       />
@@ -78,7 +79,7 @@ export default function CompetitiveAdvantagePage({ params: { locale } }: Competi
                       {advantage.icon}
                     </div>
                     <h3 className="text-xl font-bold text-neutral-900 ml-4 group-hover:text-accent-600 transition-colors duration-300">
-                      {t(`nav.competitive_advantage_items.${advantage.key}`)}
+                      {tNav(`competitive_advantage_items.${advantage.key}`)}
                     </h3>
                   </div>
                   <p className="text-neutral-600 leading-relaxed">

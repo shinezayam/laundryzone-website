@@ -349,7 +349,7 @@ export function Branches({ locale }: BranchesProps) {
         lng: 106.9177,
         hours: "08:00-24:00",
         phone: "",
-               image: "/images/Branches/Хөвсгөл аймаг - Мөрөн салбар.jpg"
+               image: "/images/placeholder_image.png"
       },
       {
         id: "Нисэх",

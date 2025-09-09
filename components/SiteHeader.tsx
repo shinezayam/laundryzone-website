@@ -110,7 +110,7 @@ export function SiteHeader({ locale }: SiteHeaderProps) {
       }`}
     >
       <div className="container-custom">
-        <div className="flex items-center justify-between h-16 lg:h-20">
+        <div className="flex items-center justify-between h-12 lg:h-14">
           {/* Logo */}
           <Link href={`/${locale}`} className="flex items-center justify-center">
             <img 
@@ -121,7 +121,7 @@ export function SiteHeader({ locale }: SiteHeaderProps) {
           </Link>
 
           {/* Desktop Navigation */}
-          <nav className="hidden lg:flex items-center space-x-6">
+          <nav className="hidden lg:flex items-center space-x-2">
             {navItems.map((item) => {
               if (item.dropdown) {
                 return (
@@ -132,7 +132,7 @@ export function SiteHeader({ locale }: SiteHeaderProps) {
                     onMouseLeave={handleMouseLeave}
                   >
                     <button
-                      className={`relative flex items-center px-4 py-3 text-base font-medium transition-colors duration-200 ${
+                      className={`relative flex items-center px-2 py-2 text-xs font-medium transition-colors duration-200 ${
                         isActive(undefined, item.key)
                           ? 'text-accent-500'
                           : 'text-neutral-700 hover:text-accent-500'
@@ -168,7 +168,7 @@ export function SiteHeader({ locale }: SiteHeaderProps) {
                             <Link
                               key={dropdownItem.href}
                               href={dropdownItem.href}
-                              className={`block px-4 py-3 text-base transition-colors duration-200 ${
+                              className={`block px-3 py-2 text-xs transition-colors duration-200 ${
                                 isActive(dropdownItem.href)
                                   ? 'text-accent-500 bg-accent-50'
                                   : 'text-neutral-700 hover:text-accent-500 hover:bg-neutral-50'
@@ -187,7 +187,7 @@ export function SiteHeader({ locale }: SiteHeaderProps) {
                   <Link
                     key={item.href}
                     href={item.href!}
-                    className={`relative px-4 py-3 text-base font-medium transition-colors duration-200 ${
+                    className={`relative px-2 py-2 text-xs font-medium transition-colors duration-200 ${
                       isActive(item.href)
                         ? 'text-accent-500'
                         : 'text-neutral-700 hover:text-accent-500'
@@ -209,11 +209,11 @@ export function SiteHeader({ locale }: SiteHeaderProps) {
           </nav>
 
           {/* Desktop CTA and Language Switcher */}
-          <div className="hidden lg:flex items-center space-x-6">
+          <div className="hidden lg:flex items-center space-x-2">
             <LanguageSwitcher currentLocale={locale} />
             <Link
               href={`/${locale}/contact`}
-              className="btn-primary text-base font-semibold"
+              className="btn-primary text-xs font-semibold"
             >
               {t('nav.contact')}
             </Link>
@@ -247,7 +247,7 @@ export function SiteHeader({ locale }: SiteHeaderProps) {
                       <div key={item.key} className="space-y-2">
                         <button
                           onClick={() => handleDropdownToggle(item.key!)}
-                          className={`w-full flex items-center justify-between px-4 py-3 text-base font-medium transition-colors duration-200 ${
+                          className={`w-full flex items-center justify-between px-4 py-2 text-xs font-medium transition-colors duration-200 ${
                             isActive(undefined, item.key)
                               ? 'text-accent-500 bg-gradient-to-br from-accent-50 to-accent-100 rounded-lg'
                               : 'text-neutral-700 hover:text-accent-500'
@@ -275,7 +275,7 @@ export function SiteHeader({ locale }: SiteHeaderProps) {
                                   key={dropdownItem.href}
                                   href={dropdownItem.href}
                                   onClick={() => setIsMobileMenuOpen(false)}
-                                  className={`block px-4 py-2.5 text-base transition-colors duration-200 rounded-lg ${
+                                  className={`block px-4 py-1.5 text-xs transition-colors duration-200 rounded-lg ${
                                     isActive(dropdownItem.href)
                                       ? 'text-accent-500 bg-accent-50'
                                       : 'text-neutral-600 hover:text-accent-500 hover:bg-neutral-50'
@@ -295,7 +295,7 @@ export function SiteHeader({ locale }: SiteHeaderProps) {
                         key={item.href}
                         href={item.href!}
                         onClick={() => setIsMobileMenuOpen(false)}
-                        className={`px-4 py-3 text-base font-medium transition-colors duration-200 ${
+                        className={`px-4 py-2 text-xs font-medium transition-colors duration-200 ${
                           isActive(item.href)
                             ? 'text-accent-500 bg-gradient-to-br from-accent-50 to-accent-100 rounded-lg'
                             : 'text-neutral-700 hover:text-accent-500'
