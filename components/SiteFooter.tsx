@@ -133,6 +133,7 @@ export function SiteFooter({ locale }: SiteFooterProps) {
                          <p className="text-neutral-400 text-sm">
                © 2025 LaundryZone Mongolia. All rights reserved. Designed by{' '}
                <a
+                //  href="https://www.instagram.com/zzzchinguun/"
                  href="https://portfolio-sage-xi-54.vercel.app/"
                  target="_blank"
                  rel="noopener noreferrer"
@@ -140,7 +141,20 @@ export function SiteFooter({ locale }: SiteFooterProps) {
                >
                  Shinezaya Myagmar
                </a>
+               <p className="text-neutral-400 text-sm">
+               Coded by{' '}
+               <a
+                 href="https://www.instagram.com/zzzchinguun/"
+                //  href="https://portfolio-sage-xi-54.vercel.app/"
+                 target="_blank"
+                 rel="noopener noreferrer"
+                 className="text-accent-400 hover:text-accent-300 transition-colors font-medium"
+               >
+                 Chinguun Khongor
+               </a>
              </p>
+             </p>
+            
             <div className="flex space-x-6">
               <Link
                 href={`/${locale}/privacy`}
