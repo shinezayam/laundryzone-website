@@ -91,7 +91,7 @@ export function Chatbot({ locale }: ChatbotProps) {
         : 'Laundryzone Self-Service Laundromat\n\n🌟 Franchise Opportunity:\nIf you are interested in Laundryzone franchise business, please send an email to laundryzone.mongolia@gmail.com.\n\n📞 Contact:\nOr contact ☎️ 7272-2121, 9192-3113 for detailed information.\n\n💼 Service Expansion:\nWe are working to expand our services to 21 aimags.\n\n🎯 Target Audience:\nWe invite financially capable individuals and organizations who want to start a new business in their aimag.\n\n⚠️ Important Information:\nOnly 1-3 permits will be granted per aimag.\n\n🥇 Don\'t miss this golden opportunity‼️\nHurry up~\n\n🔄 Redirecting to franchise page in 10 seconds...';
     }
 
-    if (lowerMessage.includes('location') || lowerMessage.includes('хаяг байршил') || lowerMessage.includes('салбар') || lowerMessage.includes('위치')) {
+    if (lowerMessage.includes('location') || lowerMessage.includes('хаяг байршил') || lowerMessage.includes('хаяг, байршил') || lowerMessage.includes('байршил') || lowerMessage.includes('салбар') || lowerMessage.includes('위치')) {
       // Auto-redirect to home page branches section after 5 seconds
       setTimeout(() => {
         window.location.href = `/${locale}#branches`;
