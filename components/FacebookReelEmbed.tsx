@@ -101,18 +101,33 @@ export function FacebookReelEmbed({ locale }: VideoEmbedProps) {
               poster="/images/banner.jpg"
               playsInline
               muted={false}
-              onPlay={() => setIsPlaying(true)}
-              onPause={() => setIsPlaying(false)}
-              onEnded={() => setIsPlaying(false)}
-              onLoadedData={() => console.log('Video loaded successfully')}
-              onError={(e) => {
-                console.log('Video loading error:', e);
-                setHasError(true);
+              onPlay={() => {
+                console.log('Video onPlay event');
+                setIsPlaying(true);
               }}
+              onPause={() => {
+                console.log('Video onPause event');
+                setIsPlaying(false);
+              }}
+              onEnded={() => {
+                console.log('Video onEnded event');
+                setIsPlaying(false);
+              }}
+              onLoadedData={() => console.log('Video loadedData event - can start playing')}
+              onLoadedMetadata={() => console.log('Video loadedMetadata event')}
               onCanPlay={() => {
-                console.log('Video can play');
+                console.log('Video canPlay event - ready to play');
                 setHasError(false);
               }}
+              onCanPlayThrough={() => console.log('Video canPlayThrough event - can play without buffering')}
+              onWaiting={() => console.log('Video waiting event - buffering')}
+              onPlaying={() => console.log('Video playing event - actually playing')}
+              onError={(e) => {
+                console.log('Video error event:', e);
+                console.log('Error details:', e.currentTarget.error);
+                setHasError(true);
+              }}
+              onLoadStart={() => console.log('Video loadStart event - started loading')}
             >
               <source src="/videos/laundryzone-reel.mp4" type="video/mp4" />
               <p>Your browser does not support the video tag.</p>
