@@ -1,4 +1,9 @@
 {
+  "social": {
+    "facebook_reel_title": "최신 비디오 보기",
+    "facebook_reel_description": "LaundryZone 서비스와 시설을 보여주는 최신 비디오를 확인해보세요.",
+    "view_on_facebook": "Facebook에서 보기"
+  },
   "nav": {
     "home": "홈",
     "about": "회사 소개",
@@ -505,6 +510,32 @@
       "international_recognition": "국제 표준을 충족하는 서비스로, 한국 기술을 사용하여 세계적 수준의 서비스를 제공합니다."
     }
   },
+  "categories": {
+    "all": "전체",
+    "hygiene": "위생",
+    "company": "회사",
+    "tips": "팁",
+    "guidelines": "가이드라인",
+    "equipment": "장비"
+  },
+  "back_to_blog": "블로그로 돌아가기",
+  "read": "읽기",
+  "share": "공유",
+  "cta": {
+    "title": "LaundryZone을 경험할 준비가 되셨나요?",
+    "description": "저희 지점 중 한 곳을 방문하여 전문 세탁 서비스의 편리함을 경험해보세요.",
+    "contact": "문의하기",
+    "more_articles": "더 많은 기사"
+  },
+  "featured": "추천",
+  "recent_posts": "최근 게시물",
+  "newsletter": {
+    "title": "LaundryZone과 함께 업데이트 받기",
+    "description": "세탁 관리와 저희 서비스에 대한 최신 팁, 뉴스, 업데이트를 받아보세요.",
+    "placeholder": "이메일을 입력하세요",
+    "subscribe": "구독하기"
+  },
+  "read_more": "더 읽기",
   "equipment": {
     "title": "장비",
     "subtitle": "전문적인 결과를 위한 최첨단 상업용 세탁 장비",

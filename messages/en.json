@@ -1,4 +1,9 @@
 {
+  "social": {
+    "facebook_reel_title": "Watch Our Latest Video",
+    "facebook_reel_description": "Check out our latest video showcasing LaundryZone services and facilities.",
+    "view_on_facebook": "View on Facebook"
+  },
   "nav": {
     "home": "Home",
     "about": "About Us",
@@ -501,6 +506,32 @@
       "international_recognition": "Service that meets international standards, offering world-class service using Korean technology."
     }
   },
+  "categories": {
+    "all": "All",
+    "hygiene": "Hygiene",
+    "company": "Company",
+    "tips": "Tips",
+    "guidelines": "Guidelines",
+    "equipment": "Equipment"
+  },
+  "back_to_blog": "Back to Blog",
+  "read": "read",
+  "share": "Share",
+  "cta": {
+    "title": "Ready to Experience LaundryZone?",
+    "description": "Visit one of our branches and experience the convenience of professional laundry services.",
+    "contact": "Contact Us",
+    "more_articles": "More Articles"
+  },
+  "featured": "Featured",
+  "recent_posts": "Recent Posts",
+  "newsletter": {
+    "title": "Stay Updated with LaundryZone",
+    "description": "Get the latest tips, news, and updates about laundry care and our services.",
+    "placeholder": "Enter your email",
+    "subscribe": "Subscribe"
+  },
+  "read_more": "Read More",
   "equipment": {
     "title": "Equipment",
     "subtitle": "State-of-the-art commercial laundry equipment for professional results",
