@@ -2,6 +2,9 @@
 
 import { useState } from 'react';
 import { useTranslations } from 'next-intl';
+import { useForm } from 'react-hook-form';
+import { zodResolver } from '@hookform/resolvers/zod';
+import { z } from 'zod';
 import { motion } from 'framer-motion';
 import { 
   Building2,
@@ -24,103 +27,32 @@ interface JobApplicationProps {
   locale: string;
 }
 
+const jobApplicationSchema = z.object({
+  name: z.string().min(2, 'name_min'),
+  email: z.string().email('email_invalid'),
+  phone: z.string().min(8, 'phone_min'),
+  message: z.string().min(10, 'message_min'),
+  noCv: z.boolean().optional(),
+});
+
+type JobApplicationFormData = z.infer<typeof jobApplicationSchema>;
+
 export function JobApplication({ jobId, locale }: JobApplicationProps) {
   const t = useTranslations();
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'error'>('idle');
-  const [validationErrors, setValidationErrors] = useState<{[key: string]: string}>({});
-  const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    phone: '',
-    message: '',
-    noCv: false
+
+  const {
+    register,
+    handleSubmit,
+    reset,
+    formState: { errors },
+    watch
+  } = useForm<JobApplicationFormData>({
+    resolver: zodResolver(jobApplicationSchema),
   });
 
-  // Validation function
-  const validateField = (name: string, value: string) => {
-    const errors: {[key: string]: string} = {};
-    
-    switch (name) {
-      case 'name':
-        if (value.length < 2) {
-          errors.name = locale === 'mn' ? 'Нэр дор хаяж 2 тэмдэгт байх ёстой' : 
-                       locale === 'kr' ? '이름은 최소 2자 이상이어야 합니다' : 
-                       'Name must be at least 2 characters';
-        }
-        break;
-      case 'email':
-        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-        if (!emailRegex.test(value)) {
-          errors.email = locale === 'mn' ? 'Зөв имэйл хаяг оруулна уу' : 
-                        locale === 'kr' ? '올바른 이메일 주소를 입력하세요' : 
-                        'Please enter a valid email address';
-        }
-        break;
-      case 'phone':
-        if (value.length < 8) {
-          errors.phone = locale === 'mn' ? 'Утасны дугаар дор хаяж 8 орон байх ёстой' : 
-                        locale === 'kr' ? '전화번호는 최소 8자리 이상이어야 합니다' : 
-                        'Phone must be at least 8 characters';
-        }
-        break;
-      case 'message':
-        if (value.length < 10) {
-          errors.message = locale === 'mn' ? 'Мессеж дор хаяж 10 тэмдэгт байх ёстой' : 
-                          locale === 'kr' ? '메시지는 최소 10자 이상이어야 합니다' : 
-                          'Message must be at least 10 characters';
-        }
-        break;
-    }
-    
-    return errors;
-  };
-
-  // Handle input changes with validation
-  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-    const { name, value, type } = e.target;
-    const checked = (e.target as HTMLInputElement).checked;
-    
-    const newValue = type === 'checkbox' ? checked : value;
-    
-    setFormData(prev => ({
-      ...prev,
-      [name]: newValue
-    }));
-
-    // Clear validation error for this field
-    if (validationErrors[name]) {
-      setValidationErrors(prev => {
-        const newErrors = { ...prev };
-        delete newErrors[name];
-        return newErrors;
-      });
-    }
-
-    // Validate field if it's not a checkbox
-    if (type !== 'checkbox') {
-      const fieldErrors = validateField(name, value);
-      if (Object.keys(fieldErrors).length > 0) {
-        setValidationErrors(prev => ({
-          ...prev,
-          ...fieldErrors
-        }));
-      }
-    }
-  };
-
-  // Check if form is valid
-  const isFormValid = () => {
-    const errors = validateField('name', formData.name);
-    const emailErrors = validateField('email', formData.email);
-    const phoneErrors = validateField('phone', formData.phone);
-    const messageErrors = validateField('message', formData.message);
-    
-    const allErrors = { ...errors, ...emailErrors, ...phoneErrors, ...messageErrors };
-    setValidationErrors(allErrors);
-    
-    return Object.keys(allErrors).length === 0;
-  };
+  const noCv = watch('noCv');
 
   const jobData = {
     branch_service_consultant: {
@@ -238,28 +170,22 @@ export function JobApplication({ jobId, locale }: JobApplicationProps) {
     );
   }
 
-  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
-    
-    // Validate form before submission
-    if (!isFormValid()) {
-      setSubmitStatus('error');
-      return;
-    }
-    
+  const onSubmit = async (data: JobApplicationFormData) => {
     setIsSubmitting(true);
     setSubmitStatus('idle');
 
-    const formDataObj = new FormData(e.currentTarget);
-    const noCv = formDataObj.get('noCv') === 'on';
-    const data = {
-      name: formData.name,
-      email: formData.email,
-      phone: formData.phone,
+    // Get CV file from the file input
+    const cvInput = document.getElementById('cv') as HTMLInputElement;
+    const cvFile = cvInput?.files?.[0] || null;
+    
+    const submitData = {
+      name: data.name,
+      email: data.email,
+      phone: data.phone,
       position: currentJob.title,
-      message: formData.message,
-      cv: noCv ? null : (formDataObj.get('cv') as File),
-      noCv: noCv
+      message: data.message,
+      cv: data.noCv ? null : cvFile,
+      noCv: data.noCv || false
     };
 
     try {
@@ -269,7 +195,7 @@ export function JobApplication({ jobId, locale }: JobApplicationProps) {
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify(data),
+        body: JSON.stringify(submitData),
       });
 
       const result = await response.json();
@@ -279,7 +205,7 @@ export function JobApplication({ jobId, locale }: JobApplicationProps) {
       }
 
       setSubmitStatus('success');
-      (e.target as HTMLFormElement).reset();
+      reset();
     } catch (error) {
       console.error('Error submitting application:', error);
       setSubmitStatus('error');
@@ -459,7 +385,7 @@ export function JobApplication({ jobId, locale }: JobApplicationProps) {
                 </motion.div>
               )}
 
-              <form onSubmit={handleSubmit} className="space-y-6">
+              <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">
                 <div>
                   <label htmlFor="name" className="block text-sm font-semibold text-neutral-700 mb-3">
                     {locale === 'mn' ? 'Нэр' : 'Name'} *
@@ -467,19 +393,18 @@ export function JobApplication({ jobId, locale }: JobApplicationProps) {
                   <input
                     type="text"
                     id="name"
-                    name="name"
-                    value={formData.name}
-                    onChange={handleInputChange}
-                    required
+                    {...register('name')}
                     className={`w-full px-5 py-4 border-2 rounded-xl focus:ring-2 focus:ring-accent-500 transition-all duration-300 bg-white/50 ${
-                      validationErrors.name 
+                      errors.name 
                         ? 'border-red-500 focus:border-red-500' 
                         : 'border-neutral-200 focus:border-accent-500'
                     }`}
                     placeholder={locale === 'mn' ? 'Нэрээ оруулна уу' : 'Enter your name'}
                   />
-                  {validationErrors.name && (
-                    <p className="text-red-500 text-sm mt-1">{validationErrors.name}</p>
+                  {errors.name && (
+                    <p className="text-red-500 text-sm mt-1">
+                      {t(`validation.${errors.name.message}`)}
+                    </p>
                   )}
                 </div>
 
@@ -490,19 +415,18 @@ export function JobApplication({ jobId, locale }: JobApplicationProps) {
                   <input
                     type="email"
                     id="email"
-                    name="email"
-                    value={formData.email}
-                    onChange={handleInputChange}
-                    required
+                    {...register('email')}
                     className={`w-full px-5 py-4 border-2 rounded-xl focus:ring-2 focus:ring-accent-500 transition-all duration-300 bg-white/50 ${
-                      validationErrors.email 
+                      errors.email 
                         ? 'border-red-500 focus:border-red-500' 
                         : 'border-neutral-200 focus:border-accent-500'
                     }`}
                     placeholder={locale === 'mn' ? 'И-мэйл хаягаа оруулна уу' : 'Enter your email'}
                   />
-                  {validationErrors.email && (
-                    <p className="text-red-500 text-sm mt-1">{validationErrors.email}</p>
+                  {errors.email && (
+                    <p className="text-red-500 text-sm mt-1">
+                      {t(`validation.${errors.email.message}`)}
+                    </p>
                   )}
                 </div>
 
@@ -513,19 +437,18 @@ export function JobApplication({ jobId, locale }: JobApplicationProps) {
                   <input
                     type="tel"
                     id="phone"
-                    name="phone"
-                    value={formData.phone}
-                    onChange={handleInputChange}
-                    required
+                    {...register('phone')}
                     className={`w-full px-5 py-4 border-2 rounded-xl focus:ring-2 focus:ring-accent-500 transition-all duration-300 bg-white/50 ${
-                      validationErrors.phone 
+                      errors.phone 
                         ? 'border-red-500 focus:border-red-500' 
                         : 'border-neutral-200 focus:border-accent-500'
                     }`}
                     placeholder={locale === 'mn' ? 'Утасны дугаараа оруулна уу' : 'Enter your phone number'}
                   />
-                  {validationErrors.phone && (
-                    <p className="text-red-500 text-sm mt-1">{validationErrors.phone}</p>
+                  {errors.phone && (
+                    <p className="text-red-500 text-sm mt-1">
+                      {t(`validation.${errors.phone.message}`)}
+                    </p>
                   )}
                 </div>
 
@@ -540,7 +463,7 @@ export function JobApplication({ jobId, locale }: JobApplicationProps) {
                       <input
                         type="checkbox"
                         id="noCv"
-                        name="noCv"
+                        {...register('noCv')}
                         className="w-5 h-5 text-accent-600 bg-white border-2 border-neutral-300 rounded focus:ring-accent-500 focus:ring-2"
                         onChange={(e) => {
                           const fileInput = document.getElementById('cv') as HTMLInputElement;
@@ -579,29 +502,29 @@ export function JobApplication({ jobId, locale }: JobApplicationProps) {
                   </label>
                   <textarea
                     id="message"
-                    name="message"
-                    value={formData.message}
-                    onChange={handleInputChange}
+                    {...register('message')}
                     rows={5}
                     className={`w-full px-5 py-4 border-2 rounded-xl focus:ring-2 focus:ring-accent-500 transition-all duration-300 resize-none bg-white/50 ${
-                      validationErrors.message 
+                      errors.message 
                         ? 'border-red-500 focus:border-red-500' 
                         : 'border-neutral-200 focus:border-accent-500'
                     }`}
                     placeholder={locale === 'mn' ? 'Нэмэлт мэдээлэл оруулна уу...' : 'Enter additional information...'}
                   />
-                  {validationErrors.message && (
-                    <p className="text-red-500 text-sm mt-1">{validationErrors.message}</p>
+                  {errors.message && (
+                    <p className="text-red-500 text-sm mt-1">
+                      {t(`validation.${errors.message.message}`)}
+                    </p>
                   )}
                 </div>
 
                 <motion.button
                   type="submit"
-                  disabled={isSubmitting || Object.keys(validationErrors).length > 0}
+                  disabled={isSubmitting || Object.keys(errors).length > 0}
                   whileHover={{ scale: 1.02 }}
                   whileTap={{ scale: 0.98 }}
                   className={`w-full font-bold py-5 px-8 rounded-2xl transition-all duration-300 flex items-center justify-center text-lg shadow-lg hover:shadow-xl ${
-                    Object.keys(validationErrors).length > 0
+                    Object.keys(errors).length > 0
                       ? 'bg-gray-400 text-gray-600 cursor-not-allowed'
                       : 'bg-gradient-to-r from-accent-500 to-accent-600 hover:from-accent-600 hover:to-accent-700 text-white'
                   } disabled:opacity-50 disabled:cursor-not-allowed`}
@@ -611,7 +534,7 @@ export function JobApplication({ jobId, locale }: JobApplicationProps) {
                       <div className="animate-spin rounded-full h-6 w-6 border-b-2 border-white mr-3"></div>
                       {locale === 'mn' ? 'Илгээж байна...' : 'Submitting...'}
                     </>
-                  ) : Object.keys(validationErrors).length > 0 ? (
+                  ) : Object.keys(errors).length > 0 ? (
                     <>
                       <Send className="w-6 h-6 mr-3" />
                       {locale === 'mn' ? 'Мэдээлэл бүрэн оруулна уу' : 'Please complete all fields'}
