@@ -1,10 +1,10 @@
 'use client';
 
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useMemo } from 'react';
 import Link from 'next/link';
 import { useTranslations } from 'next-intl';
 import { usePathname } from 'next/navigation';
-import { Menu, X, Globe, ChevronDown } from 'lucide-react';
+import { Menu, X, Globe, ChevronDown, Search } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { LanguageSwitcher } from './LanguageSwitcher';
 
@@ -16,6 +16,8 @@ export function SiteHeader({ locale }: SiteHeaderProps) {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
+  const [searchQuery, setSearchQuery] = useState('');
+  const [isSearchActive, setIsSearchActive] = useState(false);
   const t = useTranslations();
   const pathname = usePathname();
 
@@ -77,6 +79,46 @@ export function SiteHeader({ locale }: SiteHeaderProps) {
 
   const allNavItems = [...topNavItems, ...bottomNavItems];
 
+  // Create a flattened list of all menu items for search
+  const allMenuItems = useMemo(() => {
+    const items: Array<{ href: string; label: string; category: string }> = [];
+    
+    allNavItems.forEach(item => {
+      // Add main item
+      items.push({
+        href: item.href,
+        label: item.label,
+        category: item.key === 'competitive_advantage' ? 'Competitive Advantage' :
+                 item.key === 'franchise' ? 'Franchise' :
+                 item.key === 'equipment' ? 'Equipment' : 'Main Menu'
+      });
+      
+      // Add dropdown items
+      if (item.dropdown) {
+        item.dropdown.forEach(subItem => {
+          items.push({
+            href: subItem.href,
+            label: subItem.label,
+            category: item.label
+          });
+        });
+      }
+    });
+    
+    return items;
+  }, [allNavItems, t]);
+
+  // Filter menu items based on search query
+  const filteredMenuItems = useMemo(() => {
+    if (!searchQuery.trim()) return allMenuItems;
+    
+    const query = searchQuery.toLowerCase();
+    return allMenuItems.filter(item => 
+      item.label.toLowerCase().includes(query) ||
+      item.href.toLowerCase().includes(query)
+    );
+  }, [searchQuery, allMenuItems]);
+
   const isActive = (href?: string, key?: string) => {
     if (href) {
       if (href === `/${locale}`) {
@@ -104,6 +146,28 @@ export function SiteHeader({ locale }: SiteHeaderProps) {
 
   const handleMouseLeave = () => {
     setActiveDropdown(null);
+  };
+
+  const handleSearchChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setSearchQuery(e.target.value);
+    setIsSearchActive(e.target.value.length > 0);
+  };
+
+  const handleSearchFocus = () => {
+    setIsSearchActive(true);
+  };
+
+  const handleSearchBlur = () => {
+    // Delay hiding to allow clicking on search results
+    setTimeout(() => {
+      setIsSearchActive(false);
+      setSearchQuery('');
+    }, 200);
+  };
+
+  const handleSearchItemClick = () => {
+    setIsSearchActive(false);
+    setSearchQuery('');
   };
 
   const renderNavItem = (item: any, isBottomRow = false) => {
@@ -254,23 +318,66 @@ export function SiteHeader({ locale }: SiteHeaderProps) {
 
             {/* Search functionality */}
             <div className="flex items-center space-x-3">
-              <div className="flex items-center bg-white/20 rounded-lg px-3 py-2">
-                <input
-                  type="text"
-                  placeholder={t('common.search') || 'Search...'}
-                  className="bg-transparent text-white placeholder-white/70 text-sm border-none outline-none w-48"
-                />
-                <button className="text-white hover:text-white/80 transition-colors ml-2">
-                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path
-                      d="M21 21L15 15M17 10C17 13.866 13.866 17 10 17C6.13401 17 3 13.866 3 10C3 6.13401 6.13401 3 10 3C13.866 3 17 6.13401 17 10Z"
-                      stroke="currentColor"
-                      strokeWidth="2"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                    />
-                  </svg>
-                </button>
+              <div className="relative">
+                <div className="flex items-center bg-white/20 rounded-lg px-3 py-2">
+                  <input
+                    type="text"
+                    placeholder={t('common.search') || 'Search...'}
+                    value={searchQuery}
+                    onChange={handleSearchChange}
+                    onFocus={handleSearchFocus}
+                    onBlur={handleSearchBlur}
+                    className="bg-transparent text-white placeholder-white/70 text-sm border-none outline-none w-48"
+                  />
+                  <Search className="text-white/70 w-4 h-4 ml-2" />
+                </div>
+
+                {/* Search Results Dropdown */}
+                <AnimatePresence>
+                  {isSearchActive && (
+                    <motion.div
+                      initial={{ opacity: 0, y: -10 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      exit={{ opacity: 0, y: -10 }}
+                      className="absolute top-full right-0 mt-2 w-80 bg-white rounded-lg shadow-xl border border-neutral-200 max-h-96 overflow-y-auto z-50"
+                    >
+                      <div className="p-2">
+                        {filteredMenuItems.length > 0 ? (
+                          <div className="space-y-1">
+                            {filteredMenuItems.map((item, index) => (
+                              <Link
+                                key={`${item.href}-${index}`}
+                                href={item.href}
+                                onClick={handleSearchItemClick}
+                                className="flex items-center justify-between p-3 hover:bg-neutral-50 rounded-lg transition-colors group"
+                              >
+                                <div className="flex-1">
+                                  <div className="text-sm font-medium text-neutral-900 group-hover:text-accent-600">
+                                    {item.label}
+                                  </div>
+                                  <div className="text-xs text-neutral-500 mt-1">
+                                    {item.category}
+                                  </div>
+                                </div>
+                                <div className="text-xs text-neutral-400 ml-2">
+                                  {item.href.replace(`/${locale}`, '') || '/'}
+                                </div>
+                              </Link>
+                            ))}
+                          </div>
+                        ) : searchQuery.trim() ? (
+                          <div className="p-4 text-center text-neutral-500 text-sm">
+                            No results found for "{searchQuery}"
+                          </div>
+                        ) : (
+                          <div className="p-4 text-center text-neutral-500 text-sm">
+                            Start typing to search menu items...
+                          </div>
+                        )}
+                      </div>
+                    </motion.div>
+                  )}
+                </AnimatePresence>
               </div>
             </div>
           </div>
@@ -287,6 +394,74 @@ export function SiteHeader({ locale }: SiteHeaderProps) {
             className="lg:hidden bg-white border-t border-neutral-200"
           >
             <div className="container-custom py-6">
+              {/* Mobile Search */}
+              <div className="mb-6">
+                <div className="relative">
+                  <div className="flex items-center bg-neutral-100 rounded-lg px-3 py-2">
+                    <input
+                      type="text"
+                      placeholder={t('common.search') || 'Search...'}
+                      value={searchQuery}
+                      onChange={handleSearchChange}
+                      onFocus={handleSearchFocus}
+                      onBlur={handleSearchBlur}
+                      className="bg-transparent text-neutral-900 placeholder-neutral-500 text-sm border-none outline-none w-full"
+                    />
+                    <Search className="text-neutral-500 w-4 h-4 ml-2" />
+                  </div>
+
+                  {/* Mobile Search Results */}
+                  <AnimatePresence>
+                    {isSearchActive && (
+                      <motion.div
+                        initial={{ opacity: 0, y: -10 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        exit={{ opacity: 0, y: -10 }}
+                        className="absolute top-full left-0 right-0 mt-2 bg-white rounded-lg shadow-xl border border-neutral-200 max-h-64 overflow-y-auto z-50"
+                      >
+                        <div className="p-2">
+                          {filteredMenuItems.length > 0 ? (
+                            <div className="space-y-1">
+                              {filteredMenuItems.map((item, index) => (
+                                <Link
+                                  key={`mobile-${item.href}-${index}`}
+                                  href={item.href}
+                                  onClick={() => {
+                                    handleSearchItemClick();
+                                    setIsMobileMenuOpen(false);
+                                  }}
+                                  className="flex items-center justify-between p-3 hover:bg-neutral-50 rounded-lg transition-colors group"
+                                >
+                                  <div className="flex-1">
+                                    <div className="text-sm font-medium text-neutral-900 group-hover:text-accent-600">
+                                      {item.label}
+                                    </div>
+                                    <div className="text-xs text-neutral-500 mt-1">
+                                      {item.category}
+                                    </div>
+                                  </div>
+                                  <div className="text-xs text-neutral-400 ml-2">
+                                    {item.href.replace(`/${locale}`, '') || '/'}
+                                  </div>
+                                </Link>
+                              ))}
+                            </div>
+                          ) : searchQuery.trim() ? (
+                            <div className="p-4 text-center text-neutral-500 text-sm">
+                              No results found for "{searchQuery}"
+                            </div>
+                          ) : (
+                            <div className="p-4 text-center text-neutral-500 text-sm">
+                              Start typing to search menu items...
+                            </div>
+                          )}
+                        </div>
+                      </motion.div>
+                    )}
+                  </AnimatePresence>
+                </div>
+              </div>
+
               <nav className="flex flex-col space-y-3">
                 {allNavItems.map((item) => {
                   if (item.dropdown) {
