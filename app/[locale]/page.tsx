@@ -1,23 +1,24 @@
 import { Hero } from '@/components/Hero';
 import { Advantages } from '@/components/Advantages';
 import { PricingImages } from '@/components/PricingImages';
-import { FacebookReelEmbed } from '@/components/FacebookReelEmbed';
+import { YouTubeVideos } from '@/components/YouTubeVideos';
 import { FAQ } from '@/components/FAQ';
 import { Branches } from '@/components/Branches';
 import { CustomerGuidelines } from '@/components/CustomerGuidelines';
 import { ContactCTA } from '@/components/ContactCTA';
 
 interface HomePageProps {
-  params: { locale: string };
+  params: Promise<{ locale: string }>;
 }
 
-export default function HomePage({ params: { locale } }: HomePageProps) {
+export default async function HomePage({ params }: HomePageProps) {
+  const { locale } = await params;
   return (
     <>
       <Hero locale={locale} />
       <Advantages locale={locale} />
       <PricingImages locale={locale} />
-      <FacebookReelEmbed locale={locale} />
+      <YouTubeVideos locale={locale} />
       <FAQ locale={locale} />
       <CustomerGuidelines locale={locale} />
       <Branches locale={locale} />

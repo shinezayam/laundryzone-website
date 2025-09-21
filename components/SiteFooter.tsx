@@ -100,7 +100,7 @@ export function SiteFooter({ locale }: SiteFooterProps) {
               </div>
               <div className="flex items-center space-x-3">
                 <Mail size={16} className="text-accent-400" />
-                <span className="text-neutral-300 text-sm">laundryzone.mongolia@gmail.com</span>
+                <span className="text-neutral-300 text-sm">laundryzone.info@gmail.com</span>
               </div>
               <div className="flex items-center space-x-3">
                 <MapPin size={16} className="text-accent-400" />
@@ -130,30 +130,30 @@ export function SiteFooter({ locale }: SiteFooterProps) {
         {/* Bottom Bar */}
         <div className="border-t border-neutral-800 mt-12 pt-8">
           <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
-                         <p className="text-neutral-400 text-sm">
-               © 2025 LaundryZone Mongolia. All rights reserved. Designed by{' '}
-               <a
-                //  href="https://www.instagram.com/zzzchinguun/"
-                 href="https://portfolio-sage-xi-54.vercel.app/"
-                 target="_blank"
-                 rel="noopener noreferrer"
-                 className="text-accent-400 hover:text-accent-300 transition-colors font-medium"
-               >
-                 Shinezaya Myagmar
-               </a>
-               <p className="text-neutral-400 text-sm">
-               Coded by{' '}
-               <a
-                 href="https://www.instagram.com/zzzchinguun/"
-                //  href="https://portfolio-sage-xi-54.vercel.app/"
-                 target="_blank"
-                 rel="noopener noreferrer"
-                 className="text-accent-400 hover:text-accent-300 transition-colors font-medium"
-               >
-                 Chinguun Khongor
-               </a>
-             </p>
-             </p>
+            <div className="text-neutral-400 text-sm space-y-1">
+              <p>
+                © 2025 LaundryZone Mongolia. All rights reserved. Designed by{' '}
+                <a
+                  href="https://portfolio-sage-xi-54.vercel.app/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-accent-400 hover:text-accent-300 transition-colors font-medium"
+                >
+                  Shinezaya Myagmar
+                </a>
+              </p>
+              {/* <p>
+                Coded by{' '}
+                <a
+                  href="https://www.instagram.com/zzzchinguun/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-accent-400 hover:text-accent-300 transition-colors font-medium"
+                >
+                  Chinguun Khongor
+                </a>
+              </p> */}
+            </div>
             
             <div className="flex space-x-6">
               <Link

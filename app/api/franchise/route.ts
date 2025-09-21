@@ -30,8 +30,8 @@ export async function POST(request: NextRequest) {
     }
 
     // Email content - Use Resend's onboarding domain for testing
-    const fromEmail = process.env.FROM_EMAIL === 'noreply@laundryzone.mn' ? 'onboarding@resend.dev' : (process.env.FROM_EMAIL || 'onboarding@resend.dev');
-    const toEmail = process.env.TO_EMAIL || 'laundryzone.mongolia@gmail.com';
+    const fromEmail = process.env.FROM_EMAIL || 'onboarding@resend.dev';
+    const toEmail = process.env.TO_EMAIL || 'delivered@resend.dev';
 
     const emailContent = {
       from: fromEmail,

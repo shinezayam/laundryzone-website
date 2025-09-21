@@ -115,19 +115,30 @@ a {
   .container-custom {
     @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
   }
+
+  /* Fix scroll-margin for anchor links with two-row header */
+  .scroll-mt-24 {
+    scroll-margin-top: 6rem !important; /* 96px -> better for mobile */
+  }
+
+  @media (min-width: 1024px) {
+    .scroll-mt-24 {
+      scroll-margin-top: 7rem !important; /* 112px for desktop (104px header + 8px buffer) */
+    }
+  }
   
   .hero-content {
     @apply mt-16 lg:mt-20;
   }
   
-  /* Fix for hero section being covered by fixed header */
+  /* Fix for hero section being covered by fixed header - Two-row header */
   section:first-of-type {
-    padding-top: 4rem; /* 64px for mobile */
+    padding-top: 7rem; /* 112px for mobile (additional breathing room) */
   }
-  
+
   @media (min-width: 1024px) {
     section:first-of-type {
-      padding-top: 5rem; /* 80px for desktop */
+      padding-top: 8rem; /* 128px for desktop (additional breathing room) */
     }
   }
   

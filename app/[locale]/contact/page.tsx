@@ -4,10 +4,11 @@ import { ContactForm } from '@/components/ContactForm';
 import { Phone, Mail, MapPin, Clock, MessageCircle } from 'lucide-react';
 
 interface ContactPageProps {
-  params: { locale: string };
+  params: Promise<{ locale: string }>;
 }
 
-export default async function ContactPage({ params: { locale } }: ContactPageProps) {
+export default async function ContactPage({ params }: ContactPageProps) {
+  const { locale } = await params;
   const t = await getTranslations();
 
   return (
@@ -49,7 +50,7 @@ export default async function ContactPage({ params: { locale } }: ContactPagePro
                   </div>
                   <div>
                     <h3 className="font-semibold text-neutral-900">{t('contact.info.email')}</h3>
-                    <p className="text-neutral-600">laundryzone.mongolia@gmail.com</p>
+                    <p className="text-neutral-600">laundryzone.info@gmail.com</p>
                   </div>
                 </div>
 

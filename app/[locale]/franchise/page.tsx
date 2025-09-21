@@ -5,12 +5,11 @@ import { motion } from 'framer-motion';
 import { PageHeader } from '@/components/PageHeader';
 import { FranchiseForm } from '@/components/FranchiseForm';
 import { BusinessStepsPDF } from '@/components/BusinessStepsPDF';
+import { useParams } from 'next/navigation';
 
-interface FranchisePageProps {
-  params: { locale: string };
-}
-
-export default function FranchisePage({ params: { locale } }: FranchisePageProps) {
+export default function FranchisePage() {
+  const params = useParams();
+  const locale = params.locale as string;
   const t = useTranslations();
 
   const businessSteps = [

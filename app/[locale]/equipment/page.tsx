@@ -6,12 +6,11 @@ import { PageHeader } from '@/components/PageHeader';
 import { Equipment } from '@/components/Equipment';
 import { Services } from '@/components/Services';
 import Image from 'next/image';
+import { useParams } from 'next/navigation';
 
-interface EquipmentPageProps {
-  params: { locale: string };
-}
-
-export default function EquipmentPage({ params: { locale } }: EquipmentPageProps) {
+export default function EquipmentPage() {
+  const params = useParams();
+  const locale = params.locale as string;
   const t = useTranslations();
 
   return (

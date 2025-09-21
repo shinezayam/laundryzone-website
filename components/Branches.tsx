@@ -45,7 +45,7 @@ export function Branches({ locale }: BranchesProps) {
       lng: 106.9393,
       hours: "08:00-24:00",
       phone: "+976 9500 7443",
-      email: "laundryzone.mongolia@gmail.com",
+      email: "laundryzone.info@gmail.com",
       facebook: "https://www.facebook.com/laundryzone.mongolia/",
              image: "/images/Branches/Дүнжингарав.jpg"
     },

@@ -39,7 +39,13 @@
       "branch_locations": "Branch Addresses & Locations",
       "pricing_info": "Service Pricing Information"
     },
-    "contact": "Contact"
+    "contact": "Contact",
+    "human_resources": "Human Resources",
+    "branch_locations": "Branch Locations",
+    "products": "Products",
+    "customer": "Customer",
+    "contact_us": "Contact Us",
+    "search_placeholder": "Search..."
   },
   "business_steps": {
     "step_01": {
@@ -470,7 +476,9 @@
     "loading": "Loading...",
     "error": "Error occurred",
     "success": "Success",
+    "search": "Search",
     "language": "Language",
+    "Хөршийн холбоо": "Community Relations",
     "get_in_touch": "Get in Touch",
     "follow_us": "Follow Us",
     "send_message": "Send us a Message",
@@ -1096,5 +1104,14 @@
         "content": "This blog post content is not available."
       }
     }
-  }
+  },
+  "Тоног төхөөрөмж": "Equipment",
+  "Бидний тухай": "About Us",
+  "Франчайз эрх авах": "Franchise",
+  "Монголын хамгийн анхны өөртөө үйлчлэх угаалгын газар": "Mongolia's First Self-Service Laundromat",
+  "Холбоо барих": "Contact Us",
+  "Бидэнтэй холбогдоно уу": "Get in touch with us",
+  "Өрсөлдөх чадвар": "Competitive Advantage",
+  "LaundryZone Mongolia-ын өрсөлдөх давуу талууд": "LaundryZone Mongolia's Competitive Advantages",
+  "Мэргэжлийн үр дүнг хангах хамгийн сүүлийн үеийн коммерцийн угаалгын тоног төхөөрөмж": "State-of-the-art commercial laundry equipment delivering professional results"
 }

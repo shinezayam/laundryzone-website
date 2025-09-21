@@ -3,13 +3,11 @@
 import { useTranslations } from 'next-intl';
 import { motion } from 'framer-motion';
 import { PageHeader } from '@/components/PageHeader';
+import { useParams } from 'next/navigation';
 
-
-interface CompetitiveAdvantagePageProps {
-  params: { locale: string };
-}
-
-export default function CompetitiveAdvantagePage({ params: { locale } }: CompetitiveAdvantagePageProps) {
+export default function CompetitiveAdvantagePage() {
+  const params = useParams();
+  const locale = params.locale as string;
   const t = useTranslations('common');
   const tNav = useTranslations('nav');
 

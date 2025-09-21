@@ -13,7 +13,16 @@
       "Bash(git add:*)",
       "Bash(git push:*)",
       "WebSearch",
-      "Bash(curl:*)"
+      "Bash(curl:*)",
+      "Bash(npx playwright test:*)",
+      "Bash(npx playwright codegen:*)",
+      "Bash(npx playwright:*)",
+      "Bash(for file in /Users/zzzchinguun/Developer/Hustle/LaundryZone/laundryzone-website/app/[locale]/*/page.tsx)",
+      "Bash(do if grep -q \"''use client''\" \"$file\")",
+      "Bash(grep:*)",
+      "Bash(then echo \"$file\")",
+      "Bash(fi)",
+      "Bash(done)"
     ],
     "deny": [],
     "ask": []

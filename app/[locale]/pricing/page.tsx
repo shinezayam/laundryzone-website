@@ -1,10 +1,11 @@
 import { redirect } from 'next/navigation';
 
 interface PricingPageProps {
-  params: { locale: string };
+  params: Promise<{ locale: string }>;
 }
 
-export default function PricingPage({ params: { locale } }: PricingPageProps) {
+export default async function PricingPage({ params }: PricingPageProps) {
+  const { locale } = await params;
   // Redirect to community pricing section where pricing content now lives
   redirect(`/${locale}/community#pricing-info`);
 }

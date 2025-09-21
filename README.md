@@ -27,23 +27,26 @@ A production-ready, multilingual marketing website for LaundryZone (Mongolia), f
 
 ### Prerequisites
 
-- Node.js 18+ 
+- Node.js 18+
 - pnpm (recommended) or npm
 
 ### Installation
 
 1. Clone the repository:
+
 ```bash
 git clone <repository-url>
 cd laundryzone-mn
 ```
 
 2. Install dependencies:
+
 ```bash
 pnpm install
 ```
 
 3. Run the development server:
+
 ```bash
 pnpm dev
 ```
@@ -89,6 +92,7 @@ laundryzone-mn/
 ## 🌍 Internationalization
 
 The website supports three languages:
+
 - **Mongolian (MN)**: Default language
 - **English (EN)**: International audience
 - **Korean (KR)**: Korean market
@@ -102,7 +106,7 @@ The website supports three languages:
 ### URL Structure
 
 - `/mn/` - Mongolian (default)
-- `/en/` - English  
+- `/en/` - English
 - `/kr/` - Korean
 
 ## 🎨 Design System
@@ -111,10 +115,10 @@ The website supports three languages:
 
 ```css
 :root {
-  --brand-500: #2D7CFF;    /* Main blue */
-  --accent-500: #00D6A7;   /* Accent green */
-  --neutral-900: #0E1116;  /* Dark text */
-  --neutral-50: #F8FAFC;   /* Light background */
+  --brand-500: #2d7cff; /* Main blue */
+  --accent-500: #00d6a7; /* Accent green */
+  --neutral-900: #0e1116; /* Dark text */
+  --neutral-50: #f8fafc; /* Light background */
 }
 ```
 
@@ -151,6 +155,7 @@ NEXT_PUBLIC_GOOGLE_ANALYTICS_ID=your-ga-id
 ### SEO Configuration
 
 Update metadata in `app/layout.tsx`:
+
 - Site title and description
 - Open Graph images
 - Twitter Card settings
@@ -167,11 +172,13 @@ Update metadata in `app/layout.tsx`:
 ### Other Platforms
 
 1. Build the project:
+
 ```bash
 pnpm build
 ```
 
 2. Start the production server:
+
 ```bash
 pnpm start
 ```
@@ -205,7 +212,8 @@ This project is proprietary to LaundryZone Mongolia.
 ## 📞 Support
 
 For support or questions:
-- Email: laundryzone.mongolia@gmail.com
+
+- Email: laundryzone.info@gmail.com
 - Phone: +976-7272-2121
 
 ---

@@ -13,6 +13,11 @@ npm run lint           # Run ESLint
 npm run type-check     # Run TypeScript type checking
 ```
 
+## Current Version Status
+- **Next.js**: 15.5.3 (latest)
+- **next-intl**: 4.3.9 (latest)
+- **Status**: All hydration errors resolved, Next.js 15 compatible
+
 ## Project Architecture
 
 ### Tech Stack
@@ -23,6 +28,9 @@ npm run type-check     # Run TypeScript type checking
 - **Forms**: React Hook Form + Zod validation
 - **Internationalization**: next-intl
 - **Icons**: Lucide React
+- **PDF Generation**: jsPDF + html2canvas
+- **Email**: Resend
+- **Testing**: Playwright (configured)
 
 ### Internationalization Setup
 
@@ -42,18 +50,21 @@ The project supports three locales:
 ### File Structure
 
 **App Router Structure:**
-- `app/[locale]/` - Locale-specific pages
-- `app/layout.tsx` - Root layout with global styles
+- `app/[locale]/` - Locale-specific pages (about, blog, contact, franchise, etc.)
+- `app/layout.tsx` - Root layout with metadata and global styles
+- `app/[locale]/layout.tsx` - Locale wrapper with NextIntlClientProvider
 - `app/globals.css` - Global Tailwind styles
 
 **Components:**
-- `components/` - Reusable React components
-- All components are TypeScript with `.tsx` extension
-- Use Tailwind classes for styling
+- `components/` - Reusable React components (25+ components)
+- Key components: SiteHeader, SiteFooter, Hero, ContactForm, PricingTable, FAQ, Chatbot
+- All components use TypeScript with `.tsx` extension
+- Styled with Tailwind classes and custom design tokens
 
-**Data:**
-- `data/` - Static JSON data files (branches, pricing, FAQ)
-- `messages/` - Internationalization translation files
+**Data & Content:**
+- `data/` - Static JSON data (branches.json, pricing.json, faq.json)
+- `messages/` - Translation files (mn.json, en.json, kr.json)
+- Blog posts support with dynamic routing
 
 ### Design System
 
@@ -63,12 +74,17 @@ The project supports three locales:
 - `neutral-*` - Grayscale system
 
 **Typography:**
-- `font-sans: Inter` - Body text
-- `font-heading: Sora/Manrope` - Headings
+- `font-sans: Montserrat` - Body text (configured in Tailwind)
+- `font-heading: Montserrat` - Headings
 
 **Custom Shadows:**
 - `shadow-soft` - Light shadow for cards
 - `shadow-medium` - Medium depth shadow
+
+**Custom Animations:**
+- `animate-fade-in` - Fade in animation
+- `animate-slide-up` - Slide up animation
+- `animate-scale-in` - Scale in animation
 
 ### Component Patterns
 
@@ -86,10 +102,30 @@ const t = useTranslations('section');
 // Access with dot notation: t('nav.home')
 ```
 
+### Page Layout Architecture
+
+Each page follows this pattern:
+```tsx
+app/[locale]/page-name/page.tsx
+```
+
+**Layout Hierarchy:**
+1. `app/layout.tsx` - Root layout with metadata, Inter font, global styles
+2. `app/[locale]/layout.tsx` - Locale wrapper with NextIntlClientProvider, SiteHeader, SiteFooter, Chatbot
+3. Page components - Individual page content
+
+**Key Architectural Notes:**
+- Locale validation happens in both middleware.ts and locale layout
+- All pages are wrapped with NextIntlClientProvider for translations
+- Error handling component included in locale layout
+- Chatbot component available on all pages
+
 ## Development Notes
 
 - The project uses absolute imports with `@/*` path mapping
 - All pages use the locale layout wrapper for internationalization
-- Image optimization is configured for WebP/AVIF formats
+- Image optimization configured for WebP/AVIF formats with remote patterns
 - TypeScript strict mode is enabled
 - Locale detection is disabled in middleware (relies on URL prefix only)
+- SEO optimized with comprehensive metadata in root layout
+- Responsive design with mobile-first approach

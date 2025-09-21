@@ -7,12 +7,11 @@ import { Branches } from '@/components/Branches';
 import { BlogCard } from '@/components/BlogCard';
 import type { BlogPost } from '@/components/BlogList';
 import Image from 'next/image';
+import { useParams } from 'next/navigation';
 
-interface CommunityPageProps {
-  params: { locale: string };
-}
-
-export default function CommunityPage({ params: { locale } }: CommunityPageProps) {
+export default function CommunityPage() {
+  const params = useParams();
+  const locale = params.locale as string;
   const t = useTranslations();
 
   // Blog posts data for announcements section
@@ -143,7 +142,7 @@ export default function CommunityPage({ params: { locale } }: CommunityPageProps
       </section>
 
       {/* Branch Locations Section */}
-      <section id="branch-locations" className="section-padding bg-white scroll-mt-24">
+      <section id="branch-locations" className="section-padding bg-transparent scroll-mt-`12">
         <Branches locale={locale} />
       </section>
 

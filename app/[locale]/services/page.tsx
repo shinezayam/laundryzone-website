@@ -3,13 +3,14 @@ import { ServiceDetails } from '@/components/ServiceDetails';
 import { PageHeader } from '@/components/PageHeader';
 
 interface ServicesPageProps {
-  params: { locale: string };
+  params: Promise<{ locale: string }>;
 }
 
-export default function ServicesPage({ params: { locale } }: ServicesPageProps) {
+export default async function ServicesPage({ params }: ServicesPageProps) {
+  const { locale } = await params;
   return (
     <>
-      <PageHeader 
+      <PageHeader
         title="services.title"
         subtitle="services.subtitle"
         locale={locale}

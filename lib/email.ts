@@ -1,6 +1,6 @@
 // Email configuration for form submissions
 export const EMAIL_CONFIG = {
-  TO: 'laundryzone.mongolia@gmail.com',
+  TO: 'laundryzone.info@gmail.com',
   SUBJECT_PREFIX: 'LaundryZone Website - ',
   API_ENDPOINT: '/api/contact',
   FRANCHISE_API_ENDPOINT: '/api/franchise',

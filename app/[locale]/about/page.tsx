@@ -4,6 +4,7 @@ import { useTranslations } from 'next-intl';
 import { motion } from 'framer-motion';
 import { PageHeader } from '@/components/PageHeader';
 import { useState, useEffect } from 'react';
+import { useParams } from 'next/navigation';
 
 // CountUp Component
 const CountUp = ({ end, duration = 2, delay = 0 }: { end: number; duration?: number; delay?: number }) => {
@@ -36,16 +37,14 @@ const CountUp = ({ end, duration = 2, delay = 0 }: { end: number; duration?: num
   return <span>{count.toLocaleString()}</span>;
 };
 
-interface AboutPageProps {
-  params: { locale: string };
-}
-
-export default function AboutPage({ params: { locale } }: AboutPageProps) {
+export default function AboutPage() {
   const t = useTranslations();
+  const params = useParams();
+  const locale = params.locale as string;
 
   return (
     <>
-      <PageHeader 
+      <PageHeader
         title={t('about.title')}
         subtitle={t('about.subtitle')}
         locale={locale}

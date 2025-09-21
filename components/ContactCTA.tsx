@@ -24,8 +24,8 @@ export function ContactCTA({ locale }: ContactCTAProps) {
     {
       icon: Mail,
       title: t('contact.info.email'),
-      value: 'laundryzone.mongolia@gmail.com',
-      href: 'mailto:laundryzone.mongolia@gmail.com',
+      value: 'laundryzone.info@gmail.com',
+      href: 'mailto:laundryzone.info@gmail.com',
       color: 'text-green-600',
       bgColor: 'bg-green-100',
     },
@@ -175,7 +175,7 @@ export function ContactCTA({ locale }: ContactCTAProps) {
                                  {t('contact.info.phone')}
                </a>
                <a
-                 href="mailto:laundryzone.mongolia@gmail.com"
+                 href="mailto:laundryzone.info@gmail.com"
                  className="bg-gradient-to-br from-white/20 to-white/10 text-white hover:from-white/30 hover:to-white/20 border border-white/30 font-semibold text-base py-3 px-6 rounded-2xl transition-all duration-200 inline-flex items-center justify-center"
                >
                  <Mail size={20} className="mr-2" />

@@ -5,18 +5,20 @@ import { z } from 'zod';
 // Initialize Resend only when API key is available
 const resend = process.env.RESEND_API_KEY ? new Resend(process.env.RESEND_API_KEY) : null;
 
-const contactSchema = z.object({
+const jobApplicationSchema = z.object({
   name: z.string().min(2, 'Name must be at least 2 characters'),
   email: z.string().email('Invalid email address'),
   phone: z.string().min(8, 'Phone must be at least 8 characters'),
+  position: z.string().min(1, 'Position is required'),
   message: z.string().min(10, 'Message must be at least 10 characters'),
+  noCv: z.boolean().optional(),
 });
 
 export async function POST(request: NextRequest) {
   try {
     // Parse and validate the request body
     const body = await request.json();
-    const validatedData = contactSchema.parse(body);
+    const validatedData = jobApplicationSchema.parse(body);
 
     // Check if Resend API key is configured
     if (!process.env.RESEND_API_KEY || !resend) {
@@ -34,36 +36,45 @@ export async function POST(request: NextRequest) {
     const emailContent = {
       from: fromEmail,
       to: [toEmail],
-      subject: `LaundryZone Website - Contact Form Submission from ${validatedData.name}`,
+      subject: `LaundryZone Website - Job Application for ${validatedData.position}`,
       html: `
         <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto; padding: 20px; background-color: #f9fafb; border-radius: 10px;">
           <div style="background-color: #ffffff; padding: 30px; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
             <h1 style="color: #F4781F; margin-bottom: 20px; font-size: 24px; text-align: center;">
-              New Contact Form Submission
+              🧺 Job Application - LaundryZone
             </h1>
             
             <div style="background-color: #f8f9fa; padding: 20px; border-radius: 6px; margin-bottom: 20px;">
               <h2 style="color: #374151; font-size: 18px; margin-bottom: 15px; border-bottom: 2px solid #F4781F; padding-bottom: 5px;">
-                Contact Information
+                Applicant Information
               </h2>
-              
-              <div style="margin-bottom: 12px;">
-                <strong style="color: #6b7280; display: inline-block; width: 80px;">Name:</strong>
-                <span style="color: #111827;">${validatedData.name}</span>
-              </div>
-              
-              <div style="margin-bottom: 12px;">
-                <strong style="color: #6b7280; display: inline-block; width: 80px;">Email:</strong>
-                <a href="mailto:${validatedData.email}" style="color: #2563eb; text-decoration: none;">
-                  ${validatedData.email}
-                </a>
-              </div>
-              
-              <div style="margin-bottom: 12px;">
-                <strong style="color: #6b7280; display: inline-block; width: 80px;">Phone:</strong>
-                <a href="tel:${validatedData.phone}" style="color: #2563eb; text-decoration: none;">
-                  ${validatedData.phone}
-                </a>
+              <div style="display: grid; gap: 10px;">
+                <div style="display: flex; justify-content: space-between;">
+                  <strong style="color: #111827;">Name:</strong>
+                  <span style="color: #374151;">${validatedData.name}</span>
+                </div>
+                <div style="display: flex; justify-content: space-between;">
+                  <strong style="color: #111827;">Email:</strong>
+                  <a href="mailto:${validatedData.email}" style="color: #2563eb; text-decoration: none;">
+                    ${validatedData.email}
+                  </a>
+                </div>
+                <div style="display: flex; justify-content: space-between;">
+                  <strong style="color: #111827;">Phone:</strong>
+                  <a href="tel:${validatedData.phone}" style="color: #2563eb; text-decoration: none;">
+                    ${validatedData.phone}
+                  </a>
+                </div>
+                <div style="display: flex; justify-content: space-between;">
+                  <strong style="color: #111827;">Position:</strong>
+                  <span style="color: #374151; font-weight: 600;">${validatedData.position}</span>
+                </div>
+                <div style="display: flex; justify-content: space-between;">
+                  <strong style="color: #111827;">CV Status:</strong>
+                  <span style="color: ${validatedData.noCv ? '#dc2626' : '#059669'}; font-weight: 600;">
+                    ${validatedData.noCv ? 'No CV provided' : 'CV attached'}
+                  </span>
+                </div>
               </div>
             </div>
             
@@ -77,7 +88,7 @@ ${validatedData.message}
             </div>
             
             <div style="border-top: 1px solid #e5e7eb; padding-top: 20px; text-align: center; color: #6b7280; font-size: 14px;">
-              <p>This message was sent from the LaundryZone website contact form.</p>
+              <p>This job application was submitted from the LaundryZone website.</p>
               <p>Generated on: ${new Date().toLocaleString('en-US', { 
                 timeZone: 'Asia/Ulaanbaatar',
                 year: 'numeric',
@@ -99,7 +110,7 @@ ${validatedData.message}
       console.error('Resend error:', error);
       
       // Provide more specific error messages
-      let errorMessage = 'Failed to send email';
+      let errorMessage = 'Failed to send job application';
       if (error.message?.includes('testing emails')) {
         errorMessage = 'Email service is in testing mode. Please contact support.';
       } else if ((error as any).statusCode === 403) {
@@ -117,12 +128,12 @@ ${validatedData.message}
       );
     }
 
-    console.log('Email sent successfully:', data);
+    console.log('Job application email sent successfully:', data);
     
     return NextResponse.json(
       { 
         success: true, 
-        message: 'Email sent successfully',
+        message: 'Job application submitted successfully',
         emailId: data?.id 
       },
       { status: 200 }
