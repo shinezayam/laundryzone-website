@@ -4,10 +4,10 @@ import { BlogPost } from '@/components/BlogPost';
 import { setRequestLocale } from 'next-intl/server';
 
 interface BlogPostPageProps {
-  params: {
+  params: Promise<{
     locale: string;
     id: string;
-  };
+  }>;
 }
 
 // Get blog post data based on ID
@@ -97,7 +97,7 @@ function getBlogPost(id: string, locale: string) {
 }
 
 export default async function BlogPostPage({ params }: BlogPostPageProps) {
-  const { id, locale } = params;
+  const { id, locale } = await params;
   
   // Enable static rendering for this page
   setRequestLocale(locale);
@@ -112,7 +112,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
 }
 
 export async function generateMetadata({ params }: BlogPostPageProps) {
-  const { id, locale } = params;
+  const { id, locale } = await params;
   const blogPost = getBlogPost(id, locale);
 
   if (!blogPost) {
