@@ -403,7 +403,7 @@ export function JobApplication({ jobId, locale }: JobApplicationProps) {
                   />
                   {errors.name && (
                     <p className="text-red-500 text-sm mt-1">
-                      {t(`validation.${errors.name.message}`)}
+                      {t(`contact.form.validation.${errors.name.message}`)}
                     </p>
                   )}
                 </div>
@@ -425,7 +425,7 @@ export function JobApplication({ jobId, locale }: JobApplicationProps) {
                   />
                   {errors.email && (
                     <p className="text-red-500 text-sm mt-1">
-                      {t(`validation.${errors.email.message}`)}
+                      {t(`contact.form.validation.${errors.email.message}`)}
                     </p>
                   )}
                 </div>
@@ -447,7 +447,7 @@ export function JobApplication({ jobId, locale }: JobApplicationProps) {
                   />
                   {errors.phone && (
                     <p className="text-red-500 text-sm mt-1">
-                      {t(`validation.${errors.phone.message}`)}
+                      {t(`contact.form.validation.${errors.phone.message}`)}
                     </p>
                   )}
                 </div>
@@ -513,7 +513,7 @@ export function JobApplication({ jobId, locale }: JobApplicationProps) {
                   />
                   {errors.message && (
                     <p className="text-red-500 text-sm mt-1">
-                      {t(`validation.${errors.message.message}`)}
+                      {t(`contact.form.validation.${errors.message.message}`)}
                     </p>
                   )}
                 </div>
