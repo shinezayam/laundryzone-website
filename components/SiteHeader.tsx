@@ -106,7 +106,7 @@ export function SiteHeader({ locale }: SiteHeaderProps) {
     });
     
     return items;
-  }, [allNavItems, t]);
+  }, [allNavItems]);
 
   // Filter menu items based on search query
   const filteredMenuItems = useMemo(() => {
@@ -367,7 +367,7 @@ export function SiteHeader({ locale }: SiteHeaderProps) {
                           </div>
                         ) : searchQuery.trim() ? (
                           <div className="p-4 text-center text-neutral-500 text-sm">
-                            No results found for "{searchQuery}"
+                            No results found for &ldquo;{searchQuery}&rdquo;
                           </div>
                         ) : (
                           <div className="p-4 text-center text-neutral-500 text-sm">
@@ -448,7 +448,7 @@ export function SiteHeader({ locale }: SiteHeaderProps) {
                             </div>
                           ) : searchQuery.trim() ? (
                             <div className="p-4 text-center text-neutral-500 text-sm">
-                              No results found for "{searchQuery}"
+                              No results found for &ldquo;{searchQuery}&rdquo;
                             </div>
                           ) : (
                             <div className="p-4 text-center text-neutral-500 text-sm">
