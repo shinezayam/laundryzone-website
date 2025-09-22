@@ -151,7 +151,7 @@
   "hero": {
     "headline": "Self-Service Laundry",
     "sub": "LG/Samsung commercial machines, fast cycles, and cashless payment.",
-          "subtitle_new": "Mongolia's First Self-Service Laundry",
+          "subtitle_new": "Official South Korean Franchise Self-Service Laundry",
     "description": "Self-service laundromat with LG/Samsung equipment, operating 08:00 - 24:00, offering cashless payment throughout Ulaanbaatar city.",
     "cta": {
       "pricing": "View Pricing",
@@ -163,7 +163,7 @@
     "lg_samsung": "LG/Samsung"
   },
   "stats": {
-    "24_7": "08:00 - 24:00 Operation",
+    "24_7": "Open 365 days a year, every day from 08:00-24:00",
     "cashless": "Cashless Payment",
     "wifi": "Free Wi-Fi",
     "detergent": "Detergent Available"
@@ -172,16 +172,16 @@
     "title": "Why Choose Us",
     "subtitle": "Experience the future of laundry with our cutting-edge technology and premium service",
     "premium": {
-      "title": "Premium Equipment",
-      "desc": "LG/Samsung commercial machines"
+      "title": "Industrial-Grade Premium Equipment",
+      "desc": "We manufacture our own industrial-grade equipment"
     },
     "iot": {
       "title": "IoT Monitoring",
-      "desc": "Real-time machine status monitoring"
+      "desc": "Monitor machine status anytime, anywhere without time or location constraints"
     },
     "clean": {
-      "title": "Clean & Safe",
-      "desc": "Daily cleaning and maintenance"
+      "title": "Clean, Healthy & Safe Environment",
+      "desc": "Daily disinfection, sterilization, and cleaning"
     },
     "fast": {
       "title": "Fast & Efficient",
@@ -263,8 +263,8 @@
     "contact_description": "Our team is always ready to help you. Contact us if you need assistance."
   },
   "guidelines": {
-    "title": "Customer Guidelines",
-    "subtitle": "Important guidelines to follow when using LaundryZone services",
+    "title": "HELPFUL TIPS FOR YOU",
+    "subtitle": "Please follow the guidelines below when visiting our LaundryZone laundromat",
     "guideline_count": "guidelines",
     "search_placeholder": "Search guidelines...",
     "clear_filter": "Clear filter",
@@ -274,7 +274,7 @@
     "show_less": "Show less",
     "thank_you": {
       "title": "Thank you",
-      "content": "Thank you for choosing LaundryZone self-service laundromat."
+      "content": "Thank you for choosing Laundryzone self-service laundromat. Please visit us again."
     },
     "items": {
       "washing_instructions": {
@@ -1086,7 +1086,7 @@
         "content": "Regular bedding washing is crucial for maintaining good hygiene and health. Learn how to establish a proper bedding care routine and why LaundryZone's commercial-grade machines provide the best results for your bedding."
       },
       "customer_guidelines": {
-        "title": "Customer Guidelines and Safety",
+        "title": "HELPFUL TIPS FOR YOU",
         "excerpt": "Important guidelines and safety instructions for using LaundryZone services effectively and safely.",
         "content": "Please read these important guidelines before using our services. Following these rules ensures a safe and pleasant experience for all customers while maintaining the quality of our equipment and services."
       },

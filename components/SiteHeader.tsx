@@ -20,7 +20,6 @@ export function SiteHeader({ locale }: SiteHeaderProps) {
   const [isSearchActive, setIsSearchActive] = useState(false);
   const t = useTranslations();
   const pathname = usePathname();
-
   useEffect(() => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 10);
@@ -277,7 +276,7 @@ export function SiteHeader({ locale }: SiteHeaderProps) {
         <div className="container-custom">
           <div className="flex items-center justify-between h-14 lg:h-16">
             {/* Logo */}
-            <Link href={`/${locale}`} className="flex items-center">
+            <Link href={`/${locale}`} className="flex py-100 items-center">
               <img
                 src="/images/logos.png"
                 alt="LaundryZone"
@@ -285,13 +284,14 @@ export function SiteHeader({ locale }: SiteHeaderProps) {
               />
             </Link>
 
-            {/* Desktop Top Navigation */}
-            <nav className="hidden lg:flex items-center space-x-1">
-              {topNavItems.map((item) => renderNavItem(item, false))}
-            </nav>
+            {/* Spacer to push navigation to the right */}
+            <div className="flex-1"></div>
 
-            {/* Language Switcher */}
-            <div className="hidden lg:flex items-center">
+            {/* Desktop Top Navigation & Language Switcher grouped together */}
+            <div className="hidden lg:flex items-center space-x-4">
+              <nav className="flex items-center space-x-1">
+                {topNavItems.map((item) => renderNavItem(item, false))}
+              </nav>
               <LanguageSwitcher currentLocale={locale} />
             </div>
 
@@ -534,6 +534,7 @@ export function SiteHeader({ locale }: SiteHeaderProps) {
                     );
                   }
                 })}
+
                 <div className="pt-6 border-t border-neutral-200">
                   <div className="flex items-center justify-between px-4 py-3">
                     <span className="text-sm text-neutral-500">{t('common.language')}</span>

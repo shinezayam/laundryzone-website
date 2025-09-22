@@ -25,8 +25,8 @@ export function YouTubeVideos({ locale }: YouTubeVideosProps) {
              'Our Service'}
           </h2>
           <p className="text-lg text-neutral-600 max-w-2xl mx-auto">
-            {locale === 'mn' ? 'LaundryZone-ийн өөртөө үйлчлэх угаалгын газрын үйлчилгээний талаар дэлгэрэнгүй мэдээлэл' : 
-             locale === 'kr' ? 'LaundryZone 셀프 서비스 세탁소 서비스에 대한 자세한 정보' : 
+            {locale === 'mn' ? 'Laundryzone, Үйлчилгээний дэлгэрэнгүй мэдээлэл' :
+             locale === 'kr' ? 'LaundryZone 셀프 서비스 세탁소 서비스에 대한 자세한 정보' :
              'Learn more about LaundryZone\'s self-service laundry services'}
           </p>
         </motion.div>
@@ -39,12 +39,12 @@ export function YouTubeVideos({ locale }: YouTubeVideosProps) {
             transition={{ duration: 0.8, delay: 0.2 }}
             className="bg-white rounded-xl shadow-lg overflow-hidden"
           >
-            <div className="aspect-video">
+            <div className="aspect-[9/16] max-w-sm mx-auto">
               <iframe
                 width="100%"
                 height="100%"
-                src="https://www.youtube.com/embed/RI3KBcDgZy0?si=5vu8m_GIn_K4J2KH"
-                title="YouTube video player"
+                src="https://www.youtube.com/embed/BBpP2fSYYfY"
+                title="Laundryzone Mongolia Reel"
                 frameBorder="0"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                 referrerPolicy="strict-origin-when-cross-origin"
@@ -54,14 +54,14 @@ export function YouTubeVideos({ locale }: YouTubeVideosProps) {
             </div>
             <div className="p-6">
               <h3 className="text-xl font-semibold text-neutral-900 mb-2">
-                {locale === 'mn' ? 'LaundryZone үйлчилгээний танилцуулга' : 
-                 locale === 'kr' ? 'LaundryZone 서비스 소개' : 
-                 'LaundryZone Service Introduction'}
+              {locale === 'mn' ? 'LaundryZone Short' : 
+                 locale === 'kr' ? 'LaundryZone 숏' : 
+                 'LaundryZone Short'}
               </h3>
               <p className="text-neutral-600">
-                {locale === 'mn' ? 'Манай өөртөө үйлчлэх угаалгын газрын үйлчилгээний талаар дэлгэрэнгүй мэдээлэл' : 
-                 locale === 'kr' ? '셀프 서비스 세탁소 서비스에 대한 자세한 정보' : 
-                 'Detailed information about our self-service laundry services'}
+              {locale === 'mn' ? 'Богино хугацааны видео - манай үйлчилгээний богино танилцуулга' : 
+                 locale === 'kr' ? '짧은 영상 - 우리 서비스의 빠른 소개' : 
+                 'Quick introduction to our services in a short format'}
               </p>
             </div>
           </motion.div>
@@ -88,12 +88,12 @@ export function YouTubeVideos({ locale }: YouTubeVideosProps) {
             </div>
             <div className="p-6">
               <h3 className="text-xl font-semibold text-neutral-900 mb-2">
-                {locale === 'mn' ? 'LaundryZone Short' : 
-                 locale === 'kr' ? 'LaundryZone 숏' : 
-                 'LaundryZone Short'}
+              {locale === 'mn' ? 'LaundryZone үйлчилгээний танилцуулга' : 
+                 locale === 'kr' ? 'LaundryZone 서비스 소개' : 
+                 'LaundryZone Service Introduction'}
               </h3>
               <p className="text-neutral-600">
-                {locale === 'mn' ? 'Богино хугацааны видео - манай үйлчилгээний хурдан танилцуулга' : 
+                {locale === 'mn' ? 'Богино хугацааны видео - манай үйлчилгээний богино танилцуулга' : 
                  locale === 'kr' ? '짧은 영상 - 우리 서비스의 빠른 소개' : 
                  'Quick introduction to our services in a short format'}
               </p>
