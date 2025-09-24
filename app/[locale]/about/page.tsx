@@ -1,9 +1,9 @@
 'use client';
 
 import { useTranslations } from 'next-intl';
-import { motion } from 'framer-motion';
+import { motion, useScroll, useTransform } from 'framer-motion';
 import { PageHeader } from '@/components/PageHeader';
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { useParams } from 'next/navigation';
 
 // CountUp Component
@@ -41,6 +41,48 @@ export default function AboutPage() {
   const t = useTranslations();
   const params = useParams();
   const locale = params.locale as string;
+  const [isPlaying, setIsPlaying] = useState(false);
+  const [currentBranch, setCurrentBranch] = useState(0);
+  const timelineRef = useRef<HTMLDivElement>(null);
+  const branchRefs = useRef<(HTMLDivElement | null)[]>([]);
+  const { scrollY } = useScroll();
+  const y = useTransform(scrollY, [0, 300], [0, -50]);
+
+  useEffect(() => {
+    if (isPlaying && timelineRef.current) {
+      const interval = setInterval(() => {
+        setCurrentBranch((prev) => {
+          const next = prev + 1;
+          if (next >= 35) {
+            setIsPlaying(false);
+            return 0;
+          }
+          
+          // Scroll to the next branch
+          const nextBranch = branchRefs.current[next];
+          if (nextBranch) {
+            nextBranch.scrollIntoView({ 
+              behavior: 'smooth', 
+              block: 'center' 
+            });
+          }
+          
+          return next;
+        });
+      }, 2000); // 2 seconds per branch
+
+      return () => clearInterval(interval);
+    }
+  }, [isPlaying]);
+
+  const togglePlay = () => {
+    if (isPlaying) {
+      setIsPlaying(false);
+    } else {
+      setIsPlaying(true);
+      setCurrentBranch(0);
+    }
+  };
 
   return (
     <>
@@ -278,343 +320,259 @@ export default function AboutPage() {
             transition={{ duration: 0.8 }}
             className="text-center mb-16"
           >
-            <h2 className="text-3xl md:text-4xl font-bold text-neutral-900 mb-4">
+            <div className="inline-flex items-center justify-center w-16 h-16 bg-accent-500 rounded-full mb-6">
+              <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+              </svg>
+            </div>
+            <h2 className="text-3xl md:text-4xl font-bold text-neutral-900 mb-6">
               {t('about.timeline.title')}
             </h2>
-            <p className="text-lg text-neutral-600 max-w-3xl mx-auto">
+            <p className="text-lg text-neutral-600 max-w-3xl mx-auto leading-relaxed mb-8">
               {t('about.timeline.subtitle')}
             </p>
+            
+            {/* Play Button */}
+            <motion.button
+              onClick={togglePlay}
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              className={`inline-flex items-center px-6 py-3 rounded-full font-semibold transition-all duration-300 ${
+                isPlaying 
+                  ? 'bg-red-500 hover:bg-red-600 text-white' 
+                  : 'bg-accent-500 hover:bg-accent-600 text-white'
+              }`}
+            >
+              {isPlaying ? (
+                <>
+                  <svg className="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M6 4h4v16H6V4zm8 0h4v16h-4V4z"/>
+                  </svg>
+                  {t('about.timeline.stop')}
+                </>
+              ) : (
+                <>
+                  <svg className="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M8 5v14l11-7z"/>
+                  </svg>
+                  {t('about.timeline.play')}
+                </>
+              )}
+            </motion.button>
+            
+            {isPlaying && (
+              <div className="mt-4">
+                <div className="text-sm text-neutral-500 mb-2">
+                  Branch {currentBranch + 1} of 35
+                </div>
+                <div className="w-full bg-neutral-200 rounded-full h-2 max-w-md mx-auto">
+                  <motion.div 
+                    className="bg-accent-500 h-2 rounded-full"
+                    initial={{ width: "0%" }}
+                    animate={{ width: `${((currentBranch + 1) / 35) * 100}%` }}
+                    transition={{ duration: 0.3 }}
+                  />
+                </div>
+              </div>
+            )}
           </motion.div>
 
-          <div className="relative">
+          {/* Optional Stats removed to keep palette consistent */}
+
+          <div className="relative" ref={timelineRef}>
             {/* Timeline Line */}
             <div className="absolute left-1/2 transform -translate-x-1/2 w-1 bg-gradient-to-b from-accent-500 to-accent-600 h-full"></div>
             
-            {/* Timeline Items */}
+            {/* Timeline Items - Enhanced with Auto-Play */}
             <div className="space-y-12">
-              {/* 2019 - First Branch */}
-              <motion.div
-                initial={{ opacity: 0, x: -50 }}
-                animate={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.8, delay: 0.2 }}
-                className="relative flex items-center"
-              >
-                <div className="w-1/2 pr-8 text-right">
-                  <div className="bg-white rounded-lg p-6 shadow-lg border-l-4 border-accent-500">
-                    <div className="flex items-center justify-end mb-2">
-                      <span className="text-accent-500 font-bold text-sm">2019</span>
-                      <div className="ml-2 w-3 h-3 bg-accent-500 rounded-full"></div>
-                    </div>
-                    <h3 className="text-lg font-semibold text-neutral-900 mb-2">LaundryZone - 1</h3>
-                    <p className="text-neutral-600 text-sm">
-                      {t('about.timeline.branch_1_desc')}
-                    </p>
-                  </div>
-                </div>
-                <div className="absolute left-1/2 transform -translate-x-1/2 w-6 h-6 bg-accent-500 rounded-full border-4 border-white shadow-lg"></div>
-                <div className="w-1/2 pl-8"></div>
-              </motion.div>
-
-              {/* 2020 - Second Branch */}
-              <motion.div
-                initial={{ opacity: 0, x: 50 }}
-                animate={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.8, delay: 0.4 }}
-                className="relative flex items-center"
-              >
-                <div className="w-1/2 pr-8"></div>
-                <div className="absolute left-1/2 transform -translate-x-1/2 w-6 h-6 bg-accent-500 rounded-full border-4 border-white shadow-lg"></div>
-                <div className="w-1/2 pl-8">
-                  <div className="bg-white rounded-lg p-6 shadow-lg border-r-4 border-accent-500">
-                    <div className="flex items-center mb-2">
-                      <div className="w-3 h-3 bg-accent-500 rounded-full"></div>
-                      <span className="text-accent-500 font-bold text-sm ml-2">2020</span>
-                    </div>
-                    <h3 className="text-lg font-semibold text-neutral-900 mb-2">LaundryZone - 2</h3>
-                    <p className="text-neutral-600 text-sm">
-                      {t('about.timeline.branch_2_desc')}
-                    </p>
-                  </div>
-                </div>
-              </motion.div>
-
-              {/* 2021 - Third Branch */}
-              <motion.div
-                initial={{ opacity: 0, x: -50 }}
-                animate={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.8, delay: 0.6 }}
-                className="relative flex items-center"
-              >
-                <div className="w-1/2 pr-8 text-right">
-                  <div className="bg-white rounded-lg p-6 shadow-lg border-l-4 border-accent-500">
-                    <div className="flex items-center justify-end mb-2">
-                      <span className="text-accent-500 font-bold text-sm">2021</span>
-                      <div className="ml-2 w-3 h-3 bg-accent-500 rounded-full"></div>
-                    </div>
-                    <h3 className="text-lg font-semibold text-neutral-900 mb-2">LaundryZone - 3</h3>
-                    <p className="text-neutral-600 text-sm">
-                      {t('about.timeline.branch_3_desc')}
-                    </p>
-                  </div>
-                </div>
-                <div className="absolute left-1/2 transform -translate-x-1/2 w-6 h-6 bg-accent-500 rounded-full border-4 border-white shadow-lg"></div>
-                <div className="w-1/2 pl-8"></div>
-              </motion.div>
-
-              {/* 2021 - Fourth Branch */}
-              <motion.div
-                initial={{ opacity: 0, x: 50 }}
-                animate={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.8, delay: 0.8 }}
-                className="relative flex items-center"
-              >
-                <div className="w-1/2 pr-8"></div>
-                <div className="absolute left-1/2 transform -translate-x-1/2 w-6 h-6 bg-accent-500 rounded-full border-4 border-white shadow-lg"></div>
-                <div className="w-1/2 pl-8">
-                  <div className="bg-white rounded-lg p-6 shadow-lg border-r-4 border-accent-500">
-                    <div className="flex items-center mb-2">
-                      <div className="w-3 h-3 bg-accent-500 rounded-full"></div>
-                      <span className="text-accent-500 font-bold text-sm ml-2">2021</span>
-                    </div>
-                    <h3 className="text-lg font-semibold text-neutral-900 mb-2">LaundryZone - 4</h3>
-                    <p className="text-neutral-600 text-sm">
-                      {t('about.timeline.branch_4_desc')}
-                    </p>
-                  </div>
-                </div>
-              </motion.div>
-
-              {/* 2022 - Fifth Branch */}
-              <motion.div
-                initial={{ opacity: 0, x: -50 }}
-                animate={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.8, delay: 1.0 }}
-                className="relative flex items-center"
-              >
-                <div className="w-1/2 pr-8 text-right">
-                  <div className="bg-white rounded-lg p-6 shadow-lg border-l-4 border-accent-500">
-                    <div className="flex items-center justify-end mb-2">
-                      <span className="text-accent-500 font-bold text-sm">2022</span>
-                      <div className="ml-2 w-3 h-3 bg-accent-500 rounded-full"></div>
-                    </div>
-                    <h3 className="text-lg font-semibold text-neutral-900 mb-2">LaundryZone - 5</h3>
-                    <p className="text-neutral-600 text-sm">
-                      {t('about.timeline.branch_5_desc')}
-                    </p>
-                  </div>
-                </div>
-                <div className="absolute left-1/2 transform -translate-x-1/2 w-6 h-6 bg-accent-500 rounded-full border-4 border-white shadow-lg"></div>
-                <div className="w-1/2 pl-8"></div>
-              </motion.div>
-
-              {/* 2022 - Sixth Branch */}
-              <motion.div
-                initial={{ opacity: 0, x: 50 }}
-                animate={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.8, delay: 1.2 }}
-                className="relative flex items-center"
-              >
-                <div className="w-1/2 pr-8"></div>
-                <div className="absolute left-1/2 transform -translate-x-1/2 w-6 h-6 bg-accent-500 rounded-full border-4 border-white shadow-lg"></div>
-                <div className="w-1/2 pl-8">
-                  <div className="bg-white rounded-lg p-6 shadow-lg border-r-4 border-accent-500">
-                    <div className="flex items-center mb-2">
-                      <div className="w-3 h-3 bg-accent-500 rounded-full"></div>
-                      <span className="text-accent-500 font-bold text-sm ml-2">2022</span>
-                    </div>
-                    <h3 className="text-lg font-semibold text-neutral-900 mb-2">LaundryZone - 6</h3>
-                    <p className="text-neutral-600 text-sm">
-                      {t('about.timeline.branch_6_desc')}
-                    </p>
-                  </div>
-                </div>
-              </motion.div>
-
-              {/* 2022 - Seventh Branch */}
-              <motion.div
-                initial={{ opacity: 0, x: -50 }}
-                animate={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.8, delay: 1.4 }}
-                className="relative flex items-center"
-              >
-                <div className="w-1/2 pr-8 text-right">
-                  <div className="bg-white rounded-lg p-6 shadow-lg border-l-4 border-accent-500">
-                    <div className="flex items-center justify-end mb-2">
-                      <span className="text-accent-500 font-bold text-sm">2022</span>
-                      <div className="ml-2 w-3 h-3 bg-accent-500 rounded-full"></div>
-                    </div>
-                    <h3 className="text-lg font-semibold text-neutral-900 mb-2">LaundryZone - 7</h3>
-                    <p className="text-neutral-600 text-sm">
-                      {t('about.timeline.branch_7_desc')}
-                    </p>
-                  </div>
-                </div>
-                <div className="absolute left-1/2 transform -translate-x-1/2 w-6 h-6 bg-accent-500 rounded-full border-4 border-white shadow-lg"></div>
-                <div className="w-1/2 pl-8"></div>
-              </motion.div>
-
-              {/* 2022 - Eighth Branch */}
-              <motion.div
-                initial={{ opacity: 0, x: 50 }}
-                animate={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.8, delay: 1.6 }}
-                className="relative flex items-center"
-              >
-                <div className="w-1/2 pr-8"></div>
-                <div className="absolute left-1/2 transform -translate-x-1/2 w-6 h-6 bg-accent-500 rounded-full border-4 border-white shadow-lg"></div>
-                <div className="w-1/2 pl-8">
-                  <div className="bg-white rounded-lg p-6 shadow-lg border-r-4 border-accent-500">
-                    <div className="flex items-center mb-2">
-                      <div className="w-3 h-3 bg-accent-500 rounded-full"></div>
-                      <span className="text-accent-500 font-bold text-sm ml-2">2022</span>
-                    </div>
-                    <h3 className="text-lg font-semibold text-neutral-900 mb-2">LaundryZone - 8</h3>
-                    <p className="text-neutral-600 text-sm">
-                      {t('about.timeline.branch_8_desc')}
-                    </p>
-                  </div>
-                </div>
-              </motion.div>
-
-              {/* 2022 - Ninth Branch */}
-              <motion.div
-                initial={{ opacity: 0, x: -50 }}
-                animate={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.8, delay: 1.8 }}
-                className="relative flex items-center"
-              >
-                <div className="w-1/2 pr-8 text-right">
-                  <div className="bg-white rounded-lg p-6 shadow-lg border-l-4 border-accent-500">
-                    <div className="flex items-center justify-end mb-2">
-                      <span className="text-accent-500 font-bold text-sm">2022</span>
-                      <div className="ml-2 w-3 h-3 bg-accent-500 rounded-full"></div>
-                    </div>
-                    <h3 className="text-lg font-semibold text-neutral-900 mb-2">LaundryZone - 9</h3>
-                    <p className="text-neutral-600 text-sm">
-                      {t('about.timeline.branch_9_desc')}
-                    </p>
-                  </div>
-                </div>
-                <div className="absolute left-1/2 transform -translate-x-1/2 w-6 h-6 bg-accent-500 rounded-full border-4 border-white shadow-lg"></div>
-                <div className="w-1/2 pl-8"></div>
-              </motion.div>
-
-              {/* 2022 - Tenth Branch */}
-              <motion.div
-                initial={{ opacity: 0, x: 50 }}
-                animate={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.8, delay: 2.0 }}
-                className="relative flex items-center"
-              >
-                <div className="w-1/2 pr-8"></div>
-                <div className="absolute left-1/2 transform -translate-x-1/2 w-6 h-6 bg-accent-500 rounded-full border-4 border-white shadow-lg"></div>
-                <div className="w-1/2 pl-8">
-                  <div className="bg-white rounded-lg p-6 shadow-lg border-r-4 border-accent-500">
-                    <div className="flex items-center mb-2">
-                      <div className="w-3 h-3 bg-accent-500 rounded-full"></div>
-                      <span className="text-accent-500 font-bold text-sm ml-2">2022</span>
-                    </div>
-                    <h3 className="text-lg font-semibold text-neutral-900 mb-2">LaundryZone - 10</h3>
-                    <p className="text-neutral-600 text-sm">
-                      {t('about.timeline.branch_10_desc')}
-                    </p>
-                  </div>
-                </div>
-              </motion.div>
-
-              {/* 2022 - Eleventh Branch */}
-              <motion.div
-                initial={{ opacity: 0, x: -50 }}
-                animate={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.8, delay: 2.2 }}
-                className="relative flex items-center"
-              >
-                <div className="w-1/2 pr-8 text-right">
-                  <div className="bg-white rounded-lg p-6 shadow-lg border-l-4 border-accent-500">
-                    <div className="flex items-center justify-end mb-2">
-                      <span className="text-accent-500 font-bold text-sm">2022</span>
-                      <div className="ml-2 w-3 h-3 bg-accent-500 rounded-full"></div>
-                    </div>
-                    <h3 className="text-lg font-semibold text-neutral-900 mb-2">LaundryZone - 11</h3>
-                    <p className="text-neutral-600 text-sm">
-                      {t('about.timeline.branch_11_desc')}
-                    </p>
-                  </div>
-                </div>
-                <div className="absolute left-1/2 transform -translate-x-1/2 w-6 h-6 bg-accent-500 rounded-full border-4 border-white shadow-lg"></div>
-                <div className="w-1/2 pl-8"></div>
-              </motion.div>
-
-              {/* 2023 - Twelfth Branch */}
-              <motion.div
-                initial={{ opacity: 0, x: 50 }}
-                animate={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.8, delay: 2.4 }}
-                className="relative flex items-center"
-              >
-                <div className="w-1/2 pr-8"></div>
-                <div className="absolute left-1/2 transform -translate-x-1/2 w-6 h-6 bg-accent-500 rounded-full border-4 border-white shadow-lg"></div>
-                <div className="w-1/2 pl-8">
-                  <div className="bg-white rounded-lg p-6 shadow-lg border-r-4 border-accent-500">
-                    <div className="flex items-center mb-2">
-                      <div className="w-3 h-3 bg-accent-500 rounded-full"></div>
-                      <span className="text-accent-500 font-bold text-sm ml-2">2023</span>
-                    </div>
-                    <h3 className="text-lg font-semibold text-neutral-900 mb-2">LaundryZone - 12</h3>
-                    <p className="text-neutral-600 text-sm">
-                      {t('about.timeline.branch_12_desc')}
-                    </p>
-                  </div>
-                </div>
-              </motion.div>
-
-              {/* 2023 - Thirteenth Branch */}
-              <motion.div
-                initial={{ opacity: 0, x: -50 }}
-                animate={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.8, delay: 2.6 }}
-                className="relative flex items-center"
-              >
-                <div className="w-1/2 pr-8 text-right">
-                  <div className="bg-white rounded-lg p-6 shadow-lg border-l-4 border-accent-500">
-                    <div className="flex items-center justify-end mb-2">
-                      <span className="text-accent-500 font-bold text-sm">2023</span>
-                      <div className="ml-2 w-3 h-3 bg-accent-500 rounded-full"></div>
-                    </div>
-                    <h3 className="text-lg font-semibold text-neutral-900 mb-2">LaundryZone - 13</h3>
-                    <p className="text-neutral-600 text-sm">
-                      {t('about.timeline.branch_13_desc')}
-                    </p>
-                  </div>
-                </div>
-                <div className="absolute left-1/2 transform -translate-x-1/2 w-6 h-6 bg-accent-500 rounded-full border-4 border-white shadow-lg"></div>
-                <div className="w-1/2 pl-8"></div>
-              </motion.div>
-
-              {/* 2023 - Fourteenth Branch */}
-              <motion.div
-                initial={{ opacity: 0, x: 50 }}
-                animate={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.8, delay: 2.8 }}
-                className="relative flex items-center"
-              >
-                <div className="w-1/2 pr-8"></div>
-                <div className="absolute left-1/2 transform -translate-x-1/2 w-6 h-6 bg-accent-500 rounded-full border-4 border-white shadow-lg"></div>
-                <div className="w-1/2 pl-8">
-                  <div className="bg-white rounded-lg p-6 shadow-lg border-r-4 border-accent-500">
-                    <div className="flex items-center mb-2">
-                      <div className="w-3 h-3 bg-accent-500 rounded-full"></div>
-                      <span className="text-accent-500 font-bold text-sm ml-2">2023</span>
-                    </div>
-                    <h3 className="text-lg font-semibold text-neutral-900 mb-2">LaundryZone - 14</h3>
-                    <p className="text-neutral-600 text-sm">
-                      {t('about.timeline.branch_14_desc')}
-                    </p>
-                  </div>
-                </div>
-              </motion.div>
+              {Array.from({ length: 35 }, (_, index) => {
+                const branchNumber = index + 1;
+                const isLeft = index % 2 === 0;
+                const delay = index * 0.1;
+                const isCurrentBranch = currentBranch === index;
+                const isPastBranch = currentBranch > index;
+                
+                return (
+                  <motion.div
+                    key={branchNumber}
+                    ref={(el) => { branchRefs.current[index] = el; }}
+                    initial={{ opacity: 0, x: isLeft ? -50 : 50 }}
+                    animate={{ 
+                      opacity: 1, 
+                      x: 0,
+                      scale: isCurrentBranch ? 1.05 : 1,
+                      y: isCurrentBranch ? -5 : 0
+                    }}
+                    transition={{ 
+                      duration: 0.8, 
+                      delay: isPlaying ? 0 : delay,
+                      type: isCurrentBranch ? "spring" : "tween",
+                      stiffness: isCurrentBranch ? 100 : undefined
+                    }}
+                    className={`relative flex items-center transition-all duration-500 ${
+                      isCurrentBranch ? 'z-10' : ''
+                    }`}
+                  >
+                    {isLeft ? (
+                      <>
+                        <div className="w-1/2 pr-8 text-right">
+                          <motion.div 
+                            className={`rounded-lg p-6 shadow-lg border-l-4 transition-all duration-500 ${
+                              isCurrentBranch 
+                                ? 'bg-accent-50 border-accent-600 shadow-xl shadow-accent-200' 
+                                : isPastBranch 
+                                  ? 'bg-white border-accent-500 opacity-75' 
+                                  : 'bg-white border-accent-500'
+                            }`}
+                            animate={{
+                              boxShadow: isCurrentBranch 
+                                ? "0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)" 
+                                : "0 10px 15px -3px rgba(0, 0, 0, 0.1)"
+                            }}
+                          >
+                            <div className="flex items-center justify-end mb-2">
+                              <span className={`font-bold text-sm ${
+                                isCurrentBranch ? 'text-accent-700' : 'text-accent-500'
+                              }`}>
+                                {t(`about.timeline.branch_${branchNumber}_date`)}
+                              </span>
+                              <motion.div 
+                                className={`ml-2 w-3 h-3 rounded-full ${
+                                  isCurrentBranch ? 'bg-accent-600' : 'bg-accent-500'
+                                }`}
+                                animate={{
+                                  scale: isCurrentBranch ? [1, 1.2, 1] : 1,
+                                }}
+                                transition={{
+                                  duration: 1,
+                                  repeat: isCurrentBranch ? Infinity : 0
+                                }}
+                              />
+                            </div>
+                            <h3 className={`text-lg font-semibold mb-2 ${
+                              isCurrentBranch ? 'text-accent-800' : 'text-neutral-900'
+                            }`}>
+                              {t(`about.timeline.branch_${branchNumber}`)}
+                            </h3>
+                            <p className={`text-sm ${
+                              isCurrentBranch ? 'text-accent-700' : 'text-neutral-600'
+                            }`}>
+                              {t(`about.timeline.branch_${branchNumber}_desc`)}
+                            </p>
+                            {isCurrentBranch && (
+                              <motion.div
+                                initial={{ opacity: 0, scale: 0 }}
+                                animate={{ opacity: 1, scale: 1 }}
+                                className="mt-3 flex justify-end"
+                              >
+                                <span className="bg-accent-500 text-white px-2 py-1 rounded-full text-xs font-bold">
+                                  {t('about.timeline.current')}
+                                </span>
+                              </motion.div>
+                            )}
+                          </motion.div>
+                        </div>
+                        <motion.div 
+                          className={`absolute left-1/2 transform -translate-x-1/2 w-6 h-6 rounded-full border-4 border-white shadow-lg ${
+                            isCurrentBranch ? 'bg-accent-600' : 'bg-accent-500'
+                          }`}
+                          animate={{
+                            scale: isCurrentBranch ? [1, 1.3, 1] : 1,
+                            boxShadow: isCurrentBranch 
+                              ? "0 0 0 8px rgba(59, 130, 246, 0.3)" 
+                              : "0 4px 6px -1px rgba(0, 0, 0, 0.1)"
+                          }}
+                          transition={{
+                            duration: 1,
+                            repeat: isCurrentBranch ? Infinity : 0
+                          }}
+                        />
+                        <div className="w-1/2 pl-8"></div>
+                      </>
+                    ) : (
+                      <>
+                        <div className="w-1/2 pr-8"></div>
+                        <motion.div 
+                          className={`absolute left-1/2 transform -translate-x-1/2 w-6 h-6 rounded-full border-4 border-white shadow-lg ${
+                            isCurrentBranch ? 'bg-accent-600' : 'bg-accent-500'
+                          }`}
+                          animate={{
+                            scale: isCurrentBranch ? [1, 1.3, 1] : 1,
+                            boxShadow: isCurrentBranch 
+                              ? "0 0 0 8px rgba(59, 130, 246, 0.3)" 
+                              : "0 4px 6px -1px rgba(0, 0, 0, 0.1)"
+                          }}
+                          transition={{
+                            duration: 1,
+                            repeat: isCurrentBranch ? Infinity : 0
+                          }}
+                        />
+                        <div className="w-1/2 pl-8">
+                          <motion.div 
+                            className={`rounded-lg p-6 shadow-lg border-r-4 transition-all duration-500 ${
+                              isCurrentBranch 
+                                ? 'bg-accent-50 border-accent-600 shadow-xl shadow-accent-200' 
+                                : isPastBranch 
+                                  ? 'bg-white border-accent-500 opacity-75' 
+                                  : 'bg-white border-accent-500'
+                            }`}
+                            animate={{
+                              boxShadow: isCurrentBranch 
+                                ? "0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)" 
+                                : "0 10px 15px -3px rgba(0, 0, 0, 0.1)"
+                            }}
+                          >
+                            <div className="flex items-center mb-2">
+                              <motion.div 
+                                className={`w-3 h-3 rounded-full ${
+                                  isCurrentBranch ? 'bg-accent-600' : 'bg-accent-500'
+                                }`}
+                                animate={{
+                                  scale: isCurrentBranch ? [1, 1.2, 1] : 1,
+                                }}
+                                transition={{
+                                  duration: 1,
+                                  repeat: isCurrentBranch ? Infinity : 0
+                                }}
+                              />
+                              <span className={`font-bold text-sm ml-2 ${
+                                isCurrentBranch ? 'text-accent-700' : 'text-accent-500'
+                              }`}>
+                                {t(`about.timeline.branch_${branchNumber}_date`)}
+                              </span>
+                            </div>
+                            <h3 className={`text-lg font-semibold mb-2 ${
+                              isCurrentBranch ? 'text-accent-800' : 'text-neutral-900'
+                            }`}>
+                              {t(`about.timeline.branch_${branchNumber}`)}
+                            </h3>
+                            <p className={`text-sm ${
+                              isCurrentBranch ? 'text-accent-700' : 'text-neutral-600'
+                            }`}>
+                              {t(`about.timeline.branch_${branchNumber}_desc`)}
+                            </p>
+                            {isCurrentBranch && (
+                              <motion.div
+                                initial={{ opacity: 0, scale: 0 }}
+                                animate={{ opacity: 1, scale: 1 }}
+                                className="mt-3"
+                              >
+                                <span className="bg-accent-500 text-white px-2 py-1 rounded-full text-xs font-bold">
+                                  {t('about.timeline.current')}
+                                </span>
+                              </motion.div>
+                            )}
+                          </motion.div>
+                        </div>
+                      </>
+                    )}
+                  </motion.div>
+                );
+              })}
             </div>
+            {/* End marker removed to keep minimal palette */}
           </div>
+          {/* CTA removed as requested to keep existing palette and simplicity */}
         </div>
       </section>
     </>
