@@ -2,6 +2,7 @@
 
 import { useTranslations } from 'next-intl';
 import { motion, useScroll, useTransform } from 'framer-motion';
+import Link from 'next/link';
 import { PageHeader } from '@/components/PageHeader';
 import { useState, useEffect, useRef } from 'react';
 import { useParams } from 'next/navigation';
@@ -197,6 +198,23 @@ export default function AboutPage() {
                 </p>
               </div>
             </motion.div>
+          </div>
+        </div>
+      </section>
+      
+      {/* Franchise CTA at very bottom */}
+      <section className="py-10 bg-white">
+        <div className="container-custom">
+          <div className="flex justify-center">
+            <Link
+              href={`/${locale}/franchise`}
+              className="inline-flex items-center px-6 py-3 rounded-full bg-accent-500 hover:bg-accent-600 text-white font-semibold shadow-lg transition-colors"
+            >
+              {t('about.timeline.cta_franchise')}
+              <svg className="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+              </svg>
+            </Link>
           </div>
         </div>
       </section>
@@ -571,8 +589,20 @@ export default function AboutPage() {
               })}
             </div>
             {/* End marker removed to keep minimal palette */}
+            
+            {/* CTA inside timeline bottom */}
+            <div className="pt-6 flex justify-center">
+              <Link
+                href={`/${locale}/franchise`}
+                className="inline-flex items-center px-6 py-3 rounded-full bg-accent-500 hover:bg-accent-600 text-white font-semibold shadow-lg transition-colors"
+              >
+                {t('about.timeline.cta_franchise')}
+                <svg className="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                </svg>
+              </Link>
+            </div>
           </div>
-          {/* CTA removed as requested to keep existing palette and simplicity */}
         </div>
       </section>
     </>
