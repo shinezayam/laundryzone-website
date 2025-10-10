@@ -57,34 +57,42 @@ export function SiteFooter({ locale }: SiteFooterProps) {
               </li>
               <li>
                 <Link
-                  href={`/${locale}/competitive-advantage`}
+                  href={`/${locale}/services`}
                   className="text-neutral-300 hover:text-white transition-colors text-sm"
                 >
-                  {t('common.competitive_advantage')}
+                  {t('nav.services')}
                 </Link>
               </li>
               <li>
                 <Link
-                  href={`/${locale}/franchise`}
+                  href={`/${locale}/pricing`}
                   className="text-neutral-300 hover:text-white transition-colors text-sm"
                 >
-                  {t('common.franchise')}
+                  {t('nav.pricing')}
                 </Link>
               </li>
               <li>
                 <Link
-                  href={`/${locale}/equipment`}
+                  href={`/${locale}/community#branch-locations`}
                   className="text-neutral-300 hover:text-white transition-colors text-sm"
                 >
-                  {t('common.equipment')}
+                  {t('nav.branch_locations')}
                 </Link>
               </li>
               <li>
                 <Link
-                  href={`/${locale}/community`}
+                  href={`/${locale}/human-resources`}
                   className="text-neutral-300 hover:text-white transition-colors text-sm"
                 >
-                  {t('common.community_relations')}
+                  {t('nav.human_resources')}
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href={`/${locale}/contact`}
+                  className="text-neutral-300 hover:text-white transition-colors text-sm"
+                >
+                  {t('nav.contact')}
                 </Link>
               </li>
             </ul>
