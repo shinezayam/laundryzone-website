@@ -12,7 +12,7 @@ export function SiteFooter({ locale }: SiteFooterProps) {
   return (
     <footer className="bg-neutral-900 text-white">
       <div className="container-custom py-16">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {/* Company Info */}
           <div className="space-y-4">
             <div className="flex items-center space-x-2">
@@ -45,7 +45,9 @@ export function SiteFooter({ locale }: SiteFooterProps) {
 
           {/* Company Menu */}
           <div className="space-y-4">
-            <h3 className="text-lg font-semibold">{t('common.company')}</h3>
+            <h3 className="text-lg font-semibold">
+              {locale === 'mn' ? 'Компани' : locale === 'kr' ? '회사' : 'Company'}
+            </h3>
             <ul className="space-y-2">
               <li>
                 <Link
@@ -84,7 +86,7 @@ export function SiteFooter({ locale }: SiteFooterProps) {
 
           {/* Services Menu */}
           <div className="space-y-4">
-            <h3 className="text-lg font-semibold">{t('nav.services')}</h3>
+            <h3 className="text-lg font-semibold">{t('common.quick_links')}</h3>
             <ul className="space-y-2">
               <li>
                 <Link
@@ -124,37 +126,6 @@ export function SiteFooter({ locale }: SiteFooterProps) {
                   className="text-neutral-300 hover:text-white transition-colors text-sm"
                 >
                   {t('nav.customer')}
-                </Link>
-              </li>
-            </ul>
-          </div>
-
-          {/* Support Menu */}
-          <div className="space-y-4">
-            <h3 className="text-lg font-semibold">{t('common.support')}</h3>
-            <ul className="space-y-2">
-              <li>
-                <Link
-                  href={`/${locale}/contact`}
-                  className="text-neutral-300 hover:text-white transition-colors text-sm"
-                >
-                  {t('nav.contact')}
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href={`/${locale}/privacy`}
-                  className="text-neutral-300 hover:text-white transition-colors text-sm"
-                >
-                  {t('footer.links.privacy')}
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href={`/${locale}/terms`}
-                  className="text-neutral-300 hover:text-white transition-colors text-sm"
-                >
-                  {t('footer.links.terms')}
                 </Link>
               </li>
             </ul>
