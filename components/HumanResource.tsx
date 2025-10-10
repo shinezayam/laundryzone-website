@@ -210,21 +210,32 @@ export function HumanResource({ locale }: HumanResourceProps) {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
-            className="text-center mb-20"
+            className="text-center mb-16"
           >
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6">
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-8">
               {t('nav.human_resources')}
             </h1>
-            <p className="text-xl text-accent-100 max-w-3xl mx-auto leading-relaxed mb-8">
+            <p className="text-xl md:text-2xl text-white font-semibold max-w-3xl mx-auto leading-relaxed">
               {locale === 'mn' ? 'Монголын тэргүүлэгч өөртөө үйлчлэх угаалгын компанийн нэг гишүүн болоорой' : 
                locale === 'kr' ? '몽골의 선도적인 셀프 서비스 세탁소 회사의 일원이 되세요' : 
                'Become a member of Mongolia\'s leading self-service laundry company'}
             </p>
-            <p className="text-lg text-accent-100 max-w-4xl mx-auto leading-relaxed">
-              {locale === 'mn' ? 'Монголд хамгийн анх нэвтрүүлж буй шинэлэг үйлчилгээ-шинэ соёлыг, өрх бүрт, өрхийн гишүүн бүрт хүргэж, айл гэрийг аз жаргалтай болгох буянтай үйлсэд гар нийлэн ажиллах хүсэлтэй хүмүүсийг урьж байна.' : 
-               locale === 'kr' ? '몽골에서 처음으로 도입되는 혁신적인 서비스와 새로운 문화를 모든 가정과 가족 구성원에게 전달하고, 가정을 행복하게 만드는 의미 있는 일에 함께 참여하고자 하는 분들을 초대합니다.' : 
-               'We invite those who wish to work together in the meaningful endeavor of bringing innovative services and new culture—first introduced in Mongolia—to every household and family member, making families happier.'}
-            </p>
+          </motion.div>
+          
+          {/* Secondary Message */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.3 }}
+            className="text-center mb-20"
+          >
+            <div className="max-w-4xl mx-auto bg-white/10 backdrop-blur-sm rounded-2xl p-8 border border-white/20">
+              <p className="text-base md:text-lg text-accent-50 leading-relaxed">
+                {locale === 'mn' ? 'Монголд хамгийн анх нэвтрүүлж буй шинэлэг үйлчилгээ-шинэ соёлыг, өрх бүрт, өрхийн гишүүн бүрт хүргэж, айл гэрийг аз жаргалтай болгох буянтай үйлсэд гар нийлэн ажиллах хүсэлтэй хүмүүсийг урьж байна.' : 
+                 locale === 'kr' ? '몽골에서 처음으로 도입되는 혁신적인 서비스와 새로운 문화를 모든 가정과 가족 구성원에게 전달하고, 가정을 행복하게 만드는 의미 있는 일에 함께 참여하고자 하는 분들을 초대합니다.' : 
+                 'We invite those who wish to work together in the meaningful endeavor of bringing innovative services and new culture—first introduced in Mongolia—to every household and family member, making families happier.'}
+              </p>
+            </div>
           </motion.div>
 
           {/* Company Stats */}
