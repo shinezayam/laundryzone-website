@@ -47,8 +47,8 @@ export function HumanResource({ locale }: HumanResourceProps) {
       color: 'from-blue-50 to-blue-100',
       borderColor: 'border-blue-200',
       bgColor: 'bg-blue-50',
-      experience: '2+ years',
-      type: 'Full-time',
+      experience: locale === 'mn' ? '2+ жил' : locale === 'kr' ? '2년 이상' : '2+ years',
+      type: locale === 'mn' ? 'Бүтэн цагийн' : locale === 'kr' ? '정규직' : 'Full-time',
       title: locale === 'mn' ? 'Үйлчилгээний зөвлөх ажилтан' : locale === 'kr' ? '서비스 컨설턴트' : 'Service Consultant',
       description: locale === 'mn' ? 'Угаалгын газраар үйлчлүүлэх, тоног төхөөрөмж ашиглах зөвлөмж өгч, дэмжлэг үзүүлэх' : 
                    locale === 'kr' ? '세탁소 이용 및 장비 사용에 대한 안내를 제공하고 지원' : 
@@ -60,8 +60,8 @@ export function HumanResource({ locale }: HumanResourceProps) {
       color: 'from-green-50 to-green-100',
       borderColor: 'border-green-200',
       bgColor: 'bg-green-50',
-      experience: '3+ years',
-      type: 'Full-time',
+      experience: locale === 'mn' ? '3+ жил' : locale === 'kr' ? '3년 이상' : '3+ years',
+      type: locale === 'mn' ? 'Бүтэн цагийн' : locale === 'kr' ? '정규직' : 'Full-time',
       title: locale === 'mn' ? 'Хүний нөөцийн мэргэжилтэн' : locale === 'kr' ? '인적자원 전문가' : 'Human Resources Specialist',
       description: locale === 'mn' ? 'Хүний нөөц бүрдүүлэх, удирдан зохион байгуулах, ажилтны сургалт зохион байгуулах' : 
                    locale === 'kr' ? '인적자원 구축, 관리 조직, 직원 교육 조직' : 
@@ -73,8 +73,8 @@ export function HumanResource({ locale }: HumanResourceProps) {
       color: 'from-purple-50 to-purple-100',
       borderColor: 'border-purple-200',
       bgColor: 'bg-purple-50',
-      experience: '2+ years',
-      type: 'Full-time',
+      experience: locale === 'mn' ? '2+ жил' : locale === 'kr' ? '2년 이상' : '2+ years',
+      type: locale === 'mn' ? 'Бүтэн цагийн' : locale === 'kr' ? '정규직' : 'Full-time',
       title: locale === 'mn' ? 'Гадаад харилцааны мэргэжилтэн' : locale === 'kr' ? '해외 관계 전문가' : 'International Relations Manager',
       description: locale === 'mn' ? 'Гадаад харилцааг өргөжүүлэх, хамтран ажиллах' : 
                    locale === 'kr' ? '해외 관계 확장 및 협력' : 
@@ -86,32 +86,32 @@ export function HumanResource({ locale }: HumanResourceProps) {
     {
       key: 'step_1',
       icon: <FileText className="w-6 h-6" />,
-      title: 'Submit Application',
-      description: 'Send your resume and cover letter'
+      title: locale === 'mn' ? 'Анкет илгээх' : locale === 'kr' ? '지원서 제출' : 'Submit Application',
+      description: locale === 'mn' ? 'Анкет болон танилцуулга илгээнэ үү' : locale === 'kr' ? '이력서와 자기소개서 제출' : 'Send your resume and cover letter'
     },
     {
       key: 'step_2',
       icon: <Target className="w-6 h-6" />,
-      title: 'Initial Screening',
-      description: 'Phone or video interview'
+      title: locale === 'mn' ? 'Анхны шалгалт' : locale === 'kr' ? '1차 심사' : 'Initial Screening',
+      description: locale === 'mn' ? 'Утас эсвэл видео ярилцлага' : locale === 'kr' ? '전화 또는 화상 인터뷰' : 'Phone or video interview'
     },
     {
       key: 'step_3',
       icon: <UserPlus className="w-6 h-6" />,
-      title: 'Interview',
-      description: 'In-person or video interview'
+      title: locale === 'mn' ? 'Ярилцлага' : locale === 'kr' ? '면접' : 'Interview',
+      description: locale === 'mn' ? 'Биечлэн эсвэл видео ярилцлага' : locale === 'kr' ? '대면 또는 화상 면접' : 'In-person or video interview'
     },
     {
       key: 'step_4',
       icon: <BookOpen className="w-6 h-6" />,
-      title: 'Assessment',
-      description: 'Skills and culture fit evaluation'
+      title: locale === 'mn' ? 'Үнэлгээ' : locale === 'kr' ? '평가' : 'Assessment',
+      description: locale === 'mn' ? 'Ур чадвар болон компанийн соёлтой нийцэх үнэлгээ' : locale === 'kr' ? '기술 및 문화 적합성 평가' : 'Skills and culture fit evaluation'
     },
     {
       key: 'step_5',
       icon: <Award className="w-6 h-6" />,
-      title: 'Final Decision',
-      description: 'Job offer and onboarding'
+      title: locale === 'mn' ? 'Эцсийн шийдвэр' : locale === 'kr' ? '최종 결정' : 'Final Decision',
+      description: locale === 'mn' ? 'Ажлын санал болон бэлтгэл' : locale === 'kr' ? '채용 제안 및 온보딩' : 'Job offer and onboarding'
     }
   ];
 
@@ -346,11 +346,15 @@ export function HumanResource({ locale }: HumanResourceProps) {
                 {/* Job Details */}
                 <div className="grid grid-cols-2 gap-4 mb-6">
                   <div className="text-center">
-                    <div className="text-sm text-neutral-500 mb-1">Experience</div>
+                    <div className="text-sm text-neutral-500 mb-1">
+                      {locale === 'mn' ? 'Туршлага' : locale === 'kr' ? '경력' : 'Experience'}
+                    </div>
                     <div className="font-semibold text-neutral-900">{position.experience}</div>
                   </div>
                   <div className="text-center">
-                    <div className="text-sm text-neutral-500 mb-1">Type</div>
+                    <div className="text-sm text-neutral-500 mb-1">
+                      {locale === 'mn' ? 'Төрөл' : locale === 'kr' ? '유형' : 'Type'}
+                    </div>
                     <div className="font-semibold text-neutral-900">{position.type}</div>
                   </div>
                 </div>
@@ -365,7 +369,7 @@ export function HumanResource({ locale }: HumanResourceProps) {
                 >
                   <span className="flex items-center justify-center">
                     <ArrowRight className="w-5 h-5 mr-2" />
-                    {locale === 'mn' ? 'Анкет бөглөх' : 'Apply Now'}
+                    {locale === 'mn' ? 'Анкет бөглөх' : locale === 'kr' ? '지원하기' : 'Apply Now'}
                   </span>
                 </motion.button>
               </motion.div>
@@ -464,8 +468,8 @@ export function HumanResource({ locale }: HumanResourceProps) {
                 className="bg-white rounded-2xl p-8 border border-neutral-200 hover:shadow-xl transition-all duration-300 group h-full"
               >
                 <div className="flex items-center">
-                  <div className="w-16 h-16 bg-gradient-to-br from-accent-500 to-accent-600 rounded-2xl flex items-center justify-center mr-6 group-hover:scale-110 transition-transform duration-300">
-                    <Star className="w-8 h-8 text-white" />
+                  <div className="w-14 h-14 flex-shrink-0 bg-gradient-to-br from-accent-500 to-accent-600 rounded-2xl flex items-center justify-center mr-6 group-hover:scale-110 transition-transform duration-300">
+                    <Star className="w-7 h-7 text-white flex-shrink-0" fill="currentColor" />
                   </div>
                   <span className="font-semibold text-neutral-900 text-lg">{benefit}</span>
                 </div>
