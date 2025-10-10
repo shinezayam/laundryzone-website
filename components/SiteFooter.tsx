@@ -185,12 +185,6 @@ export function SiteFooter({ locale }: SiteFooterProps) {
             
             <div className="flex space-x-6">
               <Link
-                href={`/${locale}/about`}
-                className="text-neutral-400 hover:text-white transition-colors text-sm"
-              >
-                {t('nav.about')}
-              </Link>
-              <Link
                 href={`/${locale}/privacy`}
                 className="text-neutral-400 hover:text-white transition-colors text-sm"
               >
