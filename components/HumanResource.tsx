@@ -215,7 +215,7 @@ export function HumanResource({ locale }: HumanResourceProps) {
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-8">
               {t('nav.human_resources')}
             </h1>
-            <p className="text-xl md:text-2xl text-white max-w-3xl mx-auto leading-relaxed">
+            <p className="text-lg text-white/90 max-w-3xl mx-auto leading-relaxed">
               {locale === 'mn' ? 'Монголын тэргүүлэгч өөртөө үйлчлэх угаалгын компанийн нэг гишүүн болоорой' : 
                locale === 'kr' ? '몽골의 선도적인 셀프 서비스 세탁소 회사의 일원이 되세요' : 
                'Become a member of Mongolia\'s leading self-service laundry company'}
