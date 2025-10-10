@@ -49,8 +49,10 @@ export function HumanResource({ locale }: HumanResourceProps) {
       bgColor: 'bg-blue-50',
       experience: '2+ years',
       type: 'Full-time',
-      title: locale === 'mn' ? 'Салбарын үйлчилгээний зөвлөх' : 'Branch Service Consultant',
-      description: locale === 'mn' ? 'Манай салбаруудад гайхалтай үйлчлүүлэгчийн үйлчилгээ болон дэмжлэг үзүүлэх' : 'Provide excellent customer service and support at our branch locations.'
+      title: locale === 'mn' ? 'Үйлчилгээний зөвлөх ажилтан' : locale === 'kr' ? '서비스 컨설턴트' : 'Service Consultant',
+      description: locale === 'mn' ? 'Угаалгын газраар үйлчлүүлэх, тоног төхөөрөмж ашиглах зөвлөмж өгч, дэмжлэг үзүүлэх' : 
+                   locale === 'kr' ? '세탁소 이용 및 장비 사용에 대한 안내를 제공하고 지원' : 
+                   'Provide guidance on using the laundry facilities and equipment, and offer support'
     },
     {
       key: 'human_resources',
@@ -60,8 +62,10 @@ export function HumanResource({ locale }: HumanResourceProps) {
       bgColor: 'bg-green-50',
       experience: '3+ years',
       type: 'Full-time',
-      title: locale === 'mn' ? 'Хүний нөөцийн мэргэжилтэн' : 'Human Resources Specialist',
-      description: locale === 'mn' ? 'Ажилд авах, ажилтны харилцаа, ХН-ийн үйл явцыг удирдах' : 'Manage recruitment, employee relations, and HR processes.'
+      title: locale === 'mn' ? 'Хүний нөөцийн мэргэжилтэн' : locale === 'kr' ? '인적자원 전문가' : 'Human Resources Specialist',
+      description: locale === 'mn' ? 'Хүний нөөц бүрдүүлэх, удирдан зохион байгуулах, ажилтны сургалт зохион байгуулах' : 
+                   locale === 'kr' ? '인적자원 구축, 관리 조직, 직원 교육 조직' : 
+                   'Build human resources, manage and organize, and arrange employee training'
     },
     {
       key: 'international_relations',
@@ -71,8 +75,10 @@ export function HumanResource({ locale }: HumanResourceProps) {
       bgColor: 'bg-purple-50',
       experience: '2+ years',
       type: 'Full-time',
-      title: locale === 'mn' ? 'Олон улсын харилцааны мэргэжилтэн' : 'International Relations Manager',
-      description: locale === 'mn' ? 'Олон улсын түншлэл, бизнес хөгжүүлэлттэй ажиллах' : 'Handle international partnerships and business development.'
+      title: locale === 'mn' ? 'Гадаад харилцааны мэргэжилтэн' : locale === 'kr' ? '해외 관계 전문가' : 'International Relations Manager',
+      description: locale === 'mn' ? 'Гадаад харилцааг өргөжүүлэх, хамтран ажиллах' : 
+                   locale === 'kr' ? '해외 관계 확장 및 협력' : 
+                   'Expand international relations and collaborate'
     }
   ];
 
@@ -143,9 +149,9 @@ export function HumanResource({ locale }: HumanResourceProps) {
     {
       icon: <TrendingUp className="w-8 h-8 text-green-500" />,
       title: locale === 'mn' ? 'Хөгжил ба төлөвшүүлэлт' : locale === 'kr' ? '성장 및 개발' : 'Growth & Development',
-      description: locale === 'mn' ? 'Тасралтгүй суралцах болон ажлын амжилттай болох боломжууд' : 
-                   locale === 'kr' ? '지속적인 학습과 경력 발전 기회' : 
-                   'Continuous learning and career advancement opportunities'
+      description: locale === 'mn' ? 'Тасралтгүй суралцаж, туршлага хуримтлуулах боломжууд' : 
+                   locale === 'kr' ? '지속적으로 배우고 경험을 쌓을 수 있는 기회' : 
+                   'Opportunities to continuously learn and gain experience'
     },
     {
       icon: <Shield className="w-8 h-8 text-blue-500" />,
@@ -157,9 +163,9 @@ export function HumanResource({ locale }: HumanResourceProps) {
     {
       icon: <UserPlus className="w-8 h-8 text-purple-500" />,
       title: locale === 'mn' ? 'Хамтын ажиллагаа' : locale === 'kr' ? '협력' : 'Collaboration',
-      description: locale === 'mn' ? 'Бүх үйл ажиллагаандаа багийн ажиллагаа болон харилцан дэмжлэг' : 
-                   locale === 'kr' ? '모든 활동에서 팀워크와 상호 지원' : 
-                   'Teamwork and mutual support in all our activities'
+      description: locale === 'mn' ? 'Баг хамт олны харилцан дэмжлэг болон халуун дулаан уур амьсгал' : 
+                   locale === 'kr' ? '팀의 상호 지원과 따뜻한 분위기' : 
+                   'Mutual support and warm atmosphere within the team'
     }
   ];
 
@@ -210,14 +216,14 @@ export function HumanResource({ locale }: HumanResourceProps) {
               {t('nav.human_resources')}
             </h1>
             <p className="text-xl text-accent-100 max-w-3xl mx-auto leading-relaxed mb-8">
-              {locale === 'mn' ? 'Манай багт нэгдэж, Монголын тэргүүлэгч өөртөө үйлчлэх угаалгын компанийн нэг хэсэг болоорой' : 
-               locale === 'kr' ? '우리 팀에 합류하여 몽골의 선도적인 셀프 서비스 세탁소 회사의 일부가 되세요' : 
-               'Join our team and be part of Mongolia\'s leading self-service laundry company'}
+              {locale === 'mn' ? 'Монголын тэргүүлэгч өөртөө үйлчлэх угаалгын компанийн нэг гишүүн болоорой' : 
+               locale === 'kr' ? '몽골의 선도적인 셀프 서비스 세탁소 회사의 일원이 되세요' : 
+               'Become a member of Mongolia\'s leading self-service laundry company'}
             </p>
             <p className="text-lg text-accent-100 max-w-4xl mx-auto leading-relaxed">
-              {locale === 'mn' ? 'Угаалгын салбарт гайхамшигтай үйлчилгээ, шинэчлэл хангах бидний алсын хараатай ижил төстэй авьяастай хүмүүсийг хайж байна.' : 
-               locale === 'kr' ? '세탁업계에서 훌륭한 서비스와 혁신을 제공한다는 우리의 비전을 공유하는 재능 있는 개인들을 찾고 있습니다.' : 
-               'We\'re looking for talented individuals who share our vision of providing excellent service and innovation in the laundry industry.'}
+              {locale === 'mn' ? 'Монголд хамгийн анх нэвтрүүлж буй шинэлэг үйлчилгээ-шинэ соёлыг, өрх бүрт, өрхийн гишүүн бүрт хүргэж, айл гэрийг аз жаргалтай болгох буянтай үйлсэд гар нийлэн ажиллах хүсэлтэй хүмүүсийг урьж байна.' : 
+               locale === 'kr' ? '몽골에서 처음으로 도입되는 혁신적인 서비스와 새로운 문화를 모든 가정과 가족 구성원에게 전달하고, 가정을 행복하게 만드는 의미 있는 일에 함께 참여하고자 하는 분들을 초대합니다.' : 
+               'We invite those who wish to work together in the meaningful endeavor of bringing innovative services and new culture—first introduced in Mongolia—to every household and family member, making families happier.'}
             </p>
           </motion.div>
 
@@ -263,9 +269,9 @@ export function HumanResource({ locale }: HumanResourceProps) {
                'Our Company Culture'}
             </h2>
             <p className="text-lg text-neutral-600 max-w-3xl mx-auto">
-              {locale === 'mn' ? 'Бид хүн бүр амжилттай болж, бидний амжилтад хувь нэмэр оруулах эерэг ажлын орчин бүрдүүлэхэд итгэдэг.' : 
-               locale === 'kr' ? '모든 사람이 성공하고 우리의 성공에 기여할 수 있는 긍정적인 업무 환경을 조성한다고 믿습니다.' : 
-               'We believe in creating a positive work environment where everyone can thrive and contribute to our success.'}
+              {locale === 'mn' ? 'Дэлхийн түвшний орчин үеийн смарт-тав тухтай үйлчилгээг эх орондоо нутагшуулах үнэ цэнтэй үйлсэд гар бие оролцож байгаагаараа бахархдаг. Харилцан дэмтэй, халуун дулаан уур амьсгалтай бид нэг хамт олон, бид нэг гэр бүл' : 
+               locale === 'kr' ? '세계 수준의 현대적이고 스마트하며 편안한 서비스를 조국에 도입하는 가치 있는 일에 직접 참여하고 있다는 것을 자랑스럽게 생각합니다. 서로를 지지하고 따뜻한 분위기 속에서 우리는 하나의 팀이자 하나의 가족입니다' : 
+               'We are proud to be personally involved in the valuable work of bringing world-class modern, smart, and comfortable services to our homeland. With mutual support and a warm atmosphere, we are one team, one family'}
             </p>
           </motion.div>
 
@@ -303,14 +309,14 @@ export function HumanResource({ locale }: HumanResourceProps) {
             className="text-center mb-20"
           >
             <h2 className="text-3xl md:text-4xl font-bold text-neutral-900 mb-6">
-              {locale === 'mn' ? 'Боломжтой ажлын байр' : 
-               locale === 'kr' ? '채용 공고' : 
-               'Available Positions'}
+              {locale === 'mn' ? 'Ажлын байрны танилцуулга' : 
+               locale === 'kr' ? '직무 소개' : 
+               'Job Position Introduction'}
             </h2>
             <p className="text-lg text-neutral-600 max-w-3xl mx-auto">
-              {locale === 'mn' ? 'Одоогийн ажлын байрны боломжуудыг судалж, таны ажлын амжилтад тохирох төгс албан тушаалыг олоорой.' : 
-               locale === 'kr' ? '현재 채용 공고를 살펴보고 경력에 완벽한 역할을 찾아보세요.' : 
-               'Explore our current job openings and find the perfect role for your career.'}
+              {locale === 'mn' ? 'Та манай ажлын байрны мэдээлэлтэй танилцана уу.' : 
+               locale === 'kr' ? '우리의 직무 정보를 확인해 보세요.' : 
+               'Please review our job position information.'}
             </p>
           </motion.div>
 

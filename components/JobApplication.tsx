@@ -62,29 +62,42 @@ export function JobApplication({ jobId, locale }: JobApplicationProps) {
       experience: '2+ years',
       type: 'Full-time',
       location: 'Ulaanbaatar, Mongolia',
-      title: locale === 'mn' ? 'Салбарын үйлчилгээний зөвлөх' : 'Branch Service Consultant',
-      description: locale === 'mn' ? 'Манай салбаруудад гайхалтай үйлчлүүлэгчийн үйлчилгээ болон дэмжлэг үзүүлэх' : 'Provide excellent customer service and support at our branch locations.',
+      title: locale === 'mn' ? 'Үйлчилгээний зөвлөх ажилтан' : 'Service Consultant',
+      description: locale === 'mn' ? 'Угаалгын газраар үйлчлүүлэх, тоног төхөөрөмж ашиглах зөвлөмж өгч, дэмжлэг үзүүлэх' : 'Provide guidance on using the laundry facilities and equipment, and offer support',
       requirements: locale === 'mn' ? [
-        'Харилцагчтай ажиллах туршлага',
-        'Сайн харилцааны ур чадвар',
-        'Англи хэлний мэдлэг',
-        'Компьютерийн үндсэн мэдлэг'
+        'Үйлчлүүлэгчидтэй харилцах 3+ жилийн туршлагатай байх',
+        'Эерэг хандлагатай байх',
+        'Багаар ажиллах чадвартай байх',
+        'Төлбөр тооцоо, бүртгэл хийх'
+      ] : locale === 'kr' ? [
+        '고객 응대 경험 3년 이상',
+        '긍정적인 태도',
+        '팀워크 능력',
+        '결제 및 기록 관리'
       ] : [
-        'Customer service experience',
-        'Excellent communication skills',
-        'English language proficiency',
-        'Basic computer skills'
+        '3+ years customer service experience',
+        'Positive attitude',
+        'Ability to work in a team',
+        'Payment processing and record keeping'
       ],
       responsibilities: locale === 'mn' ? [
-        'Үйлчлүүлэгчдэд үйлчилгээ үзүүлэх',
-        'Салбарын үйл ажиллагааг дэмжих',
-        'Тоног төхөөрөмжийн засвар үйлчилгээ',
-        'Тайлан гаргах'
+        'Үйлчлүүлэгчийг халамжлах, зөвлөж чиглүүлэх',
+        'Ажлын байр, орчны халдваргүйтгэл, цэвэрлэгээг тогтмол хийх',
+        'Эд хогшил, бодис, бараа бүтээгдэхүүн бүртгэх',
+        'Төлбөр, тооцоо хийх',
+        'Тоног төхөөрөмжийн ариулгал халдваргүйтгэл хийх'
+      ] : locale === 'kr' ? [
+        '고객을 배려하고 상담 및 안내',
+        '작업장 및 환경의 소독 및 청소를 정기적으로 수행',
+        '소모품 및 제품 재고 기록',
+        '결제 처리',
+        '장비 소독 및 위생 관리'
       ] : [
-        'Provide customer service',
-        'Support branch operations',
-        'Equipment maintenance',
-        'Generate reports'
+        'Care for customers, provide advice and guidance',
+        'Regularly perform disinfection and cleaning of workplace and environment',
+        'Record inventory of supplies and products',
+        'Process payments',
+        'Disinfect and sanitize equipment'
       ]
     },
     human_resources: {
@@ -94,29 +107,41 @@ export function JobApplication({ jobId, locale }: JobApplicationProps) {
       experience: '3+ years',
       type: 'Full-time',
       location: 'Ulaanbaatar, Mongolia',
-      title: locale === 'mn' ? 'Хүний нөөцийн мэргэжилтэн' : 'Human Resources Specialist',
-      description: locale === 'mn' ? 'Ажилд авах, ажилтны харилцаа, ХН-ийн үйл явцыг удирдах' : 'Manage recruitment, employee relations, and HR processes.',
+      title: locale === 'mn' ? 'Хүний нөөцийн мэргэжилтэн' : locale === 'kr' ? '인적자원 전문가' : 'Human Resources Specialist',
+      description: locale === 'mn' ? 'Хүний нөөц бүрдүүлэх, удирдан зохион байгуулах, ажилтны сургалт зохион байгуулах' : 
+                   locale === 'kr' ? '인적자원 구축, 관리 조직, 직원 교육 조직' : 
+                   'Build human resources, manage and organize, and arrange employee training',
       requirements: locale === 'mn' ? [
-        'ХН-ийн салбарт 3+ жилийн туршлага',
-        'Хүний нөөцийн менежментийн мэдлэг',
-        'Харилцааны ур чадвар',
-        'Хууль эрх зүйн мэдлэг'
+        'Мэргэжлээрээ 3+ жил ажилласан байх',
+        'Мэргэжлийн сургууль төгссөн байх',
+        'Харилцааны болон багаар ажиллах ур чадвар, мэдрэмжтэй байх',
+        'Хөдөлмөрийн болон холбогдох хууль эрх зүйн мэдлэгтэй байх'
+      ] : locale === 'kr' ? [
+        '전공 분야 3년 이상 근무 경험',
+        '전문 대학 졸업',
+        '커뮤니케이션 및 팀워크 능력과 감수성',
+        '노동법 및 관련 법률 지식'
       ] : [
-        '3+ years experience in HR',
-        'Human resource management knowledge',
-        'Communication skills',
-        'Legal knowledge'
+        '3+ years of work experience in the field',
+        'Completed vocational school education',
+        'Communication and teamwork skills with sensitivity',
+        'Knowledge of labor and related legal regulations'
       ],
       responsibilities: locale === 'mn' ? [
-        'Ажилд авах үйл явц удирдах',
-        'Ажилтны харилцаа удирдах',
-        'ХН-ийн бодлого хэрэгжүүлэх',
-        'Сургалт зохион байгуулах'
+        'Ажилд авах сонгон шалгаруулалт хийх',
+        'Гүйцэтгэлийн удирдлагаар хангах',
+        'Сургалт ба хөгжил',
+        'Байгууллагын эерэг соёл'
+      ] : locale === 'kr' ? [
+        '채용 선발 절차 수행',
+        '성과 관리 제공',
+        '교육 및 개발',
+        '조직의 긍정적인 문화'
       ] : [
-        'Manage recruitment process',
-        'Handle employee relations',
-        'Implement HR policies',
-        'Organize training programs'
+        'Conduct recruitment and selection',
+        'Provide performance management',
+        'Training and development',
+        'Positive organizational culture'
       ]
     },
     international_relations: {
@@ -281,7 +306,7 @@ export function JobApplication({ jobId, locale }: JobApplicationProps) {
                   <CheckCircle className="w-6 h-6 text-accent-600" />
                 </div>
                 <h2 className="text-3xl font-bold text-neutral-900">
-                  {locale === 'mn' ? 'Шаардлага' : 'Requirements'}
+                  {locale === 'mn' ? 'Ажлын байранд тавигдах шаардлага' : locale === 'kr' ? '직무 요구사항' : 'Job Requirements'}
                 </h2>
               </div>
               <div className="space-y-4">
