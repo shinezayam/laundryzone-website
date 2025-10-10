@@ -152,7 +152,7 @@ export function SiteFooter({ locale }: SiteFooterProps) {
           <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
             <div className="text-neutral-400 text-sm space-y-1">
               <p>
-                © 2025 LaundryZone Mongolia. All rights reserved. Designed by{' '}
+                {t('common.copyright')} {t('common.designed_by')}{' '}
                 <a
                   href="https://portfolio-sage-xi-54.vercel.app/"
                   target="_blank"
