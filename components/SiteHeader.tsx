@@ -183,8 +183,8 @@ export function SiteHeader({ locale }: SiteHeaderProps) {
             className={`relative flex items-center px-4 py-3 text-sm font-semibold transition-colors duration-200 hover:scale-105 ${
               isBottomRow
                 ? isActive(item.href) || isActive(undefined, item.key)
-                  ? 'text-white bg-white/20 rounded-lg'
-                  : 'text-white hover:text-white hover:bg-white/10 rounded-lg'
+                  ? 'text-white'
+                  : 'text-white hover:text-white'
                 : isActive(item.href) || isActive(undefined, item.key)
                   ? 'text-accent-500'
                   : 'text-neutral-700 hover:text-accent-500'
@@ -197,10 +197,12 @@ export function SiteHeader({ locale }: SiteHeaderProps) {
                 activeDropdown === item.key ? 'rotate-180' : ''
               }`}
             />
-            {!isBottomRow && (isActive(item.href) || isActive(undefined, item.key)) && (
+            {(isActive(item.href) || isActive(undefined, item.key)) && (
               <motion.div
-                layoutId="activeTabTop"
-                className="absolute bottom-0 left-0 right-0 h-0.5 bg-accent-500"
+                layoutId={isBottomRow ? "activeTabBottom" : "activeTabTop"}
+                className={`absolute bottom-0 left-0 right-0 h-0.5 ${
+                  isBottomRow ? 'bg-white' : 'bg-accent-500'
+                }`}
                 initial={false}
                 transition={{ type: "spring", stiffness: 300, damping: 30 }}
               />
@@ -242,18 +244,20 @@ export function SiteHeader({ locale }: SiteHeaderProps) {
           className={`relative px-4 py-3 text-sm font-semibold transition-colors duration-200 hover:scale-105 ${
             isBottomRow
               ? isActive(item.href)
-                ? 'text-white bg-white/20 rounded-lg'
-                : 'text-white hover:text-white hover:bg-white/10 rounded-lg'
+                ? 'text-white'
+                : 'text-white hover:text-white'
               : isActive(item.href)
                 ? 'text-accent-500'
                 : 'text-neutral-700 hover:text-accent-500'
           }`}
         >
           {item.label}
-          {!isBottomRow && isActive(item.href) && (
+          {isActive(item.href) && (
             <motion.div
-              layoutId="activeTabTop"
-              className="absolute bottom-0 left-0 right-0 h-0.5 bg-accent-500"
+              layoutId={isBottomRow ? "activeTabBottom" : "activeTabTop"}
+              className={`absolute bottom-0 left-0 right-0 h-0.5 ${
+                isBottomRow ? 'bg-white' : 'bg-accent-500'
+              }`}
               initial={false}
               transition={{ type: "spring", stiffness: 300, damping: 30 }}
             />
