@@ -8,6 +8,7 @@ import Image from 'next/image';
 
 interface BranchesProps {
   locale: string;
+  showHeader?: boolean;
 }
 
 interface Branch {
@@ -25,7 +26,7 @@ interface Branch {
   image: string;
 }
 
-export function Branches({ locale }: BranchesProps) {
+export function Branches({ locale, showHeader = true }: BranchesProps) {
   const t = useTranslations();
   const [selectedDistrict, setSelectedDistrict] = useState<string>('all');
   const [selectedHours, setSelectedHours] = useState<string>('all');
@@ -510,20 +511,22 @@ export function Branches({ locale }: BranchesProps) {
     <section id="branches" className="section-padding bg-neutral-50">
       <div className="container-custom">
                  {/* Section Header */}
-         <motion.div
-           initial={{ opacity: 0, y: 30 }}
-           whileInView={{ opacity: 1, y: 0 }}
-           viewport={{ once: true }}
-           transition={{ duration: 0.8 }}
-           className="text-center mb-16"
-         >
-           <h2 className="text-3xl md:text-4xl font-bold text-neutral-900 mb-4">
-             {t('branches.title')}
-           </h2>
-           <p className="text-lg text-neutral-600 max-w-2xl mx-auto">
-             {t('branches.subtitle')}
-           </p>
-         </motion.div>
+         {showHeader && (
+           <motion.div
+             initial={{ opacity: 0, y: 30 }}
+             whileInView={{ opacity: 1, y: 0 }}
+             viewport={{ once: true }}
+             transition={{ duration: 0.8 }}
+             className="text-center mb-16"
+           >
+             <h2 className="text-3xl md:text-4xl font-bold text-neutral-900 mb-4">
+               {t('branches.title')}
+             </h2>
+             <p className="text-lg text-neutral-600 max-w-2xl mx-auto">
+               {t('branches.subtitle')}
+             </p>
+           </motion.div>
+         )}
 
                  {/* Enhanced Filter Bar */}
          <motion.div

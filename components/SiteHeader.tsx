@@ -59,7 +59,7 @@ export function SiteHeader({ locale }: SiteHeaderProps) {
   // Bottom row navigation items
   const bottomNavItems = [
     { href: `/${locale}`, label: t('nav.home') },
-    { href: `/${locale}/community#branch-locations`, label: t('nav.branch_locations') },
+    { href: `/${locale}/branches`, label: t('nav.branch_locations') },
     {
       key: 'equipment',
       href: `/${locale}/equipment`,

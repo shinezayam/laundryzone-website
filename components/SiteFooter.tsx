@@ -12,7 +12,7 @@ export function SiteFooter({ locale }: SiteFooterProps) {
   return (
     <footer className="bg-neutral-900 text-white">
       <div className="container-custom py-16">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8">
           {/* Company Info */}
           <div className="space-y-4">
             <div className="flex items-center space-x-2">
@@ -43,24 +43,71 @@ export function SiteFooter({ locale }: SiteFooterProps) {
             </div>
           </div>
 
-          {/* Quick Links */}
+          {/* Company Menu */}
           <div className="space-y-4">
-            <h3 className="text-lg font-semibold">{t('common.quick_links')}</h3>
+            <h3 className="text-lg font-semibold">{t('common.company')}</h3>
             <ul className="space-y-2">
               <li>
                 <Link
                   href={`/${locale}/about`}
                   className="text-neutral-300 hover:text-white transition-colors text-sm"
                 >
-                  {t('common.about_us')}
+                  {t('nav.about')}
                 </Link>
               </li>
               <li>
                 <Link
-                  href={`/${locale}/services`}
+                  href={`/${locale}/competitive-advantage`}
                   className="text-neutral-300 hover:text-white transition-colors text-sm"
                 >
-                  {t('nav.services')}
+                  {t('nav.competitive_advantage')}
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href={`/${locale}/franchise`}
+                  className="text-neutral-300 hover:text-white transition-colors text-sm"
+                >
+                  {t('nav.franchise')}
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href={`/${locale}/human-resources`}
+                  className="text-neutral-300 hover:text-white transition-colors text-sm"
+                >
+                  {t('nav.human_resources')}
+                </Link>
+              </li>
+            </ul>
+          </div>
+
+          {/* Services Menu */}
+          <div className="space-y-4">
+            <h3 className="text-lg font-semibold">{t('nav.services')}</h3>
+            <ul className="space-y-2">
+              <li>
+                <Link
+                  href={`/${locale}`}
+                  className="text-neutral-300 hover:text-white transition-colors text-sm"
+                >
+                  {t('nav.home')}
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href={`/${locale}/branches`}
+                  className="text-neutral-300 hover:text-white transition-colors text-sm"
+                >
+                  {t('nav.branch_locations')}
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href={`/${locale}/equipment`}
+                  className="text-neutral-300 hover:text-white transition-colors text-sm"
+                >
+                  {t('nav.equipment')}
                 </Link>
               </li>
               <li>
@@ -73,26 +120,41 @@ export function SiteFooter({ locale }: SiteFooterProps) {
               </li>
               <li>
                 <Link
-                  href={`/${locale}/community#branch-locations`}
+                  href={`/${locale}/customer`}
                   className="text-neutral-300 hover:text-white transition-colors text-sm"
                 >
-                  {t('nav.branch_locations')}
+                  {t('nav.customer')}
                 </Link>
               </li>
-              <li>
-                <Link
-                  href={`/${locale}/human-resources`}
-                  className="text-neutral-300 hover:text-white transition-colors text-sm"
-                >
-                  {t('nav.human_resources')}
-                </Link>
-              </li>
+            </ul>
+          </div>
+
+          {/* Support Menu */}
+          <div className="space-y-4">
+            <h3 className="text-lg font-semibold">{t('common.support')}</h3>
+            <ul className="space-y-2">
               <li>
                 <Link
                   href={`/${locale}/contact`}
                   className="text-neutral-300 hover:text-white transition-colors text-sm"
                 >
                   {t('nav.contact')}
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href={`/${locale}/privacy`}
+                  className="text-neutral-300 hover:text-white transition-colors text-sm"
+                >
+                  {t('footer.links.privacy')}
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href={`/${locale}/terms`}
+                  className="text-neutral-300 hover:text-white transition-colors text-sm"
+                >
+                  {t('footer.links.terms')}
                 </Link>
               </li>
             </ul>
@@ -103,35 +165,22 @@ export function SiteFooter({ locale }: SiteFooterProps) {
             <h3 className="text-lg font-semibold">{t('contact.title')}</h3>
             <div className="space-y-3">
               <div className="flex items-center space-x-3">
-                <Phone size={16} className="text-accent-400" />
+                <Phone size={16} className="text-accent-400 flex-shrink-0" />
                 <span className="text-neutral-300 text-sm">+976-7272-2121</span>
               </div>
               <div className="flex items-center space-x-3">
-                <Mail size={16} className="text-accent-400" />
-                <span className="text-neutral-300 text-sm">laundryzone.info@gmail.com</span>
+                <Mail size={16} className="text-accent-400 flex-shrink-0" />
+                <span className="text-neutral-300 text-sm break-all">laundryzone.info@gmail.com</span>
               </div>
               <div className="flex items-center space-x-3">
-                <MapPin size={16} className="text-accent-400" />
+                <MapPin size={16} className="text-accent-400 flex-shrink-0" />
                 <span className="text-neutral-300 text-sm">Ulaanbaatar, Mongolia</span>
               </div>
               <div className="flex items-center space-x-3">
-                <Clock size={16} className="text-accent-400" />
+                <Clock size={16} className="text-accent-400 flex-shrink-0" />
                 <span className="text-neutral-300 text-sm">08:00-24:00</span>
               </div>
             </div>
-          </div>
-
-                          {/* Equipment */}
-                <div className="space-y-4">
-                  <h3 className="text-lg font-semibold">{t('common.equipment')}</h3>
-            <ul className="space-y-2">
-              <li className="text-neutral-300 text-sm">{t('common.self_service_washing')}</li>
-              <li className="text-neutral-300 text-sm">{t('common.commercial_dryers')}</li>
-              <li className="text-neutral-300 text-sm">{t('common.shoe_washing')}</li>
-              <li className="text-neutral-300 text-sm">{t('common.detergent_available')}</li>
-              <li className="text-neutral-300 text-sm">{t('common.free_wifi')}</li>
-              <li className="text-neutral-300 text-sm">{t('common.cashless_payment')}</li>
-            </ul>
           </div>
         </div>
 
@@ -165,6 +214,12 @@ export function SiteFooter({ locale }: SiteFooterProps) {
             
             <div className="flex space-x-6">
               <Link
+                href={`/${locale}/about`}
+                className="text-neutral-400 hover:text-white transition-colors text-sm"
+              >
+                {t('nav.about')}
+              </Link>
+              <Link
                 href={`/${locale}/privacy`}
                 className="text-neutral-400 hover:text-white transition-colors text-sm"
               >
@@ -175,12 +230,6 @@ export function SiteFooter({ locale }: SiteFooterProps) {
                 className="text-neutral-400 hover:text-white transition-colors text-sm"
               >
                 {t('footer.links.terms')}
-              </Link>
-              <Link
-                href={`/${locale}/franchise`}
-                className="text-neutral-400 hover:text-white transition-colors text-sm"
-              >
-                {t('footer.links.franchise')}
               </Link>
             </div>
           </div>
