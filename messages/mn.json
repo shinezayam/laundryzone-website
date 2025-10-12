@@ -385,7 +385,7 @@
   "footer": {
     "company_description": "LG/Samsung тоног төхөөрөмжтэй, 08:00 - 24:00 ажилладаг, бэлэн мөнгөгүй төлбөрийн боломжтой өөртөө үйлчлэх угаалгын газар Улаанбаатар хот даяар.",
     "copyright": "© 2025 LaundryZone Mongolia. Бүх эрх хуулиар хамгаалагдсан.",
-    "designed_by": "Дизайнер",
+    "powered_by": "Хөгжүүлсэн",
     "links": {
       "privacy": "Нууцлалын бодлого",
       "terms": "Үйлчилгээний нөхцөл",
@@ -434,7 +434,7 @@
     "free_wifi": "Үнэгүй Wi-Fi",
     "cashless_payment": "Бэлэн мөнгөгүй төлбөр тооцоо",
     "copyright": "© 2025 LaundryZone Mongolia. Бүх эрх хуулиар хамгаалагдсан.",
-    "designed_by": "Дизайнер",
+    "powered_by": "Хөгжүүлсэн",
     "need_help": "Тусламж хэрэгтэй юу?",
     "sending": "Илгээж байна...",
     "competitive_advantage_subtitle": "LaundryZone Mongolia-ын өрсөлдөх давуу талууд",

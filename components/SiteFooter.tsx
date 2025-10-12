@@ -152,14 +152,14 @@ export function SiteFooter({ locale }: SiteFooterProps) {
           <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
             <div className="text-neutral-400 text-sm space-y-1">
               <p>
-                {t('common.copyright')} {t('common.designed_by')}{' '}
+                {t('common.copyright')} {t('common.powered_by')}{' '}
                 <a
-                  href="https://portfolio-sage-xi-54.vercel.app/"
+                  href="https://blueprint-studio-mu.vercel.app/en"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-accent-400 hover:text-accent-300 transition-colors font-medium"
                 >
-                  Shinezaya Myagmar
+                  Blueprint Studio
                 </a>
               </p>
               {/* <p>
