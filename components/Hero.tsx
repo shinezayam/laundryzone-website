@@ -4,7 +4,7 @@ import { useTranslations } from 'next-intl';
 import Link from 'next/link';
 import Image from 'next/image';
 import { motion } from 'framer-motion';
-import { ArrowRight, Play, Star, Clock, Shield } from 'lucide-react';
+import { ArrowRight, Play } from 'lucide-react';
 import { StatBadges } from './StatBadges';
 
 interface HeroProps {
@@ -136,23 +136,42 @@ export function Hero({ locale }: HeroProps) {
 
       {/* Content */}
       <div className="container-custom relative z-10 mt-16 lg:mt-20">
+        {/* Full-width Video at top */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
+          className="mb-8"
+        >
+          <div className="relative aspect-video rounded-3xl overflow-hidden shadow-2xl">
+            <video
+              src="/videos/facebook.mp4"
+              autoPlay
+              loop
+              muted
+              playsInline
+              className="absolute inset-0 w-full h-full object-cover"
+            />
+          </div>
+        </motion.div>
+
         <div className="grid grid-cols-1 lg:grid-cols-5 gap-8 items-center">
           {/* Text Content */}
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
+            transition={{ duration: 0.8, delay: 0.2 }}
             className="text-center lg:text-left lg:col-span-2"
           >
             <motion.h1
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.2 }}
+              transition={{ duration: 0.8, delay: 0.3 }}
               className="text-2xl md:text-5xl lg:text-6xl font-bold text-neutral-900 leading-tight mb-6"
             >
               {t('hero.headline')}
             </motion.h1>
-            
+
             <motion.p
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
@@ -166,7 +185,7 @@ export function Hero({ locale }: HeroProps) {
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.6 }}
+              transition={{ duration: 0.8, delay: 0.5 }}
               className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start"
             >
               <motion.div
@@ -181,7 +200,7 @@ export function Hero({ locale }: HeroProps) {
                   <ArrowRight size={20} className="ml-2 group-hover:translate-x-1 transition-transform" />
                 </Link>
               </motion.div>
-              
+
               <motion.div
                 whileHover={{ scale: 1.05, y: -2 }}
                 whileTap={{ scale: 0.95 }}
@@ -200,7 +219,7 @@ export function Hero({ locale }: HeroProps) {
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.8 }}
+              transition={{ duration: 0.8, delay: 0.6 }}
               className="mt-12"
             >
               <StatBadges />
@@ -222,17 +241,17 @@ export function Hero({ locale }: HeroProps) {
                 className="object-cover transition-transform duration-500 group-hover:scale-105"
                 sizes="(max-width: 768px) 100vw, (max-width: 1024px) 80vw, 60vw"
               />
-              
+
               {/* Floating Interactive Elements */}
               <motion.div
-                animate={{ 
+                animate={{
                   y: [-10, 10, -10],
                   rotate: [-2, 2, -2]
                 }}
-                transition={{ 
-                  duration: 4, 
-                  repeat: Infinity, 
-                  ease: "easeInOut" 
+                transition={{
+                  duration: 4,
+                  repeat: Infinity,
+                  ease: "easeInOut"
                 }}
                 className="absolute top-6 right-6 bg-gradient-to-br from-white/95 to-white/90 backdrop-blur-sm rounded-2xl p-4 shadow-lg border border-white/20"
               >
@@ -241,15 +260,15 @@ export function Hero({ locale }: HeroProps) {
                   <span className="text-xs md:text-sm font-semibold text-neutral-800">{t('hero.open_24_7')}</span>
                 </div>
               </motion.div>
-              
+
               <motion.div
-                animate={{ 
+                animate={{
                   y: [10, -10, 10],
                   rotate: [2, -2, 2]
                 }}
-                transition={{ 
-                  duration: 4, 
-                  repeat: Infinity, 
+                transition={{
+                  duration: 4,
+                  repeat: Infinity,
                   ease: "easeInOut",
                   delay: 2
                 }}

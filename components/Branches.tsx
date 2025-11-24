@@ -1,8 +1,8 @@
 'use client';
 
 import { useTranslations } from 'next-intl';
-import { motion, AnimatePresence } from 'framer-motion';
-import { useState, useMemo } from 'react';
+import { motion } from 'framer-motion';
+import { useState, useMemo, useEffect } from 'react';
 import { MapPin, Clock, Phone, Filter, Search, SlidersHorizontal, Map, Facebook } from 'lucide-react';
 import Image from 'next/image';
 
@@ -24,6 +24,7 @@ interface Branch {
   email?: string;
   facebook?: string;
   image: string;
+  comingSoon?: boolean;
 }
 
 export function Branches({ locale, showHeader = true }: BranchesProps) {
@@ -34,6 +35,43 @@ export function Branches({ locale, showHeader = true }: BranchesProps) {
   const [showFilters, setShowFilters] = useState<boolean>(false);
   const [imagesLoaded, setImagesLoaded] = useState<Set<string>>(new Set());
   const [displayCount, setDisplayCount] = useState<number>(12);
+  const [selectedProvinces, setSelectedProvinces] = useState<string[]>([]);
+  const [allProvincesSelected, setAllProvincesSelected] = useState<boolean>(true);
+
+  // Branch names mapped to their province IDs
+  const branchToProvince: Record<string, string> = {
+    // Dornod province
+    'Дорнод аймаг': 'MN061',
+    // Orkhon province (Erdenet)
+    'Эрдэнэт салбар': 'MN035',
+    'Эрдэнэт хот 2-р салбар': 'MN035',
+    // Khövsgöl province
+    'Хөвсгөл аймаг - Мөрөн салбар': 'MN041',
+    'Хөвсгөл аймаг - Номин салбар': 'MN041',
+    // Uvs province
+    'Увс аймаг': 'MN046',
+    // Töv province (Zuunmod)
+    'Төв аймаг - Зуунмод': 'MN047',
+    // Dornogovi province (Sainshand)
+    'Дорноговь - Сайншанд': 'MN063',
+    // Ömnögovi province
+    'Өмнөговь аймаг': 'MN053',
+    // Zavkhan province (Uliastai)
+    'Улиастай салбар': 'MN057',
+  };
+
+  // Listen for messages from the map iframe
+  useEffect(() => {
+    const handleMessage = (event: MessageEvent) => {
+      if (event.data?.type === 'provinces-updated') {
+        setSelectedProvinces(event.data.provinces || []);
+        setAllProvincesSelected(event.data.allSelected || false);
+      }
+    };
+
+    window.addEventListener('message', handleMessage);
+    return () => window.removeEventListener('message', handleMessage);
+  }, []);
 
   // Branch data with real information from LaundryZone Mongolia website
   const branches: Branch[] = [
@@ -459,6 +497,43 @@ export function Branches({ locale, showHeader = true }: BranchesProps) {
       phone: "+976 8520 2211",
       facebook: "https://www.facebook.com/profile.php?id=61574842010456",
              image: "/images/Branches/Зуунмод.jpg"
+    },
+    // Coming Soon Branches
+    {
+      id: "Яармаг-Мандала хотхон",
+      name: "Яармаг-Мандала хотхон",
+      address: "Тун удахгүй нээгдэнэ",
+      district: "Хан-Уул",
+      lat: 47.8800,
+      lng: 106.9100,
+      hours: "08:00-24:00",
+      phone: "",
+      image: "/images/placeholder_image.png",
+      comingSoon: true
+    },
+    {
+      id: "Эрдэнэт хот 2-р салбар",
+      name: "Эрдэнэт хот 2-р салбар",
+      address: "Тун удахгүй нээгдэнэ",
+      district: "Орон нутаг",
+      lat: 49.0276,
+      lng: 104.0445,
+      hours: "08:00-24:00",
+      phone: "",
+      image: "/images/placeholder_image.png",
+      comingSoon: true
+    },
+    {
+      id: "Улиастай салбар",
+      name: "Улиастай салбар",
+      address: "Тун удахгүй нээгдэнэ",
+      district: "Орон нутаг",
+      lat: 47.7394,
+      lng: 96.8425,
+      hours: "08:00-24:00",
+      phone: "",
+      image: "/images/placeholder_image.png",
+      comingSoon: true
     }
   ];
 
@@ -468,9 +543,19 @@ export function Branches({ locale, showHeader = true }: BranchesProps) {
     return uniqueDistricts.sort();
   }, []);
 
-  // Filter branches
+  // Filter branches and sort with coming soon first
   const filteredBranches = useMemo(() => {
-    return branches.filter(branch => {
+    const filtered = branches.filter(branch => {
+      // Province/Map filter - only apply if not all provinces are selected
+      if (!allProvincesSelected && selectedProvinces.length > 0) {
+        // Get the province for this branch (default to Ulaanbaatar MN1)
+        const branchProvince = branchToProvince[branch.name] || 'MN1';
+        // Check if this branch's province is in the selected provinces
+        if (!selectedProvinces.includes(branchProvince)) {
+          return false;
+        }
+      }
+
       if (selectedDistrict !== 'all' && branch.district !== selectedDistrict) {
         return false;
       }
@@ -489,7 +574,13 @@ export function Branches({ locale, showHeader = true }: BranchesProps) {
       }
       return true;
     });
-  }, [branches, selectedDistrict, selectedHours, searchTerm]);
+    // Sort: coming soon branches first
+    return filtered.sort((a, b) => {
+      if (a.comingSoon && !b.comingSoon) return -1;
+      if (!a.comingSoon && b.comingSoon) return 1;
+      return 0;
+    });
+  }, [branches, selectedDistrict, selectedHours, searchTerm, selectedProvinces, allProvincesSelected, branchToProvince]);
 
   const clearFilters = () => {
     setSelectedDistrict('all');
@@ -522,9 +613,18 @@ export function Branches({ locale, showHeader = true }: BranchesProps) {
              <h2 className="text-3xl md:text-4xl font-bold text-neutral-900 mb-4">
                {t('branches.title')}
              </h2>
-             <p className="text-lg text-neutral-600 max-w-2xl mx-auto">
+             <p className="text-lg text-neutral-600 max-w-2xl mx-auto mb-8">
                {t('branches.subtitle')}
              </p>
+             {/* Mongolia Map - iframe for complete CSS isolation */}
+             <div className="flex justify-center">
+               <iframe
+                 src={`/map-interactive.html?locale=${locale}`}
+                 className="w-full max-w-2xl border-0"
+                 style={{ height: '400px' }}
+                 title="Mongolia Map"
+               />
+             </div>
            </motion.div>
          )}
 
@@ -655,18 +755,24 @@ export function Branches({ locale, showHeader = true }: BranchesProps) {
             >
               {/* Image */}
               <div className="relative w-full h-48 bg-neutral-100 rounded-t-2xl overflow-hidden">
+                {/* Coming Soon Badge */}
+                {branch.comingSoon && (
+                  <div className="absolute top-3 right-3 z-10 bg-accent-500 text-white px-3 py-1.5 rounded-full text-xs font-bold uppercase tracking-wide shadow-lg">
+                    {t('branches.coming_soon')}
+                  </div>
+                )}
                 {/* Loading Skeleton */}
                 {!imagesLoaded.has(branch.id) && (
                   <div className="absolute inset-0 bg-gradient-to-br from-neutral-200 to-neutral-300 animate-pulse" />
                 )}
-                <Image 
-                  src={branch.image} 
-                  alt={branch.name} 
+                <Image
+                  src={branch.image}
+                  alt={branch.name}
                   fill
                   sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
                   className={`object-cover transition-opacity duration-300 ${
                     imagesLoaded.has(branch.id) ? 'opacity-100' : 'opacity-0'
-                  }`}
+                  } ${branch.comingSoon ? 'grayscale opacity-70' : ''}`}
                   priority={index < 6}
                   loading={index < 6 ? "eager" : "lazy"}
                   quality={75}
@@ -706,29 +812,37 @@ export function Branches({ locale, showHeader = true }: BranchesProps) {
 
                 {/* Actions - Fixed at bottom */}
                 <div className="mt-4 pt-4 border-t border-neutral-100 flex flex-col sm:flex-row items-stretch sm:items-center gap-2">
-                  <a
-                    href={`https://www.google.com/maps?q=${branch.lat},${branch.lng}`}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="flex-1 inline-flex items-center justify-center gap-2 px-2 sm:px-3 py-2.5 rounded-lg text-xs sm:text-sm font-medium text-orange-600 border-2 border-orange-500 hover:bg-orange-50 transition-all duration-200"
-                  >
-                     <Map size={14} className="sm:w-4 sm:h-4" />
-                     <span>{t('branches.view_on_maps')}</span>
-                  </a>
-                  <a
-                    href={branch.facebook || '#'}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className={`flex-1 inline-flex items-center justify-center gap-2 px-2 sm:px-3 py-2.5 rounded-lg text-xs sm:text-sm font-medium transition-all duration-200 ${
-                      branch.facebook 
-                        ? 'text-blue-600 border-2 border-blue-500 hover:bg-blue-50' 
-                        : 'text-neutral-400 border-2 border-neutral-300 bg-neutral-50 cursor-not-allowed'
-                    }`}
-                    onClick={!branch.facebook ? (e) => e.preventDefault() : undefined}
-                  >
-                     <Facebook size={14} className="sm:w-4 sm:h-4" />
-                     <span>{t('branches.visit_facebook_button')}</span>
-                  </a>
+                  {branch.comingSoon ? (
+                    <div className="flex-1 inline-flex items-center justify-center gap-2 px-2 sm:px-3 py-2.5 rounded-lg text-xs sm:text-sm font-medium text-accent-600 bg-accent-50 border-2 border-accent-200">
+                      {t('branches.opening_soon')}
+                    </div>
+                  ) : (
+                    <>
+                      <a
+                        href={`https://www.google.com/maps?q=${branch.lat},${branch.lng}`}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="flex-1 inline-flex items-center justify-center gap-2 px-2 sm:px-3 py-2.5 rounded-lg text-xs sm:text-sm font-medium text-orange-600 border-2 border-orange-500 hover:bg-orange-50 transition-all duration-200"
+                      >
+                         <Map size={14} className="sm:w-4 sm:h-4" />
+                         <span>{t('branches.view_on_maps')}</span>
+                      </a>
+                      <a
+                        href={branch.facebook || '#'}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className={`flex-1 inline-flex items-center justify-center gap-2 px-2 sm:px-3 py-2.5 rounded-lg text-xs sm:text-sm font-medium transition-all duration-200 ${
+                          branch.facebook
+                            ? 'text-blue-600 border-2 border-blue-500 hover:bg-blue-50'
+                            : 'text-neutral-400 border-2 border-neutral-300 bg-neutral-50 cursor-not-allowed'
+                        }`}
+                        onClick={!branch.facebook ? (e) => e.preventDefault() : undefined}
+                      >
+                         <Facebook size={14} className="sm:w-4 sm:h-4" />
+                         <span>{t('branches.visit_facebook_button')}</span>
+                      </a>
+                    </>
+                  )}
                 </div>
               </div>
             </motion.div>

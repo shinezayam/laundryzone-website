@@ -379,7 +379,10 @@
     "visit_facebook": "Visit Facebook",
     "view_on_maps": "Open in Maps",
     "visit_facebook_button": "Follow on Facebook",
-    "load_more": "Load More Branches"
+    "load_more": "Load More Branches",
+    "coming_soon": "Coming Soon",
+    "coming_soon_address": "Opening Soon",
+    "opening_soon": "Opening Soon"
   },
   "contact": {
     "title": "Contact Us",

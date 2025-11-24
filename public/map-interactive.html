@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      font-family: system-ui, -apple-system, sans-serif;
+      background: transparent;
+    }
+    .container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 10px;
+    }
+    .controls {
+      display: flex;
+      gap: 8px;
+      margin-bottom: 12px;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+    .control-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 6px 14px;
+      font-size: 13px;
+      font-weight: 500;
+      border: none;
+      border-radius: 9999px;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+    .control-btn.select-all {
+      color: #c2410c;
+      background: #ffedd5;
+    }
+    .control-btn.select-all:hover {
+      background: #fed7aa;
+    }
+    .control-btn.deselect-all {
+      color: #525252;
+      background: #e5e5e5;
+    }
+    .control-btn.deselect-all:hover {
+      background: #d4d4d4;
+    }
+    .control-btn svg {
+      width: 14px;
+      height: 14px;
+    }
+    .selection-info {
+      font-size: 12px;
+      color: #737373;
+      margin-bottom: 8px;
+    }
+    #map-container {
+      width: 100%;
+      max-width: 600px;
+    }
+    #map-container svg {
+      width: 100%;
+      height: auto;
+    }
+    #map-container svg path {
+      fill: #F4781F;
+      stroke: white;
+      stroke-width: 50;
+      cursor: pointer;
+      transition: fill 0.2s ease;
+    }
+    #map-container svg path:hover {
+      fill: #ea6a10;
+    }
+    #map-container svg path.deselected {
+      fill: #d1d5db !important;
+    }
+    #map-container svg path.deselected:hover {
+      fill: #9ca3af !important;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="controls">
+      <button class="control-btn select-all" id="select-all-btn" onclick="selectAll()">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <polyline points="20 6 9 17 4 12"></polyline>
+        </svg>
+        <span id="select-all-text">Бүгдийг сонгох</span>
+      </button>
+      <button class="control-btn deselect-all" id="deselect-all-btn" onclick="deselectAll()">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="18" y1="6" x2="6" y2="18"></line>
+          <line x1="6" y1="6" x2="18" y2="18"></line>
+        </svg>
+        <span id="deselect-all-text">Бүгдийг арилгах</span>
+      </button>
+    </div>
+    <div class="selection-info" id="selection-info"></div>
+    <div id="map-container"></div>
+  </div>
+
+  <script>
+    // Province names and their mapping to districts
+    const PROVINCES = {
+      'MN071': { mn: 'Баян-Өлгий', en: 'Bayan-Ölgii', kr: '바얀울기' },
+      'MN046': { mn: 'Увс', en: 'Uvs', kr: '옵스' },
+      'MN043': { mn: 'Ховд', en: 'Khovd', kr: '호브드' },
+      'MN041': { mn: 'Хөвсгөл', en: 'Khövsgöl', kr: '홉스골' },
+      'MN057': { mn: 'Завхан', en: 'Zavkhan', kr: '자브한' },
+      'MN073': { mn: 'Архангай', en: 'Arkhangai', kr: '아르항가이' },
+      'MN065': { mn: 'Говь-Алтай', en: 'Govi-Altai', kr: '고비알타이' },
+      'MN069': { mn: 'Баянхонгор', en: 'Bayankhongor', kr: '바얀홍고르' },
+      'MN067': { mn: 'Булган', en: 'Bulgan', kr: '불간' },
+      'MN035': { mn: 'Орхон', en: 'Orkhon', kr: '오르혼' },
+      'MN049': { mn: 'Сэлэнгэ', en: 'Selenge', kr: '셀렝게' },
+      'MN037': { mn: 'Дархан-Уул', en: 'Darkhan-Uul', kr: '다르항올' },
+      'MN047': { mn: 'Төв', en: 'Töv', kr: '투브' },
+      'MN053': { mn: 'Өмнөговь', en: 'Ömnögovi', kr: '움누고비' },
+      'MN063': { mn: 'Дорноговь', en: 'Dornogovi', kr: '도르노고비' },
+      'MN059': { mn: 'Дундговь', en: 'Dundgovi', kr: '둔드고비' },
+      'MN055': { mn: 'Өвөрхангай', en: 'Övörkhangai', kr: '우부르항가이' },
+      'MN039': { mn: 'Хэнтий', en: 'Khentii', kr: '헨티' },
+      'MN051': { mn: 'Сүхбаатар', en: 'Sükhbaatar', kr: '수흐바타르' },
+      'MN061': { mn: 'Дорнод', en: 'Dornod', kr: '도르노드' },
+      'MN1': { mn: 'Улаанбаатар', en: 'Ulaanbaatar', kr: '울란바토르' },
+      'MN064': { mn: 'Багануур', en: 'Baganuur', kr: '바가누르' },
+    };
+
+    const LABELS = {
+      mn: {
+        selectAll: 'Бүгдийг сонгох',
+        deselectAll: 'Бүгдийг арилгах',
+        selected: 'сонгосон',
+        of: '/'
+      },
+      en: {
+        selectAll: 'Select All',
+        deselectAll: 'Deselect All',
+        selected: 'selected',
+        of: 'of'
+      },
+      kr: {
+        selectAll: '모두 선택',
+        deselectAll: '모두 해제',
+        selected: '선택됨',
+        of: '/'
+      }
+    };
+
+    let selectedProvinces = new Set();
+    let allProvinceIds = Object.keys(PROVINCES);
+    let locale = 'mn';
+
+    // Get locale from URL params
+    const urlParams = new URLSearchParams(window.location.search);
+    locale = urlParams.get('locale') || 'mn';
+
+    // Update button labels
+    const labels = LABELS[locale] || LABELS.mn;
+    document.getElementById('select-all-text').textContent = labels.selectAll;
+    document.getElementById('deselect-all-text').textContent = labels.deselectAll;
+
+    // Load SVG
+    fetch('/images/map/mongolia map.svg')
+      .then(r => r.text())
+      .then(svg => {
+        document.getElementById('map-container').innerHTML = svg;
+
+        // Initialize all as selected
+        document.querySelectorAll('#map-container svg path').forEach(path => {
+          if (PROVINCES[path.id]) {
+            selectedProvinces.add(path.id);
+            path.addEventListener('click', () => handleProvinceClick(path.id));
+          }
+        });
+
+        updateSelectionInfo();
+        notifyParent();
+      });
+
+    function handleProvinceClick(id) {
+      const allSelected = selectedProvinces.size === allProvinceIds.length;
+
+      if (allSelected) {
+        // If all are selected, deselect everything except clicked one
+        deselectAllExcept(id);
+      } else {
+        // Toggle the clicked province
+        toggleProvince(id);
+      }
+    }
+
+    function deselectAllExcept(id) {
+      // Deselect all
+      document.querySelectorAll('#map-container svg path').forEach(path => {
+        if (PROVINCES[path.id]) {
+          path.classList.add('deselected');
+        }
+      });
+      selectedProvinces.clear();
+
+      // Select only the clicked one
+      const path = document.getElementById(id);
+      if (path) {
+        path.classList.remove('deselected');
+        selectedProvinces.add(id);
+      }
+
+      updateSelectionInfo();
+      notifyParent();
+    }
+
+    function toggleProvince(id) {
+      const path = document.getElementById(id);
+      if (!path) return;
+
+      const isDeselected = path.classList.contains('deselected');
+
+      if (isDeselected) {
+        path.classList.remove('deselected');
+        selectedProvinces.add(id);
+      } else {
+        path.classList.add('deselected');
+        selectedProvinces.delete(id);
+      }
+
+      updateSelectionInfo();
+      notifyParent();
+    }
+
+    function selectAll() {
+      document.querySelectorAll('#map-container svg path').forEach(path => {
+        if (PROVINCES[path.id]) {
+          path.classList.remove('deselected');
+          selectedProvinces.add(path.id);
+        }
+      });
+      updateSelectionInfo();
+      notifyParent();
+    }
+
+    function deselectAll() {
+      document.querySelectorAll('#map-container svg path').forEach(path => {
+        if (PROVINCES[path.id]) {
+          path.classList.add('deselected');
+        }
+      });
+      selectedProvinces.clear();
+      updateSelectionInfo();
+      notifyParent();
+    }
+
+    function updateSelectionInfo() {
+      const total = allProvinceIds.length;
+      const selected = selectedProvinces.size;
+      const labels = LABELS[locale] || LABELS.mn;
+
+      const infoEl = document.getElementById('selection-info');
+      if (selected === total) {
+        infoEl.textContent = '';
+      } else {
+        infoEl.textContent = `${selected} ${labels.of} ${total} ${labels.selected}`;
+      }
+    }
+
+    function notifyParent() {
+      const selectedArray = Array.from(selectedProvinces);
+      const selectedNames = selectedArray.map(id => PROVINCES[id]?.mn || id);
+
+      window.parent.postMessage({
+        type: 'provinces-updated',
+        provinces: selectedArray,
+        provinceNames: selectedNames,
+        allSelected: selectedProvinces.size === allProvinceIds.length
+      }, '*');
+    }
+  </script>
+</body>
+</html>

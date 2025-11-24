@@ -7,21 +7,22 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 ```bash
 # Development
 npm run dev              # Start development server on localhost:3000
-npm run build           # Build for production
-npm start              # Start production server
-npm run lint           # Run ESLint
-npm run type-check     # Run TypeScript type checking
-```
+npm run build            # Build for production
+npm start                # Start production server
+npm run lint             # Run ESLint
+npm run type-check       # Run TypeScript type checking
 
-## Current Version Status
-- **Next.js**: 15.5.3 (latest)
-- **next-intl**: 4.3.9 (latest)
-- **Status**: All hydration errors resolved, Next.js 15 compatible
+# Testing (Playwright)
+npx playwright test                    # Run all tests
+npx playwright test tests/example.spec.ts  # Run single test file
+npx playwright test --ui               # Run tests with UI mode
+npx playwright show-report             # View test report
+```
 
 ## Project Architecture
 
 ### Tech Stack
-- **Framework**: Next.js 14 with App Router
+- **Framework**: Next.js 15 with App Router
 - **Language**: TypeScript
 - **Styling**: Tailwind CSS with custom design system
 - **Animations**: Framer Motion
@@ -30,7 +31,7 @@ npm run type-check     # Run TypeScript type checking
 - **Icons**: Lucide React
 - **PDF Generation**: jsPDF + html2canvas
 - **Email**: Resend
-- **Testing**: Playwright (configured)
+- **Testing**: Playwright
 
 ### Internationalization Setup
 
@@ -110,7 +111,7 @@ app/[locale]/page-name/page.tsx
 ```
 
 **Layout Hierarchy:**
-1. `app/layout.tsx` - Root layout with metadata, Inter font, global styles
+1. `app/layout.tsx` - Root layout with metadata, Montserrat font, global styles
 2. `app/[locale]/layout.tsx` - Locale wrapper with NextIntlClientProvider, SiteHeader, SiteFooter, Chatbot
 3. Page components - Individual page content
 

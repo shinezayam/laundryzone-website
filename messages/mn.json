@@ -301,7 +301,10 @@
     "view_on_map": "Газрын зураг дээр харах",
     "view_on_maps": "Газрын зураг дээр нээх",
     "visit_facebook_button": "Facebook-ээр дагах",
-    "load_more": "Цааш үзэх"
+    "load_more": "Цааш үзэх",
+    "coming_soon": "Тун удахгүй",
+    "coming_soon_address": "Тун удахгүй нээгдэнэ",
+    "opening_soon": "Тун удахгүй нээгдэнэ"
   },
   "contact": {
     "title": "Холбоо барих",

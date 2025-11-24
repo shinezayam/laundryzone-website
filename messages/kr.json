@@ -378,7 +378,10 @@
     "view_on_map": "지도에서 보기",
     "view_on_maps": "지도에서 열기",
     "visit_facebook_button": "Facebook 팔로우하기",
-    "load_more": "더 많은 지점 보기"
+    "load_more": "더 많은 지점 보기",
+    "coming_soon": "곧 오픈",
+    "coming_soon_address": "곧 오픈 예정",
+    "opening_soon": "곧 오픈 예정"
   },
   "contact": {
     "title": "연락처",
