@@ -31,6 +31,25 @@ export default function BranchesPage() {
         </div>
       </section>
 
+      {/* Interactive Map Section */}
+      <section className="pt-12 pb-4 bg-neutral-50">
+        <div className="container-custom">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+            className="flex justify-center"
+          >
+            <iframe
+              src={`/map-interactive.html?locale=${locale}`}
+              className="w-full max-w-2xl border-0"
+              style={{ height: '400px' }}
+              title="Mongolia Map"
+            />
+          </motion.div>
+        </div>
+      </section>
+
       {/* Branches Section */}
       <section className="bg-white">
         <Branches locale={locale} showHeader={false} />

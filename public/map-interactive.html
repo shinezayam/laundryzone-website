@@ -85,9 +85,29 @@
     #map-container svg path.deselected:hover {
       fill: #9ca3af !important;
     }
+    /* Tooltip styles */
+    .tooltip {
+      position: fixed;
+      background: rgba(0, 0, 0, 0.85);
+      color: white;
+      padding: 8px 14px;
+      border-radius: 8px;
+      font-size: 13px;
+      font-weight: 500;
+      pointer-events: none;
+      z-index: 1000;
+      opacity: 0;
+      transition: opacity 0.15s ease;
+      white-space: nowrap;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    }
+    .tooltip.visible {
+      opacity: 1;
+    }
   </style>
 </head>
 <body>
+  <div class="tooltip" id="tooltip"></div>
   <div class="container">
     <div class="controls">
       <button class="control-btn select-all" id="select-all-btn" onclick="selectAll()">
@@ -176,10 +196,30 @@
         document.getElementById('map-container').innerHTML = svg;
 
         // Initialize all as selected
+        const tooltip = document.getElementById('tooltip');
+
         document.querySelectorAll('#map-container svg path').forEach(path => {
           if (PROVINCES[path.id]) {
             selectedProvinces.add(path.id);
             path.addEventListener('click', () => handleProvinceClick(path.id));
+
+            // Hover events for tooltip
+            path.addEventListener('mouseenter', (e) => {
+              const province = PROVINCES[path.id];
+              if (province) {
+                tooltip.textContent = province[locale] || province.mn;
+                tooltip.classList.add('visible');
+              }
+            });
+
+            path.addEventListener('mousemove', (e) => {
+              tooltip.style.left = (e.clientX + 12) + 'px';
+              tooltip.style.top = (e.clientY - 10) + 'px';
+            });
+
+            path.addEventListener('mouseleave', () => {
+              tooltip.classList.remove('visible');
+            });
           }
         });
 
