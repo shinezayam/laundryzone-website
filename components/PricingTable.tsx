@@ -130,18 +130,35 @@ export function PricingTable({ locale }: PricingTableProps) {
   return (
     <section className="section-padding bg-gradient-to-br from-white to-neutral-50">
       <div className="container-custom">
-        {/* Featured Image */}
+        {/* Pricing Images */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
-          className="text-center mb-12"
+          className="mb-12"
         >
-          <img 
-            src="/images/123.png" 
-            alt="LaundryZone Services"
-            className="mx-auto rounded-2xl shadow-lg max-w-full h-auto"
-          />
+          <div className="grid md:grid-cols-2 gap-6">
+            <div className="text-center">
+              <h3 className="text-xl font-bold text-neutral-900 mb-4">
+                {t('pricing.ulaanbaatar_prices')}
+              </h3>
+              <img
+                src="/images/price_ub.png"
+                alt="Ulaanbaatar Pricing"
+                className="mx-auto rounded-2xl shadow-lg max-w-full h-auto"
+              />
+            </div>
+            <div className="text-center">
+              <h3 className="text-xl font-bold text-neutral-900 mb-4">
+                {t('pricing.province_prices')}
+              </h3>
+              <img
+                src="/images/price_provinces.png"
+                alt="Province Pricing"
+                className="mx-auto rounded-2xl shadow-lg max-w-full h-auto"
+              />
+            </div>
+          </div>
         </motion.div>
 
         {/* How it works section */}

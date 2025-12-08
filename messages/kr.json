@@ -205,6 +205,8 @@
   "pricing": {
     "title": "가격",
     "subtitle": "합리적인 가격, 프리미엄 품질",
+    "ulaanbaatar_prices": "울란바토르 가격",
+    "province_prices": "지방 가격",
     "washers": "세탁기",
     "dryers": "건조기",
     "extras": "추가 장비",
