@@ -23,7 +23,11 @@
       "Bash(then echo \"$file\")",
       "Bash(fi)",
       "Bash(done)",
-      "Bash(ls:*)"
+      "Bash(ls:*)",
+      "Bash(cat:*)",
+      "Bash(npm install:*)",
+      "Bash(npm show:*)",
+      "Bash(npm audit fix:*)"
     ],
     "deny": [],
     "ask": []
