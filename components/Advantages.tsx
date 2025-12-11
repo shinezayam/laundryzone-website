@@ -142,6 +142,26 @@ export function Advantages({ locale }: AdvantagesProps) {
             </div>
           </div>
         </motion.div>
+
+        {/* Video Section */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8, delay: 0.2 }}
+          className="mt-12 md:mt-16"
+        >
+          <div className="relative aspect-video max-w-5xl mx-auto rounded-3xl overflow-hidden shadow-2xl">
+            <video
+              src="/videos/facebook.mp4"
+              autoPlay
+              loop
+              muted
+              playsInline
+              className="absolute inset-0 w-full h-full object-cover"
+            />
+          </div>
+        </motion.div>
       </div>
     </section>
   );

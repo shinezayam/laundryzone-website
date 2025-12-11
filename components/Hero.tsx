@@ -15,6 +15,7 @@ export function Hero({ locale }: HeroProps) {
   const t = useTranslations();
 
   return (
+    <>
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-accent-50 via-white to-accent-50">
       {/* Floating Bubbles Background */}
       <div className="absolute inset-0 overflow-hidden">
@@ -136,7 +137,7 @@ export function Hero({ locale }: HeroProps) {
 
       {/* Content */}
       <div className="container-custom relative z-10 mt-16 lg:mt-20">
-        {/* Full-width Video at top */}
+        {/* YouTube Video at top */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -144,13 +145,13 @@ export function Hero({ locale }: HeroProps) {
           className="mb-8"
         >
           <div className="relative aspect-video rounded-3xl overflow-hidden shadow-2xl">
-            <video
-              src="/videos/facebook.mp4"
-              autoPlay
-              loop
-              muted
-              playsInline
-              className="absolute inset-0 w-full h-full object-cover"
+            <iframe
+              src="https://www.youtube.com/embed/oSXXd-PXLrI?si=Rf2a1X6fWWlT_DS4&autoplay=1&mute=1&loop=1&playlist=oSXXd-PXLrI"
+              title="LaundryZone Video"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              referrerPolicy="strict-origin-when-cross-origin"
+              allowFullScreen
+              className="absolute inset-0 w-full h-full"
             />
           </div>
         </motion.div>
@@ -304,5 +305,6 @@ export function Hero({ locale }: HeroProps) {
         </motion.div>
       </motion.div>
     </section>
+    </>
   );
 }
