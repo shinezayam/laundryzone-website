@@ -23,6 +23,7 @@ interface Branch {
   phone2?: string;
   email?: string;
   facebook?: string;
+  mapsUrl?: string;
   image: string;
   comingSoon?: boolean;
 }
@@ -44,7 +45,7 @@ export function Branches({ locale, showHeader = true }: BranchesProps) {
     'Дорнод аймаг': 'MN061',
     // Orkhon province (Erdenet)
     'Эрдэнэт салбар': 'MN035',
-    'Эрдэнэт хот 2-р салбар': 'MN035',
+    'Эрдэнэт - Гранд Гарден': 'MN035',
     // Khövsgöl province
     'Хөвсгөл аймаг - Мөрөн салбар': 'MN041',
     'Хөвсгөл аймаг - Номин салбар': 'MN041',
@@ -56,8 +57,10 @@ export function Branches({ locale, showHeader = true }: BranchesProps) {
     'Дорноговь - Сайншанд': 'MN063',
     // Ömnögovi province
     'Өмнөговь аймаг': 'MN053',
-    // Zavkhan province (Uliastai)
-    'Улиастай салбар': 'MN057',
+    // Övörkhangai province (Arvaikheer)
+    'Өвөрхангай - Арвайхээр': 'MN055',
+    // Darkhan-Uul province
+    'Дархан салбар': 'MN037',
   };
 
   // Listen for messages from the map iframe
@@ -86,6 +89,7 @@ export function Branches({ locale, showHeader = true }: BranchesProps) {
       phone: "+976 9500 7443",
       email: "laundryzone.info@gmail.com",
       facebook: "https://www.facebook.com/laundryzone.mongolia/",
+      mapsUrl: "https://maps.app.goo.gl/p9jwFNGR3kasCx9L8",
              image: "/images/Branches/Дүнжингарав.jpg"
     },
     {
@@ -99,6 +103,7 @@ export function Branches({ locale, showHeader = true }: BranchesProps) {
       phone: "72722121-2",
       phone2: "+976 9004 4848",
       facebook: "https://www.facebook.com/laundryzone.branch2/",
+      mapsUrl: "https://maps.app.goo.gl/xDH9S1sNKYBUUWP1A",
              image: "/images/Branches/4-р хороолол.jpg"
     },    
     {
@@ -111,6 +116,7 @@ export function Branches({ locale, showHeader = true }: BranchesProps) {
       hours: "08:00-24:00",
       phone: "+976 8865 7370",
       facebook: "https://www.facebook.com/laundryzone.yarmag",
+      mapsUrl: "https://maps.app.goo.gl/gwkDBzLq6HoXL2za9",
              image: "/images/Branches/Яармаг.jpg"
     },
     {
@@ -124,6 +130,7 @@ export function Branches({ locale, showHeader = true }: BranchesProps) {
       phone: "+976 8008 4979",
       phone2: "+976 9961 6303",
       facebook: "https://www.facebook.com/LaundryZoneMarshalTown",
+      mapsUrl: "https://maps.app.goo.gl/g2YbMyShsBu6BbZZ8",
              image: "/images/Branches/Хүүхдийн 100.jpg"
     },
     {
@@ -137,6 +144,7 @@ export function Branches({ locale, showHeader = true }: BranchesProps) {
       phone: "+976 7272 2121-5",
       phone2: "+976 9008 2080",
       facebook: "https://www.facebook.com/laundryzonesansaremart",
+      mapsUrl: "https://maps.app.goo.gl/t2o1BiiJBabU5GZ79",
              image: "/images/Branches/Сансар.jpg"
     },
     {
@@ -150,6 +158,7 @@ export function Branches({ locale, showHeader = true }: BranchesProps) {
       phone: "72722121-6",
       phone2: "90006818",
       facebook: "https://www.facebook.com/laundrybars",
+      mapsUrl: "https://maps.app.goo.gl/AaaHkf5HwbBDsnVQ6",
              image: "/images/Branches/Барс_Зах.jpg"
     },
     {
@@ -162,11 +171,13 @@ export function Branches({ locale, showHeader = true }: BranchesProps) {
       hours: "08:00-24:00",
       phone: "+976 8309 5555",
       facebook: "https://www.facebook.com/profile.php?id=100084351392239",
-             image: "/images/Branches/Өмнөговь.jpg"
+      mapsUrl: "https://maps.app.goo.gl/Do1rtmG6PQhpfsFb7",
+             image: "/images/Branches/Өмнөговь.png"
     },
     {
       id: "1-р Хороолол",
       name: "1-р Хороолол",
+      mapsUrl: "https://maps.app.goo.gl/K81JRKBKhc9MmTgz9",
       address: "Баянгол дүүрэг, 20-р хороо, Улаанбаатар хот, Монгол улс",
       district: "Баянгол",
       lat: 47.9113,
@@ -186,6 +197,7 @@ export function Branches({ locale, showHeader = true }: BranchesProps) {
       hours: "08:00-24:00",
       phone: "+976 9411 0793",
       facebook: "https://www.facebook.com/LaundryZoneBayntseelSalbar/",
+      mapsUrl: "https://maps.app.goo.gl/HinpZqUTM8wRiQKd9",
              image: "/images/Branches/Баянцээл.jpg"
     },
     {
@@ -198,6 +210,7 @@ export function Branches({ locale, showHeader = true }: BranchesProps) {
       hours: "08:00-24:00",
       phone: "+976 9012 6677",
       facebook: "https://www.facebook.com/laundryzone.nalaikh",
+      mapsUrl: "https://maps.app.goo.gl/jyps4NWYbMNTk2eh7",
              image: "/images/Branches/Налайх.jpg"
     },
     {
@@ -210,6 +223,7 @@ export function Branches({ locale, showHeader = true }: BranchesProps) {
       hours: "08:00-24:00",
       phone: "+976 7611 1247",
       facebook: "https://www.facebook.com/Laundryzone.sharkhad",
+      mapsUrl: "https://maps.app.goo.gl/4bJrsx5uYeLG3j2m9",
               image: "/images/Branches/Шархад.jpg"
     },
     {
@@ -222,6 +236,7 @@ export function Branches({ locale, showHeader = true }: BranchesProps) {
       hours: "08:00-24:00",
       phone: "+976 9500 7442",
       facebook: "https://www.facebook.com/laundryzone.rashaant32",
+      mapsUrl: "https://maps.app.goo.gl/1NFt8GmCJU4xqAGd8",
              image: "/images/Branches/Рашаант.jpg"
     },
     {
@@ -234,6 +249,7 @@ export function Branches({ locale, showHeader = true }: BranchesProps) {
         hours: "08:00-24:00",
         phone: "+976 9500 7446",
         facebook: "https://www.facebook.com/laundryzone.monel",
+        mapsUrl: "https://maps.app.goo.gl/ZncMNKW2Xpxcokiw8",
                image: "/images/Branches/Монел Цайз 16.jpg"
       },
       {
@@ -246,6 +262,7 @@ export function Branches({ locale, showHeader = true }: BranchesProps) {
         hours: "08:00-24:00",
         phone: "+976 8060 2033",
         facebook: "https://www.facebook.com/profile.php?id=100087135199549",
+        mapsUrl: "https://maps.app.goo.gl/Hpyjo2RAnuGsc4q17",
               image: "/images/Branches/19-р хороолол.jpg"
       },
       {
@@ -258,6 +275,7 @@ export function Branches({ locale, showHeader = true }: BranchesProps) {
         hours: "08:00-24:00",
         phone: "+976 9090 7777",
         facebook: "https://www.facebook.com/LaundryzoneSodon",
+        mapsUrl: "https://maps.app.goo.gl/HAH4JvPUfJgC3utj8",
                 image: "/images/Branches/21 - Содон хороолол.jpg"
       },
       {
@@ -270,6 +288,7 @@ export function Branches({ locale, showHeader = true }: BranchesProps) {
         hours: "08:00-24:00",
         phone: "+976 9191 6818",
         facebook: "https://www.facebook.com/profile.php?id=100088826766556",
+        mapsUrl: "https://maps.app.goo.gl/7wzXXKUVbVLUUJro8",
                 image: "/images/Branches/Дорнод.jpg"
       },
       {
@@ -282,6 +301,7 @@ export function Branches({ locale, showHeader = true }: BranchesProps) {
         hours: "08:00-24:00",
         phone: "+976 8581 5544",
         facebook: "https://www.facebook.com/profile.php?id=100095010397188",
+        mapsUrl: "https://maps.app.goo.gl/sLoJ6N3e8iGu6yWU7",
                image: "/images/Branches/Эх нялхас.jpg"
       },
       {
@@ -294,6 +314,7 @@ export function Branches({ locale, showHeader = true }: BranchesProps) {
         hours: "08:00-24:00",
         phone: "+976 9500 7856",
         facebook: "https://www.facebook.com/laundryzone.erdenet/",
+        mapsUrl: "https://maps.app.goo.gl/yEdvRdaDBKHmZqVN6",
                image: "/images/Branches/Эрдэнэт.jpg"
       },
       {
@@ -306,6 +327,7 @@ export function Branches({ locale, showHeader = true }: BranchesProps) {
         hours: "08:00-24:00",
         phone: "+976 9422 3447",
         facebook: "https://www.facebook.com/laundryzone.khuvsgul/",
+        mapsUrl: "https://maps.app.goo.gl/hCnjp2Nt51bc9HiP8",
                image: "/images/Branches/Хөвсгөл аймаг - Мөрөн салбар.jpg"
       },
       {
@@ -318,6 +340,7 @@ export function Branches({ locale, showHeader = true }: BranchesProps) {
         hours: "08:00-24:00",
         phone: "+976 9668 2329",
         facebook: "https://www.facebook.com/profile.php?id=100093604088219",
+        mapsUrl: "https://maps.app.goo.gl/YRtVzQNFMgPvzM8w6",
                image: "/images/Branches/Нарны хороолол.jpg"
       },
       {
@@ -330,6 +353,7 @@ export function Branches({ locale, showHeader = true }: BranchesProps) {
         hours: "08:00-24:00",
         phone: "+976 9000 3801",
         facebook: "https://www.facebook.com/profile.php?id=100083213588146",
+        mapsUrl: "https://maps.app.goo.gl/n2rir9mFQ6Lfk97XA",
                image: "/images/Branches/10-р хороолол - И-март.jpg"
       },
       {
@@ -341,6 +365,7 @@ export function Branches({ locale, showHeader = true }: BranchesProps) {
         lng: 106.9250,
         hours: "08:00-24:00",
         phone: "+976 8802 8550",
+        mapsUrl: "https://maps.app.goo.gl/7bQzQDJ9W69mJWSf7",
                 image: "/images/Branches/Нисэх.jpg"
       },
       {
@@ -353,6 +378,7 @@ export function Branches({ locale, showHeader = true }: BranchesProps) {
         hours: "08:00-24:00",
         phone: "+976 8060 2033",
         facebook: "https://www.facebook.com/profile.php?id=61552825743219",
+        mapsUrl: "https://maps.app.goo.gl/wMM7uCr7VQPtNnuTA",
                image: "/images/Branches/Гэмтэл.jpg"
       },
       {
@@ -365,6 +391,7 @@ export function Branches({ locale, showHeader = true }: BranchesProps) {
         hours: "08:00-24:00",
         phone: "+976 9594 4004",
         facebook: "https://www.facebook.com/laundryzone.dari.ekh",
+        mapsUrl: "https://maps.app.goo.gl/1Afacppe95n1cQZDA",
                image: "/images/Branches/Дарь Эх.jpg"
       },
       {
@@ -376,7 +403,8 @@ export function Branches({ locale, showHeader = true }: BranchesProps) {
         lng: 106.9166,
         hours: "08:00-24:00",
         phone: "+976 9438 3003",
-        facebook: "https://www.facebook.com/laundryzone.chingeltei",
+        facebook: "https://www.facebook.com/laundryzone.chingeltei/",
+        mapsUrl: "https://www.facebook.com/laundryzone.chingeltei/",
                image: "/images/Branches/Чингэлтэй.jpg"
       },
       {
@@ -388,7 +416,9 @@ export function Branches({ locale, showHeader = true }: BranchesProps) {
         lng: 106.9177,
         hours: "08:00-24:00",
         phone: "",
-               image: "/images/placeholder_image.png"
+        facebook: "https://www.facebook.com/profile.php?id=61557198998129",
+        mapsUrl: "https://maps.app.goo.gl/gdohmTGeBHc4nzfx5",
+               image: "/images/Branches/Хөвсгөл-Номин.png"
       },
       {
         id: "Нисэх",
@@ -400,7 +430,8 @@ export function Branches({ locale, showHeader = true }: BranchesProps) {
         hours: "08:00-24:00",
         phone: "+976 9020 9194",
         facebook: "https://www.facebook.com/profile.php?id=61563123433927",
-                image: "/images/placeholder_image.png"
+        mapsUrl: "https://maps.app.goo.gl/ZPDdztk69FanibU27",
+                image: "/images/Branches/Нисэх.png"
       },
       {
        id: "Баянхошуу",
@@ -412,6 +443,7 @@ export function Branches({ locale, showHeader = true }: BranchesProps) {
        hours: "08:00-24:00",
        phone: "+976 8920 2457",
        facebook: "https://www.facebook.com/profile.php?id=61567297173651",
+       mapsUrl: "https://maps.app.goo.gl/NjciBJvrf3VMSKBm9",
               image: "/images/Branches/Баянхошуу.jpg"
      },
      {
@@ -424,6 +456,7 @@ export function Branches({ locale, showHeader = true }: BranchesProps) {
       hours: "08:00-24:00",
       phone: "+976 9980 6252",
       facebook: "https://www.facebook.com/laundryzone.tengis",
+      mapsUrl: "https://maps.app.goo.gl/ypq81tsSvY9Hnv7S9",
              image: "/images/Branches/Тэнгис.jpg"
     },
      {
@@ -436,6 +469,7 @@ export function Branches({ locale, showHeader = true }: BranchesProps) {
        hours: "08:00-24:00",
        phone: "+976 9196 0247",
        facebook: "https://www.facebook.com/profile.php?id=100069384228854",
+       mapsUrl: "https://maps.app.goo.gl/tLw4HSjk6q6aAcWHA",
               image: "/images/Branches/Орбит.jpg"
      },
          {
@@ -448,6 +482,7 @@ export function Branches({ locale, showHeader = true }: BranchesProps) {
        hours: "08:00-24:00",
        phone: "+976 8500 4010",
        facebook: "https://www.facebook.com/profile.php?id=100057454611542",
+       mapsUrl: "https://maps.app.goo.gl/jwS5ihBdMBNPwJUD6",
               image: "/images/Branches/Хайлааст.jpg"
      },
          {
@@ -460,6 +495,7 @@ export function Branches({ locale, showHeader = true }: BranchesProps) {
        hours: "08:00-24:00",
        phone: "+976 9500 8683",
        facebook: "https://www.facebook.com/laundryzone.damba",
+       mapsUrl: "https://maps.app.goo.gl/WVFoPw6tMGJjedLy5",
               image: "/images/Branches/Дамбадаржаа.jpg"
      },
     {
@@ -472,6 +508,7 @@ export function Branches({ locale, showHeader = true }: BranchesProps) {
       hours: "08:00-24:00",
       phone: "+976 9091 2468",
       facebook: "https://www.facebook.com/profile.php?id=61572590766659",
+      mapsUrl: "https://maps.app.goo.gl/ewUH9LJdbeXyqcX96",
              image: "/images/Branches/Увс аймаг.jpg"
     },
     {
@@ -484,6 +521,7 @@ export function Branches({ locale, showHeader = true }: BranchesProps) {
       hours: "08:00-24:00",
       phone: "+976 8850 1980",
       facebook: "https://www.facebook.com/DornogobiLaundryzone",
+      mapsUrl: "https://maps.app.goo.gl/z5FH3qgbLiEoYFmU7",
              image: "/images/Branches/Дорноговь.jpg"
     },
     {
@@ -495,41 +533,74 @@ export function Branches({ locale, showHeader = true }: BranchesProps) {
       lng: 106.9229,
       hours: "08:00-24:00",
       phone: "+976 8520 2211",
+      phone2: "+976 8815 6945",
       facebook: "https://www.facebook.com/profile.php?id=61574842010456",
+      mapsUrl: "https://maps.app.goo.gl/kEEnnUfoBUkdRB5QA",
              image: "/images/Branches/Зуунмод.jpg"
     },
-    // Coming Soon Branches
     {
       id: "Яармаг-Мандала хотхон",
       name: "Яармаг-Мандала хотхон",
-      address: "Тун удахгүй нээгдэнэ",
+      address: "Хан-Уул дүүрэг, 23-р хороо, Мандала гарден хотхон, 1475-р байр, 1 давхарт, Улаанбаатар хот, Монгол улс",
       district: "Хан-Уул",
-      lat: 47.8800,
-      lng: 106.9100,
+      lat: 47.8654,
+      lng: 106.8342,
       hours: "08:00-24:00",
-      phone: "",
-      image: "/images/placeholder_image.png",
-      comingSoon: true
+      phone: "+976 9101 0226",
+      phone2: "+976 7708 7709",
+      facebook: "https://www.facebook.com/profile.php?id=61584498733899",
+      mapsUrl: "https://maps.app.goo.gl/s5Ha4F14mQZff4kA7",
+      image: "/images/Branches/Яармаг-Мандала.png"
     },
     {
-      id: "Эрдэнэт хот 2-р салбар",
-      name: "Эрдэнэт хот 2-р салбар",
-      address: "Тун удахгүй нээгдэнэ",
+      id: "Эрдэнэт - Гранд Гарден",
+      name: "Эрдэнэт - Гранд Гарден",
+      address: "Орхон аймаг, Баян-Өндөр сум, 2-р баг, Гранд Гарден ресиденс, 10-3 байр, Ү-3 тоот",
       district: "Орон нутаг",
-      lat: 49.0276,
-      lng: 104.0445,
+      lat: 49.0316,
+      lng: 104.0712,
       hours: "08:00-24:00",
-      phone: "",
-      image: "/images/placeholder_image.png",
-      comingSoon: true
+      phone: "+976 7708 7709",
+      facebook: "https://www.facebook.com/people/LaundryZone-Эрдэнэт-хот-Grand-Garden-салбар/61584512854633/",
+      mapsUrl: "https://maps.app.goo.gl/Lj695GQAYf8ZTjN9A",
+      image: "/images/Branches/Эрдэнэт-Гранд-Гарден.png"
     },
     {
-      id: "Улиастай салбар",
-      name: "Улиастай салбар",
+      id: "Улиастай - БЗД",
+      name: "Улиастай - БЗД",
+      address: "Баянзүрх дүүрэг, 23-р хороо, 3-р хэсэг, сургуулийн 1296 тоот, Улиастайн хуучин эцэс, Улаанбаатар хот, Монгол улс",
+      district: "Баянзүрх",
+      lat: 47.9129,
+      lng: 107.0367,
+      hours: "08:00-24:00",
+      phone: "+976 8815 6945",
+      phone2: "+976 8520 2211",
+      facebook: "https://www.facebook.com/laundryzone.mongolia",
+      mapsUrl: "https://maps.app.goo.gl/RWqpPV8qovME389h9",
+      image: "/images/Branches/Улиастай-БЗД.png"
+    },
+    {
+      id: "Өвөрхангай - Арвайхээр",
+      name: "Өвөрхангай - Арвайхээр",
+      address: "Өвөрхангай аймаг, Арвайхээр, Ноён-3 гудамж, 303 тоот (11-ийн шар дэлгүүр буюу \"Батдаваа\" хүнсний дэлгүүрийн замын эсрэг талд)",
+      district: "Орон нутаг",
+      lat: 46.2603,
+      lng: 102.7012,
+      hours: "08:00-24:00",
+      phone: "+976 9950 2325",
+      phone2: "+976 9408 7440",
+      facebook: "https://www.facebook.com/profile.php?id=61578460486564",
+      mapsUrl: "https://maps.app.goo.gl/1iwGhGbtaKvaqAar8",
+      image: "/images/Branches/Өвөрхангай-Арвайхээр.png"
+    },
+    // Coming Soon Branches
+    {
+      id: "Дархан салбар",
+      name: "Дархан салбар",
       address: "Тун удахгүй нээгдэнэ",
       district: "Орон нутаг",
-      lat: 47.7394,
-      lng: 96.8425,
+      lat: 49.4867,
+      lng: 105.9228,
       hours: "08:00-24:00",
       phone: "",
       image: "/images/placeholder_image.png",
@@ -574,8 +645,8 @@ export function Branches({ locale, showHeader = true }: BranchesProps) {
       }
       return true;
     });
-    // Sort: coming soon branches first
-    return filtered.sort((a, b) => {
+    // Sort: coming soon first, then newest-added first (reverse array order)
+    return filtered.reverse().sort((a, b) => {
       if (a.comingSoon && !b.comingSoon) return -1;
       if (!a.comingSoon && b.comingSoon) return 1;
       return 0;
@@ -819,7 +890,7 @@ export function Branches({ locale, showHeader = true }: BranchesProps) {
                   ) : (
                     <>
                       <a
-                        href={`https://www.google.com/maps?q=${branch.lat},${branch.lng}`}
+                        href={branch.mapsUrl || `https://www.google.com/maps?q=${branch.lat},${branch.lng}`}
                         target="_blank"
                         rel="noopener noreferrer"
                         className="flex-1 inline-flex items-center justify-center gap-2 px-2 sm:px-3 py-2.5 rounded-lg text-xs sm:text-sm font-medium text-orange-600 border-2 border-orange-500 hover:bg-orange-50 transition-all duration-200"
