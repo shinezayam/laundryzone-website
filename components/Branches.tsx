@@ -418,7 +418,7 @@ export function Branches({ locale, showHeader = true }: BranchesProps) {
         phone: "",
         facebook: "https://www.facebook.com/profile.php?id=61557198998129",
         mapsUrl: "https://maps.app.goo.gl/gdohmTGeBHc4nzfx5",
-               image: "/images/Branches/Хөвсгөл-Номин.png"
+               image: "/images/Branches/Хөвсгөл-Номин.jpg"
       },
       {
         id: "Нисэх",
@@ -457,7 +457,7 @@ export function Branches({ locale, showHeader = true }: BranchesProps) {
       phone: "+976 9980 6252",
       facebook: "https://www.facebook.com/laundryzone.tengis",
       mapsUrl: "https://maps.app.goo.gl/ypq81tsSvY9Hnv7S9",
-             image: "/images/Branches/Тэнгис.jpg"
+             image: "/images/Branches/Бичил.jpg"
     },
      {
        id: "Орбит",
@@ -592,6 +592,18 @@ export function Branches({ locale, showHeader = true }: BranchesProps) {
       facebook: "https://www.facebook.com/profile.php?id=61578460486564",
       mapsUrl: "https://maps.app.goo.gl/1iwGhGbtaKvaqAar8",
       image: "/images/Branches/Өвөрхангай-Арвайхээр.png"
+    },
+    {
+      id: "Гачуурт",
+      name: "Гачуурт",
+      address: "Гачууртын Цагаан дэлгүүрийн уулзвараас урагшаа 300м байрлах \"ТА ЧИ\" төвд, Улаанбаатар хот, Монгол улс",
+      district: "Баянзүрх",
+      lat: 47.9300,
+      lng: 107.2000,
+      hours: "08:00-24:00",
+      phone: "",
+      mapsUrl: "https://maps.app.goo.gl/hUipRVxpn9W9kEJ59",
+      image: "/images/Branches/Гачуурт.png"
     },
     // Coming Soon Branches
     {
