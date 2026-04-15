@@ -1,6 +1,7 @@
 'use client';
 
 import { useState } from 'react';
+import Image from 'next/image';
 import { useTranslations } from 'next-intl';
 import { motion, AnimatePresence } from 'framer-motion';
 import { 
@@ -43,6 +44,8 @@ export function HumanResource({ locale }: HumanResourceProps) {
   const positions = [
     {
       key: 'branch_service_consultant',
+      applyUrl: 'https://forms.gle/N31Qgtk2g7ses3mp8',
+      qrImage: '/images/service-consultant-qr.jpg',
       icon: <Building2 className="w-8 h-8 text-blue-600" />,
       color: 'from-blue-50 to-blue-100',
       borderColor: 'border-blue-200',
@@ -50,8 +53,8 @@ export function HumanResource({ locale }: HumanResourceProps) {
       experience: locale === 'mn' ? '2+ жил' : locale === 'kr' ? '2년 이상' : '2+ years',
       type: locale === 'mn' ? 'Бүтэн цагийн' : locale === 'kr' ? '정규직' : 'Full-time',
       title: locale === 'mn' ? 'Үйлчилгээний зөвлөх ажилтан' : locale === 'kr' ? '서비스 컨설턴트' : 'Service Consultant',
-      description: locale === 'mn' ? 'Угаалгын газраар үйлчлүүлэх, тоног төхөөрөмж ашиглах зөвлөмж өгч, дэмжлэг үзүүлэх' : 
-                   locale === 'kr' ? '세탁소 이용 및 장비 사용에 대한 안내를 제공하고 지원' : 
+      description: locale === 'mn' ? 'Угаалгын газраар үйлчлүүлэх, тоног төхөөрөмж ашиглах зөвлөмж өгч, дэмжлэг үзүүлэх' :
+                   locale === 'kr' ? '세탁소 이용 및 장비 사용에 대한 안내를 제공하고 지원' :
                    'Provide guidance on using the laundry facilities and equipment, and offer support'
     },
     {
@@ -121,10 +124,10 @@ export function HumanResource({ locale }: HumanResourceProps) {
       label: locale === 'mn' ? 'Ажилчид' : locale === 'kr' ? '직원' : 'Employees', 
       icon: <Users className="w-6 h-6" /> 
     },
-    { 
-      number: '35+', 
-      label: locale === 'mn' ? 'Салбар' : locale === 'kr' ? '지점' : 'Branches', 
-      icon: <Building2 className="w-6 h-6" /> 
+    {
+      number: '40+',
+      label: locale === 'mn' ? 'Салбар' : locale === 'kr' ? '지점' : 'Branches',
+      icon: <Building2 className="w-6 h-6" />
     },
     { 
       number: '5+', 
@@ -373,7 +376,11 @@ export function HumanResource({ locale }: HumanResourceProps) {
                   whileTap={{ scale: 0.98 }}
                   className="w-full bg-gradient-to-r from-accent-500 to-accent-600 hover:from-accent-600 hover:to-accent-700 text-white font-semibold py-4 px-6 rounded-xl transition-all duration-300 group-hover:shadow-lg"
                   onClick={() => {
-                    window.location.href = `/${locale}/jobs/${position.key}`;
+                    if ('applyUrl' in position && position.applyUrl) {
+                      window.open(position.applyUrl, '_blank', 'noopener,noreferrer');
+                    } else {
+                      window.location.href = `/${locale}/jobs/${position.key}`;
+                    }
                   }}
                 >
                   <span className="flex items-center justify-center">
@@ -381,6 +388,27 @@ export function HumanResource({ locale }: HumanResourceProps) {
                     {locale === 'mn' ? 'Анкет бөглөх' : locale === 'kr' ? '지원하기' : 'Apply Now'}
                   </span>
                 </motion.button>
+
+                {'qrImage' in position && position.qrImage && (
+                  <div className="mt-5 pt-5 border-t border-neutral-100 flex flex-col items-center">
+                    <p className="text-sm text-neutral-500 mb-3 text-center">
+                      {locale === 'mn'
+                        ? 'Утсаараа уншуулан анкет бөглөх'
+                        : locale === 'kr'
+                        ? '휴대폰으로 QR 코드를 스캔하여 지원하기'
+                        : 'Scan with your phone to apply'}
+                    </p>
+                    <div className="bg-white p-2 rounded-lg border border-neutral-200">
+                      <Image
+                        src={position.qrImage}
+                        alt={locale === 'mn' ? 'Анкетын QR код' : locale === 'kr' ? '지원서 QR 코드' : 'Application QR code'}
+                        width={140}
+                        height={140}
+                        className="rounded"
+                      />
+                    </div>
+                  </div>
+                )}
               </motion.div>
             ))}
           </div>
