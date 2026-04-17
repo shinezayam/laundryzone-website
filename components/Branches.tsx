@@ -60,7 +60,12 @@ export function Branches({ locale, showHeader = true }: BranchesProps) {
     // Övörkhangai province (Arvaikheer)
     'Өвөрхангай - Арвайхээр': 'MN055',
     // Darkhan-Uul province
-    'Дархан салбар': 'MN037',
+    'Дархан Найрамдал Master State': 'MN037',
+    'Дархан Том&Томс салбар': 'MN037',
+    // Arkhangai province
+    'Архангай салбар': 'MN073',
+    // Bayankhongor province
+    'Баянхонгор салбар': 'MN067',
   };
 
   // Listen for messages from the map iframe
@@ -601,18 +606,52 @@ export function Branches({ locale, showHeader = true }: BranchesProps) {
       lat: 47.9300,
       lng: 107.2000,
       hours: "08:00-24:00",
-      phone: "",
+      phone: "+976 8818 1646",
       mapsUrl: "https://maps.app.goo.gl/hUipRVxpn9W9kEJ59",
       image: "/images/Branches/Гачуурт.png"
     },
     // Coming Soon Branches
     {
-      id: "Дархан салбар",
-      name: "Дархан салбар",
-      address: "Тун удахгүй нээгдэнэ",
+      id: "Дархан Найрамдал Master State",
+      name: "Дархан Найрамдал Master State",
+      address: "Дархан-Уул аймгийн Найрамдал Master State хотхоны A8-р блок",
       district: "Орон нутаг",
       lat: 49.4867,
       lng: 105.9228,
+      hours: "08:00-24:00",
+      phone: "+976 9408 7441",
+      image: "/images/Branches/Дархан.png"
+    },
+    {
+      id: "Архангай салбар",
+      name: "Архангай салбар",
+      address: "Тун удахгүй нээгдэнэ",
+      district: "Орон нутаг",
+      lat: 47.4500,
+      lng: 101.4500,
+      hours: "08:00-24:00",
+      phone: "+976 9408 7442",
+      image: "/images/placeholder_image.png",
+      comingSoon: true
+    },
+    {
+      id: "Дархан Том&Томс салбар",
+      name: "Дархан Том&Томс салбар",
+      address: "Дархан-Уул аймгийн Оргил супермаркетийн хажууд, Буудай хотхонд",
+      district: "Орон нутаг",
+      lat: 49.4867,
+      lng: 105.9228,
+      hours: "08:00-24:00",
+      phone: "+976 9939 8126",
+      image: "/images/Branches/Дархан-Том&Томс.png"
+    },
+    {
+      id: "Баянхонгор салбар",
+      name: "Баянхонгор салбар",
+      address: "Тун удахгүй нээгдэнэ",
+      district: "Орон нутаг",
+      lat: 46.1944,
+      lng: 100.7211,
       hours: "08:00-24:00",
       phone: "",
       image: "/images/placeholder_image.png",
@@ -837,7 +876,7 @@ export function Branches({ locale, showHeader = true }: BranchesProps) {
               className="card relative bg-white border border-neutral-200 rounded-2xl overflow-hidden hover:shadow-lg hover:scale-[1.02] transition-all duration-300 flex flex-col"
             >
               {/* Image */}
-              <div className="relative w-full h-48 bg-neutral-100 rounded-t-2xl overflow-hidden">
+              <div className="relative w-full h-80 bg-neutral-100 rounded-t-2xl overflow-hidden">
                 {/* Coming Soon Badge */}
                 {branch.comingSoon && (
                   <div className="absolute top-3 right-3 z-10 bg-accent-500 text-white px-3 py-1.5 rounded-full text-xs font-bold uppercase tracking-wide shadow-lg">
@@ -866,7 +905,7 @@ export function Branches({ locale, showHeader = true }: BranchesProps) {
               </div>
 
               {/* Content */}
-              <div className="p-5 flex flex-col h-full">
+              <div className="p-4 flex flex-col h-full">
                 <div className="flex-1">
                   <h4 className="text-lg lg:text-xl font-bold text-neutral-900 mb-3">
                     {branch.name}
@@ -894,7 +933,7 @@ export function Branches({ locale, showHeader = true }: BranchesProps) {
                 </div>
 
                 {/* Actions - Fixed at bottom */}
-                <div className="mt-4 pt-4 border-t border-neutral-100 flex flex-col sm:flex-row items-stretch sm:items-center gap-2">
+                <div className="mt-3 pt-3 border-t border-neutral-100 flex flex-col sm:flex-row items-stretch sm:items-center gap-2">
                   {branch.comingSoon ? (
                     <div className="flex-1 inline-flex items-center justify-center gap-2 px-2 sm:px-3 py-2.5 rounded-lg text-xs sm:text-sm font-medium text-accent-600 bg-accent-50 border-2 border-accent-200">
                       {t('branches.opening_soon')}
