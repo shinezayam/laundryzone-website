@@ -6,6 +6,7 @@ import Image from 'next/image';
 import { motion } from 'framer-motion';
 import { ArrowRight, Play } from 'lucide-react';
 import { StatBadges } from './StatBadges';
+import { DISPLAYED_BRANCH_COUNT } from '@/data/branches-data';
 
 interface HeroProps {
   locale: string;
@@ -146,7 +147,7 @@ export function Hero({ locale }: HeroProps) {
         >
           <div className="relative aspect-video rounded-3xl overflow-hidden shadow-2xl">
             <iframe
-              src="https://www.youtube.com/embed/oSXXd-PXLrI?si=Rf2a1X6fWWlT_DS4&autoplay=1&mute=1&loop=1&playlist=oSXXd-PXLrI"
+              src="https://www.youtube.com/embed/oSXXd-PXLrI?si=Rf2a1X6fWWlT_DS4&loop=1&playlist=oSXXd-PXLrI"
               title="LaundryZone Video"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
               referrerPolicy="strict-origin-when-cross-origin"
@@ -234,14 +235,38 @@ export function Hero({ locale }: HeroProps) {
             transition={{ duration: 1, delay: 0.4 }}
             className="relative group lg:col-span-3"
           >
-            <div className="relative aspect-square rounded-3xl overflow-hidden shadow-2xl hover:shadow-3xl transition-all duration-300 transform hover:scale-[1.02]">
+            <div className="relative aspect-square rounded-3xl overflow-hidden shadow-2xl">
               <Image
                 src="/images/banner.jpg"
                 alt="LaundryZone"
                 fill
-                className="object-cover transition-transform duration-500 group-hover:scale-105"
+                className="object-cover"
                 sizes="(max-width: 768px) 100vw, (max-width: 1024px) 80vw, 60vw"
               />
+
+              {/* Branch count overlay — anchored to original spot on banner (99px left, 196px bottom of native 1920x1920) */}
+              <div
+                className="absolute flex items-center justify-center pointer-events-none"
+                style={{
+                  left: '5.16%',
+                  bottom: '10.21%',
+                  width: '10.55%',
+                  height: '8.20%',
+                }}
+              >
+                <div
+                  className="bg-white rounded-2xl shadow-md flex items-center justify-center w-full h-full"
+                >
+                  <span
+                    className="font-black text-accent-500 leading-none"
+                    style={{
+                      fontSize: 'clamp(1.1rem, 4vw, 4rem)',
+                    }}
+                  >
+                    {DISPLAYED_BRANCH_COUNT}
+                  </span>
+                </div>
+              </div>
 
               {/* Floating Interactive Elements */}
               <motion.div
