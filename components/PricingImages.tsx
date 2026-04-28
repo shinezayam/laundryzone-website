@@ -3,6 +3,7 @@
 import { useTranslations } from 'next-intl';
 import { motion } from 'framer-motion';
 import Image from 'next/image';
+import { DISPLAYED_BRANCH_COUNT } from '@/data/branches-data';
 
 interface PricingImagesProps {
   locale: string;
@@ -38,7 +39,7 @@ export function PricingImages({ locale }: PricingImagesProps) {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
-            className="bg-white rounded-xl shadow-lg overflow-hidden border border-neutral-200"
+            className="relative bg-white rounded-xl shadow-lg overflow-hidden border border-neutral-200"
           >
             <Image
               src="/images/price_ub.png"
@@ -47,6 +48,25 @@ export function PricingImages({ locale }: PricingImagesProps) {
               height={800}
               className="w-full h-auto object-contain"
             />
+            {/* Branch count overlay (native 1639x2048: 98px left, 169px bottom, 181x141 box at 90% scale) */}
+            <div
+              className="absolute flex items-center justify-center pointer-events-none"
+              style={{
+                left: '5.98%',
+                bottom: '8.25%',
+                width: '9.94%',
+                height: '6.20%',
+              }}
+            >
+              <div className="bg-white rounded-2xl shadow-md flex items-center justify-center w-full h-full">
+                <span
+                  className="font-black text-accent-500 leading-none"
+                  style={{ fontSize: 'clamp(0.9rem, 2.5vw, 2.5rem)' }}
+                >
+                  {DISPLAYED_BRANCH_COUNT}
+                </span>
+              </div>
+            </div>
           </motion.div>
 
           {/* Provinces Pricing */}
@@ -55,7 +75,7 @@ export function PricingImages({ locale }: PricingImagesProps) {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8, delay: 0.2 }}
-            className="bg-white rounded-xl shadow-lg overflow-hidden border border-neutral-200"
+            className="relative bg-white rounded-xl shadow-lg overflow-hidden border border-neutral-200"
           >
             <Image
               src="/images/price_provinces.png"
@@ -64,6 +84,25 @@ export function PricingImages({ locale }: PricingImagesProps) {
               height={800}
               className="w-full h-auto object-contain"
             />
+            {/* Branch count overlay (native 1639x2048: 98px left, 169px bottom, 181x141 box at 90% scale) */}
+            <div
+              className="absolute flex items-center justify-center pointer-events-none"
+              style={{
+                left: '5.98%',
+                bottom: '8.25%',
+                width: '9.94%',
+                height: '6.20%',
+              }}
+            >
+              <div className="bg-white rounded-2xl shadow-md flex items-center justify-center w-full h-full">
+                <span
+                  className="font-black text-accent-500 leading-none"
+                  style={{ fontSize: 'clamp(0.9rem, 2.5vw, 2.5rem)' }}
+                >
+                  {DISPLAYED_BRANCH_COUNT}
+                </span>
+              </div>
+            </div>
           </motion.div>
         </div>
       </div>
