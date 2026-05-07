@@ -177,16 +177,10 @@ export function SiteFooter({ locale }: SiteFooterProps) {
             
             <div className="flex space-x-6">
               <Link
-                href={`/${locale}/privacy`}
+                href={`/${locale}/pricing`}
                 className="text-neutral-400 hover:text-white transition-colors text-sm"
               >
-                {t('footer.links.privacy')}
-              </Link>
-              <Link
-                href={`/${locale}/terms`}
-                className="text-neutral-400 hover:text-white transition-colors text-sm"
-              >
-                {t('footer.links.terms')}
+                {t('footer.links.pricing_info')}
               </Link>
             </div>
           </div>
